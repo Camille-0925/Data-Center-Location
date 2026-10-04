@@ -1,0 +1,24 @@
+[
+  {
+    "record_id": "LOUDOUN_SPEX_2025",
+    "county_fips": "51107",
+    "source_url": "https://www.loudoun.gov/datacenterstandards",
+    "checked_on": "2026-10-03",
+    "kind": "additional_approval_pathway",
+    "effective_date": "2025-03-18",
+    "summary": "Previously by-right areas changed to conditional/SPEX uses; certain applications accepted before 2025-02-12 may qualify for grandfathering.",
+    "scope": "Affected areas; parcel/project eligibility not established by county membership.",
+    "requires_project_check": true
+  },
+  {
+    "record_id": "PWC_SUP_OVERLAY_UPDATE",
+    "county_fips": "51153",
+    "source_url": "https://www.pwcva.gov/department/planning-office/data-center-overlay-district-comprehensive-review",
+    "checked_on": "2026-10-03",
+    "kind": "additional_approval_pathway",
+    "effective_date": null,
+    "summary": "Official page describes revised overlay eligibility and SUP pathway for listed districts outside overlay.",
+    "scope": "Outside revised overlay in listed districts. Individual parcel eligibility and ordinance effective date not fully verified.",
+    "requires_project_check": true
+  }
+]
