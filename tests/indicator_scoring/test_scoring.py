@@ -32,7 +32,8 @@ class UtilityTests(unittest.TestCase):
         self.assertAlmostEqual(float(utility([300], "low_better", 100, 650)[0]), 63.636, places=3)
 
     def test_log_transform_applies_to_value_and_anchors(self):
-        u = utility([2000, math.sqrt(2000 * 50000), 50000], "high_better", 50000, 2000, transform="ln")
+        midpoint = math.exp((math.log1p(2000) + math.log1p(50000)) / 2) - 1
+        u = utility([2000, midpoint, 50000], "high_better", 50000, 2000, transform="ln")
         self.assertTrue(np.allclose(u, [0, 50, 100]))
 
     def test_exponential_shape_bends_but_keeps_end_points(self):
@@ -57,11 +58,12 @@ class ConfigTests(unittest.TestCase):
     def test_shipped_config_is_valid(self):
         validate_config(CONFIG)
         self.assertEqual(len(CONFIG["dimensions"]), 8)
-        self.assertEqual(len(CONFIG["indicators"]), 15)
+        self.assertEqual(len(CONFIG["indicators"]), 18)
+        self.assertEqual(CONFIG["value_function"], "clipped_piecewise_linear")
 
     def test_weights_must_sum_to_one(self):
         config = deepcopy(CONFIG)
-        config["dimensions"]["transportation"]["weights"]["distance_to_rail_km"] = 0.5
+        config["dimensions"]["transportation"]["weights"]["distance_to_rail_km"] = 0.6
         with self.assertRaises(ValueError):
             validate_config(config)
 
@@ -86,35 +88,44 @@ class CountyScoringTests(unittest.TestCase):
         self.assertFalse(np.isnan(values).any())
         self.assertTrue(((values >= 0) & (values <= 1)).all())
 
-    def test_loudoun_climate_is_geometric_mean_of_percentile_utilities(self):
-        expected = math.sqrt((1 - 0.257) * (1 - 0.1819306930693069))
+    def test_raw_values_and_piecewise_results_are_both_auditable(self):
+        for metric_id in CONFIG["indicators"]:
+            self.assertIn(f"raw__{metric_id}", self.scored)
+            self.assertIn(f"u__{metric_id}", self.scored)
+
+    def test_loudoun_climate_is_mean_of_fixed_anchor_utilities(self):
+        wildfire = (0.9 - 0.257) / (0.9 - 0.2)
+        flood = (0.8 - 0.1819306930693069) / (0.8 - 0.1)
+        expected = (wildfire + flood) / 2
         self.assertAlmostEqual(self.loudoun["climate_risk"], expected, places=9)
 
-    def test_loudoun_water_is_the_worse_of_baseline_and_2050(self):
+    def test_loudoun_water_is_the_mean_of_baseline_and_2050(self):
         baseline = 1.0  # 0.306 is below T = 1
-        future = (4 - 0.5991993213842712) / 3
-        self.assertAlmostEqual(self.loudoun["water"], min(baseline, future), places=9)
+        future = 1.0  # 0.599 is also below T = 1
+        self.assertAlmostEqual(self.loudoun["water"], (baseline + future) / 2, places=9)
 
-    def test_loudoun_land_is_weighted_geometric_mean(self):
-        u_open = (0.775497584437608 - 0.25) / (0.95 - 0.25)
-        u_protected = 1 - 0.0051825238339239 / 0.5
-        u_wetland = 1 - 0.0149899382239743 / 0.6
-        expected = u_open**0.5 * u_protected**0.25 * u_wetland**0.25
+    def test_loudoun_land_is_equal_weight_mean(self):
+        u_open = (0.775497584437608 - 0.25) / (0.98 - 0.25)
+        u_protected = 1 - 0.0051825238339239 / 0.25
+        u_wetland = 1 - 0.0149899382239743 / 0.4
+        expected = (u_open + u_protected + u_wetland) / 3
         self.assertAlmostEqual(self.loudoun["land_ecology"], expected, places=9)
 
-    def test_loudoun_transport_is_weighted_mean(self):
-        u_interstate = (60 - 27.93260053074667) / 55
-        u_rail = (30 - 20.260402329138177) / 28
-        self.assertAlmostEqual(self.loudoun["transportation"], 0.7 * u_interstate + 0.3 * u_rail, places=9)
+    def test_loudoun_transport_is_equal_weight_mean(self):
+        u_interstate = (50 - 27.93260053074667) / 45
+        u_rail = 0.0  # 20.2604 km is beyond L = 20 km
+        self.assertAlmostEqual(self.loudoun["transportation"], (u_interstate + u_rail) / 2, places=9)
 
     def test_energy_is_constant_within_each_state(self):
         self.assertTrue((self.scored.groupby("state")["energy_carbon"].nunique() == 1).all())
 
-    def test_flags_are_computed_but_not_scored(self):
+    def test_context_views_are_retained_for_scored_indicators(self):
         self.assertAlmostEqual(self.loudoun["water_stress_change_2050"], 0.5991993213842712 - 0.3058479616917511)
         self.assertIn(self.loudoun["social_vulnerability_band"], {"low", "low-moderate", "moderate-high", "high"})
         self.assertIn(self.loudoun["extreme_heat_days_band"], {"normal", "elevated", "high", "extreme"})
-        self.assertNotIn("u__social_vulnerability_percentile", self.scored.columns)
+        self.assertIn("u__social_vulnerability_percentile", self.scored.columns)
+        self.assertIn("u__fiber_business_100_20_availability", self.scored.columns)
+        self.assertIn("u__historical_days_tmax_gt90f", self.scored.columns)
 
     def test_records_feed_the_decision_matrix(self):
         records = dimension_score_records(self.scored[self.scored["state"] == "VA"], list(CONFIG["dimensions"]))

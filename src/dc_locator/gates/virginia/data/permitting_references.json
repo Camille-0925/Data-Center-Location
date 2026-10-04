@@ -6,7 +6,7 @@
     "summary": "官方说明I-5/I-6分区满足标准时可by-right建设，调整部分标准需special exception；具体地块仍须核查。",
     "source_id": "PERMIT_FAIRFAX",
     "source_url": "https://www.fairfaxcounty.gov/topics/data-centers",
-    "evidence_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Gate_Virginia_Permitting补充资料/FAIRFAX.txt",
+    "evidence_file": "src/dc_locator/gates/virginia/data/evidence/Gate_Virginia_Permitting补充资料/FAIRFAX.txt",
     "source_locator": "Extracted text line 2766",
     "checked_on": "2026-10-04",
     "can_claim_project_approved": false,
@@ -17,8 +17,8 @@
       "url": "https://www.fairfaxcounty.gov/topics/data-centers",
       "checked_on": "2026-10-04",
       "download_ok": true,
-      "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Gate_Virginia_Permitting补充资料/FAIRFAX.html",
-      "text_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Gate_Virginia_Permitting补充资料/FAIRFAX.txt",
+      "local_file": "src/dc_locator/gates/virginia/data/evidence/Gate_Virginia_Permitting补充资料/FAIRFAX.html",
+      "text_file": "src/dc_locator/gates/virginia/data/evidence/Gate_Virginia_Permitting补充资料/FAIRFAX.txt",
       "sha256": "38f46fb742316a5aa37a1c79a45baf699a482f19e4555d812c1dba7025cc6b6d",
       "bytes": 104813
     }
@@ -30,7 +30,7 @@
     "summary": "县官方公布的2026年BZA材料包含2025年6月10日通过的条例，独立数据中心有PUP审批路径；不把2025年5月草案当现行规则。",
     "source_id": "PERMIT_HENRICO_ADOPTED",
     "source_url": "https://henrico.gov/pdfs/planning/2026/feb26/bza/app-2026-100056-appellant.pdf",
-    "evidence_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Gate_Virginia_Permitting补充资料/HENRICO_ADOPTED.txt",
+    "evidence_file": "src/dc_locator/gates/virginia/data/evidence/Gate_Virginia_Permitting补充资料/HENRICO_ADOPTED.txt",
     "source_locator": "Extracted text line 3800",
     "checked_on": "2026-10-04",
     "can_claim_project_approved": false,
@@ -41,8 +41,8 @@
       "url": "https://henrico.gov/pdfs/planning/2026/feb26/bza/app-2026-100056-appellant.pdf",
       "checked_on": "2026-10-04",
       "download_ok": true,
-      "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Gate_Virginia_Permitting补充资料/HENRICO_ADOPTED.pdf",
-      "text_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Gate_Virginia_Permitting补充资料/HENRICO_ADOPTED.txt",
+      "local_file": "src/dc_locator/gates/virginia/data/evidence/Gate_Virginia_Permitting补充资料/HENRICO_ADOPTED.pdf",
+      "text_file": "src/dc_locator/gates/virginia/data/evidence/Gate_Virginia_Permitting补充资料/HENRICO_ADOPTED.txt",
       "sha256": "cf7d1b380688a7eb39d37e5d094558587f516d03d4c76349a393addb91ae6b64",
       "bytes": 23085103
     }
@@ -54,7 +54,7 @@
     "summary": "县官方资料说明技术叠加区的by-right项目及CUP流程；不代表所有地块允许建设。",
     "source_id": "PERMIT_LOUISA",
     "source_url": "https://www.louisacounty.gov/DocumentCenter/View/11955/Data-Centers-in-Louisa-County",
-    "evidence_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Gate_Virginia_Permitting补充资料/LOUISA.txt",
+    "evidence_file": "src/dc_locator/gates/virginia/data/evidence/Gate_Virginia_Permitting补充资料/LOUISA.txt",
     "source_locator": "Extracted text line 56",
     "checked_on": "2026-10-04",
     "can_claim_project_approved": false,
@@ -65,8 +65,8 @@
       "url": "https://www.louisacounty.gov/DocumentCenter/View/11955/Data-Centers-in-Louisa-County",
       "checked_on": "2026-10-04",
       "download_ok": true,
-      "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Gate_Virginia_Permitting补充资料/LOUISA.pdf",
-      "text_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Gate_Virginia_Permitting补充资料/LOUISA.txt",
+      "local_file": "src/dc_locator/gates/virginia/data/evidence/Gate_Virginia_Permitting补充资料/LOUISA.pdf",
+      "text_file": "src/dc_locator/gates/virginia/data/evidence/Gate_Virginia_Permitting补充资料/LOUISA.txt",
       "sha256": "17e51bbeaa7b22324c10d879579914c751c04b4f32651dde929a7056fe068e5b",
       "bytes": 2337821
     }
@@ -78,7 +78,7 @@
     "summary": "Upper Magnolia Green及Watkins Centre在2025年5月获得数据中心用途rezoning；新项目仍需CUP。",
     "source_id": "PERMIT_CHESTERFIELD",
     "source_url": "https://www.chesterfield.gov/5989/Data-Centers",
-    "evidence_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Gate_Virginia_Permitting补充资料/CHESTERFIELD.txt",
+    "evidence_file": "src/dc_locator/gates/virginia/data/evidence/Gate_Virginia_Permitting补充资料/CHESTERFIELD.txt",
     "source_locator": "Extracted text line 478",
     "checked_on": "2026-10-04",
     "can_claim_project_approved": false,
@@ -89,8 +89,8 @@
       "url": "https://www.chesterfield.gov/5989/Data-Centers",
       "checked_on": "2026-10-04",
       "download_ok": true,
-      "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Gate_Virginia_Permitting补充资料/CHESTERFIELD.html",
-      "text_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Gate_Virginia_Permitting补充资料/CHESTERFIELD.txt",
+      "local_file": "src/dc_locator/gates/virginia/data/evidence/Gate_Virginia_Permitting补充资料/CHESTERFIELD.html",
+      "text_file": "src/dc_locator/gates/virginia/data/evidence/Gate_Virginia_Permitting补充资料/CHESTERFIELD.txt",
       "sha256": "9ad71bc1c637efcddc29c38660a82a1a5313faad5d116c9432426cc6f0a1ad67",
       "bytes": 163256
     }
@@ -102,7 +102,7 @@
     "summary": "县已收到Tuckahoe项目的正式CUP申请，证明有申请审查路径；项目仍在审查且有材料完整性问题，未宣称已批准。",
     "source_id": "PERMIT_GOOCHLAND",
     "source_url": "https://www.goochlandva.us/1480/Tuckahoe-Technology-Park",
-    "evidence_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Gate_Virginia_Permitting补充资料/GOOCHLAND.txt",
+    "evidence_file": "src/dc_locator/gates/virginia/data/evidence/Gate_Virginia_Permitting补充资料/GOOCHLAND.txt",
     "source_locator": "Extracted text line 719",
     "checked_on": "2026-10-04",
     "can_claim_project_approved": false,
@@ -113,8 +113,8 @@
       "url": "https://www.goochlandva.us/1480/Tuckahoe-Technology-Park",
       "checked_on": "2026-10-04",
       "download_ok": true,
-      "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Gate_Virginia_Permitting补充资料/GOOCHLAND.html",
-      "text_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Gate_Virginia_Permitting补充资料/GOOCHLAND.txt",
+      "local_file": "src/dc_locator/gates/virginia/data/evidence/Gate_Virginia_Permitting补充资料/GOOCHLAND.html",
+      "text_file": "src/dc_locator/gates/virginia/data/evidence/Gate_Virginia_Permitting补充资料/GOOCHLAND.txt",
       "sha256": "388701adff6240b680ac24259ea66bbe166f8e115eeaab3dd45794ffb5c1caca",
       "bytes": 152042
     }
@@ -126,7 +126,7 @@
     "summary": "Hanover Technology Park在2024年3月27日获rezoning，可建设多园区数据中心；这是特定地块先例。",
     "source_id": "PERMIT_HANOVER",
     "source_url": "https://www.hanovercounty.gov/1360/Breaking-Ground-Select-Development-Proje",
-    "evidence_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Gate_Virginia_Permitting补充资料/HANOVER.txt",
+    "evidence_file": "src/dc_locator/gates/virginia/data/evidence/Gate_Virginia_Permitting补充资料/HANOVER.txt",
     "source_locator": "Extracted text line 429",
     "checked_on": "2026-10-04",
     "can_claim_project_approved": false,
@@ -137,8 +137,8 @@
       "url": "https://www.hanovercounty.gov/1360/Breaking-Ground-Select-Development-Proje",
       "checked_on": "2026-10-04",
       "download_ok": true,
-      "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Gate_Virginia_Permitting补充资料/HANOVER.html",
-      "text_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Gate_Virginia_Permitting补充资料/HANOVER.txt",
+      "local_file": "src/dc_locator/gates/virginia/data/evidence/Gate_Virginia_Permitting补充资料/HANOVER.html",
+      "text_file": "src/dc_locator/gates/virginia/data/evidence/Gate_Virginia_Permitting补充资料/HANOVER.txt",
       "sha256": "e606b26be69e09a8e1cf9f6741727a78f44e365997aca072f7cbc9ae92134d51",
       "bytes": 107975
     }
@@ -150,7 +150,7 @@
     "summary": "2024年11月26日通过条例，将数据中心加入RAM分区用途；官方明确当前只有Greenfield区域满足该分区。",
     "source_id": "PERMIT_BOTETOURT",
     "source_url": "https://www.botetourtva.gov/1021/Google-Data-Center",
-    "evidence_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Gate_Virginia_Permitting补充资料/BOTETOURT.txt",
+    "evidence_file": "src/dc_locator/gates/virginia/data/evidence/Gate_Virginia_Permitting补充资料/BOTETOURT.txt",
     "source_locator": "Extracted text line 1068",
     "checked_on": "2026-10-04",
     "can_claim_project_approved": false,
@@ -161,8 +161,8 @@
       "url": "https://www.botetourtva.gov/1021/Google-Data-Center",
       "checked_on": "2026-10-04",
       "download_ok": true,
-      "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Gate_Virginia_Permitting补充资料/BOTETOURT.html",
-      "text_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Gate_Virginia_Permitting补充资料/BOTETOURT.txt",
+      "local_file": "src/dc_locator/gates/virginia/data/evidence/Gate_Virginia_Permitting补充资料/BOTETOURT.html",
+      "text_file": "src/dc_locator/gates/virginia/data/evidence/Gate_Virginia_Permitting补充资料/BOTETOURT.txt",
       "sha256": "c2d0ea530cc274daab941cfb742a04ba0f6cae3a64f75ad78812f7d2e06631fe",
       "bytes": 164541
     }
@@ -174,7 +174,7 @@
     "summary": "官方项目审查门户载有数据中心审查记录及2025年新条例要求，可支持存在审批路径；不能沿用2023年条例的by-right结论。",
     "source_id": "PERMIT_STAFFORD_REVIEW",
     "source_url": "https://hello.stafford.va.us/plan?apnum=25156157",
-    "evidence_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Gate_Virginia_Permitting补充资料/STAFFORD_REVIEW.txt",
+    "evidence_file": "src/dc_locator/gates/virginia/data/evidence/Gate_Virginia_Permitting补充资料/STAFFORD_REVIEW.txt",
     "source_locator": "Extracted text line 1249",
     "checked_on": "2026-10-04",
     "can_claim_project_approved": false,
@@ -185,8 +185,8 @@
       "url": "https://hello.stafford.va.us/plan?apnum=25156157",
       "checked_on": "2026-10-04",
       "download_ok": true,
-      "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Gate_Virginia_Permitting补充资料/STAFFORD_REVIEW.html",
-      "text_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Gate_Virginia_Permitting补充资料/STAFFORD_REVIEW.txt",
+      "local_file": "src/dc_locator/gates/virginia/data/evidence/Gate_Virginia_Permitting补充资料/STAFFORD_REVIEW.html",
+      "text_file": "src/dc_locator/gates/virginia/data/evidence/Gate_Virginia_Permitting补充资料/STAFFORD_REVIEW.txt",
       "sha256": "fe1c2a3a0079895b46744204fdaeaf5722ee2410be79b76453e2a725a14d9477",
       "bytes": 429374
     }
@@ -198,7 +198,7 @@
     "summary": "2023年县官方资料区分已通过标准与拟修改标准，说明本地已有数据中心监管路径；不将右栏草案认作已生效。",
     "source_id": "PERMIT_KING_GEORGE",
     "source_url": "https://www.kinggeorgecountyva.gov/AgendaCenter/ViewFile/Agenda/_04252023-920",
-    "evidence_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Gate_Virginia_Permitting补充资料/KING_GEORGE.txt",
+    "evidence_file": "src/dc_locator/gates/virginia/data/evidence/Gate_Virginia_Permitting补充资料/KING_GEORGE.txt",
     "source_locator": "Extracted text line 2371",
     "checked_on": "2026-10-04",
     "can_claim_project_approved": false,
@@ -209,8 +209,8 @@
       "url": "https://www.kinggeorgecountyva.gov/AgendaCenter/ViewFile/Agenda/_04252023-920",
       "checked_on": "2026-10-04",
       "download_ok": true,
-      "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Gate_Virginia_Permitting补充资料/KING_GEORGE.pdf",
-      "text_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Gate_Virginia_Permitting补充资料/KING_GEORGE.txt",
+      "local_file": "src/dc_locator/gates/virginia/data/evidence/Gate_Virginia_Permitting补充资料/KING_GEORGE.pdf",
+      "text_file": "src/dc_locator/gates/virginia/data/evidence/Gate_Virginia_Permitting补充资料/KING_GEORGE.txt",
       "sha256": "e9900e619bbe1cc0fb621eb47ba5bbc311a7c44649215820e7b120fa9de931cd",
       "bytes": 1080064
     }
@@ -222,7 +222,7 @@
     "summary": "县FAQ明确2026年2月24日取消数据中心by-right建设，需SUP；审批路径仍存在。",
     "source_id": "PERMIT_SPOTSYLVANIA",
     "source_url": "https://www.spotsylvania.va.us/3241/Data-Center-FAQs",
-    "evidence_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Gate_Virginia_Permitting补充资料/SPOTSYLVANIA.txt",
+    "evidence_file": "src/dc_locator/gates/virginia/data/evidence/Gate_Virginia_Permitting补充资料/SPOTSYLVANIA.txt",
     "source_locator": "Extracted text line 435",
     "checked_on": "2026-10-04",
     "can_claim_project_approved": false,
@@ -233,8 +233,8 @@
       "url": "https://www.spotsylvania.va.us/3241/Data-Center-FAQs",
       "checked_on": "2026-10-04",
       "download_ok": true,
-      "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Gate_Virginia_Permitting补充资料/SPOTSYLVANIA.html",
-      "text_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Gate_Virginia_Permitting补充资料/SPOTSYLVANIA.txt",
+      "local_file": "src/dc_locator/gates/virginia/data/evidence/Gate_Virginia_Permitting补充资料/SPOTSYLVANIA.html",
+      "text_file": "src/dc_locator/gates/virginia/data/evidence/Gate_Virginia_Permitting补充资料/SPOTSYLVANIA.txt",
       "sha256": "d899b028b7cc2fb93f0c9fc9bcbdf2aa7e80dbb9dcecdb7558f0ea3fa2f5f96c",
       "bytes": 199810
     }
@@ -246,7 +246,7 @@
     "summary": "2024年7月25日Planning Commission记录对Microsoft关联数据中心rezoning申请建议批准；只是建议，未当作Board最终批准。",
     "source_id": "PERMIT_MECKLENBURG",
     "source_url": "https://www.mecklenburgva.com/AgendaCenter/ViewFile/Minutes/_07252024-156",
-    "evidence_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Gate_Virginia_Permitting补充资料/MECKLENBURG.txt",
+    "evidence_file": "src/dc_locator/gates/virginia/data/evidence/Gate_Virginia_Permitting补充资料/MECKLENBURG.txt",
     "source_locator": "Extracted text line 112",
     "checked_on": "2026-10-04",
     "can_claim_project_approved": false,
@@ -257,8 +257,8 @@
       "url": "https://www.mecklenburgva.com/AgendaCenter/ViewFile/Minutes/_07252024-156",
       "checked_on": "2026-10-04",
       "download_ok": true,
-      "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Gate_Virginia_Permitting补充资料/MECKLENBURG.pdf",
-      "text_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Gate_Virginia_Permitting补充资料/MECKLENBURG.txt",
+      "local_file": "src/dc_locator/gates/virginia/data/evidence/Gate_Virginia_Permitting补充资料/MECKLENBURG.pdf",
+      "text_file": "src/dc_locator/gates/virginia/data/evidence/Gate_Virginia_Permitting补充资料/MECKLENBURG.txt",
       "sha256": "dd3ce90d9d7c893a53480c3822561cb985f3056c112d8258b6b9d036e21520df",
       "bytes": 131479
     }
@@ -270,7 +270,7 @@
     "summary": "2024年9月10日县Board会议记录确认当地有已批准数据中心，支持历史先例；不推定旧by-right规则目前仍有效。",
     "source_id": "PERMIT_CAROLINE_MINUTES",
     "source_url": "https://www.co.caroline.va.us/AgendaCenter/ViewFile/Minutes/_09102024-475",
-    "evidence_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Gate_Virginia_Permitting补充资料/CAROLINE_MINUTES.txt",
+    "evidence_file": "src/dc_locator/gates/virginia/data/evidence/Gate_Virginia_Permitting补充资料/CAROLINE_MINUTES.txt",
     "source_locator": "Extracted text line 815",
     "checked_on": "2026-10-04",
     "can_claim_project_approved": false,
@@ -281,8 +281,8 @@
       "url": "https://www.co.caroline.va.us/AgendaCenter/ViewFile/Minutes/_09102024-475",
       "checked_on": "2026-10-04",
       "download_ok": true,
-      "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Gate_Virginia_Permitting补充资料/CAROLINE_MINUTES.pdf",
-      "text_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Gate_Virginia_Permitting补充资料/CAROLINE_MINUTES.txt",
+      "local_file": "src/dc_locator/gates/virginia/data/evidence/Gate_Virginia_Permitting补充资料/CAROLINE_MINUTES.pdf",
+      "text_file": "src/dc_locator/gates/virginia/data/evidence/Gate_Virginia_Permitting补充资料/CAROLINE_MINUTES.txt",
       "sha256": "f58d9b90a5673a63759f12f2a8534ff633f162ae7ead8567ca7254519615c6de",
       "bytes": 249536
     }
@@ -294,7 +294,7 @@
     "summary": "县2025年社区发展年报确认2025年9月通过数据中心条例，以SUP逐项目审查。",
     "source_id": "PERMIT_ROCKINGHAM",
     "source_url": "https://www.rockinghamcountyva.gov/DocumentCenter/View/21116/Community-Development-Annual-Report_2025?bidId=",
-    "evidence_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Gate_Virginia_Permitting补充资料/ROCKINGHAM.txt",
+    "evidence_file": "src/dc_locator/gates/virginia/data/evidence/Gate_Virginia_Permitting补充资料/ROCKINGHAM.txt",
     "source_locator": "Extracted text line 56",
     "checked_on": "2026-10-04",
     "can_claim_project_approved": false,
@@ -305,8 +305,8 @@
       "url": "https://www.rockinghamcountyva.gov/DocumentCenter/View/21116/Community-Development-Annual-Report_2025?bidId=",
       "checked_on": "2026-10-04",
       "download_ok": true,
-      "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Gate_Virginia_Permitting补充资料/ROCKINGHAM.pdf",
-      "text_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Gate_Virginia_Permitting补充资料/ROCKINGHAM.txt",
+      "local_file": "src/dc_locator/gates/virginia/data/evidence/Gate_Virginia_Permitting补充资料/ROCKINGHAM.pdf",
+      "text_file": "src/dc_locator/gates/virginia/data/evidence/Gate_Virginia_Permitting补充资料/ROCKINGHAM.txt",
       "sha256": "c8584a2b935d6efdd4e3a98a885d3784ec60570d58518a012923dc784c6b3bab",
       "bytes": 18655544
     }
@@ -318,7 +318,7 @@
     "summary": "官方资料记载2026年7月21日起暂停数据中心申请审议8个月；2026年8月新增CUP规则，CoVAC有例外，需要核实暂停的适用范围。",
     "source_id": "PERMIT_CHESAPEAKE",
     "source_url": "https://www.cityofchesapeake.net/3783/Data-Center-Ordinance-and-Policy",
-    "evidence_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Gate_Virginia_Permitting补充资料/CHESAPEAKE.txt",
+    "evidence_file": "src/dc_locator/gates/virginia/data/evidence/Gate_Virginia_Permitting补充资料/CHESAPEAKE.txt",
     "source_locator": "Extracted text line 492",
     "checked_on": "2026-10-04",
     "can_claim_project_approved": false,
@@ -329,8 +329,8 @@
       "url": "https://www.cityofchesapeake.net/3783/Data-Center-Ordinance-and-Policy",
       "checked_on": "2026-10-04",
       "download_ok": true,
-      "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Gate_Virginia_Permitting补充资料/CHESAPEAKE.html",
-      "text_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Gate_Virginia_Permitting补充资料/CHESAPEAKE.txt",
+      "local_file": "src/dc_locator/gates/virginia/data/evidence/Gate_Virginia_Permitting补充资料/CHESAPEAKE.html",
+      "text_file": "src/dc_locator/gates/virginia/data/evidence/Gate_Virginia_Permitting补充资料/CHESAPEAKE.txt",
       "sha256": "3fdea22d9c75f507d3b734d120b6919bd3956a58571709a57881e82bb44ca71f",
       "bytes": 137017
     },
@@ -345,7 +345,7 @@
     "summary": "官方2026年8月25日公告说明当前没有D-C分区土地；需先rezoning再SUP，存在额外审批障碍，但不是全县禁止。",
     "source_id": "PERMIT_HENRY",
     "source_url": "https://www.henrycountyva.gov/m/NewsFlash/Home/Detail/148",
-    "evidence_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Gate_Virginia_Permitting补充资料/official_web_reads.json",
+    "evidence_file": "src/dc_locator/gates/virginia/data/evidence/Gate_Virginia_Permitting补充资料/official_web_reads.json",
     "source_locator": "Official web-reader snapshot, Henry County page lines 19–25",
     "checked_on": "2026-10-04",
     "can_claim_project_approved": false,
@@ -358,7 +358,7 @@
       "download_ok": false,
       "error": "0      0 --:--:-- --:--:-- --:--:--     0\r  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\n\r  0 81078    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0\ncurl: (56) The requested URL returned error: 404\n",
       "evidence_read_via": "web tool",
-      "web_snapshot_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Gate_Virginia_Permitting补充资料/official_web_reads.json"
+      "web_snapshot_file": "src/dc_locator/gates/virginia/data/evidence/Gate_Virginia_Permitting补充资料/official_web_reads.json"
     }
   }
 ]

@@ -5,6 +5,21 @@
 
 ---
 
+## 2026-10-04：Adelyn v0.3 normalization + margin + dimension robustness 接入正式 pipeline
+
+- `configs/indicator_scoring.json` 已更新为 8 维 18 指标的最终固定锚点，所有维度内部使用等权算术平均。
+- 新增 `configs/score_adjustments.json`。18 个 indicator 的 margin 使用 `A_M = min(a_M,k)`，`lambda_M = 0.20`，不会把 18 个 factor 连乘。
+- 新增 CMRA 的三个一对一维度 penalty：热变化只给 Cooling climate，连续干旱日变化只给 Water，强降水日变化只给 Climate risk。三个 factor 不会互乘，也不会变成全局 penalty。
+- `data/processed/county_robustness_va_ga.csv` 固化了 VA+GA 292 个 GEOID 的历史值、RCP8.5 mid-century 值、downside change、joint percentile 和 factor。更改 Camille 权重不需要重算。
+- hard-zero 只支持显式配置的关键 indicator。当前没有经团队批准的 hard gate，因此默认不把任何 normalization 0 自动解释成物理不可行。
+- pipeline 默认顺序为 `U → D → D^R → weights/interactions → S^R → A_M → final`。decision、Choquet、Pareto、已有 feasibility gate 接口没有改动，并保留 `--no-adjustments` 回归路径。
+- 每次保存新增 `scored_counties_audit.csv` 与 `score_adjustments.json`，可以追到所有中间结果和参数。
+- 全套测试通过；另与仓库内 `data/processed/va_ga_dimension_specific_robustness_v02.xlsx` 逐项复核，最大差为浮点舍入量级。
+
+详细公式见 `docs/SCORING_ADJUSTMENTS.md`。
+
+---
+
 ## 项目目标
 
 为 Virginia 和 Georgia 两个州的每个县（VA 133 个县级单位，GA 159 个县）计算数据中心选址的 suitability 分数并排名。

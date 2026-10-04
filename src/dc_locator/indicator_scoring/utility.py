@@ -9,7 +9,7 @@
 
 T is the ideal value (utility saturates at 100), L the unacceptable value (utility 0).
 Fixed anchors make utilities comparable across states and stable when counties are added,
-unlike min-max scaling of the current sample. ``transform="ln"`` applies the natural log to
+unlike min-max scaling of the current sample. ``transform="ln"`` applies ``ln(1+x)`` to
 the value and to both anchors (diminishing returns, e.g. labor force).
 
 The optional ``exponential`` shape, u = 100 (1 - e^(-rho s)) / (1 - e^(-rho)) with s the linear
@@ -26,9 +26,9 @@ def _transform(values, transform: str | None):
     if transform is None:
         return values
     if transform == "ln":
-        if np.any(values <= 0):
-            raise ValueError("ln transform needs positive values")
-        return np.log(values)
+        if np.any(values < 0):
+            raise ValueError("ln(1+x) transform needs non-negative values")
+        return np.log1p(values)
     raise ValueError(f"unknown transform: {transform}")
 
 

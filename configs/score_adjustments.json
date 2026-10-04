@@ -1,0 +1,37 @@
+{
+  "version": "score_adjustments_v1.0",
+  "notes": "Independent of Camille's dimension weights. Margin is applied once after suitability; robustness is applied once to each mapped dimension before suitability.",
+  "margin": {
+    "enabled": true,
+    "lambda": 0.2,
+    "aggregation": "minimum",
+    "default_tau": 0.0,
+    "indicators": [
+      "wildfire_bp_national_percentile", "inland_flood_loss_rate_percentile", "baseline_water_stress", "water_stress_2050_bau",
+      "low_impervious_land_share", "gap12_protected_land_share", "wetland_land_share",
+      "fiber_business_100_20_availability", "fiber_business_1000_100_availability",
+      "labor_force", "social_vulnerability_percentile", "historical_cdd65", "historical_days_tmax_gt90f",
+      "distance_to_interstate_km", "distance_to_rail_km", "state_industrial_price", "state_ieee_saidi_without_med", "state_grid_co2e_intensity"
+    ],
+    "thresholds": {}
+  },
+  "hard_zero_gate": {
+    "enabled": false,
+    "indicators": [],
+    "notes": "No indicator is automatically a physical-feasibility gate. Populate this explicit list only after the team approves non-negotiable indicators."
+  },
+  "robustness": {
+    "enabled": true,
+    "data_path": "data/processed/county_robustness_va_ga.csv",
+    "reference_workbook": "data/processed/va_ga_dimension_specific_robustness_v02.xlsx",
+    "source_inputs": "data/raw/cmra_2025_va_ga_robustness_inputs.csv",
+    "comparison_scope": "VA+GA, N=292",
+    "expected_counties": 292,
+    "scenario": "RCP8.5 mid-century minus historic; downside change only",
+    "dimensions": {
+      "cooling_climate": {"factor_column": "cooling_climate_robustness_factor", "risk_column": "heat_risk_percentile", "lambda": 0.2},
+      "water": {"factor_column": "water_robustness_factor", "risk_column": "dry_risk_percentile", "lambda": 0.2},
+      "climate_risk": {"factor_column": "climate_risk_robustness_factor", "risk_column": "heavy_rain_risk_percentile", "lambda": 0.2}
+    }
+  }
+}

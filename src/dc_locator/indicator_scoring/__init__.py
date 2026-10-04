@@ -10,6 +10,13 @@ import numpy as np
 import pandas as pd
 
 from .aggregation import AGGREGATION_METHODS, aggregate_dimension
+from .adjustments import (
+    apply_final_score_adjustments,
+    apply_pre_weight_adjustments,
+    load_adjustments_config,
+    load_robustness_factors,
+    validate_adjustments_config,
+)
 from .utility import utility
 
 DEFAULT_CONFIG = Path(__file__).resolve().parents[3] / "configs" / "indicator_scoring.json"
@@ -107,7 +114,8 @@ def score_counties(
     util = utilities(table, config, shape, rho)
     dims = dimension_scores(util, config)
     ids = table[["fips", "county_name", "state"]]
-    return pd.concat([ids, dims, util, flags(table, config)], axis=1)
+    raw = table[list(config["indicators"])].rename(columns=lambda column: f"raw__{column}")
+    return pd.concat([ids, dims, raw, util, flags(table, config)], axis=1)
 
 
 def zero_utility_report(scored: pd.DataFrame, config: Mapping[str, Any]) -> pd.DataFrame:
@@ -139,13 +147,18 @@ def dimension_score_records(scored: pd.DataFrame, dimension_order: Sequence[str]
 __all__ = [
     "AGGREGATION_METHODS",
     "aggregate_dimension",
+    "apply_final_score_adjustments",
+    "apply_pre_weight_adjustments",
     "dimension_score_records",
     "dimension_scores",
     "flags",
     "load_config",
+    "load_adjustments_config",
+    "load_robustness_factors",
     "score_counties",
     "utilities",
     "utility",
     "validate_config",
+    "validate_adjustments_config",
     "zero_utility_report",
 ]

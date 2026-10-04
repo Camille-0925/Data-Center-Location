@@ -28,7 +28,7 @@
     "No county spare capacity, parcel zoning eligibility or committed delivery date is claimed.",
     "Local policy research covers identified sources, not all 159 county and city ordinance systems."
   ],
-  "originals_directory": "../Feasibility_Gates_Georgia",
+  "originals_directory": "src/dc_locator/gates/georgia/Feasibility_Gates_Georgia",
   "validation": {
     "meaningful_test_cases": 17,
     "status": "passed",

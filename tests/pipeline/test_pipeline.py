@@ -42,6 +42,23 @@ class PipelineTests(unittest.TestCase):
     def test_energy_is_not_used_within_state(self):
         self.assertEqual(self.va["weights"]["weights"]["energy_carbon"], 0.0)
 
+    def test_adjustments_are_in_the_live_pipeline_and_auditable(self):
+        ranking = self.va["ranking"]
+        self.assertIn("margin_adjustment", ranking)
+        self.assertIn("D_base_water", ranking)
+        self.assertIn("A_R_water", ranking)
+        first = self.va["decision"]["recommendations"]["records"][0]
+        self.assertAlmostEqual(
+            first["score_0_100"],
+            first["suitability_before_margin_0_100"] * first["margin_adjustment"],
+        )
+        self.assertEqual(set(first["robustness_factors"]), set(self.va["weights"]["dimension_order"]))
+
+    def test_adjustments_can_be_disabled_without_changing_other_modules(self):
+        legacy = run("VA", scored=self.scored, apply_adjustments=False)
+        self.assertIsNone(legacy["adjustments_config"])
+        self.assertNotIn("suitability_before_margin_0_100", legacy["decision"]["recommendations"]["records"][0])
+
 
 if __name__ == "__main__":
     unittest.main()

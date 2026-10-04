@@ -2,7 +2,7 @@
   {
     "source_id": "Dominion_Data_Center_Load_Letter",
     "url": "https://www.dominionenergy.com/-/media/content/large-business-services/pdfs/virginia/data-center-load-letter.pdf",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia/Gate1_Power_Availability/Dominion_Data_Center_Load_Letter.pdf",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia/Gate1_Power_Availability/Dominion_Data_Center_Load_Letter.pdf",
     "downloaded_at": "2026-10-03T21:57:42.980061+00:00",
     "source_type": "document",
     "source_name": "Dominion_Data_Center_Load_Letter"
@@ -10,7 +10,7 @@
   {
     "source_id": "PJM_Dominion_Load_Projects_20250107",
     "url": "https://www.pjm.com/-/media/DotCom/committees-groups/committees/teac/2025/20250107/20250107-item-10---dominion-supplemental-projects.pdf",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia/Gate2_Time_to_Power/PJM_Dominion_Load_Projects_20250107.pdf",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia/Gate2_Time_to_Power/PJM_Dominion_Load_Projects_20250107.pdf",
     "downloaded_at": "2026-10-03T21:57:42.980061+00:00",
     "source_type": "document",
     "source_name": "PJM_Dominion_Load_Projects_20250107"
@@ -18,7 +18,7 @@
   {
     "source_id": "PJM_Project_Status_Page",
     "url": "https://www.pjm.com/planning/m/project-construction",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia/Gate2_Time_to_Power/PJM_Project_Status_Page.html",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia/Gate2_Time_to_Power/PJM_Project_Status_Page.html",
     "downloaded_at": "2026-10-03T21:57:42.980061+00:00",
     "source_type": "reference",
     "source_name": "PJM_Project_Status_Page"
@@ -26,7 +26,7 @@
   {
     "source_id": "SCC_Transmission_Project_Directory",
     "url": "https://www.scc.virginia.gov/consumers/public-utility/electricity-faqs/transmission-line-projects/",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia/Gate2_Time_to_Power/SCC_Transmission_Project_Directory.html",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia/Gate2_Time_to_Power/SCC_Transmission_Project_Directory.html",
     "downloaded_at": "2026-10-03T21:57:42.980061+00:00",
     "source_type": "reference",
     "source_name": "SCC_Transmission_Project_Directory"
@@ -34,7 +34,7 @@
   {
     "source_id": "Dominion_Northern_Virginia_Projects",
     "url": "https://www.dominionenergy.com/nova",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia/Gate2_Time_to_Power/Dominion_Northern_Virginia_Projects.html",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia/Gate2_Time_to_Power/Dominion_Northern_Virginia_Projects.html",
     "downloaded_at": "2026-10-03T21:57:42.980061+00:00",
     "source_type": "reference",
     "source_name": "Dominion_Northern_Virginia_Projects"
@@ -42,7 +42,7 @@
   {
     "source_id": "PJM_MOD032_Data_Requirements",
     "url": "https://www.pjm.com/-/media/DotCom/etools/planning-center/pjm-mod-032-data-requirements-and-procedures.ashx",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia/Gate1_Power_Availability/PJM_MOD032_Data_Requirements.pdf",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia/Gate1_Power_Availability/PJM_MOD032_Data_Requirements.pdf",
     "downloaded_at": "2026-10-03T21:57:42.980061+00:00",
     "source_type": "document",
     "source_name": "PJM_MOD032_Data_Requirements"
@@ -50,7 +50,7 @@
   {
     "source_id": "Dominion_Data_Center_Requests",
     "url": "https://www.dominionenergy.com/virginia/large-business-services/data-center-requests",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia/Gate1_Power_Availability/Dominion_Data_Center_Requests.html",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia/Gate1_Power_Availability/Dominion_Data_Center_Requests.html",
     "downloaded_at": "2026-10-03T21:57:42.980061+00:00",
     "source_type": "reference",
     "source_name": "Dominion_Data_Center_Requests"
@@ -58,7 +58,7 @@
   {
     "source_id": "PJM_Model_Access_Requirements",
     "url": "https://www.pjm.com/planning/rtep-development/powerflow-cases.aspx?p=1",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia/Gate1_Power_Availability/PJM_Model_Access_Requirements.html",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia/Gate1_Power_Availability/PJM_Model_Access_Requirements.html",
     "downloaded_at": "2026-10-03T21:57:42.980061+00:00",
     "source_type": "reference",
     "source_name": "PJM_Model_Access_Requirements"
@@ -66,7 +66,7 @@
   {
     "source_id": "Loudoun_Data_Center_Standards",
     "url": "https://www.loudoun.gov/datacenterstandards",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia/Gate5_Permitting_Zoning/Loudoun_Data_Center_Standards.html",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia/Gate5_Permitting_Zoning/Loudoun_Data_Center_Standards.html",
     "downloaded_at": "2026-10-03T21:57:42.980061+00:00",
     "source_type": "reference",
     "source_name": "Loudoun_Data_Center_Standards"
@@ -74,7 +74,7 @@
   {
     "source_id": "Loudoun_LandMARC_Portal_Guide",
     "url": "https://www.loudoun.gov/landmarc",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia/Gate5_Permitting_Zoning/Loudoun_LandMARC_Portal_Guide.html",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia/Gate5_Permitting_Zoning/Loudoun_LandMARC_Portal_Guide.html",
     "downloaded_at": "2026-10-03T21:57:42.980061+00:00",
     "source_type": "reference",
     "source_name": "Loudoun_LandMARC_Portal_Guide"
@@ -82,7 +82,7 @@
   {
     "source_id": "Loudoun_GIS_Catalog",
     "url": "https://logis.loudoun.gov/loudoun/opendata_layers.html",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia/Gate5_Permitting_Zoning/Loudoun_GIS_Catalog.html",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia/Gate5_Permitting_Zoning/Loudoun_GIS_Catalog.html",
     "downloaded_at": "2026-10-03T21:57:42.980061+00:00",
     "source_type": "reference",
     "source_name": "Loudoun_GIS_Catalog"
@@ -90,7 +90,7 @@
   {
     "source_id": "Prince_William_ePortal_Guide",
     "url": "https://www.pwcva.gov/department/development-services/eportal-access",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia/Gate5_Permitting_Zoning/Prince_William_ePortal_Guide.html",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia/Gate5_Permitting_Zoning/Prince_William_ePortal_Guide.html",
     "downloaded_at": "2026-10-03T21:57:42.980061+00:00",
     "source_type": "reference",
     "source_name": "Prince_William_ePortal_Guide"
@@ -98,7 +98,7 @@
   {
     "source_id": "Dominion_Facility_Interconnection_Requirements",
     "url": "https://www.dominionenergy.com/-/media/content/large-business-services/pdfs/virginia/facility-interconnection-requirements.pdf",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia/Gate1_Power_Availability/Dominion_Facility_Interconnection_Requirements.pdf",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia/Gate1_Power_Availability/Dominion_Facility_Interconnection_Requirements.pdf",
     "downloaded_at": "2026-10-03T21:57:42.980061+00:00",
     "source_type": "document",
     "source_name": "Dominion_Facility_Interconnection_Requirements"
@@ -106,7 +106,7 @@
   {
     "source_id": "Twin_Creeks_Apollo_Application_2024_Vol1",
     "url": "https://www.dominionenergy.com/-/media/content/about/power-line-projects/nova/pdfs/application-documents/application-volume-1-of-3-2024.pdf",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia/Gate2_Time_to_Power/Twin_Creeks_Apollo_Application_2024_Vol1.pdf",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia/Gate2_Time_to_Power/Twin_Creeks_Apollo_Application_2024_Vol1.pdf",
     "downloaded_at": "2026-10-03T21:57:42.980061+00:00",
     "source_type": "document",
     "source_name": "Twin_Creeks_Apollo_Application_2024_Vol1"
@@ -114,7 +114,7 @@
   {
     "source_id": "Loudoun_Zoning",
     "url": "https://logis.loudoun.gov/gis/rest/services/COL/Zoning/MapServer/3",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia/Gate5_Permitting_Zoning/Loudoun_Zoning",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia/Gate5_Permitting_Zoning/Loudoun_Zoning",
     "downloaded_at": "2026-10-03T21:57:42.980061+00:00",
     "source_type": "GIS_or_table",
     "source_name": "Loudoun_Zoning"
@@ -122,7 +122,7 @@
   {
     "source_id": "Loudoun_Rezoning",
     "url": "https://logis.loudoun.gov/gis/rest/services/COL/Zoning/MapServer/5",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia/Gate5_Permitting_Zoning/Loudoun_Rezoning",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia/Gate5_Permitting_Zoning/Loudoun_Rezoning",
     "downloaded_at": "2026-10-03T21:57:42.980061+00:00",
     "source_type": "GIS_or_table",
     "source_name": "Loudoun_Rezoning"
@@ -130,7 +130,7 @@
   {
     "source_id": "Loudoun_Permits_Submitted",
     "url": "https://logis.loudoun.gov/gis/rest/services/LMARC/LandMARC_Permits/MapServer/2",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia/Gate5_Permitting_Zoning/Loudoun_Permits_Submitted",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia/Gate5_Permitting_Zoning/Loudoun_Permits_Submitted",
     "downloaded_at": "2026-10-03T21:57:42.980061+00:00",
     "source_type": "GIS_or_table",
     "source_name": "Loudoun_Permits_Submitted"
@@ -138,7 +138,7 @@
   {
     "source_id": "Prince_William_Data_Center_Overlay",
     "url": "https://gisweb.pwcva.gov/arcgis/rest/services/OpenData/OpenData/MapServer/57",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia/Gate5_Permitting_Zoning/Prince_William_Data_Center_Overlay",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia/Gate5_Permitting_Zoning/Prince_William_Data_Center_Overlay",
     "downloaded_at": "2026-10-03T21:57:42.980061+00:00",
     "source_type": "GIS_or_table",
     "source_name": "Prince_William_Data_Center_Overlay"
@@ -146,7 +146,7 @@
   {
     "source_id": "Prince_William_Zoning",
     "url": "https://gisweb.pwcva.gov/arcgis/rest/services/OpenData/OpenData/MapServer/21",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia/Gate5_Permitting_Zoning/Prince_William_Zoning",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia/Gate5_Permitting_Zoning/Prince_William_Zoning",
     "downloaded_at": "2026-10-03T21:57:42.980061+00:00",
     "source_type": "GIS_or_table",
     "source_name": "Prince_William_Zoning"
@@ -154,7 +154,7 @@
   {
     "source_id": "Prince_William_Use_Permits",
     "url": "https://gisweb.pwcva.gov/arcgis/rest/services/OpenData/OpenData/MapServer/66",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia/Gate5_Permitting_Zoning/Prince_William_Use_Permits",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia/Gate5_Permitting_Zoning/Prince_William_Use_Permits",
     "downloaded_at": "2026-10-03T21:57:42.980061+00:00",
     "source_type": "GIS_or_table",
     "source_name": "Prince_William_Use_Permits"
@@ -162,7 +162,7 @@
   {
     "source_id": "Loudoun_Parcels",
     "url": "https://logis.loudoun.gov/gis/rest/services/COL/LandRecords/MapServer/5",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia/Gate5_Permitting_Zoning/Loudoun_Parcels",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia/Gate5_Permitting_Zoning/Loudoun_Parcels",
     "downloaded_at": "2026-10-03T21:57:42.980061+00:00",
     "source_type": "GIS_or_table",
     "source_name": "Loudoun_Parcels"
@@ -170,7 +170,7 @@
   {
     "source_id": "Loudoun_Permits_Issued",
     "url": "https://logis.loudoun.gov/gis/rest/services/LMARC/LandMARC_Permits/MapServer/1",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia/Gate5_Permitting_Zoning/Loudoun_Permits_Issued",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia/Gate5_Permitting_Zoning/Loudoun_Permits_Issued",
     "downloaded_at": "2026-10-03T21:57:42.980061+00:00",
     "source_type": "GIS_or_table",
     "source_name": "Loudoun_Permits_Issued"
@@ -178,7 +178,7 @@
   {
     "source_id": "Prince_William_Parcels",
     "url": "https://gisweb.pwcva.gov/arcgis/rest/services/OpenData/OpenData/MapServer/0",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia/Gate5_Permitting_Zoning/Prince_William_Parcels",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia/Gate5_Permitting_Zoning/Prince_William_Parcels",
     "downloaded_at": "2026-10-03T21:57:42.980061+00:00",
     "source_type": "GIS_or_table",
     "source_name": "Prince_William_Parcels"
@@ -186,7 +186,7 @@
   {
     "source_id": "Loudoun_Application_Pathway_Guide",
     "url": "https://www.loudoun.gov/DocumentCenter/View/215836",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia/Gate5_Permitting_Zoning/Loudoun_Application_Pathway_Guide.pdf",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia/Gate5_Permitting_Zoning/Loudoun_Application_Pathway_Guide.pdf",
     "downloaded_at": null,
     "source_type": "document",
     "source_name": "Loudoun_Application_Pathway_Guide"
@@ -194,7 +194,7 @@
   {
     "source_id": "Loudoun_Grandfathering_Resolution",
     "url": "https://www.loudoun.gov/DocumentCenter/View/215835",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia/Gate5_Permitting_Zoning/Loudoun_Grandfathering_Resolution.pdf",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia/Gate5_Permitting_Zoning/Loudoun_Grandfathering_Resolution.pdf",
     "downloaded_at": null,
     "source_type": "document",
     "source_name": "Loudoun_Grandfathering_Resolution"
@@ -202,7 +202,7 @@
   {
     "source_id": "Prince_William_Overlay_Rules_Entry",
     "url": "https://www.pwcva.gov/department/zoning-administration/overlay-districts",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia/Gate5_Permitting_Zoning/Prince_William_Overlay_Rules_Entry.html",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia/Gate5_Permitting_Zoning/Prince_William_Overlay_Rules_Entry.html",
     "downloaded_at": null,
     "source_type": "reference",
     "source_name": "Prince_William_Overlay_Rules_Entry"
@@ -210,7 +210,7 @@
   {
     "source_id": "Loudoun_Zoning_Ordinance_Entry",
     "url": "https://www.loudoun.gov/1755/Zoning-Ordinance",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia/Gate5_Permitting_Zoning/Loudoun_Zoning_Ordinance_Entry.html",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia/Gate5_Permitting_Zoning/Loudoun_Zoning_Ordinance_Entry.html",
     "downloaded_at": null,
     "source_type": "reference",
     "source_name": "Loudoun_Zoning_Ordinance_Entry"
@@ -218,7 +218,7 @@
   {
     "source_id": "aspen-golden-scc-final-order",
     "url": "https://cdn-dominionenergy-prd-001.azureedge.net/-/media/content/about/power-line-projects/nova/pdfs/application-documents/aspen-golden-scc-final-order.pdf?rev=6cfacd4c669d4b65a8e093dd69bbf0cc&hash=4841B9AA9508939349A08483030B557F",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia/Gate2_Time_to_Power/aspen-golden-scc-final-order.pdf",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia/Gate2_Time_to_Power/aspen-golden-scc-final-order.pdf",
     "downloaded_at": null,
     "source_type": "document",
     "source_name": "aspen-golden-scc-final-order"
@@ -226,7 +226,7 @@
   {
     "source_id": "apollo-twin-creeks-scc-final-order",
     "url": "https://cdn-dominionenergy-prd-001.azureedge.net/-/media/content/about/power-line-projects/nova/pdfs/application-documents/apollo-twin-creeks-scc-final-order.pdf?rev=a5bb5c3602fd486d8f692c82efdf21b0&hash=715EBD13D779DD2578EDF764C5BAB52E",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia/Gate2_Time_to_Power/apollo-twin-creeks-scc-final-order.pdf",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia/Gate2_Time_to_Power/apollo-twin-creeks-scc-final-order.pdf",
     "downloaded_at": null,
     "source_type": "document",
     "source_name": "apollo-twin-creeks-scc-final-order"
@@ -234,7 +234,7 @@
   {
     "source_id": "evergreen-mills-b-scc-final-order",
     "url": "https://cdn-dominionenergy-prd-001.azureedge.net/-/media/content/about/power-line-projects/nova/pdfs/application-documents/evergreen-mills-b-scc-final-order.pdf?rev=c4efe19246da4a338154ae7cbb6c89ac&hash=5F168E6971E3518B3521281BD1C69884",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia/Gate2_Time_to_Power/evergreen-mills-b-scc-final-order.pdf",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia/Gate2_Time_to_Power/evergreen-mills-b-scc-final-order.pdf",
     "downloaded_at": null,
     "source_type": "document",
     "source_name": "evergreen-mills-b-scc-final-order"
@@ -242,7 +242,7 @@
   {
     "source_id": "aviator-takeoff-scc-final-order",
     "url": "https://cdn-dominionenergy-prd-001.azureedge.net/-/media/content/about/power-line-projects/nova/pdfs/application-documents/aviator-takeoff-scc-final-order.pdf?rev=f2b2e4f06a074f62b6ea6d6307ab9e76&hash=4CB16E2FB32B57AFDF53C285ADCEDAAE",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia/Gate2_Time_to_Power/aviator-takeoff-scc-final-order.pdf",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia/Gate2_Time_to_Power/aviator-takeoff-scc-final-order.pdf",
     "downloaded_at": null,
     "source_type": "document",
     "source_name": "aviator-takeoff-scc-final-order"
@@ -250,7 +250,7 @@
   {
     "source_id": "Prince_William_Resource_Protection_Areas",
     "url": "https://gisweb.pwcva.gov/arcgis/rest/services/OpenData/OpenData/MapServer/73",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia/Gate5_Permitting_Zoning/Prince_William_Resource_Protection_Areas",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia/Gate5_Permitting_Zoning/Prince_William_Resource_Protection_Areas",
     "downloaded_at": null,
     "source_type": "GIS_or_table",
     "source_name": "Prince_William_Resource_Protection_Areas"
@@ -258,7 +258,7 @@
   {
     "source_id": "Prince_William_Protected_Open_Space",
     "url": "https://gisweb.pwcva.gov/arcgis/rest/services/OpenData/OpenData/MapServer/67",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia/Gate5_Permitting_Zoning/Prince_William_Protected_Open_Space",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia/Gate5_Permitting_Zoning/Prince_William_Protected_Open_Space",
     "downloaded_at": null,
     "source_type": "GIS_or_table",
     "source_name": "Prince_William_Protected_Open_Space"
@@ -266,7 +266,7 @@
   {
     "source_id": "Loudoun_FEMA_Special_Flood_Hazard",
     "url": "https://logis.loudoun.gov/gis/rest/services/COL/FEMAFlood/MapServer/5",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia/Gate5_Permitting_Zoning/Loudoun_FEMA_Special_Flood_Hazard",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia/Gate5_Permitting_Zoning/Loudoun_FEMA_Special_Flood_Hazard",
     "downloaded_at": null,
     "source_type": "GIS_or_table",
     "source_name": "Loudoun_FEMA_Special_Flood_Hazard"
@@ -274,7 +274,7 @@
   {
     "source_id": "Loudoun_Wetlands_Model_NOT_NWI",
     "url": "https://logis.loudoun.gov/gis/rest/services/COL/Environmental/MapServer/9",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia/Gate5_Permitting_Zoning/Loudoun_Wetlands_Model_NOT_NWI",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia/Gate5_Permitting_Zoning/Loudoun_Wetlands_Model_NOT_NWI",
     "downloaded_at": null,
     "source_type": "GIS_or_table",
     "source_name": "Loudoun_Wetlands_Model_NOT_NWI"
@@ -282,7 +282,7 @@
   {
     "source_id": "Loudoun_Zoning_Ordinance_2023_ADOPTION_HISTORICAL",
     "url": "https://www.loudoun.gov/DocumentCenter/View/180069/Item-01-ZOAM-2020-0001-Zoning-Ordinance-Rewrite-Supplemental-ATT-1",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia/Gate5_Permitting_Zoning/Loudoun_Zoning_Ordinance_2023_ADOPTION_HISTORICAL.pdf",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia/Gate5_Permitting_Zoning/Loudoun_Zoning_Ordinance_2023_ADOPTION_HISTORICAL.pdf",
     "downloaded_at": null,
     "source_type": "document",
     "source_name": "Loudoun_Zoning_Ordinance_2023_ADOPTION_HISTORICAL"
@@ -290,7 +290,7 @@
   {
     "source_id": "Loudoun_Current_Online_Code_Entry",
     "url": "https://online.encodeplus.com/regs/loudouncounty-va-crosswalk/page/homepage",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia/Gate5_Permitting_Zoning/Loudoun_Current_Online_Code_Entry.html",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia/Gate5_Permitting_Zoning/Loudoun_Current_Online_Code_Entry.html",
     "downloaded_at": null,
     "source_type": "reference",
     "source_name": "Loudoun_Current_Online_Code_Entry"
@@ -298,7 +298,7 @@
   {
     "source_id": "PJM_ProjectConstructionUpgrades",
     "url": "https://www.pjm.com/planning/m/project-construction",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia/Gate2_Time_to_Power/PJM_ProjectConstructionUpgrades.xlsx",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia/Gate2_Time_to_Power/PJM_ProjectConstructionUpgrades.xlsx",
     "downloaded_at": "2026-10-03T21:57:42.980061+00:00",
     "source_type": "original_Excel_export",
     "source_name": "PJM_ProjectConstructionUpgrades"
@@ -308,7 +308,7 @@
     "url": "https://docs.aep.com/docs/economic-development/AEP-Data-Center-Publication.pdf",
     "downloaded_at": "2026-10-04T04:35:37.366544+00:00",
     "status": "downloaded",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia_补充供电资料/VA_AEP_SITES.pdf",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia_补充供电资料/VA_AEP_SITES.pdf",
     "sha256": "5d608e69c243c11f3163db33e052010b5a6129cd338e86e141c3fb0aa71aa870",
     "bytes": 790403,
     "source_name": "VA_AEP_SITES",
@@ -319,7 +319,7 @@
     "url": "https://www.cleanarcdatacenters.com/va1/",
     "downloaded_at": "2026-10-04T04:35:37.850792+00:00",
     "status": "downloaded",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia_补充供电资料/VA_CLEANARC_CAROLINE.html",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia_补充供电资料/VA_CLEANARC_CAROLINE.html",
     "sha256": "60f7589229c1f73f260ba69c895b2aa0d306bc75036a7cf4756df43206ef2099",
     "bytes": 233557,
     "source_name": "VA_CLEANARC_CAROLINE",
@@ -330,7 +330,7 @@
     "url": "https://www.tract.com/project/hanover/",
     "downloaded_at": "2026-10-04T04:35:38.131924+00:00",
     "status": "downloaded",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia_补充供电资料/VA_TRACT_HANOVER.html",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia_补充供电资料/VA_TRACT_HANOVER.html",
     "sha256": "1f66cbcde55aa96e4627c02426e9ef922472da3e5509ce2686b2f1f6eda0d28a",
     "bytes": 192444,
     "source_name": "VA_TRACT_HANOVER",
@@ -341,7 +341,7 @@
     "url": "https://edgecore.com/locations/louisa-county-data-center",
     "downloaded_at": "2026-10-04T04:35:37.083965+00:00",
     "status": "downloaded",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia_补充供电资料/VA_EDGECORE_LOUISA.html",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia_补充供电资料/VA_EDGECORE_LOUISA.html",
     "sha256": "8d6bf41553c4c98987966eb08f73e3fd09de1c1d26e7e1ceb4c662666f45c2c3",
     "bytes": 56224,
     "source_name": "VA_EDGECORE_LOUISA",
@@ -352,7 +352,7 @@
     "url": "https://www.powerhousedata.com/news/powerhouse-data-centers-closes-on-site-of-800-mw-data-center-campus-in-spotsylvania-virginia-2",
     "downloaded_at": "2026-10-04T04:35:37.811217+00:00",
     "status": "downloaded",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia_补充供电资料/VA_POWERHOUSE_SPOTSY.html",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia_补充供电资料/VA_POWERHOUSE_SPOTSY.html",
     "sha256": "e4f34abe642cd49b5478a37154ab975eb3870e19e3b83abea9a8febcdfd1e110",
     "bytes": 19838,
     "source_name": "VA_POWERHOUSE_SPOTSY",
@@ -363,7 +363,7 @@
     "url": "https://henrico.gov/pdfs/planning/DataCenterStaffAnalysis.pdf",
     "downloaded_at": "2026-10-04T04:35:37.847945+00:00",
     "status": "downloaded",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia_补充供电资料/VA_HENRICO_ANALYSIS.pdf",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia_补充供电资料/VA_HENRICO_ANALYSIS.pdf",
     "sha256": "9f5b2191b760249e54d6a974ba057bfde127468af76d47b272e0ed273e89f467",
     "bytes": 2761895,
     "source_name": "VA_HENRICO_ANALYSIS",
@@ -374,7 +374,7 @@
     "url": "https://rga.lis.virginia.gov/Published/2025/RD206/PDF",
     "downloaded_at": "2026-10-04T04:35:38.862865+00:00",
     "status": "downloaded",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia_补充供电资料/VA_JLARC_DC.pdf",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia_补充供电资料/VA_JLARC_DC.pdf",
     "sha256": "51af159f30efc46b650ee8c5a2684eac8ef14d2bd6e04e3f6690e26e0e11fb41",
     "bytes": 10142932,
     "source_name": "VA_JLARC_DC",
@@ -385,7 +385,7 @@
     "url": "https://www.dominionenergy.com/-/media/content/about/power-line-projects/tributary/pdfs/tributary-application-vol-1-part-2-of-4.pdf",
     "downloaded_at": "2026-10-04T04:37:19.750143+00:00",
     "status": "downloaded",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia_补充供电资料/VA_DOMINION_TRIBUTARY.pdf",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia_补充供电资料/VA_DOMINION_TRIBUTARY.pdf",
     "sha256": "1d612ba6ed215cc592c952b1abe6785af02afb81f7bd5f9822919f43d35a3050",
     "bytes": 41374362,
     "source_name": "VA_DOMINION_TRIBUTARY",
@@ -396,7 +396,7 @@
     "url": "https://www.dominionenergy.com/-/media/content/about/power-line-projects/carmel-church-ruther-glen/pdfs/application--volume-1-of-4-2024-carmel-church-ruther-glen.pdf",
     "downloaded_at": "2026-10-04T04:37:11.084111+00:00",
     "status": "downloaded",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia_补充供电资料/VA_DOMINION_CAROLINE.pdf",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia_补充供电资料/VA_DOMINION_CAROLINE.pdf",
     "sha256": "c789ef46f71af6c600b944c03d70876b591d674bd0a6fd47de1c9c1a923553ff",
     "bytes": 27913937,
     "source_name": "VA_DOMINION_CAROLINE",
@@ -407,7 +407,7 @@
     "url": "https://www.dominionenergy.com/-/media/content/about/power-line-projects/centreport/pdfs/application-volume-1-of-3-2024-centreport.pdf",
     "downloaded_at": "2026-10-04T04:37:13.757929+00:00",
     "status": "downloaded",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia_补充供电资料/VA_DOMINION_STAFFORD.pdf",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia_补充供电资料/VA_DOMINION_STAFFORD.pdf",
     "sha256": "693dfb30e4cee07b6abf67476c27808cf4b49349530316ba60bda6f6cc339fd7",
     "bytes": 26185301,
     "source_name": "VA_DOMINION_STAFFORD",
@@ -418,7 +418,7 @@
     "url": "https://goochlandva.us/1480/Tuckahoe-Technology-Park",
     "downloaded_at": "2026-10-04T04:37:32.535414+00:00",
     "status": "downloaded",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia_补充供电资料/VA_GOOCHLAND_PROJECT.html",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia_补充供电资料/VA_GOOCHLAND_PROJECT.html",
     "sha256": "388701adff6240b680ac24259ea66bbe166f8e115eeaab3dd45794ffb5c1caca",
     "bytes": 152042,
     "source_name": "VA_GOOCHLAND_PROJECT",
@@ -429,7 +429,7 @@
     "url": "https://local.microsoft.com/wp-content/uploads/2025/10/Microsoft-datacenters-in-Virginia.pdf",
     "downloaded_at": "2026-10-04T04:37:31.336601+00:00",
     "status": "downloaded",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia_补充供电资料/VA_MICROSOFT_LOCATIONS.pdf",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia_补充供电资料/VA_MICROSOFT_LOCATIONS.pdf",
     "sha256": "51ada8a25902930bea5049b788bda7a5d5b094066fc8b94f88ee85fa1400f88d",
     "bytes": 9688800,
     "source_name": "VA_MICROSOFT_LOCATIONS",
@@ -440,7 +440,7 @@
     "url": "https://edgecore.com/",
     "downloaded_at": "2026-10-04T04:39:26.592015+00:00",
     "status": "downloaded",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia_补充供电资料/VA_EDGECORE_LOCATIONS.html",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia_补充供电资料/VA_EDGECORE_LOCATIONS.html",
     "sha256": "c7e288461b22a1716541018c9ce7544a3cd465db4f46bcb1a5fcc4b18e376794",
     "bytes": 49155,
     "source_name": "VA_EDGECORE_LOCATIONS",
@@ -451,7 +451,7 @@
     "url": "https://www.botetourtva.gov/1021/Google-Data-Center",
     "downloaded_at": "2026-10-04T04:39:27.174590+00:00",
     "status": "downloaded",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia_补充供电资料/VA_BOTETOURT_GOOGLE.html",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia_补充供电资料/VA_BOTETOURT_GOOGLE.html",
     "sha256": "ecaf7b9e30063e314e865c7f9696cefe8f53740e1ab035ac5202b03949d9e321",
     "bytes": 164541,
     "source_name": "VA_BOTETOURT_GOOGLE",
@@ -462,7 +462,7 @@
     "url": "https://www.chesterfield.gov/5989/Data-Centers",
     "downloaded_at": "2026-10-04T04:39:27.310202+00:00",
     "status": "downloaded",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia_补充供电资料/VA_CHESTERFIELD_DC.html",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia_补充供电资料/VA_CHESTERFIELD_DC.html",
     "sha256": "9ad71bc1c637efcddc29c38660a82a1a5313faad5d116c9432426cc6f0a1ad67",
     "bytes": 163256,
     "source_name": "VA_CHESTERFIELD_DC",
@@ -473,7 +473,7 @@
     "url": "https://kinggeorgecountyva.gov/2287/_2025",
     "downloaded_at": "2026-10-04T04:39:27.154694+00:00",
     "status": "downloaded",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia_补充供电资料/VA_KINGGEORGE_APPROVAL.html",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia_补充供电资料/VA_KINGGEORGE_APPROVAL.html",
     "sha256": "55970689a80b5efb45c8a50c65fd82a721bc6a5118a5b37db57790b575ec913f",
     "bytes": 128892,
     "source_name": "VA_KINGGEORGE_APPROVAL",
@@ -484,7 +484,7 @@
     "url": "https://goochlandva.us/DocumentCenter/View/13916/Tuckahoe-Tech-Park-Narrative",
     "downloaded_at": "2026-10-04T04:39:30.823246+00:00",
     "status": "downloaded",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia_补充供电资料/VA_GOOCHLAND_NARRATIVE.pdf",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia_补充供电资料/VA_GOOCHLAND_NARRATIVE.pdf",
     "sha256": "894d5b17fdad3daf7ad6aef5d3e84ae67042dccccc3d4112188e1b38877ac8e5",
     "bytes": 2895932,
     "source_name": "VA_GOOCHLAND_NARRATIVE",
@@ -495,7 +495,7 @@
     "url": "https://www.fairfaxcounty.gov/topics/data-centers",
     "downloaded_at": "2026-10-04T04:41:59.387187+00:00",
     "status": "downloaded",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia_补充供电资料/VA_FAIRFAX_DC.html",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia_补充供电资料/VA_FAIRFAX_DC.html",
     "sha256": "7c31875086f591f962afa398220ef88837ffc54b09b4391b67209520139144df",
     "bytes": 104813,
     "source_name": "VA_FAIRFAX_DC",
@@ -506,7 +506,7 @@
     "url": "https://novaregion.org/1598/Data-Centers",
     "downloaded_at": "2026-10-04T04:42:00.626243+00:00",
     "status": "downloaded",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia_补充供电资料/VA_NVRC_DC.html",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia_补充供电资料/VA_NVRC_DC.html",
     "sha256": "5aebda35429cab56028efcd25fce768fe214d9976131b7cbf4b39fdc58706e4e",
     "bytes": 105847,
     "source_name": "VA_NVRC_DC",
@@ -517,7 +517,7 @@
     "url": "https://services5.arcgis.com/6MUPhDX27Ne3DNOw/ArcGIS/rest/services/Data_Centers/FeatureServer?f=pjson",
     "downloaded_at": "2026-10-04T04:41:59.407620+00:00",
     "status": "downloaded",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia_补充供电资料/VA_NVRC_DC_SERVICE.html",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia_补充供电资料/VA_NVRC_DC_SERVICE.html",
     "sha256": "488f72f9ed5a006bdd8a9761ab9e0142cd1abb24530cbb1e72c93222b65fd7d2",
     "bytes": 9517,
     "source_name": "VA_NVRC_DC_SERVICE",
@@ -528,7 +528,7 @@
     "url": "https://services5.arcgis.com/6MUPhDX27Ne3DNOw/ArcGIS/rest/services/Data_Centers/FeatureServer/0?f=pjson",
     "downloaded_at": "2026-10-04T04:42:18.347497+00:00",
     "status": "downloaded",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia_补充供电资料/VA_NVRC_DC_LAYER.html",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia_补充供电资料/VA_NVRC_DC_LAYER.html",
     "sha256": "16759cc74e0eba03a0e8d32c517ee546546aa9edd581c2fc51860d61f8b36854",
     "bytes": 15281,
     "source_name": "VA_NVRC_DC_LAYER",
@@ -539,7 +539,7 @@
     "url": "https://services5.arcgis.com/6MUPhDX27Ne3DNOw/ArcGIS/rest/services/Data_Centers/FeatureServer/0/query?where=1%3D1&outFields=%2A&returnGeometry=false&f=pjson&orderByFields=OBJECTID",
     "downloaded_at": "2026-10-04T04:42:37.541567+00:00",
     "status": "downloaded",
-    "local_file": "/Users/siyuanliu/Documents/Codex/2026-10-02/wo/outputs/Feasibility_Gates_Virginia_补充供电资料/VA_NVRC_DC_RECORDS.html",
+    "local_file": "src/dc_locator/gates/virginia/data/evidence/Feasibility_Gates_Virginia_补充供电资料/VA_NVRC_DC_RECORDS.html",
     "sha256": "084cf2e95a2bb1da093de4cf294a1594f49bbe330638b46b40e7cac52e188941",
     "bytes": 89467,
     "source_name": "VA_NVRC_DC_RECORDS",
