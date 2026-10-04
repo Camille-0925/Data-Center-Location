@@ -60,5 +60,40 @@ class PipelineTests(unittest.TestCase):
         self.assertNotIn("suitability_before_margin_0_100", legacy["decision"]["recommendations"]["records"][0])
 
 
+class GateIntegrationTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.scored = score_counties(load_processed())
+
+    def test_gates_add_columns_without_changing_the_ranking(self):
+        plain = run("VA", scored=self.scored)["ranking"]
+        gated = run("VA", scored=self.scored, power_input_mw=100, target_full_power_date="2029-12-31",
+                    gate_as_of="2026-10-04")["ranking"]
+        self.assertEqual(list(plain["fips"]), list(gated["fips"]))
+        for column in ("gate_power", "gate_time_to_power", "gate_permitting", "gate_overall"):
+            self.assertIn(column, gated)
+            self.assertFalse(gated[column].isna().any())
+        self.assertTrue((gated["feasibility"] == "conditional").all())
+
+    def test_strict_screening_excludes_detected_risks_and_reranks(self):
+        strict = run("VA", scored=self.scored, power_input_mw=100, target_full_power_date="2029-12-31",
+                     gate_as_of="2026-10-04", exclude_gate_risks=True)["ranking"]
+        excluded = strict[strict["gate_overall"] == "RISK_DETECTED"]
+        self.assertTrue(len(excluded) > 0)
+        self.assertTrue(excluded["rank"].isna().all())
+        self.assertTrue((excluded["feasibility"] == "excluded").all())
+        ranked = strict["rank"].dropna().astype(int)
+        self.assertEqual(sorted(ranked)[:3], [1, 2, 3])
+        self.assertEqual(len(ranked), len(strict) - len(excluded))
+
+    def test_gate_modules_cover_every_county_of_both_states(self):
+        from dc_locator.pipeline import gate_screening
+
+        for state, n in (("VA", 133), ("GA", 159)):
+            gates = gate_screening(state, 100, "2029-12-31", "2026-10-04")
+            self.assertEqual(len(gates), n)
+            self.assertEqual(set(gates["fips"]), set(self.scored.loc[self.scored["state"] == state, "fips"]))
+
+
 if __name__ == "__main__":
     unittest.main()

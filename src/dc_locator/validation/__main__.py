@@ -22,7 +22,7 @@ def main() -> int:
     print(result["methods"]["summary"].round(3).to_string(index=False))
     print("\n   weights by method")
     print(result["methods"]["weights"].round(3).to_string())
-    print(f"\n2. SMAA-2 ({args.samples} samples, Dirichlet alpha 20, kappa ~ U(0,1)): top 10 by p(top 10)")
+    print(f"\n2. SMAA-2 ({args.samples} samples; weights ~ Dirichlet(20 phi), kappa ~ U(0,1), lambda_R and lambda_M ~ U(0.1,0.3)): top 10 by p(top 10)")
     print(result["smaa_table"].head(10).round(3).to_string())
     print("\n3. Effective weights (share of score variance)")
     print(result["effective_weights"].round(3).to_string(index=False))

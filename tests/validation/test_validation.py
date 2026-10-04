@@ -95,5 +95,48 @@ class ConsistencyTests(unittest.TestCase):
                          result["baseline"]["counties"].set_index("fips").loc[final_first, "county_name"])
 
 
+class AdjustmentSamplingTests(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        from dc_locator.pipeline import run
+        from dc_locator.validation.smaa import raw_interaction_pattern
+
+        cls.baseline = run("VA")
+        cls.counties = cls.baseline["counties"].set_index("fips")
+        cls.pattern = raw_interaction_pattern(cls.baseline["interactions"]["pairs"])
+
+    def _run(self, **kwargs):
+        return smaa(self.counties, self.baseline["weights"]["weights"], self.pattern, samples=200, seed=3, **kwargs)
+
+    def test_fixed_lambdas_reproduce_the_pipeline_factors(self):
+        from dc_locator.validation import adjustment_inputs, final_multiplier
+
+        sampled = self._run(adjustments=adjustment_inputs(self.baseline, (0.2, 0.2)))["table"]
+        fixed = self._run(final_multiplier=final_multiplier(self.baseline))["table"]
+        self.assertTrue(np.allclose(sampled["regret_q90"], fixed["regret_q90"].reindex(sampled.index)))
+
+    def test_zero_lambdas_remove_both_adjustments(self):
+        from dc_locator.validation import adjustment_inputs
+
+        inputs = adjustment_inputs(self.baseline, (0.0, 0.0))
+        base = inputs["base"]
+        sampled = self._run(adjustments=inputs)["table"]
+        unadjusted = smaa(base, self.baseline["weights"]["weights"], self.pattern, samples=200, seed=3)["table"]
+        self.assertTrue(np.allclose(sampled["regret_q90"], unadjusted["regret_q90"].reindex(sampled.index)))
+
+    def test_effective_shares_sum_to_one(self):
+        from dc_locator.validation import effective_weights
+
+        shares = effective_weights(self.baseline)
+        self.assertAlmostEqual(shares["effective_share"].sum(), 1.0)
+
+    def test_sampled_ranges_are_reported(self):
+        from dc_locator.validation import adjustment_inputs
+
+        settings = self._run(adjustments=adjustment_inputs(self.baseline))["settings"]
+        self.assertEqual(settings["lambda_m_range"], [0.1, 0.3])
+        self.assertEqual(set(settings["robustness_dimensions"]), {"cooling_climate", "water", "climate_risk"})
+
+
 if __name__ == "__main__":
     unittest.main()

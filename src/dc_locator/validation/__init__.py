@@ -3,7 +3,8 @@
     python -m dc_locator.validation --state VA [--samples 10000]
 
 1. Weight-method comparison: AHP (primary) vs equal, ROC, CRITIC, entropy, DEMATEL weights.
-2. SMAA-2: Dirichlet-sampled weights and uniform kappa -> rank acceptability, p(top 10), regret.
+2. SMAA-2: Dirichlet-sampled weights, uniform kappa, and uniform robustness / margin
+   coefficients (lambda_R, lambda_M in [0.1, 0.3]) -> rank acceptability, p(top 10), regret.
 3. Effective weights: each dimension's share of the variance of the total score.
 4. Customer-input response: how each option changes the top 10.
 5. Value-function shape: linear vs exponential (rho = +/-2) utilities.
@@ -49,6 +50,38 @@ def final_multiplier(baseline: Mapping[str, Any]) -> pd.Series:
     return ranking["margin_adjustment"].fillna(1.0).astype(float)
 
 
+LAMBDA_RANGE = (0.10, 0.30)  # around the configured 0.20; same range as the weights guide uses for lambda
+
+
+def adjustment_inputs(baseline: Mapping[str, Any], lambda_range=LAMBDA_RANGE) -> dict[str, Any] | None:
+    """Inputs for sampling the robustness and margin coefficients in SMAA (None if adjustments are off)."""
+
+    config = baseline.get("adjustments_config")
+    if not config:
+        return None
+    counties = baseline["counties"].set_index("fips")
+    order = baseline["weights"]["dimension_order"]
+    base = counties[[f"base__{d}" for d in order]].rename(columns=lambda c: c.split("__", 1)[1])
+    risk = {}
+    if config["robustness"].get("enabled"):
+        for dimension_id, spec in config["robustness"]["dimensions"].items():
+            risk[dimension_id] = counties[spec["risk_column"]].astype(float)
+    headroom_columns = [c for c in counties.columns if c.startswith("margin_headroom__")]
+    if config["margin"].get("enabled") and headroom_columns:
+        min_headroom = counties[headroom_columns].min(axis=1)
+        lambda_m_range = lambda_range
+    else:
+        min_headroom = pd.Series(1.0, index=counties.index)
+        lambda_m_range = (0.0, 0.0)
+    return {
+        "base": base,
+        "risk": risk,
+        "min_headroom": min_headroom,
+        "lambda_r_range": lambda_range,
+        "lambda_m_range": lambda_m_range,
+    }
+
+
 def compare_methods(baseline: Mapping[str, Any]) -> dict[str, Any]:
     """Rank the same counties under six weighting methods (weighted sum x margin) and compare."""
 
@@ -86,20 +119,31 @@ def compare_methods(baseline: Mapping[str, Any]) -> dict[str, Any]:
 
 
 def effective_weights(baseline: Mapping[str, Any]) -> pd.DataFrame:
-    """Share of Var(score) explained by each term: phi_k Cov(D_k, S) / Var(S); interactions together."""
+    """Share of Var(final score) explained by each term; the shares sum to 1.
+
+    Final = A_M * [sum_k phi_k D_k + interaction part], so with t_k = phi_k D_k A_M and the
+    interaction term taken as the remainder, Final = sum_k t_k + t_I exactly and
+    share_k = Cov(t_k, Final) / Var(Final).
+    """
 
     ranking = baseline["ranking"].set_index("fips")
     phi = baseline["weights"]["weights"]
     active = [d for d, w in phi.items() if w > 0]
-    S = ranking["score"] / 100
-    var = S.var()
-    rows = [
-        {"term": d, "nominal_weight": phi[d], "effective_share": float(phi[d] * ranking[f"D_{d}"].cov(S) / var)}
-        for d in active
-    ]
-    rows.append({"term": "interactions", "nominal_weight": np.nan,
-                 "effective_share": float((ranking["interaction_points"] / 100).cov(S) / var)})
-    return pd.DataFrame(rows)
+    final = ranking["score"] / 100
+    margin = ranking["margin_adjustment"].astype(float) if "margin_adjustment" in ranking else 1.0
+    var = final.var()
+    terms = {d: phi[d] * ranking[f"D_{d}"] * margin for d in active}
+    terms["interactions"] = final - sum(terms.values())
+    return pd.DataFrame(
+        [
+            {
+                "term": name,
+                "nominal_weight": phi.get(name, np.nan),
+                "effective_share": float(t.cov(final) / var),
+            }
+            for name, t in terms.items()
+        ]
+    )
 
 
 def customer_response(state: str, scored: pd.DataFrame, baseline: Mapping[str, Any]) -> pd.DataFrame:
@@ -156,6 +200,7 @@ def run_validation(state: str, samples: int = 10_000, seed: int = 42, out_dir: s
         samples=samples,
         seed=seed,
         final_multiplier=final_multiplier(baseline),
+        adjustments=adjustment_inputs(baseline),
     )
     robust_table = robust["table"].copy()
     robust_table.insert(0, "county", names.reindex(robust_table.index))
@@ -194,4 +239,4 @@ def run_validation(state: str, samples: int = 10_000, seed: int = 42, out_dir: s
     }
 
 
-__all__ = ["compare_methods", "customer_response", "effective_weights", "run_validation", "smaa", "utility_shape"]
+__all__ = ["adjustment_inputs", "compare_methods", "customer_response", "effective_weights", "run_validation", "smaa", "utility_shape"]
