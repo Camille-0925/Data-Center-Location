@@ -3,6 +3,7 @@
 > 用途：给负责做 PPT 的组员。每一节对应一页幻灯片，包括 **建议标题（英文，直接放到幻灯片上）**、**页面要点**、**公式**、**建议配图** 和 **讲稿要点（中文）**。
 > 文中所有数字都来自 repo 的实际运行结果（默认客户、单人初稿判断）。团队打分后需要重跑并更新数字，见最后一节。
 > 代码位置：`src/dc_locator/decision/`、`dimension_weights/`、`interactions/`、`validation/`。
+> 纯英文版见 `docs/PPT_decision_matrix_and_dynamic_weights_EN.md`。
 
 ---
 
