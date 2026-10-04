@@ -1,0 +1,1679 @@
+[
+  {
+    "record_id": "GA_DRI_4843",
+    "dri_id": "4843",
+    "county_fips": "13121",
+    "county_name": "Fulton County",
+    "project_name": "ATL50",
+    "jurisdiction": "Union City",
+    "submitted_date": "2026-09-15",
+    "dri_status": "Initial Form Submitted",
+    "local_permission_status": "not_established_by_DRI",
+    "regional_review_completed": false,
+    "active_reference": true,
+    "description": "The site is located west of Stonewall Tell Road and north of Koweta Road. It is a data center development on 88.01 acres of land that consists of two, 3-story buildings totaling 910,000 square feet.",
+    "project_location": "5235 Stonewall Tell Rd",
+    "project_size": "88.01 total site acreage",
+    "developer": "Microsoft",
+    "energy_provider": "",
+    "raw_peak_connected_load": "",
+    "peak_connected_load_mw": null,
+    "load_quality": "missing",
+    "applicant_infrastructure_response": "unanswered",
+    "infrastructure_expansion_plan": "",
+    "project_completion_text": "2032",
+    "source_ids": [
+      "dri_4843_InitialForm",
+      "dri_4843_AdditionalForm",
+      "dri_4843_AppSummary"
+    ],
+    "field_sources": {
+      "peak_connected_load_mw": {
+        "source_id": "dri_4843_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_EnergySupplyDemandLabel",
+        "raw_value": "",
+        "unit_from_question": "MW peak connected electrical load"
+      },
+      "applicant_infrastructure_response": {
+        "source_id": "dri_4843_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_rblEnergySupplyAvailable",
+        "extraction": "checked radio value, not all displayed option labels"
+      }
+    },
+    "note": "DRI Completed means regional review completed; it is not local permit approval, construction completion or energization. Applicant statements are not utility commitments."
+  },
+  {
+    "record_id": "GA_DRI_4835",
+    "dri_id": "4835",
+    "county_fips": "13015",
+    "county_name": "Bartow County",
+    "project_name": "Kingston Technology Hub",
+    "jurisdiction": "Kingston",
+    "submitted_date": "2026-09-04",
+    "dri_status": "Completed",
+    "local_permission_status": "not_established_by_DRI",
+    "regional_review_completed": true,
+    "active_reference": true,
+    "description": "One (1) Approximately 350,000 Square Foot Proposed Data Center Facility in Bartow County, GA",
+    "project_location": "Bartow County, GA Tax Parcel Number: 0037-0197-001",
+    "project_size": "One (1) Approximately 350,000 Square Foot Building on 559 Acres of Land",
+    "developer": "Thor Acquisition WC LLC",
+    "energy_provider": "Municipal Electric Authority of Georgia (MEAG)",
+    "raw_peak_connected_load": "Approximately 150 Megawatts per day",
+    "peak_connected_load_mw": null,
+    "load_quality": "invalid_or_unresolved_unit",
+    "applicant_infrastructure_response": "no",
+    "infrastructure_expansion_plan": "The project intends to pursue energy supply through the MEAG Power Request for Proposals (2026-A), issued July 13, 2026, which, if successful, would deliver sufficient capacity via off-site transmission. On-site, the project is likely to include the substation/electrical infrastructure needed to receive and distribute this energy.",
+    "project_completion_text": "2030",
+    "source_ids": [
+      "dri_4835_InitialForm",
+      "dri_4835_AdditionalForm",
+      "dri_4835_AppSummary"
+    ],
+    "field_sources": {
+      "peak_connected_load_mw": {
+        "source_id": "dri_4835_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_EnergySupplyDemandLabel",
+        "raw_value": "Approximately 150 Megawatts per day",
+        "unit_from_question": "MW peak connected electrical load"
+      },
+      "applicant_infrastructure_response": {
+        "source_id": "dri_4835_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_rblEnergySupplyAvailable",
+        "extraction": "checked radio value, not all displayed option labels"
+      }
+    },
+    "note": "DRI Completed means regional review completed; it is not local permit approval, construction completion or energization. Applicant statements are not utility commitments."
+  },
+  {
+    "record_id": "GA_DRI_4801",
+    "dri_id": "4801",
+    "county_fips": "13103",
+    "county_name": "Effingham County",
+    "project_name": "Project Camellia",
+    "jurisdiction": "unincorporated",
+    "submitted_date": "2026-07-22",
+    "dri_status": "Completed",
+    "local_permission_status": "not_established_by_DRI",
+    "regional_review_completed": true,
+    "active_reference": true,
+    "description": "Data center campus",
+    "project_location": "32.261081, -81.263903",
+    "project_size": "4 buildings with a total of 4,400,000 square feet",
+    "developer": "Octans GA LLC c/o Butler Snow",
+    "energy_provider": "Georgia Power",
+    "raw_peak_connected_load": "3,210",
+    "peak_connected_load_mw": 3210.0,
+    "load_quality": "declared_peak_connected_load",
+    "applicant_infrastructure_response": "yes",
+    "infrastructure_expansion_plan": "",
+    "project_completion_text": "2032",
+    "source_ids": [
+      "dri_4801_InitialForm",
+      "dri_4801_AdditionalForm",
+      "dri_4801_AppSummary"
+    ],
+    "field_sources": {
+      "peak_connected_load_mw": {
+        "source_id": "dri_4801_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_EnergySupplyDemandLabel",
+        "raw_value": "3,210",
+        "unit_from_question": "MW peak connected electrical load"
+      },
+      "applicant_infrastructure_response": {
+        "source_id": "dri_4801_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_rblEnergySupplyAvailable",
+        "extraction": "checked radio value, not all displayed option labels"
+      }
+    },
+    "note": "DRI Completed means regional review completed; it is not local permit approval, construction completion or energization. Applicant statements are not utility commitments."
+  },
+  {
+    "record_id": "GA_DRI_4794",
+    "dri_id": "4794",
+    "county_fips": "13063",
+    "county_name": "Clayton County",
+    "project_name": "Stillwater Technology Park",
+    "jurisdiction": "Lovejoy",
+    "submitted_date": "2026-07-22",
+    "dri_status": "Withdrawn",
+    "local_permission_status": "not_established_by_DRI",
+    "regional_review_completed": false,
+    "active_reference": false,
+    "description": "Land development and construction of approximately 3,465,000 square feet of data center buildings",
+    "project_location": "11760 Panhandle Road, Lovejoy, Ga 30228",
+    "project_size": "Approximately 3,465,000 square feet of buildings",
+    "developer": "Stillwater Development, LLC.",
+    "energy_provider": "Central Georgia EMC",
+    "raw_peak_connected_load": "Per Stillwater: 1250 MW",
+    "peak_connected_load_mw": 1250.0,
+    "load_quality": "declared_peak_connected_load",
+    "applicant_infrastructure_response": "yes",
+    "infrastructure_expansion_plan": "",
+    "project_completion_text": "12/31/2031",
+    "source_ids": [
+      "dri_4794_InitialForm",
+      "dri_4794_AdditionalForm",
+      "dri_4794_AppSummary"
+    ],
+    "field_sources": {
+      "peak_connected_load_mw": {
+        "source_id": "dri_4794_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_EnergySupplyDemandLabel",
+        "raw_value": "Per Stillwater: 1250 MW",
+        "unit_from_question": "MW peak connected electrical load"
+      },
+      "applicant_infrastructure_response": {
+        "source_id": "dri_4794_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_rblEnergySupplyAvailable",
+        "extraction": "checked radio value, not all displayed option labels"
+      }
+    },
+    "note": "DRI Completed means regional review completed; it is not local permit approval, construction completion or energization. Applicant statements are not utility commitments."
+  },
+  {
+    "record_id": "GA_DRI_4797",
+    "dri_id": "4797",
+    "county_fips": "13285",
+    "county_name": "Troup County",
+    "project_name": "PRL2",
+    "jurisdiction": "LaGrange",
+    "submitted_date": "2026-07-22",
+    "dri_status": "Completed",
+    "local_permission_status": "not_established_by_DRI",
+    "regional_review_completed": true,
+    "active_reference": true,
+    "description": "This project includes an existing data center building on site. A subsequent phase of this project will consist of a +/- 470,000 sq. ft. data center building.",
+    "project_location": "411 Pegasus Parkway (Tax Parcel ID No. 0592000004)",
+    "project_size": "Approximately 470,000sq. ft. data center building",
+    "developer": "KDC",
+    "energy_provider": "MEAG",
+    "raw_peak_connected_load": "350 MW",
+    "peak_connected_load_mw": 350.0,
+    "load_quality": "declared_peak_connected_load",
+    "applicant_infrastructure_response": "yes",
+    "infrastructure_expansion_plan": "",
+    "project_completion_text": "TBD",
+    "source_ids": [
+      "dri_4797_InitialForm",
+      "dri_4797_AdditionalForm",
+      "dri_4797_AppSummary"
+    ],
+    "field_sources": {
+      "peak_connected_load_mw": {
+        "source_id": "dri_4797_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_EnergySupplyDemandLabel",
+        "raw_value": "350 MW",
+        "unit_from_question": "MW peak connected electrical load"
+      },
+      "applicant_infrastructure_response": {
+        "source_id": "dri_4797_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_rblEnergySupplyAvailable",
+        "extraction": "checked radio value, not all displayed option labels"
+      }
+    },
+    "note": "DRI Completed means regional review completed; it is not local permit approval, construction completion or energization. Applicant statements are not utility commitments."
+  },
+  {
+    "record_id": "GA_DRI_4761",
+    "dri_id": "4761",
+    "county_fips": "13015",
+    "county_name": "Bartow County",
+    "project_name": "Project Indo",
+    "jurisdiction": "Cartersville",
+    "submitted_date": "2026-06-19",
+    "dri_status": "Completed",
+    "local_permission_status": "not_established_by_DRI",
+    "regional_review_completed": true,
+    "active_reference": true,
+    "description": "200 +/- Megawatt Critical IT Load Data Center",
+    "project_location": "218 Industrial Park Road. Parcel No. C059-0001-001.",
+    "project_size": "69 +/- acres. 1,100,000 +/- SF floor area",
+    "developer": "Databank Holdings Ltd",
+    "energy_provider": "Cartersville Electric System and MEAG",
+    "raw_peak_connected_load": "Requested connected utility load supply is 288 +/-",
+    "peak_connected_load_mw": 288.0,
+    "load_quality": "declared_peak_connected_load",
+    "applicant_infrastructure_response": "yes",
+    "infrastructure_expansion_plan": "",
+    "project_completion_text": "Approx. 2032",
+    "source_ids": [
+      "dri_4761_InitialForm",
+      "dri_4761_AdditionalForm",
+      "dri_4761_AppSummary"
+    ],
+    "field_sources": {
+      "peak_connected_load_mw": {
+        "source_id": "dri_4761_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_EnergySupplyDemandLabel",
+        "raw_value": "Requested connected utility load supply is 288 +/-",
+        "unit_from_question": "MW peak connected electrical load"
+      },
+      "applicant_infrastructure_response": {
+        "source_id": "dri_4761_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_rblEnergySupplyAvailable",
+        "extraction": "checked radio value, not all displayed option labels"
+      }
+    },
+    "note": "DRI Completed means regional review completed; it is not local permit approval, construction completion or energization. Applicant statements are not utility commitments."
+  },
+  {
+    "record_id": "GA_DRI_4736",
+    "dri_id": "4736",
+    "county_fips": "13073",
+    "county_name": "Columbia County",
+    "project_name": "Project JGK-Mass Grading",
+    "jurisdiction": "unincorporated",
+    "submitted_date": "2026-05-05",
+    "dri_status": "Completed",
+    "local_permission_status": "not_established_by_DRI",
+    "regional_review_completed": true,
+    "active_reference": true,
+    "description": "Mass grading for Project JGK. Applicant is requesting only a Land Disturbance Permit (LDP) at this time.",
+    "project_location": "5140-5150 Catalyst Drive, off Appling Harlem Road, Interstate 20, and Morris Callaway Road",
+    "project_size": "Project is approximately 2,862 acres with approximately 1,100 acres disturbed with this land disturb",
+    "developer": "Turner Construction Company",
+    "energy_provider": "Georgia Power Company",
+    "raw_peak_connected_load": "1400",
+    "peak_connected_load_mw": 1400.0,
+    "load_quality": "declared_peak_connected_load",
+    "applicant_infrastructure_response": "no",
+    "infrastructure_expansion_plan": "Project will require new onsite substation, transmission lines, backup generators (diesel), and battery banks. Kinetic Infrastructure Solutions, LLC is funding all associated costs.",
+    "project_completion_text": "",
+    "source_ids": [
+      "dri_4736_InitialForm",
+      "dri_4736_AdditionalForm",
+      "dri_4736_AppSummary"
+    ],
+    "field_sources": {
+      "peak_connected_load_mw": {
+        "source_id": "dri_4736_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_EnergySupplyDemandLabel",
+        "raw_value": "1400",
+        "unit_from_question": "MW peak connected electrical load"
+      },
+      "applicant_infrastructure_response": {
+        "source_id": "dri_4736_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_rblEnergySupplyAvailable",
+        "extraction": "checked radio value, not all displayed option labels"
+      }
+    },
+    "note": "DRI Completed means regional review completed; it is not local permit approval, construction completion or energization. Applicant statements are not utility commitments."
+  },
+  {
+    "record_id": "GA_DRI_4735",
+    "dri_id": "4735",
+    "county_fips": "13073",
+    "county_name": "Columbia County",
+    "project_name": "Project Squash",
+    "jurisdiction": "unincorporated",
+    "submitted_date": "2026-05-05",
+    "dri_status": "Completed",
+    "local_permission_status": "not_established_by_DRI",
+    "regional_review_completed": true,
+    "active_reference": true,
+    "description": "Issuance of land disturbance permit for data center development.",
+    "project_location": "6423 Wrightsboro Road, Harlem, GA",
+    "project_size": "325 Acres",
+    "developer": "The Whiting-Turner Contracting Company",
+    "energy_provider": "Georgia Power Company",
+    "raw_peak_connected_load": "200",
+    "peak_connected_load_mw": 200.0,
+    "load_quality": "declared_peak_connected_load",
+    "applicant_infrastructure_response": "no",
+    "infrastructure_expansion_plan": "Project requires new onsite substation, transmission lines, backup generators (diesel), and battery banks. Kinetic Infrastructure Solutions, LLC is funding all associated costs.",
+    "project_completion_text": "",
+    "source_ids": [
+      "dri_4735_InitialForm",
+      "dri_4735_AdditionalForm",
+      "dri_4735_AppSummary"
+    ],
+    "field_sources": {
+      "peak_connected_load_mw": {
+        "source_id": "dri_4735_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_EnergySupplyDemandLabel",
+        "raw_value": "200",
+        "unit_from_question": "MW peak connected electrical load"
+      },
+      "applicant_infrastructure_response": {
+        "source_id": "dri_4735_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_rblEnergySupplyAvailable",
+        "extraction": "checked radio value, not all displayed option labels"
+      }
+    },
+    "note": "DRI Completed means regional review completed; it is not local permit approval, construction completion or energization. Applicant statements are not utility commitments."
+  },
+  {
+    "record_id": "GA_DRI_4727",
+    "dri_id": "4727",
+    "county_fips": "13077",
+    "county_name": "Coweta County",
+    "project_name": "Bridgeport (Revised)",
+    "jurisdiction": "unincorporated",
+    "submitted_date": "2026-04-28",
+    "dri_status": "Completed",
+    "local_permission_status": "not_established_by_DRI",
+    "regional_review_completed": true,
+    "active_reference": true,
+    "description": "Existing industrial park adding a technological facility component",
+    "project_location": "0 Bridgeport Parkway",
+    "project_size": "8,250,000 SF",
+    "developer": "McKagen Jones Law Firm, attn: Mr. Steven Jones",
+    "energy_provider": "Georgia Power",
+    "raw_peak_connected_load": "Preliminary load request up to 1500MW electricity",
+    "peak_connected_load_mw": 1500.0,
+    "load_quality": "declared_peak_connected_load",
+    "applicant_infrastructure_response": "no",
+    "infrastructure_expansion_plan": "Power transmission lines exist to serve the property. New on-site substations will be required to serve the property. Details will be further determined at the discretion of GPC. The County ordinance currently restricts on-site generation.",
+    "project_completion_text": "2034",
+    "source_ids": [
+      "dri_4727_InitialForm",
+      "dri_4727_AdditionalForm",
+      "dri_4727_AppSummary"
+    ],
+    "field_sources": {
+      "peak_connected_load_mw": {
+        "source_id": "dri_4727_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_EnergySupplyDemandLabel",
+        "raw_value": "Preliminary load request up to 1500MW electricity",
+        "unit_from_question": "MW peak connected electrical load"
+      },
+      "applicant_infrastructure_response": {
+        "source_id": "dri_4727_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_rblEnergySupplyAvailable",
+        "extraction": "checked radio value, not all displayed option labels"
+      }
+    },
+    "note": "DRI Completed means regional review completed; it is not local permit approval, construction completion or energization. Applicant statements are not utility commitments."
+  },
+  {
+    "record_id": "GA_DRI_4689",
+    "dri_id": "4689",
+    "county_fips": "13155",
+    "county_name": "Irwin County",
+    "project_name": "Project Arrowhead",
+    "jurisdiction": "unincorporated",
+    "submitted_date": "2026-04-10",
+    "dri_status": "Completed",
+    "local_permission_status": "not_established_by_DRI",
+    "regional_review_completed": true,
+    "active_reference": true,
+    "description": "The proposed development consists of 5 properties for a data center campus.",
+    "project_location": "31°35'57.00\"N, 83°22'2.79\"W. Parcel numbers 0018 0007, 0026 0001, 0026 0003, 0026 00040AA, and a p",
+    "project_size": "4,220,000 SF, Approximately 1066 acres",
+    "developer": "Premier Data Center Development, LLC",
+    "energy_provider": "GA Power",
+    "raw_peak_connected_load": "1250 MW (1.25 GW)",
+    "peak_connected_load_mw": 1250.0,
+    "load_quality": "declared_peak_connected_load",
+    "applicant_infrastructure_response": "no",
+    "infrastructure_expansion_plan": "Georgia Power is in the process of completing an energy study for the project.",
+    "project_completion_text": "2034",
+    "source_ids": [
+      "dri_4689_InitialForm",
+      "dri_4689_AdditionalForm",
+      "dri_4689_AppSummary"
+    ],
+    "field_sources": {
+      "peak_connected_load_mw": {
+        "source_id": "dri_4689_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_EnergySupplyDemandLabel",
+        "raw_value": "1250 MW (1.25 GW)",
+        "unit_from_question": "MW peak connected electrical load"
+      },
+      "applicant_infrastructure_response": {
+        "source_id": "dri_4689_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_rblEnergySupplyAvailable",
+        "extraction": "checked radio value, not all displayed option labels"
+      }
+    },
+    "note": "DRI Completed means regional review completed; it is not local permit approval, construction completion or energization. Applicant statements are not utility commitments."
+  },
+  {
+    "record_id": "GA_DRI_4651",
+    "dri_id": "4651",
+    "county_fips": "13099",
+    "county_name": "Early County",
+    "project_name": "QTS - Blakely",
+    "jurisdiction": "Blakely",
+    "submitted_date": "2026-03-10",
+    "dri_status": "Additional Form Submitted",
+    "local_permission_status": "not_established_by_DRI",
+    "regional_review_completed": false,
+    "active_reference": true,
+    "description": "The proposed development consists of a Data Center type project. This site will also contain related site amenities and improvements which includes parking, access roadways, lighting, landscaping, utilities, and stormwater management facilities.",
+    "project_location": "31.406296, -84.912908",
+    "project_size": "12,000,000SF",
+    "developer": "QTS Technology Services, LLC",
+    "energy_provider": "GA Power",
+    "raw_peak_connected_load": "1,500MW pending completed utility studies",
+    "peak_connected_load_mw": 1500.0,
+    "load_quality": "declared_peak_connected_load",
+    "applicant_infrastructure_response": "yes",
+    "infrastructure_expansion_plan": "A new substation will be built on-site. New transmission lines will be built on-site",
+    "project_completion_text": "Q4 2035",
+    "source_ids": [
+      "dri_4651_InitialForm",
+      "dri_4651_AdditionalForm",
+      "dri_4651_AppSummary"
+    ],
+    "field_sources": {
+      "peak_connected_load_mw": {
+        "source_id": "dri_4651_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_EnergySupplyDemandLabel",
+        "raw_value": "1,500MW pending completed utility studies",
+        "unit_from_question": "MW peak connected electrical load"
+      },
+      "applicant_infrastructure_response": {
+        "source_id": "dri_4651_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_rblEnergySupplyAvailable",
+        "extraction": "checked radio value, not all displayed option labels"
+      }
+    },
+    "note": "DRI Completed means regional review completed; it is not local permit approval, construction completion or energization. Applicant statements are not utility commitments."
+  },
+  {
+    "record_id": "GA_DRI_4624",
+    "dri_id": "4624",
+    "county_fips": "13151",
+    "county_name": "Henry County",
+    "project_name": "Hampton Technology Park",
+    "jurisdiction": "Hampton",
+    "submitted_date": "2026-02-13",
+    "dri_status": "Completed",
+    "local_permission_status": "not_established_by_DRI",
+    "regional_review_completed": true,
+    "active_reference": true,
+    "description": "Proposed Technology Facility with five buildings (4,000,000 sf) located on approximately 603.56 acres.",
+    "project_location": "PIN 003-01042003,003-01042000; LAND LOTS 14,15,16,17,18,19,255,256; 3RD & 6TH DISTRICT",
+    "project_size": "4,000,000 sf",
+    "developer": "Hampton Technology Park Owner, LLC c/o Dillard Sellers",
+    "energy_provider": "Georgia Power",
+    "raw_peak_connected_load": "1,500 MW peak",
+    "peak_connected_load_mw": 1500.0,
+    "load_quality": "declared_peak_connected_load",
+    "applicant_infrastructure_response": "yes",
+    "infrastructure_expansion_plan": "new substation infrastructure will be located on development site with Georgia Power",
+    "project_completion_text": "2033",
+    "source_ids": [
+      "dri_4624_InitialForm",
+      "dri_4624_AdditionalForm",
+      "dri_4624_AppSummary"
+    ],
+    "field_sources": {
+      "peak_connected_load_mw": {
+        "source_id": "dri_4624_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_EnergySupplyDemandLabel",
+        "raw_value": "1,500 MW peak",
+        "unit_from_question": "MW peak connected electrical load"
+      },
+      "applicant_infrastructure_response": {
+        "source_id": "dri_4624_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_rblEnergySupplyAvailable",
+        "extraction": "checked radio value, not all displayed option labels"
+      }
+    },
+    "note": "DRI Completed means regional review completed; it is not local permit approval, construction completion or energization. Applicant statements are not utility commitments."
+  },
+  {
+    "record_id": "GA_DRI_4617",
+    "dri_id": "4617",
+    "county_fips": "13121",
+    "county_name": "Fulton County",
+    "project_name": "The Crossings",
+    "jurisdiction": "Union City",
+    "submitted_date": "2026-02-12",
+    "dri_status": "Terminated",
+    "local_permission_status": "not_established_by_DRI",
+    "regional_review_completed": false,
+    "active_reference": false,
+    "description": "The site is located east Roosevelt Highway. It is an data center development on 231.8 acres of land, consisting of 5 buildings that total 1,565,300 square feet.",
+    "project_location": "33°35'43.2\"N 84°32'47.7\"W",
+    "project_size": "1,565,300",
+    "developer": "B9 Union City Owner LLC ( Anthony Nelson",
+    "energy_provider": "",
+    "raw_peak_connected_load": "",
+    "peak_connected_load_mw": null,
+    "load_quality": "missing",
+    "applicant_infrastructure_response": "unanswered",
+    "infrastructure_expansion_plan": "",
+    "project_completion_text": "2028",
+    "source_ids": [
+      "dri_4617_InitialForm",
+      "dri_4617_AdditionalForm",
+      "dri_4617_AppSummary"
+    ],
+    "field_sources": {
+      "peak_connected_load_mw": {
+        "source_id": "dri_4617_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_EnergySupplyDemandLabel",
+        "raw_value": "",
+        "unit_from_question": "MW peak connected electrical load"
+      },
+      "applicant_infrastructure_response": {
+        "source_id": "dri_4617_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_rblEnergySupplyAvailable",
+        "extraction": "checked radio value, not all displayed option labels"
+      }
+    },
+    "note": "DRI Completed means regional review completed; it is not local permit approval, construction completion or energization. Applicant statements are not utility commitments."
+  },
+  {
+    "record_id": "GA_DRI_4607",
+    "dri_id": "4607",
+    "county_fips": "13255",
+    "county_name": "Spalding County",
+    "project_name": "75 South Data Center Campus",
+    "jurisdiction": "unincorporated",
+    "submitted_date": "2026-01-27",
+    "dri_status": "Completed",
+    "local_permission_status": "not_established_by_DRI",
+    "regional_review_completed": true,
+    "active_reference": true,
+    "description": "Data Center Campus with 7, two-story buildings totaling 2,240,000 square feet.",
+    "project_location": "Land Lots 10 & 11, 2nd District Tax Parcel Numbers 214 01016B and 214 01016",
+    "project_size": "7, two-story buildings totaling 2,240,000 square feet",
+    "developer": "Industrial VI Enterprises, LLC c/o Steven L. Jones",
+    "energy_provider": "Central Georgia Electric Membership Corporation",
+    "raw_peak_connected_load": "450 MW",
+    "peak_connected_load_mw": 450.0,
+    "load_quality": "declared_peak_connected_load",
+    "applicant_infrastructure_response": "yes",
+    "infrastructure_expansion_plan": "Based on extensive coordination with CGEMC, sufficient energy supply capacity will be available to serve this project at build-out.",
+    "project_completion_text": "2030",
+    "source_ids": [
+      "dri_4607_InitialForm",
+      "dri_4607_AdditionalForm",
+      "dri_4607_AppSummary"
+    ],
+    "field_sources": {
+      "peak_connected_load_mw": {
+        "source_id": "dri_4607_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_EnergySupplyDemandLabel",
+        "raw_value": "450 MW",
+        "unit_from_question": "MW peak connected electrical load"
+      },
+      "applicant_infrastructure_response": {
+        "source_id": "dri_4607_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_rblEnergySupplyAvailable",
+        "extraction": "checked radio value, not all displayed option labels"
+      }
+    },
+    "note": "DRI Completed means regional review completed; it is not local permit approval, construction completion or energization. Applicant statements are not utility commitments."
+  },
+  {
+    "record_id": "GA_DRI_4606",
+    "dri_id": "4606",
+    "county_fips": "13045",
+    "county_name": "Carroll County",
+    "project_name": "Project Bus",
+    "jurisdiction": "Temple",
+    "submitted_date": "2026-01-26",
+    "dri_status": "Withdrawn",
+    "local_permission_status": "not_established_by_DRI",
+    "regional_review_completed": false,
+    "active_reference": false,
+    "description": "Data Center 350.73 acres 12 buildings 2 substations",
+    "project_location": "Parcel# 102 0044, 102 0040, 102 0048, 102 0005",
+    "project_size": "12 buildings, 2 substations, 350.73 acres",
+    "developer": "Atlas Development, LLC",
+    "energy_provider": "",
+    "raw_peak_connected_load": "",
+    "peak_connected_load_mw": null,
+    "load_quality": "missing",
+    "applicant_infrastructure_response": "unanswered",
+    "infrastructure_expansion_plan": "",
+    "project_completion_text": "2036",
+    "source_ids": [
+      "dri_4606_InitialForm",
+      "dri_4606_AdditionalForm",
+      "dri_4606_AppSummary"
+    ],
+    "field_sources": {
+      "peak_connected_load_mw": {
+        "source_id": "dri_4606_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_EnergySupplyDemandLabel",
+        "raw_value": "",
+        "unit_from_question": "MW peak connected electrical load"
+      },
+      "applicant_infrastructure_response": {
+        "source_id": "dri_4606_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_rblEnergySupplyAvailable",
+        "extraction": "checked radio value, not all displayed option labels"
+      }
+    },
+    "note": "DRI Completed means regional review completed; it is not local permit approval, construction completion or energization. Applicant statements are not utility commitments."
+  },
+  {
+    "record_id": "GA_DRI_4603",
+    "dri_id": "4603",
+    "county_fips": "13113",
+    "county_name": "Fayette County",
+    "project_name": "ATL2 East",
+    "jurisdiction": "Fayetteville",
+    "submitted_date": "2026-01-13",
+    "dri_status": "Completed",
+    "local_permission_status": "not_established_by_DRI",
+    "regional_review_completed": true,
+    "active_reference": true,
+    "description": "The ATL2 East development consists of a 2M SF data center located west of Veterans Parkway on an approximately 313 acre site.",
+    "project_location": "33.45435337191984, -84.51676089318552",
+    "project_size": "2,000,000 SF",
+    "developer": "QTS Eastwood, LLC",
+    "energy_provider": "Georgia Power Company",
+    "raw_peak_connected_load": "TBD - dependent on customer usage. This informatio",
+    "peak_connected_load_mw": null,
+    "load_quality": "invalid_or_unresolved_unit",
+    "applicant_infrastructure_response": "yes",
+    "infrastructure_expansion_plan": "A new substation will be built on-site. New transmission lines on-site will serve the development.",
+    "project_completion_text": "2029",
+    "source_ids": [
+      "dri_4603_InitialForm",
+      "dri_4603_AdditionalForm",
+      "dri_4603_AppSummary"
+    ],
+    "field_sources": {
+      "peak_connected_load_mw": {
+        "source_id": "dri_4603_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_EnergySupplyDemandLabel",
+        "raw_value": "TBD - dependent on customer usage. This informatio",
+        "unit_from_question": "MW peak connected electrical load"
+      },
+      "applicant_infrastructure_response": {
+        "source_id": "dri_4603_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_rblEnergySupplyAvailable",
+        "extraction": "checked radio value, not all displayed option labels"
+      }
+    },
+    "note": "DRI Completed means regional review completed; it is not local permit approval, construction completion or energization. Applicant statements are not utility commitments."
+  },
+  {
+    "record_id": "GA_DRI_4602",
+    "dri_id": "4602",
+    "county_fips": "13189",
+    "county_name": "McDuffie County",
+    "project_name": "Project Azelea",
+    "jurisdiction": "unincorporated",
+    "submitted_date": "2026-01-10",
+    "dri_status": "Completed",
+    "local_permission_status": "not_established_by_DRI",
+    "regional_review_completed": true,
+    "active_reference": true,
+    "description": "Data center construction, consisting of 6 buildings",
+    "project_location": "33.453555, -82.399583 2660-2358 Randall Hunt Rd, Thomson, GA 30824",
+    "project_size": "200 acres",
+    "developer": "Camreon Grogan",
+    "energy_provider": "Jefferson Energy",
+    "raw_peak_connected_load": "400",
+    "peak_connected_load_mw": 400.0,
+    "load_quality": "declared_peak_connected_load",
+    "applicant_infrastructure_response": "no",
+    "infrastructure_expansion_plan": "Studies are ongoing with GA Power, Georgia Transmission Corporation, and the EMC to determine what upgrades, are necessary. Sufficient KV transmission lines are at the property and will not need to be added or expanded. The development will have its own substation and back-up generators.",
+    "project_completion_text": "2029",
+    "source_ids": [
+      "dri_4602_InitialForm",
+      "dri_4602_AdditionalForm",
+      "dri_4602_AppSummary"
+    ],
+    "field_sources": {
+      "peak_connected_load_mw": {
+        "source_id": "dri_4602_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_EnergySupplyDemandLabel",
+        "raw_value": "400",
+        "unit_from_question": "MW peak connected electrical load"
+      },
+      "applicant_infrastructure_response": {
+        "source_id": "dri_4602_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_rblEnergySupplyAvailable",
+        "extraction": "checked radio value, not all displayed option labels"
+      }
+    },
+    "note": "DRI Completed means regional review completed; it is not local permit approval, construction completion or energization. Applicant statements are not utility commitments."
+  },
+  {
+    "record_id": "GA_DRI_4599",
+    "dri_id": "4599",
+    "county_fips": "13255",
+    "county_name": "Spalding County",
+    "project_name": "Wallace Jackson Data Center Campus",
+    "jurisdiction": "unincorporated",
+    "submitted_date": "2026-01-06",
+    "dri_status": "Completed",
+    "local_permission_status": "not_established_by_DRI",
+    "regional_review_completed": true,
+    "active_reference": true,
+    "description": "Data Center Campus with 10 buildings and a total of 4,986,000 square feet",
+    "project_location": "Land Lots 25 & 40 of the 2nd District; 189.64 +/- acres",
+    "project_size": "10 buildings and a total of 4,986,000 square feet",
+    "developer": "Wallace Jackson, LLC c/o Steven L. Jones, McKagen Jones",
+    "energy_provider": "",
+    "raw_peak_connected_load": "",
+    "peak_connected_load_mw": null,
+    "load_quality": "missing",
+    "applicant_infrastructure_response": "unanswered",
+    "infrastructure_expansion_plan": "",
+    "project_completion_text": "",
+    "source_ids": [
+      "dri_4599_InitialForm",
+      "dri_4599_AdditionalForm",
+      "dri_4599_AppSummary"
+    ],
+    "field_sources": {
+      "peak_connected_load_mw": {
+        "source_id": "dri_4599_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_EnergySupplyDemandLabel",
+        "raw_value": "",
+        "unit_from_question": "MW peak connected electrical load"
+      },
+      "applicant_infrastructure_response": {
+        "source_id": "dri_4599_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_rblEnergySupplyAvailable",
+        "extraction": "checked radio value, not all displayed option labels"
+      }
+    },
+    "note": "DRI Completed means regional review completed; it is not local permit approval, construction completion or energization. Applicant statements are not utility commitments."
+  },
+  {
+    "record_id": "GA_DRI_4428",
+    "dri_id": "4428",
+    "county_fips": "13217",
+    "county_name": "Newton County",
+    "project_name": "Gregory Road Data Center",
+    "jurisdiction": "Covington",
+    "submitted_date": "2025-03-27",
+    "dri_status": "Completed",
+    "local_permission_status": "not_established_by_DRI",
+    "regional_review_completed": true,
+    "active_reference": true,
+    "description": "Data Center Campus occupying multiple buildings up to 1,410,000 square feet on approximately ±213.0 acres (with ± 307.50 acres of residential with approximately 27 lots for a total of ±520 acres) Project size: ±213.0 acres, 1,410,000 SF Industrial Data Center, and ± 307.50 acres with approx. 27 single-family estate lots shown on site plan with other proposed residential land vacant. If yes, property owner: Multiple ownership, including developer & others: JBW Investments, LLC; JF Land Investments, LLC; Tide Investments, LLC; FW Johansen Investments, LLC; James Moss, LLC; and John B. Williams & Alyce Toonk. A water line extension is not required to serve this property. Water service is currently available to the property along Gregory Rd. It is critical to note that this proposed development will require extensive relocation of an existing 30-inch water transmission main, located in the Gregory Rd right-of-way, that supplies water to the Cornish Mountain elevated water tank, northern and western Newton County, and a primary interconnect serving Walton County.",
+    "project_location": "-83° 48’ 58.1” W, 33° 39’ 09.2” N - center; 89, 161, 170, 301, 317, 319, 375, 378, 653, 657, & 665 G",
+    "project_size": "±213.0 acres, 1,410,000 SF Industrial Data Center, and ± 307.50 acres with approx. 27 single-family",
+    "developer": "John B. Williams",
+    "energy_provider": "",
+    "raw_peak_connected_load": "",
+    "peak_connected_load_mw": null,
+    "load_quality": "missing",
+    "applicant_infrastructure_response": "unanswered",
+    "infrastructure_expansion_plan": "",
+    "project_completion_text": "2027-2036",
+    "source_ids": [
+      "dri_4428_InitialForm",
+      "dri_4428_AdditionalForm",
+      "dri_4428_AppSummary"
+    ],
+    "field_sources": {
+      "peak_connected_load_mw": {
+        "source_id": "dri_4428_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_EnergySupplyDemandLabel",
+        "raw_value": "",
+        "unit_from_question": "MW peak connected electrical load"
+      },
+      "applicant_infrastructure_response": {
+        "source_id": "dri_4428_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_rblEnergySupplyAvailable",
+        "extraction": "checked radio value, not all displayed option labels"
+      }
+    },
+    "note": "DRI Completed means regional review completed; it is not local permit approval, construction completion or energization. Applicant statements are not utility commitments."
+  },
+  {
+    "record_id": "GA_DRI_4342",
+    "dri_id": "4342",
+    "county_fips": "13121",
+    "county_name": "Fulton County",
+    "project_name": "Stonewall Tell Data Center",
+    "jurisdiction": "South Fulton",
+    "submitted_date": "2024-12-06",
+    "dri_status": "Completed",
+    "local_permission_status": "not_established_by_DRI",
+    "regional_review_completed": true,
+    "active_reference": true,
+    "description": "New 1,902,000-square-foot data center development.",
+    "project_location": "Lat: 33.615125, Long: -84.552224 South of South Fulton Parkway and east of Stonewall Tell Road",
+    "project_size": "1,902,000 SF of data center use on approximately 59 acres.",
+    "developer": "RSC Investment Management LLC",
+    "energy_provider": "",
+    "raw_peak_connected_load": "",
+    "peak_connected_load_mw": null,
+    "load_quality": "missing",
+    "applicant_infrastructure_response": "unanswered",
+    "infrastructure_expansion_plan": "",
+    "project_completion_text": "2033",
+    "source_ids": [
+      "dri_4342_InitialForm",
+      "dri_4342_AdditionalForm",
+      "dri_4342_AppSummary"
+    ],
+    "field_sources": {
+      "peak_connected_load_mw": {
+        "source_id": "dri_4342_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_EnergySupplyDemandLabel",
+        "raw_value": "",
+        "unit_from_question": "MW peak connected electrical load"
+      },
+      "applicant_infrastructure_response": {
+        "source_id": "dri_4342_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_rblEnergySupplyAvailable",
+        "extraction": "checked radio value, not all displayed option labels"
+      }
+    },
+    "note": "DRI Completed means regional review completed; it is not local permit approval, construction completion or energization. Applicant statements are not utility commitments."
+  },
+  {
+    "record_id": "GA_DRI_4334",
+    "dri_id": "4334",
+    "county_fips": "13097",
+    "county_name": "Douglas County",
+    "project_name": "Stream Data Center",
+    "jurisdiction": "unincorporated",
+    "submitted_date": "2024-11-26",
+    "dri_status": "Completed",
+    "local_permission_status": "not_established_by_DRI",
+    "regional_review_completed": true,
+    "active_reference": true,
+    "description": "9 data center buildings with a total of 2,687,400 sq. ft., 2 substation areas, stormwater infrastructure, and an internal access road. Access is proposed to be from Jason Industrial Pkwy and N Baggett Rd.",
+    "project_location": "Land Lots: 0166, 0186, 0187, District: 02, Section: 5, Parcels: 01660250005 (0 Polk Rd), 01660250006",
+    "project_size": "9 data center buildings with a total of 2,687,400 sq. ft",
+    "developer": "SDC ATLA, LLC",
+    "energy_provider": "",
+    "raw_peak_connected_load": "",
+    "peak_connected_load_mw": null,
+    "load_quality": "missing",
+    "applicant_infrastructure_response": "unanswered",
+    "infrastructure_expansion_plan": "",
+    "project_completion_text": "Not Disclosed",
+    "source_ids": [
+      "dri_4334_InitialForm",
+      "dri_4334_AdditionalForm",
+      "dri_4334_AppSummary"
+    ],
+    "field_sources": {
+      "peak_connected_load_mw": {
+        "source_id": "dri_4334_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_EnergySupplyDemandLabel",
+        "raw_value": "",
+        "unit_from_question": "MW peak connected electrical load"
+      },
+      "applicant_infrastructure_response": {
+        "source_id": "dri_4334_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_rblEnergySupplyAvailable",
+        "extraction": "checked radio value, not all displayed option labels"
+      }
+    },
+    "note": "DRI Completed means regional review completed; it is not local permit approval, construction completion or energization. Applicant statements are not utility commitments."
+  },
+  {
+    "record_id": "GA_DRI_4329",
+    "dri_id": "4329",
+    "county_fips": "13297",
+    "county_name": "Walton County",
+    "project_name": "Data Center - 0 Social Circle Parkway",
+    "jurisdiction": "Social Circle",
+    "submitted_date": "2024-11-15",
+    "dri_status": "Completed",
+    "local_permission_status": "not_established_by_DRI",
+    "regional_review_completed": true,
+    "active_reference": true,
+    "description": "Data Center",
+    "project_location": "Tax Parcels C1520001, C1720027B00, C1720041, C15200010DP, SC220009A00",
+    "project_size": "1,786,832 sq ft",
+    "developer": "Sailfish Investors Acquisitions, LLC",
+    "energy_provider": "",
+    "raw_peak_connected_load": "",
+    "peak_connected_load_mw": null,
+    "load_quality": "missing",
+    "applicant_infrastructure_response": "unanswered",
+    "infrastructure_expansion_plan": "",
+    "project_completion_text": "January 2027",
+    "source_ids": [
+      "dri_4329_InitialForm",
+      "dri_4329_AdditionalForm",
+      "dri_4329_AppSummary"
+    ],
+    "field_sources": {
+      "peak_connected_load_mw": {
+        "source_id": "dri_4329_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_EnergySupplyDemandLabel",
+        "raw_value": "",
+        "unit_from_question": "MW peak connected electrical load"
+      },
+      "applicant_infrastructure_response": {
+        "source_id": "dri_4329_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_rblEnergySupplyAvailable",
+        "extraction": "checked radio value, not all displayed option labels"
+      }
+    },
+    "note": "DRI Completed means regional review completed; it is not local permit approval, construction completion or energization. Applicant statements are not utility commitments."
+  },
+  {
+    "record_id": "GA_DRI_4325",
+    "dri_id": "4325",
+    "county_fips": "13097",
+    "county_name": "Douglas County",
+    "project_name": "Lithia Springs Data Center",
+    "jurisdiction": "unincorporated",
+    "submitted_date": "2024-11-08",
+    "dri_status": "Withdrawn",
+    "local_permission_status": "not_established_by_DRI",
+    "regional_review_completed": false,
+    "active_reference": false,
+    "description": "Expansion of previously reviewed DRI 4087; addition of 1, two-story data center, 98,015 sq. ft./floor (196,030 sq. ft. total), addition of 1, two-story data center, 113,630 sq. ft./floor (227,260 sq. ft. total), addition of a substation and two water storage tank areas",
+    "project_location": "Land Lots 0706, 0707, District 18, Section 2, being parcels: 0706-182-0010, 0706-182-0011, 0707-182-",
+    "project_size": "Two data center buildings, one 196,030 sq. ft. & one 227,260 sq. ft. for a total of 423,290 sq. ft.,",
+    "developer": "SAC III Acquisition Co., LLC",
+    "energy_provider": "",
+    "raw_peak_connected_load": "",
+    "peak_connected_load_mw": null,
+    "load_quality": "missing",
+    "applicant_infrastructure_response": "unanswered",
+    "infrastructure_expansion_plan": "",
+    "project_completion_text": "Not Disclosed; Previous Phase May 2026",
+    "source_ids": [
+      "dri_4325_InitialForm",
+      "dri_4325_AdditionalForm",
+      "dri_4325_AppSummary"
+    ],
+    "field_sources": {
+      "peak_connected_load_mw": {
+        "source_id": "dri_4325_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_EnergySupplyDemandLabel",
+        "raw_value": "",
+        "unit_from_question": "MW peak connected electrical load"
+      },
+      "applicant_infrastructure_response": {
+        "source_id": "dri_4325_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_rblEnergySupplyAvailable",
+        "extraction": "checked radio value, not all displayed option labels"
+      }
+    },
+    "note": "DRI Completed means regional review completed; it is not local permit approval, construction completion or energization. Applicant statements are not utility commitments."
+  },
+  {
+    "record_id": "GA_DRI_4326",
+    "dri_id": "4326",
+    "county_fips": "13097",
+    "county_name": "Douglas County",
+    "project_name": "Lithia Springs Data Center",
+    "jurisdiction": "unincorporated",
+    "submitted_date": "2024-11-08",
+    "dri_status": "Completed",
+    "local_permission_status": "not_established_by_DRI",
+    "regional_review_completed": true,
+    "active_reference": true,
+    "description": "Expansion of previously reviewed DRI 4087; addition of 1, two-story data center, 98,015 sq. ft./floor (196,030 sq. ft. total), addition of 1, two-story data center, 113,630 sq. ft./floor (227,260 sq. ft. total), addition of a substation and two water storage tank areas",
+    "project_location": "Land Lots 0706, 0707, District 18, Section 2, being parcels: 0706-182-0010, 0706-182-0011, 0707-182-",
+    "project_size": "Two data center buildings, one 196,030 sq. ft. & one 227,260 sq. ft. for a total of 423,290 sq. ft.,",
+    "developer": "SAC III Acquisition Co., LLC",
+    "energy_provider": "",
+    "raw_peak_connected_load": "",
+    "peak_connected_load_mw": null,
+    "load_quality": "missing",
+    "applicant_infrastructure_response": "unanswered",
+    "infrastructure_expansion_plan": "",
+    "project_completion_text": "Not Disclosed; Previous Phase May 2026",
+    "source_ids": [
+      "dri_4326_InitialForm",
+      "dri_4326_AdditionalForm",
+      "dri_4326_AppSummary"
+    ],
+    "field_sources": {
+      "peak_connected_load_mw": {
+        "source_id": "dri_4326_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_EnergySupplyDemandLabel",
+        "raw_value": "",
+        "unit_from_question": "MW peak connected electrical load"
+      },
+      "applicant_infrastructure_response": {
+        "source_id": "dri_4326_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_rblEnergySupplyAvailable",
+        "extraction": "checked radio value, not all displayed option labels"
+      }
+    },
+    "note": "DRI Completed means regional review completed; it is not local permit approval, construction completion or energization. Applicant statements are not utility commitments."
+  },
+  {
+    "record_id": "GA_DRI_4256",
+    "dri_id": "4256",
+    "county_fips": "13121",
+    "county_name": "Fulton County",
+    "project_name": "Vantage Data Center - Westlake",
+    "jurisdiction": "South Fulton",
+    "submitted_date": "2024-08-13",
+    "dri_status": "Completed",
+    "local_permission_status": "not_established_by_DRI",
+    "regional_review_completed": true,
+    "active_reference": true,
+    "description": "The development is planned to be a 754,221 S.F. Data Center facility. The development is planned to be located on the undeveloped land to west of Plummer Rd, east of the existing Quaker facility, and north of Riverside Dr in South Fulton, Ga.",
+    "project_location": "33° 42'29.95\"N 84° 35'4.42\"W",
+    "project_size": "754,221 sf",
+    "developer": "Vantage Data Centers",
+    "energy_provider": "",
+    "raw_peak_connected_load": "",
+    "peak_connected_load_mw": null,
+    "load_quality": "missing",
+    "applicant_infrastructure_response": "unanswered",
+    "infrastructure_expansion_plan": "",
+    "project_completion_text": "Jan 2028",
+    "source_ids": [
+      "dri_4256_InitialForm",
+      "dri_4256_AdditionalForm",
+      "dri_4256_AppSummary"
+    ],
+    "field_sources": {
+      "peak_connected_load_mw": {
+        "source_id": "dri_4256_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_EnergySupplyDemandLabel",
+        "raw_value": "",
+        "unit_from_question": "MW peak connected electrical load"
+      },
+      "applicant_infrastructure_response": {
+        "source_id": "dri_4256_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_rblEnergySupplyAvailable",
+        "extraction": "checked radio value, not all displayed option labels"
+      }
+    },
+    "note": "DRI Completed means regional review completed; it is not local permit approval, construction completion or energization. Applicant statements are not utility commitments."
+  },
+  {
+    "record_id": "GA_DRI_4257",
+    "dri_id": "4257",
+    "county_fips": "13121",
+    "county_name": "Fulton County",
+    "project_name": "Vantage Data Center - Stacks Rd",
+    "jurisdiction": "South Fulton",
+    "submitted_date": "2024-08-13",
+    "dri_status": "Completed",
+    "local_permission_status": "not_established_by_DRI",
+    "regional_review_completed": true,
+    "active_reference": true,
+    "description": "The development is planned to be a 696,981 S.F. Data Center Facility. The development is planned to be located on undeveloped land (in the southwest quadrant of the intersection of Stacks Rd and Mallory Rd, just north of the CSX Railroad.",
+    "project_location": "33° 36' 20.52\" N 84° 31' 51.2\" W",
+    "project_size": "696,981 sf",
+    "developer": "Vantage Data Centers",
+    "energy_provider": "",
+    "raw_peak_connected_load": "",
+    "peak_connected_load_mw": null,
+    "load_quality": "missing",
+    "applicant_infrastructure_response": "unanswered",
+    "infrastructure_expansion_plan": "",
+    "project_completion_text": "Jan 2027",
+    "source_ids": [
+      "dri_4257_InitialForm",
+      "dri_4257_AdditionalForm",
+      "dri_4257_AppSummary"
+    ],
+    "field_sources": {
+      "peak_connected_load_mw": {
+        "source_id": "dri_4257_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_EnergySupplyDemandLabel",
+        "raw_value": "",
+        "unit_from_question": "MW peak connected electrical load"
+      },
+      "applicant_infrastructure_response": {
+        "source_id": "dri_4257_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_rblEnergySupplyAvailable",
+        "extraction": "checked radio value, not all displayed option labels"
+      }
+    },
+    "note": "DRI Completed means regional review completed; it is not local permit approval, construction completion or energization. Applicant statements are not utility commitments."
+  },
+  {
+    "record_id": "GA_DRI_4222",
+    "dri_id": "4222",
+    "county_fips": "13121",
+    "county_name": "Fulton County",
+    "project_name": "T5 Data Center",
+    "jurisdiction": "Fairburn",
+    "submitted_date": "2024-06-11",
+    "dri_status": "Withdrawn",
+    "local_permission_status": "not_established_by_DRI",
+    "regional_review_completed": false,
+    "active_reference": false,
+    "description": "2 data center buildings",
+    "project_location": "07 380001570168 07 290001560467 07 380001570200",
+    "project_size": "495,000 square feet, 2 buildings, 2 stories",
+    "developer": "T5 Data Centers",
+    "energy_provider": "",
+    "raw_peak_connected_load": "",
+    "peak_connected_load_mw": null,
+    "load_quality": "missing",
+    "applicant_infrastructure_response": "unanswered",
+    "infrastructure_expansion_plan": "",
+    "project_completion_text": "",
+    "source_ids": [
+      "dri_4222_InitialForm",
+      "dri_4222_AdditionalForm",
+      "dri_4222_AppSummary"
+    ],
+    "field_sources": {
+      "peak_connected_load_mw": {
+        "source_id": "dri_4222_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_EnergySupplyDemandLabel",
+        "raw_value": "",
+        "unit_from_question": "MW peak connected electrical load"
+      },
+      "applicant_infrastructure_response": {
+        "source_id": "dri_4222_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_rblEnergySupplyAvailable",
+        "extraction": "checked radio value, not all displayed option labels"
+      }
+    },
+    "note": "DRI Completed means regional review completed; it is not local permit approval, construction completion or energization. Applicant statements are not utility commitments."
+  },
+  {
+    "record_id": "GA_DRI_4120",
+    "dri_id": "4120",
+    "county_fips": "13247",
+    "county_name": "Rockdale County",
+    "project_name": "DC Blox - ATL East Data Center",
+    "jurisdiction": "unincorporated",
+    "submitted_date": "2024-01-17",
+    "dri_status": "Completed",
+    "local_permission_status": "not_established_by_DRI",
+    "regional_review_completed": true,
+    "active_reference": true,
+    "description": "The project includes three industrial data center buildings with a combined 1,016,828 SF of space, equipment yards, parking, and substation",
+    "project_location": "1726 Farmer Road NW, Conyers GA 30012",
+    "project_size": "1,016,828 SF gross square footage (SF)",
+    "developer": "DC Blox",
+    "energy_provider": "",
+    "raw_peak_connected_load": "",
+    "peak_connected_load_mw": null,
+    "load_quality": "missing",
+    "applicant_infrastructure_response": "unanswered",
+    "infrastructure_expansion_plan": "",
+    "project_completion_text": "2026",
+    "source_ids": [
+      "dri_4120_InitialForm",
+      "dri_4120_AdditionalForm",
+      "dri_4120_AppSummary"
+    ],
+    "field_sources": {
+      "peak_connected_load_mw": {
+        "source_id": "dri_4120_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_EnergySupplyDemandLabel",
+        "raw_value": "",
+        "unit_from_question": "MW peak connected electrical load"
+      },
+      "applicant_infrastructure_response": {
+        "source_id": "dri_4120_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_rblEnergySupplyAvailable",
+        "extraction": "checked radio value, not all displayed option labels"
+      }
+    },
+    "note": "DRI Completed means regional review completed; it is not local permit approval, construction completion or energization. Applicant statements are not utility commitments."
+  },
+  {
+    "record_id": "GA_DRI_4111",
+    "dri_id": "4111",
+    "county_fips": "13097",
+    "county_name": "Douglas County",
+    "project_name": "DC Blox- ATL West Data Center",
+    "jurisdiction": "Douglasville",
+    "submitted_date": "2023-12-08",
+    "dri_status": "Withdrawn",
+    "local_permission_status": "not_established_by_DRI",
+    "regional_review_completed": false,
+    "active_reference": false,
+    "description": "Project includes two industrial data center buildings with a combined 761,852 SF of space, equipment, yards, parking and substation.",
+    "project_location": "1701 North River Rd, Douglasville GA 30122",
+    "project_size": "761,852 Gross Square Feet",
+    "developer": "DC Blox",
+    "energy_provider": "",
+    "raw_peak_connected_load": "",
+    "peak_connected_load_mw": null,
+    "load_quality": "missing",
+    "applicant_infrastructure_response": "unanswered",
+    "infrastructure_expansion_plan": "",
+    "project_completion_text": "2026",
+    "source_ids": [
+      "dri_4111_InitialForm",
+      "dri_4111_AdditionalForm",
+      "dri_4111_AppSummary"
+    ],
+    "field_sources": {
+      "peak_connected_load_mw": {
+        "source_id": "dri_4111_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_EnergySupplyDemandLabel",
+        "raw_value": "",
+        "unit_from_question": "MW peak connected electrical load"
+      },
+      "applicant_infrastructure_response": {
+        "source_id": "dri_4111_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_rblEnergySupplyAvailable",
+        "extraction": "checked radio value, not all displayed option labels"
+      }
+    },
+    "note": "DRI Completed means regional review completed; it is not local permit approval, construction completion or energization. Applicant statements are not utility commitments."
+  },
+  {
+    "record_id": "GA_DRI_4112",
+    "dri_id": "4112",
+    "county_fips": "13097",
+    "county_name": "Douglas County",
+    "project_name": "DC Blox- ATL West Data Center",
+    "jurisdiction": "Douglasville",
+    "submitted_date": "2023-12-08",
+    "dri_status": "Completed",
+    "local_permission_status": "not_established_by_DRI",
+    "regional_review_completed": true,
+    "active_reference": true,
+    "description": "Project includes two industrial data center buildings with a combined 761,852 SF of space, equipment, yards, parking and substation.",
+    "project_location": "1701 North River Rd, Douglasville GA 30122",
+    "project_size": "761,852 Gross Square Feet",
+    "developer": "DC Blox",
+    "energy_provider": "",
+    "raw_peak_connected_load": "",
+    "peak_connected_load_mw": null,
+    "load_quality": "missing",
+    "applicant_infrastructure_response": "unanswered",
+    "infrastructure_expansion_plan": "",
+    "project_completion_text": "2026",
+    "source_ids": [
+      "dri_4112_InitialForm",
+      "dri_4112_AdditionalForm",
+      "dri_4112_AppSummary"
+    ],
+    "field_sources": {
+      "peak_connected_load_mw": {
+        "source_id": "dri_4112_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_EnergySupplyDemandLabel",
+        "raw_value": "",
+        "unit_from_question": "MW peak connected electrical load"
+      },
+      "applicant_infrastructure_response": {
+        "source_id": "dri_4112_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_rblEnergySupplyAvailable",
+        "extraction": "checked radio value, not all displayed option labels"
+      }
+    },
+    "note": "DRI Completed means regional review completed; it is not local permit approval, construction completion or energization. Applicant statements are not utility commitments."
+  },
+  {
+    "record_id": "GA_DRI_4087",
+    "dri_id": "4087",
+    "county_fips": "13097",
+    "county_name": "Douglas County",
+    "project_name": "Lithia Springs Data Center",
+    "jurisdiction": "unincorporated",
+    "submitted_date": "2023-10-12",
+    "dri_status": "Completed",
+    "local_permission_status": "not_established_by_DRI",
+    "regional_review_completed": true,
+    "active_reference": true,
+    "description": "Construction of two - three-story data center buildings, each having a +/- 146,481 SF footprint, with a total square footage for both building of 878,886 SF",
+    "project_location": "808 Factory Shoals Rd., Lithia Springs, GA 30122",
+    "project_size": "900,000 SF",
+    "developer": "SI ATL02A, LLC (c/o Stack Infrastructure) c/o Bohler Engineering",
+    "energy_provider": "",
+    "raw_peak_connected_load": "",
+    "peak_connected_load_mw": null,
+    "load_quality": "missing",
+    "applicant_infrastructure_response": "unanswered",
+    "infrastructure_expansion_plan": "",
+    "project_completion_text": "May 2026",
+    "source_ids": [
+      "dri_4087_InitialForm",
+      "dri_4087_AdditionalForm",
+      "dri_4087_AppSummary"
+    ],
+    "field_sources": {
+      "peak_connected_load_mw": {
+        "source_id": "dri_4087_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_EnergySupplyDemandLabel",
+        "raw_value": "",
+        "unit_from_question": "MW peak connected electrical load"
+      },
+      "applicant_infrastructure_response": {
+        "source_id": "dri_4087_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_rblEnergySupplyAvailable",
+        "extraction": "checked radio value, not all displayed option labels"
+      }
+    },
+    "note": "DRI Completed means regional review completed; it is not local permit approval, construction completion or energization. Applicant statements are not utility commitments."
+  },
+  {
+    "record_id": "GA_DRI_4079",
+    "dri_id": "4079",
+    "county_fips": "13077",
+    "county_name": "Coweta County",
+    "project_name": "T5 - ATL IV Data Center",
+    "jurisdiction": "unincorporated",
+    "submitted_date": "2023-09-28",
+    "dri_status": "Completed",
+    "local_permission_status": "not_established_by_DRI",
+    "regional_review_completed": true,
+    "active_reference": true,
+    "description": "Proposed 2,950,000 SF of Data Center space on an approximately 200-acre site.",
+    "project_location": "Lat 33.492702° N, Long 84.661315° W. South of Weldon Road and east of Palmetto Tyrone Road",
+    "project_size": "2,950,000 SF of Data Center space in seven (7) buildings",
+    "developer": "T5@Atlanta IV, LP",
+    "energy_provider": "",
+    "raw_peak_connected_load": "",
+    "peak_connected_load_mw": null,
+    "load_quality": "missing",
+    "applicant_infrastructure_response": "unanswered",
+    "infrastructure_expansion_plan": "",
+    "project_completion_text": "2030",
+    "source_ids": [
+      "dri_4079_InitialForm",
+      "dri_4079_AdditionalForm",
+      "dri_4079_AppSummary"
+    ],
+    "field_sources": {
+      "peak_connected_load_mw": {
+        "source_id": "dri_4079_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_EnergySupplyDemandLabel",
+        "raw_value": "",
+        "unit_from_question": "MW peak connected electrical load"
+      },
+      "applicant_infrastructure_response": {
+        "source_id": "dri_4079_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_rblEnergySupplyAvailable",
+        "extraction": "checked radio value, not all displayed option labels"
+      }
+    },
+    "note": "DRI Completed means regional review completed; it is not local permit approval, construction completion or energization. Applicant statements are not utility commitments."
+  },
+  {
+    "record_id": "GA_DRI_4078",
+    "dri_id": "4078",
+    "county_fips": "13097",
+    "county_name": "Douglas County",
+    "project_name": "Rock House Road Data Center Site",
+    "jurisdiction": "unincorporated",
+    "submitted_date": "2023-09-27",
+    "dri_status": "Completed",
+    "local_permission_status": "not_established_by_DRI",
+    "regional_review_completed": true,
+    "active_reference": true,
+    "description": "Data Center space with four buildings comprising 1,465,000 square feet and an electrical sub-station accessory facility",
+    "project_location": "1971 Rock House Road, Lithia Springs, GA (Douglas County)",
+    "project_size": "1,465,000 SF of data center space in four buildings",
+    "developer": "Taylor Mathis / c/o Mike Irby",
+    "energy_provider": "",
+    "raw_peak_connected_load": "",
+    "peak_connected_load_mw": null,
+    "load_quality": "missing",
+    "applicant_infrastructure_response": "unanswered",
+    "infrastructure_expansion_plan": "",
+    "project_completion_text": "2028",
+    "source_ids": [
+      "dri_4078_InitialForm",
+      "dri_4078_AdditionalForm",
+      "dri_4078_AppSummary"
+    ],
+    "field_sources": {
+      "peak_connected_load_mw": {
+        "source_id": "dri_4078_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_EnergySupplyDemandLabel",
+        "raw_value": "",
+        "unit_from_question": "MW peak connected electrical load"
+      },
+      "applicant_infrastructure_response": {
+        "source_id": "dri_4078_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_rblEnergySupplyAvailable",
+        "extraction": "checked radio value, not all displayed option labels"
+      }
+    },
+    "note": "DRI Completed means regional review completed; it is not local permit approval, construction completion or energization. Applicant statements are not utility commitments."
+  },
+  {
+    "record_id": "GA_DRI_4051",
+    "dri_id": "4051",
+    "county_fips": "13097",
+    "county_name": "Douglas County",
+    "project_name": "Vantage Data Center",
+    "jurisdiction": "Douglasville",
+    "submitted_date": "2023-08-15",
+    "dri_status": "Completed",
+    "local_permission_status": "not_established_by_DRI",
+    "regional_review_completed": true,
+    "active_reference": true,
+    "description": "Construction of a data center with two buildings at 402,000 square feet, 595,000 square feet, and 660,000 square feet.",
+    "project_location": "01690150004",
+    "project_size": "1,657,000 square feet across 3 buildings.",
+    "developer": "Vantage Data Center Management Company",
+    "energy_provider": "",
+    "raw_peak_connected_load": "",
+    "peak_connected_load_mw": null,
+    "load_quality": "missing",
+    "applicant_infrastructure_response": "unanswered",
+    "infrastructure_expansion_plan": "",
+    "project_completion_text": "December 2025",
+    "source_ids": [
+      "dri_4051_InitialForm",
+      "dri_4051_AdditionalForm",
+      "dri_4051_AppSummary"
+    ],
+    "field_sources": {
+      "peak_connected_load_mw": {
+        "source_id": "dri_4051_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_EnergySupplyDemandLabel",
+        "raw_value": "",
+        "unit_from_question": "MW peak connected electrical load"
+      },
+      "applicant_infrastructure_response": {
+        "source_id": "dri_4051_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_rblEnergySupplyAvailable",
+        "extraction": "checked radio value, not all displayed option labels"
+      }
+    },
+    "note": "DRI Completed means regional review completed; it is not local permit approval, construction completion or energization. Applicant statements are not utility commitments."
+  },
+  {
+    "record_id": "GA_DRI_3747",
+    "dri_id": "3747",
+    "county_fips": "13097",
+    "county_name": "Douglas County",
+    "project_name": "T5 - ATL III Data Center",
+    "jurisdiction": "unincorporated",
+    "submitted_date": "2022-06-24",
+    "dri_status": "Completed",
+    "local_permission_status": "not_established_by_DRI",
+    "regional_review_completed": true,
+    "active_reference": true,
+    "description": "Proposing four 2-sory data center buildings with supporting access and utility infrastructure comprising 1.6 million square feet",
+    "project_location": "Lat 33 degree45'38.87\"N, Long 84 degrees36'17.11\"W. An 80 acre tract bounded by Douglas Hill Rd to",
+    "project_size": "Four 2-story data center buildings comprising 1.6 million square feet",
+    "developer": "T5 Data Centers",
+    "energy_provider": "",
+    "raw_peak_connected_load": "",
+    "peak_connected_load_mw": null,
+    "load_quality": "missing",
+    "applicant_infrastructure_response": "unanswered",
+    "infrastructure_expansion_plan": "",
+    "project_completion_text": "October 2025",
+    "source_ids": [
+      "dri_3747_InitialForm",
+      "dri_3747_AdditionalForm",
+      "dri_3747_AppSummary"
+    ],
+    "field_sources": {
+      "peak_connected_load_mw": {
+        "source_id": "dri_3747_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_EnergySupplyDemandLabel",
+        "raw_value": "",
+        "unit_from_question": "MW peak connected electrical load"
+      },
+      "applicant_infrastructure_response": {
+        "source_id": "dri_3747_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_rblEnergySupplyAvailable",
+        "extraction": "checked radio value, not all displayed option labels"
+      }
+    },
+    "note": "DRI Completed means regional review completed; it is not local permit approval, construction completion or energization. Applicant statements are not utility commitments."
+  },
+  {
+    "record_id": "GA_DRI_3576",
+    "dri_id": "3576",
+    "county_fips": "13121",
+    "county_name": "Fulton County",
+    "project_name": "Microsoft Data Center Palmetto",
+    "jurisdiction": "Palmetto",
+    "submitted_date": "2022-01-13",
+    "dri_status": "Completed",
+    "local_permission_status": "not_established_by_DRI",
+    "regional_review_completed": true,
+    "active_reference": true,
+    "description": "Site clearing and grading in preparation for a future Microsoft Data Center.",
+    "project_location": "0 Williams Road, TMS 07-380001320770, 84.6282W 33.5241N",
+    "project_size": "116 Disturbed Acres",
+    "developer": "Microsoft Corporation",
+    "energy_provider": "",
+    "raw_peak_connected_load": "",
+    "peak_connected_load_mw": null,
+    "load_quality": "missing",
+    "applicant_infrastructure_response": "unanswered",
+    "infrastructure_expansion_plan": "",
+    "project_completion_text": "2028",
+    "source_ids": [
+      "dri_3576_InitialForm",
+      "dri_3576_AdditionalForm",
+      "dri_3576_AppSummary"
+    ],
+    "field_sources": {
+      "peak_connected_load_mw": {
+        "source_id": "dri_3576_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_EnergySupplyDemandLabel",
+        "raw_value": "",
+        "unit_from_question": "MW peak connected electrical load"
+      },
+      "applicant_infrastructure_response": {
+        "source_id": "dri_3576_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_rblEnergySupplyAvailable",
+        "extraction": "checked radio value, not all displayed option labels"
+      }
+    },
+    "note": "DRI Completed means regional review completed; it is not local permit approval, construction completion or energization. Applicant statements are not utility commitments."
+  },
+  {
+    "record_id": "GA_DRI_3463",
+    "dri_id": "3463",
+    "county_fips": "13121",
+    "county_name": "Fulton County",
+    "project_name": "Microsoft CCO06 Data Center",
+    "jurisdiction": "Palmetto",
+    "submitted_date": "2021-09-09",
+    "dri_status": "Terminated",
+    "local_permission_status": "not_established_by_DRI",
+    "regional_review_completed": false,
+    "active_reference": false,
+    "description": "Site Clearing and grading in preparation for a future Microsoft Data Center.",
+    "project_location": "0 Williams Road, TMS 07-380001320770, 84.6282W 33.5241N Site entrance is planned for Tatum Road and",
+    "project_size": "116 Disturbed Acres",
+    "developer": "Microsoft Corporation",
+    "energy_provider": "",
+    "raw_peak_connected_load": "",
+    "peak_connected_load_mw": null,
+    "load_quality": "missing",
+    "applicant_infrastructure_response": "unanswered",
+    "infrastructure_expansion_plan": "",
+    "project_completion_text": "2023",
+    "source_ids": [
+      "dri_3463_InitialForm",
+      "dri_3463_AdditionalForm",
+      "dri_3463_AppSummary"
+    ],
+    "field_sources": {
+      "peak_connected_load_mw": {
+        "source_id": "dri_3463_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_EnergySupplyDemandLabel",
+        "raw_value": "",
+        "unit_from_question": "MW peak connected electrical load"
+      },
+      "applicant_infrastructure_response": {
+        "source_id": "dri_3463_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_rblEnergySupplyAvailable",
+        "extraction": "checked radio value, not all displayed option labels"
+      }
+    },
+    "note": "DRI Completed means regional review completed; it is not local permit approval, construction completion or energization. Applicant statements are not utility commitments."
+  },
+  {
+    "record_id": "GA_DRI_3160",
+    "dri_id": "3160",
+    "county_fips": "13113",
+    "county_name": "Fayette County",
+    "project_name": "Southeast Data Center campus",
+    "jurisdiction": "Fayetteville",
+    "submitted_date": "2020-09-16",
+    "dri_status": "Completed",
+    "local_permission_status": "not_established_by_DRI",
+    "regional_review_completed": true,
+    "active_reference": true,
+    "description": "Data center-focused technology park creating an environment that combines hyperscale, corporate and industrial campus attributes while blending in with surrounding developments.",
+    "project_location": "W HWY 54 (Parcel #0704 008)",
+    "project_size": "+/- 1,000,000 SF/ 122.7 acres",
+    "developer": "Oceanic Data Centers, LLC",
+    "energy_provider": "",
+    "raw_peak_connected_load": "",
+    "peak_connected_load_mw": null,
+    "load_quality": "missing",
+    "applicant_infrastructure_response": "unanswered",
+    "infrastructure_expansion_plan": "",
+    "project_completion_text": "2030",
+    "source_ids": [
+      "dri_3160_InitialForm",
+      "dri_3160_AdditionalForm",
+      "dri_3160_AppSummary"
+    ],
+    "field_sources": {
+      "peak_connected_load_mw": {
+        "source_id": "dri_3160_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_EnergySupplyDemandLabel",
+        "raw_value": "",
+        "unit_from_question": "MW peak connected electrical load"
+      },
+      "applicant_infrastructure_response": {
+        "source_id": "dri_3160_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_rblEnergySupplyAvailable",
+        "extraction": "checked radio value, not all displayed option labels"
+      }
+    },
+    "note": "DRI Completed means regional review completed; it is not local permit approval, construction completion or energization. Applicant statements are not utility commitments."
+  },
+  {
+    "record_id": "GA_DRI_4198",
+    "dri_id": "4198",
+    "county_fips": "13151",
+    "county_name": "Henry County",
+    "project_name": "0 Rocky Creek",
+    "jurisdiction": "unincorporated",
+    "submitted_date": "2024-05-03",
+    "dri_status": "Completed",
+    "local_permission_status": "not_established_by_DRI",
+    "regional_review_completed": true,
+    "active_reference": true,
+    "description": "1,253,752 sq ft Data Center",
+    "project_location": "SE intersection of Rocky Creek Road and GA Highway 20 W",
+    "project_size": "1,253,752 square feet",
+    "developer": "Red Wolf DCD Properties, LLC",
+    "energy_provider": "",
+    "raw_peak_connected_load": "",
+    "peak_connected_load_mw": null,
+    "load_quality": "missing",
+    "applicant_infrastructure_response": "unanswered",
+    "infrastructure_expansion_plan": "",
+    "project_completion_text": "",
+    "source_ids": [
+      "dri_4198_InitialForm",
+      "dri_4198_AdditionalForm",
+      "dri_4198_AppSummary"
+    ],
+    "field_sources": {
+      "peak_connected_load_mw": {
+        "source_id": "dri_4198_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_EnergySupplyDemandLabel",
+        "raw_value": "",
+        "unit_from_question": "MW peak connected electrical load"
+      },
+      "applicant_infrastructure_response": {
+        "source_id": "dri_4198_AdditionalForm",
+        "html_element_id": "MainBodyContent_fvFormAdditional_rblEnergySupplyAvailable",
+        "extraction": "checked radio value, not all displayed option labels"
+      }
+    },
+    "note": "DRI Completed means regional review completed; it is not local permit approval, construction completion or energization. Applicant statements are not utility commitments."
+  }
+]

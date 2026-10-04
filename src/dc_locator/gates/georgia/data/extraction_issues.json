@@ -1,0 +1,14 @@
+[
+  {
+    "record_id": "GA_DRI_4835",
+    "field": "peak_connected_load_mw",
+    "reason": "invalid_or_unresolved_unit",
+    "raw_value": "Approximately 150 Megawatts per day"
+  },
+  {
+    "record_id": "GA_DRI_4603",
+    "field": "peak_connected_load_mw",
+    "reason": "invalid_or_unresolved_unit",
+    "raw_value": "TBD - dependent on customer usage. This informatio"
+  }
+]

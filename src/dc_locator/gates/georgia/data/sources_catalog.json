@@ -1,0 +1,1226 @@
+{
+  "arc_rocky_creek": {
+    "source_id": "arc_rocky_creek",
+    "url": "https://documents.atlantaregional.com/Land%20Use/Reviews/ID5445/2024%200%20Rocky%20Creek%20DRI%204198%20-%20Preliminary%20Report%20and%20Comments%20Request.pdf",
+    "retrieved_at": "2026-10-04T04:20:23.067651+00:00",
+    "status": "downloaded",
+    "path": "raw/arc_rocky_creek.pdf",
+    "bytes": 20291122,
+    "sha256": "47903788f90ce0f6e27af9e44649edbfcf92d5a8972fb11789df33dbec8a88a3"
+  },
+  "arc_stonewall": {
+    "source_id": "arc_stonewall",
+    "url": "https://documents.atlantaregional.com/Land%20Use/Reviews/ID5486/2025%20Stonewall%20Tell%20Data%20Center%20DRI%204342%20-%20Final%20Report.pdf",
+    "retrieved_at": "2026-10-04T04:20:20.764682+00:00",
+    "status": "downloaded",
+    "path": "raw/arc_stonewall.pdf",
+    "bytes": 7241739,
+    "sha256": "0414957bbcf38464c213e9aa2dd2714f55d8e53e890021a730761144f824b4c8"
+  },
+  "arc_vantage": {
+    "source_id": "arc_vantage",
+    "url": "https://documents.atlantaregional.com/Land%20Use/Reviews/ID5353/2023%20Vantage%20Data%20Center%20DRI%204051%20-%20Final%20Report.pdf",
+    "retrieved_at": "2026-10-04T04:20:18.703179+00:00",
+    "status": "downloaded",
+    "path": "raw/arc_vantage.pdf",
+    "bytes": 9367144,
+    "sha256": "29b36af4f184e4902a19850421310fd89d830a4543aad7f50eaf5fdb6d3e325a"
+  },
+  "dca_faq": {
+    "source_id": "dca_faq",
+    "url": "https://dca.georgia.gov/developments-regional-impact-dri-faqs",
+    "retrieved_at": "2026-10-04T04:20:17.416300+00:00",
+    "status": "downloaded",
+    "path": "raw/dca_faq.html",
+    "bytes": 110967,
+    "sha256": "d5fe1822b62739b04ea6d833914a515589f98a2675914fb464c24075a45165c5"
+  },
+  "dca_home": {
+    "source_id": "dca_home",
+    "url": "https://apps.dca.ga.gov/DRI/",
+    "retrieved_at": "2026-10-04T04:20:23.114674+00:00",
+    "status": "downloaded",
+    "path": "raw/dca_home.html",
+    "bytes": 9935,
+    "sha256": "d34a4b12347efa72e6c0c0f3a89c12d5739ec2c84a225269766378b2bd991bfc"
+  },
+  "dca_submissions": {
+    "source_id": "dca_submissions",
+    "url": "https://apps.dca.ga.gov/DRI/Submissions.aspx",
+    "retrieved_at": "2026-10-04T04:20:23.113263+00:00",
+    "status": "downloaded",
+    "path": "raw/dca_submissions.html",
+    "bytes": 2292676,
+    "sha256": "646f20bf4ade24d92298f0fcdbe8cb4264b4469887328d65d3654e5016747e8c"
+  },
+  "douglas_planning": {
+    "source_id": "douglas_planning",
+    "url": "https://www.douglascountyga.gov/287/Planning-Zoning",
+    "retrieved_at": "2026-10-04T04:20:18.976183+00:00",
+    "status": "downloaded",
+    "path": "raw/douglas_planning.html",
+    "bytes": 113653,
+    "sha256": "23bd971aec2cb06c0d199721130e22db2e44dbe0e35b9eb478f3d3ae845129e3"
+  },
+  "douglas_zoning_2024": {
+    "source_id": "douglas_zoning_2024",
+    "url": "https://www.douglascountyga.gov/DocumentCenter/View/11134/DRAFT-10-1-2024-Zoning-Agenda?bidId=",
+    "retrieved_at": "2026-10-04T04:20:17.828304+00:00",
+    "status": "downloaded",
+    "path": "raw/douglas_zoning_2024.pdf",
+    "bytes": 101020,
+    "sha256": "a61a1e32a7f8218091f0c055dbc43d7abb7520d7125756ea6c532e906a210411"
+  },
+  "dri_3160_AdditionalForm": {
+    "source_id": "dri_3160_AdditionalForm",
+    "url": "https://apps.dca.ga.gov/DRI/AdditionalForm.aspx?driid=3160",
+    "retrieved_at": "2026-10-04T04:20:19.084980+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_3160_AdditionalForm.html",
+    "bytes": 69532,
+    "sha256": "ff102a1c63fc71c4e91648b38d1ca8a6b8ba1d3643ac99d183107ca9abfb425f"
+  },
+  "dri_3160_AppSummary": {
+    "source_id": "dri_3160_AppSummary",
+    "url": "https://apps.dca.ga.gov/DRI/AppSummary.aspx?driid=3160",
+    "retrieved_at": "2026-10-04T04:20:18.823549+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_3160_AppSummary.html",
+    "bytes": 13353,
+    "sha256": "509204fab6018acd7f1afa6b7853f0ceb28009c22dbd9536e8c942b417413cd2"
+  },
+  "dri_3160_InitialForm": {
+    "source_id": "dri_3160_InitialForm",
+    "url": "https://apps.dca.ga.gov/DRI/InitialForm.aspx?driid=3160",
+    "retrieved_at": "2026-10-04T04:20:18.946405+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_3160_InitialForm.html",
+    "bytes": 38888,
+    "sha256": "6eb2dfd35310c53cdce6aa9ab8c220b1871e99f54d9dfc14975267e020021c66"
+  },
+  "dri_3463_AdditionalForm": {
+    "source_id": "dri_3463_AdditionalForm",
+    "url": "https://apps.dca.ga.gov/DRI/AdditionalForm.aspx?driid=3463",
+    "retrieved_at": "2026-10-04T04:20:19.219751+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_3463_AdditionalForm.html",
+    "bytes": 68383,
+    "sha256": "2ca1ada87902404bc572e10ebc0f75334c8ef1922025517fd8b9840a3871f79c"
+  },
+  "dri_3463_AppSummary": {
+    "source_id": "dri_3463_AppSummary",
+    "url": "https://apps.dca.ga.gov/DRI/AppSummary.aspx?driid=3463",
+    "retrieved_at": "2026-10-04T04:20:19.083555+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_3463_AppSummary.html",
+    "bytes": 13189,
+    "sha256": "c1e879f8e8f911a0047b5a0561bad326759c5ec73215e89bf6574d8c6ea99087"
+  },
+  "dri_3463_InitialForm": {
+    "source_id": "dri_3463_InitialForm",
+    "url": "https://apps.dca.ga.gov/DRI/InitialForm.aspx?driid=3463",
+    "retrieved_at": "2026-10-04T04:20:19.202369+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_3463_InitialForm.html",
+    "bytes": 38594,
+    "sha256": "6d56ee16ca6fbb31f8d6edeeb5502fa5e7fe181fbc9515e7fda872315e770e4b"
+  },
+  "dri_3576_AdditionalForm": {
+    "source_id": "dri_3576_AdditionalForm",
+    "url": "https://apps.dca.ga.gov/DRI/AdditionalForm.aspx?driid=3576",
+    "retrieved_at": "2026-10-04T04:20:19.384331+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_3576_AdditionalForm.html",
+    "bytes": 70398,
+    "sha256": "250cd158aff6de4f458391aef1184b1c7c3e8bdc217f8d0c73f5b5e940786922"
+  },
+  "dri_3576_AppSummary": {
+    "source_id": "dri_3576_AppSummary",
+    "url": "https://apps.dca.ga.gov/DRI/AppSummary.aspx?driid=3576",
+    "retrieved_at": "2026-10-04T04:20:19.213434+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_3576_AppSummary.html",
+    "bytes": 13317,
+    "sha256": "d348f79fbd95d671aa7518a78efa8fb71347b8ba03b65ca4e352c75b467b8700"
+  },
+  "dri_3576_InitialForm": {
+    "source_id": "dri_3576_InitialForm",
+    "url": "https://apps.dca.ga.gov/DRI/InitialForm.aspx?driid=3576",
+    "retrieved_at": "2026-10-04T04:20:19.344835+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_3576_InitialForm.html",
+    "bytes": 38484,
+    "sha256": "b5501dc79a28bc0203ac47285fb907edcb74b03f1dcd6ef5b7545d04364aaa45"
+  },
+  "dri_3747_AdditionalForm": {
+    "source_id": "dri_3747_AdditionalForm",
+    "url": "https://apps.dca.ga.gov/DRI/AdditionalForm.aspx?driid=3747",
+    "retrieved_at": "2026-10-04T04:20:19.515288+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_3747_AdditionalForm.html",
+    "bytes": 70816,
+    "sha256": "3d24dae2261870497975644a76b03cbc2524e5d1f8ddba3ccb424f606844ddf7"
+  },
+  "dri_3747_AppSummary": {
+    "source_id": "dri_3747_AppSummary",
+    "url": "https://apps.dca.ga.gov/DRI/AppSummary.aspx?driid=3747",
+    "retrieved_at": "2026-10-04T04:20:19.379733+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_3747_AppSummary.html",
+    "bytes": 13289,
+    "sha256": "244645c28f44aa1144723de43e9b9e48d11e9401fa46ac50ef4543155d5bf131"
+  },
+  "dri_3747_InitialForm": {
+    "source_id": "dri_3747_InitialForm",
+    "url": "https://apps.dca.ga.gov/DRI/InitialForm.aspx?driid=3747",
+    "retrieved_at": "2026-10-04T04:20:19.474546+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_3747_InitialForm.html",
+    "bytes": 38969,
+    "sha256": "255a496487507c58417b4ae0b3dd51fd76174b646424f7cc29f4d170f0112832"
+  },
+  "dri_4051_AdditionalForm": {
+    "source_id": "dri_4051_AdditionalForm",
+    "url": "https://apps.dca.ga.gov/DRI/AdditionalForm.aspx?driid=4051",
+    "retrieved_at": "2026-10-04T04:20:19.637500+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4051_AdditionalForm.html",
+    "bytes": 71475,
+    "sha256": "753a218826ef42c44e7fabcb1bfd2e1b4f72b7547c614d3915a69759df4e69ab"
+  },
+  "dri_4051_AppSummary": {
+    "source_id": "dri_4051_AppSummary",
+    "url": "https://apps.dca.ga.gov/DRI/AppSummary.aspx?driid=4051",
+    "retrieved_at": "2026-10-04T04:20:19.483841+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4051_AppSummary.html",
+    "bytes": 13365,
+    "sha256": "777eb24764c868cfebc36a69f4a25615c818071d92fa862970d3acabf09c9117"
+  },
+  "dri_4051_InitialForm": {
+    "source_id": "dri_4051_InitialForm",
+    "url": "https://apps.dca.ga.gov/DRI/InitialForm.aspx?driid=4051",
+    "retrieved_at": "2026-10-04T04:20:19.602356+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4051_InitialForm.html",
+    "bytes": 38553,
+    "sha256": "a5bd576b1b7c48e58780354438a5e351e48c03f63fd23a3653506f0a35e1a605"
+  },
+  "dri_4078_AdditionalForm": {
+    "source_id": "dri_4078_AdditionalForm",
+    "url": "https://apps.dca.ga.gov/DRI/AdditionalForm.aspx?driid=4078",
+    "retrieved_at": "2026-10-04T04:20:19.764474+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4078_AdditionalForm.html",
+    "bytes": 70005,
+    "sha256": "900b3b0b8c3c81be90532b1b90fb1fc82330c44698ff23313077b8fbfbd97967"
+  },
+  "dri_4078_AppSummary": {
+    "source_id": "dri_4078_AppSummary",
+    "url": "https://apps.dca.ga.gov/DRI/AppSummary.aspx?driid=4078",
+    "retrieved_at": "2026-10-04T04:20:19.626015+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4078_AppSummary.html",
+    "bytes": 13353,
+    "sha256": "470fc55019da97746cc42234c050fe898c462d9491d6810b67fc95f6bb0465a4"
+  },
+  "dri_4078_InitialForm": {
+    "source_id": "dri_4078_InitialForm",
+    "url": "https://apps.dca.ga.gov/DRI/InitialForm.aspx?driid=4078",
+    "retrieved_at": "2026-10-04T04:20:19.722231+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4078_InitialForm.html",
+    "bytes": 38662,
+    "sha256": "22d61e7a2fb4c4523cf5a1f8961617fbc6be61d99532a541fa11d8e578c4b6ce"
+  },
+  "dri_4079_AdditionalForm": {
+    "source_id": "dri_4079_AdditionalForm",
+    "url": "https://apps.dca.ga.gov/DRI/AdditionalForm.aspx?driid=4079",
+    "retrieved_at": "2026-10-04T04:20:19.866787+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4079_AdditionalForm.html",
+    "bytes": 69040,
+    "sha256": "09deba7d491f6c702efb918f23d7f9447777168741235681eb0f066471b080f3"
+  },
+  "dri_4079_AppSummary": {
+    "source_id": "dri_4079_AppSummary",
+    "url": "https://apps.dca.ga.gov/DRI/AppSummary.aspx?driid=4079",
+    "retrieved_at": "2026-10-04T04:20:19.732243+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4079_AppSummary.html",
+    "bytes": 13283,
+    "sha256": "d30eb240a9e2b02abef4a72b28da8b772ad7061f18c160206bf6463322dcb37a"
+  },
+  "dri_4079_InitialForm": {
+    "source_id": "dri_4079_InitialForm",
+    "url": "https://apps.dca.ga.gov/DRI/InitialForm.aspx?driid=4079",
+    "retrieved_at": "2026-10-04T04:20:19.844641+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4079_InitialForm.html",
+    "bytes": 38537,
+    "sha256": "83ad5608be8ebdb33443dd548c5a5ab4d607d097d26060219fc9b5add5cfbc83"
+  },
+  "dri_4087_AdditionalForm": {
+    "source_id": "dri_4087_AdditionalForm",
+    "url": "https://apps.dca.ga.gov/DRI/AdditionalForm.aspx?driid=4087",
+    "retrieved_at": "2026-10-04T04:20:20.000483+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4087_AdditionalForm.html",
+    "bytes": 71104,
+    "sha256": "0a3bd27138861edc33272bd60a7f1ba6b84b51ca5f76b53ca6908a9462df6b61"
+  },
+  "dri_4087_AppSummary": {
+    "source_id": "dri_4087_AppSummary",
+    "url": "https://apps.dca.ga.gov/DRI/AppSummary.aspx?driid=4087",
+    "retrieved_at": "2026-10-04T04:20:19.866724+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4087_AppSummary.html",
+    "bytes": 13429,
+    "sha256": "df6f53d7d38c07eacb9bd8b4bbed33475f8a99ccf3fe9ac8a91fea435982df95"
+  },
+  "dri_4087_InitialForm": {
+    "source_id": "dri_4087_InitialForm",
+    "url": "https://apps.dca.ga.gov/DRI/InitialForm.aspx?driid=4087",
+    "retrieved_at": "2026-10-04T04:20:19.975417+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4087_InitialForm.html",
+    "bytes": 38844,
+    "sha256": "9203913dfefe103894d1b80252f252f40e93871c1b8c74a88328aebd5916d0eb"
+  },
+  "dri_4111_AdditionalForm": {
+    "source_id": "dri_4111_AdditionalForm",
+    "url": "https://apps.dca.ga.gov/DRI/AdditionalForm.aspx?driid=4111",
+    "retrieved_at": "2026-10-04T04:20:20.142326+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4111_AdditionalForm.html",
+    "bytes": 68388,
+    "sha256": "f600c04db8ba7748ba1499cf6d477d9a78c682cba01f836ccc4fa8be7eb80528"
+  },
+  "dri_4111_AppSummary": {
+    "source_id": "dri_4111_AppSummary",
+    "url": "https://apps.dca.ga.gov/DRI/AppSummary.aspx?driid=4111",
+    "retrieved_at": "2026-10-04T04:20:19.964335+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4111_AppSummary.html",
+    "bytes": 13160,
+    "sha256": "f10deca5082d922e89ee0b99f34f2162e6113003ac3fe664d02f3d79641a87c6"
+  },
+  "dri_4111_InitialForm": {
+    "source_id": "dri_4111_InitialForm",
+    "url": "https://apps.dca.ga.gov/DRI/InitialForm.aspx?driid=4111",
+    "retrieved_at": "2026-10-04T04:20:20.105924+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4111_InitialForm.html",
+    "bytes": 38540,
+    "sha256": "5b36a851ee61481dcaa1a6673669be11a8791110c21459def8562cf513003324"
+  },
+  "dri_4112_AdditionalForm": {
+    "source_id": "dri_4112_AdditionalForm",
+    "url": "https://apps.dca.ga.gov/DRI/AdditionalForm.aspx?driid=4112",
+    "retrieved_at": "2026-10-04T04:20:20.258180+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4112_AdditionalForm.html",
+    "bytes": 69709,
+    "sha256": "6c2ef7c9ece71b07ded31d0e0abed81dd7fb4f836d901a3f5a96e82b5adaa7fd"
+  },
+  "dri_4112_AppSummary": {
+    "source_id": "dri_4112_AppSummary",
+    "url": "https://apps.dca.ga.gov/DRI/AppSummary.aspx?driid=4112",
+    "retrieved_at": "2026-10-04T04:20:20.106009+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4112_AppSummary.html",
+    "bytes": 13304,
+    "sha256": "20fd6d2eddc8d74cb3b0d98488a9037eb4360963a5dc23445db01fb54e7980bc"
+  },
+  "dri_4112_InitialForm": {
+    "source_id": "dri_4112_InitialForm",
+    "url": "https://apps.dca.ga.gov/DRI/InitialForm.aspx?driid=4112",
+    "retrieved_at": "2026-10-04T04:20:20.243258+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4112_InitialForm.html",
+    "bytes": 38540,
+    "sha256": "2d5be017fc8b14b7449beab659c29db5bde06d624363252293c8031ff4b4c3fb"
+  },
+  "dri_4120_AdditionalForm": {
+    "source_id": "dri_4120_AdditionalForm",
+    "url": "https://apps.dca.ga.gov/DRI/AdditionalForm.aspx?driid=4120",
+    "retrieved_at": "2026-10-04T04:20:20.390375+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4120_AdditionalForm.html",
+    "bytes": 70168,
+    "sha256": "85a3f55dc3eacc64a5c5a385f444ea3b7594b23f14bfc632d713e7d1fdd0fa43"
+  },
+  "dri_4120_AppSummary": {
+    "source_id": "dri_4120_AppSummary",
+    "url": "https://apps.dca.ga.gov/DRI/AppSummary.aspx?driid=4120",
+    "retrieved_at": "2026-10-04T04:20:20.249457+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4120_AppSummary.html",
+    "bytes": 13290,
+    "sha256": "d4062457745bbb409fb1b507d77f479c2a00accabb832d43ffd5a31e045a3c80"
+  },
+  "dri_4120_InitialForm": {
+    "source_id": "dri_4120_InitialForm",
+    "url": "https://apps.dca.ga.gov/DRI/InitialForm.aspx?driid=4120",
+    "retrieved_at": "2026-10-04T04:20:20.376081+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4120_InitialForm.html",
+    "bytes": 38553,
+    "sha256": "3e82d32e104eb03280c4b1c4644f7703e03b9d01e9f8ca71afc1071e8ed6ee79"
+  },
+  "dri_4198_AdditionalForm": {
+    "source_id": "dri_4198_AdditionalForm",
+    "url": "https://apps.dca.ga.gov/DRI/AdditionalForm.aspx?driid=4198",
+    "retrieved_at": "2026-10-04T04:20:20.524869+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4198_AdditionalForm.html",
+    "bytes": 69625,
+    "sha256": "44e5ef000bbe3a66b2b17b9b33bb5325010331c90ff56c527f880a95292a14ac"
+  },
+  "dri_4198_AppSummary": {
+    "source_id": "dri_4198_AppSummary",
+    "url": "https://apps.dca.ga.gov/DRI/AppSummary.aspx?driid=4198",
+    "retrieved_at": "2026-10-04T04:20:20.444061+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4198_AppSummary.html",
+    "bytes": 13302,
+    "sha256": "fe0e2f5fc5cd5a5b336e2d6d10a8e671b5d747496c3fa8e248f045540d1e9ccb"
+  },
+  "dri_4198_InitialForm": {
+    "source_id": "dri_4198_InitialForm",
+    "url": "https://apps.dca.ga.gov/DRI/InitialForm.aspx?driid=4198",
+    "retrieved_at": "2026-10-04T04:20:20.506886+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4198_InitialForm.html",
+    "bytes": 38331,
+    "sha256": "3c5612029cb5d2b2934fe9b4d6d7ea8f1558b31ff6280f095e52c94f9174c786"
+  },
+  "dri_4222_AdditionalForm": {
+    "source_id": "dri_4222_AdditionalForm",
+    "url": "https://apps.dca.ga.gov/DRI/AdditionalForm.aspx?driid=4222",
+    "retrieved_at": "2026-10-04T04:20:20.672230+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4222_AdditionalForm.html",
+    "bytes": 68346,
+    "sha256": "356b831c293331d92cb046d2e011ee13414a54046d38546fa3272132987bbee3"
+  },
+  "dri_4222_AppSummary": {
+    "source_id": "dri_4222_AppSummary",
+    "url": "https://apps.dca.ga.gov/DRI/AppSummary.aspx?driid=4222",
+    "retrieved_at": "2026-10-04T04:20:20.560781+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4222_AppSummary.html",
+    "bytes": 13133,
+    "sha256": "c81996cf27b82ae37fa302cee1b2aa630d649220c4407fa454795b0c7b68dc15"
+  },
+  "dri_4222_InitialForm": {
+    "source_id": "dri_4222_InitialForm",
+    "url": "https://apps.dca.ga.gov/DRI/InitialForm.aspx?driid=4222",
+    "retrieved_at": "2026-10-04T04:20:20.634261+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4222_InitialForm.html",
+    "bytes": 38299,
+    "sha256": "01dab977d5bfb08c862edcdf2b3bb160273afaca4f05cae40f0879d51afa28b9"
+  },
+  "dri_4256_AdditionalForm": {
+    "source_id": "dri_4256_AdditionalForm",
+    "url": "https://apps.dca.ga.gov/DRI/AdditionalForm.aspx?driid=4256",
+    "retrieved_at": "2026-10-04T04:20:20.827620+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4256_AdditionalForm.html",
+    "bytes": 69186,
+    "sha256": "ffb19d04773ae617df3ef6a320c1551f75822bf1f2cdc8d6804416842c1d523c"
+  },
+  "dri_4256_AppSummary": {
+    "source_id": "dri_4256_AppSummary",
+    "url": "https://apps.dca.ga.gov/DRI/AppSummary.aspx?driid=4256",
+    "retrieved_at": "2026-10-04T04:20:20.665812+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4256_AppSummary.html",
+    "bytes": 13339,
+    "sha256": "afa2b948f8a4cd704092e636eb7f5fbbc0996630c59221211c6f0343dfd957b5"
+  },
+  "dri_4256_InitialForm": {
+    "source_id": "dri_4256_InitialForm",
+    "url": "https://apps.dca.ga.gov/DRI/InitialForm.aspx?driid=4256",
+    "retrieved_at": "2026-10-04T04:20:20.763385+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4256_InitialForm.html",
+    "bytes": 38768,
+    "sha256": "351108c7d0ca6137f6ac37a63594e3391ee5f8a850dc78cd1b5ad3f830a3e905"
+  },
+  "dri_4257_AdditionalForm": {
+    "source_id": "dri_4257_AdditionalForm",
+    "url": "https://apps.dca.ga.gov/DRI/AdditionalForm.aspx?driid=4257",
+    "retrieved_at": "2026-10-04T04:20:20.925589+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4257_AdditionalForm.html",
+    "bytes": 69316,
+    "sha256": "0c9a1d0d6167349c716e373aa066a020728e97ea248448984862f456a2fc6d85"
+  },
+  "dri_4257_AppSummary": {
+    "source_id": "dri_4257_AppSummary",
+    "url": "https://apps.dca.ga.gov/DRI/AppSummary.aspx?driid=4257",
+    "retrieved_at": "2026-10-04T04:20:20.771643+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4257_AppSummary.html",
+    "bytes": 13339,
+    "sha256": "a07ed0a4c0c591d9f4f0c5a3e1a3d2432b06c3ffa7754544078961b52b1ead41"
+  },
+  "dri_4257_InitialForm": {
+    "source_id": "dri_4257_InitialForm",
+    "url": "https://apps.dca.ga.gov/DRI/InitialForm.aspx?driid=4257",
+    "retrieved_at": "2026-10-04T04:20:20.905664+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4257_InitialForm.html",
+    "bytes": 38769,
+    "sha256": "904b1764ffe91133c2d584acdc16477ab33b47ae57f3cea94c642485c301f030"
+  },
+  "dri_4325_AdditionalForm": {
+    "source_id": "dri_4325_AdditionalForm",
+    "url": "https://apps.dca.ga.gov/DRI/AdditionalForm.aspx?driid=4325",
+    "retrieved_at": "2026-10-04T04:20:21.012550+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4325_AdditionalForm.html",
+    "bytes": 68402,
+    "sha256": "c703daf407f5cfde1a4f2fa4bf14a4ed9ddc4e5333f16adea50a1da0da126f3d"
+  },
+  "dri_4325_AppSummary": {
+    "source_id": "dri_4325_AppSummary",
+    "url": "https://apps.dca.ga.gov/DRI/AppSummary.aspx?driid=4325",
+    "retrieved_at": "2026-10-04T04:20:20.882971+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4325_AppSummary.html",
+    "bytes": 13190,
+    "sha256": "6750b36c9c8d9da64eeabba4383ae8c1faa2d9a0b98507ebc716951461ef9e3a"
+  },
+  "dri_4325_InitialForm": {
+    "source_id": "dri_4325_InitialForm",
+    "url": "https://apps.dca.ga.gov/DRI/InitialForm.aspx?driid=4325",
+    "retrieved_at": "2026-10-04T04:20:20.944026+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4325_InitialForm.html",
+    "bytes": 39536,
+    "sha256": "d16c3d26d47ff019d8615619927b9945c111383e231d12984339b04398888ea0"
+  },
+  "dri_4326_AdditionalForm": {
+    "source_id": "dri_4326_AdditionalForm",
+    "url": "https://apps.dca.ga.gov/DRI/AdditionalForm.aspx?driid=4326",
+    "retrieved_at": "2026-10-04T04:20:21.071735+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4326_AdditionalForm.html",
+    "bytes": 71520,
+    "sha256": "25442aeed1f0117bb6d0b9f8220c8c78f9c8f3b564697770c1d52048ea08aa29"
+  },
+  "dri_4326_AppSummary": {
+    "source_id": "dri_4326_AppSummary",
+    "url": "https://apps.dca.ga.gov/DRI/AppSummary.aspx?driid=4326",
+    "retrieved_at": "2026-10-04T04:20:20.999609+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4326_AppSummary.html",
+    "bytes": 13332,
+    "sha256": "373bdcd21e0451779b0df953f9805d38c588980110749c2ace1f3c8729c96b41"
+  },
+  "dri_4326_InitialForm": {
+    "source_id": "dri_4326_InitialForm",
+    "url": "https://apps.dca.ga.gov/DRI/InitialForm.aspx?driid=4326",
+    "retrieved_at": "2026-10-04T04:20:21.034881+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4326_InitialForm.html",
+    "bytes": 39536,
+    "sha256": "eb97423fc992fdd71f6558dd86ec80656701766bc65a334182eda15b9e3cd42f"
+  },
+  "dri_4329_AdditionalForm": {
+    "source_id": "dri_4329_AdditionalForm",
+    "url": "https://apps.dca.ga.gov/DRI/AdditionalForm.aspx?driid=4329",
+    "retrieved_at": "2026-10-04T04:20:21.163280+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4329_AdditionalForm.html",
+    "bytes": 70744,
+    "sha256": "8fa851fda445ff5dce73011e516da197763041e442f6abc79f98220c4f2191d5"
+  },
+  "dri_4329_AppSummary": {
+    "source_id": "dri_4329_AppSummary",
+    "url": "https://apps.dca.ga.gov/DRI/AppSummary.aspx?driid=4329",
+    "retrieved_at": "2026-10-04T04:20:21.096064+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4329_AppSummary.html",
+    "bytes": 13380,
+    "sha256": "35451551d6f60c0651999211d520e373954e210a30ef4162d327571a0a5a7103"
+  },
+  "dri_4329_InitialForm": {
+    "source_id": "dri_4329_InitialForm",
+    "url": "https://apps.dca.ga.gov/DRI/InitialForm.aspx?driid=4329",
+    "retrieved_at": "2026-10-04T04:20:21.126439+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4329_InitialForm.html",
+    "bytes": 38665,
+    "sha256": "4f4f25bf215493a5c955085b789e75b2fe15be4e09ae57442c2f0e440039ac94"
+  },
+  "dri_4334_AdditionalForm": {
+    "source_id": "dri_4334_AdditionalForm",
+    "url": "https://apps.dca.ga.gov/DRI/AdditionalForm.aspx?driid=4334",
+    "retrieved_at": "2026-10-04T04:20:21.258315+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4334_AdditionalForm.html",
+    "bytes": 70112,
+    "sha256": "7be095033da376c7fd384e366a019764a262c87ea717a7762e03e28b3743372e"
+  },
+  "dri_4334_AppSummary": {
+    "source_id": "dri_4334_AppSummary",
+    "url": "https://apps.dca.ga.gov/DRI/AppSummary.aspx?driid=4334",
+    "retrieved_at": "2026-10-04T04:20:21.168788+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4334_AppSummary.html",
+    "bytes": 13282,
+    "sha256": "021e6040438d402450a0728457cf0c7dd768852d11d60e44a8b1ca47f98bf241"
+  },
+  "dri_4334_InitialForm": {
+    "source_id": "dri_4334_InitialForm",
+    "url": "https://apps.dca.ga.gov/DRI/InitialForm.aspx?driid=4334",
+    "retrieved_at": "2026-10-04T04:20:21.207919+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4334_InitialForm.html",
+    "bytes": 39153,
+    "sha256": "47fae5619203954b1ea4e37b027d08d475aa6256daf07c2286712ecdd21db7a5"
+  },
+  "dri_4342_AdditionalForm": {
+    "source_id": "dri_4342_AdditionalForm",
+    "url": "https://apps.dca.ga.gov/DRI/AdditionalForm.aspx?driid=4342",
+    "retrieved_at": "2026-10-04T04:20:21.332779+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4342_AdditionalForm.html",
+    "bytes": 70013,
+    "sha256": "5dfc2c7e262c670cafd8f8788d59040ca6b1d0ddac55f20a9636918e75c31c51"
+  },
+  "dri_4342_AppSummary": {
+    "source_id": "dri_4342_AppSummary",
+    "url": "https://apps.dca.ga.gov/DRI/AppSummary.aspx?driid=4342",
+    "retrieved_at": "2026-10-04T04:20:21.263308+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4342_AppSummary.html",
+    "bytes": 13351,
+    "sha256": "9322d53dd173937e5cde6b1daa843b7da35f068d8948367a9b132a089d872f4f"
+  },
+  "dri_4342_InitialForm": {
+    "source_id": "dri_4342_InitialForm",
+    "url": "https://apps.dca.ga.gov/DRI/InitialForm.aspx?driid=4342",
+    "retrieved_at": "2026-10-04T04:20:21.644541+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4342_InitialForm.html",
+    "bytes": 38598,
+    "sha256": "563b6090498b22ebcddfc3bf6f18a4e5e1a5dc0fd3026936b61373b7f1b5a5e7"
+  },
+  "dri_4428_AdditionalForm": {
+    "source_id": "dri_4428_AdditionalForm",
+    "url": "https://apps.dca.ga.gov/DRI/AdditionalForm.aspx?driid=4428",
+    "retrieved_at": "2026-10-04T04:20:21.467108+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4428_AdditionalForm.html",
+    "bytes": 74110,
+    "sha256": "146d1b5a2a3c9518ed2b3afaedfef62095a85ceba6470593ee5e5658974fe3b0"
+  },
+  "dri_4428_AppSummary": {
+    "source_id": "dri_4428_AppSummary",
+    "url": "https://apps.dca.ga.gov/DRI/AppSummary.aspx?driid=4428",
+    "retrieved_at": "2026-10-04T04:20:21.356799+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4428_AppSummary.html",
+    "bytes": 13282,
+    "sha256": "86df01cc74e884168a0cc736c496c6f66fea9f90e79dbc0246a45cb6623a2435"
+  },
+  "dri_4428_InitialForm": {
+    "source_id": "dri_4428_InitialForm",
+    "url": "https://apps.dca.ga.gov/DRI/InitialForm.aspx?driid=4428",
+    "retrieved_at": "2026-10-04T04:20:21.378743+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4428_InitialForm.html",
+    "bytes": 41946,
+    "sha256": "db8be4ac57d73cbef74a3cf160e3e19c05baf0d716976eee95d50e9277873992"
+  },
+  "dri_4599_AdditionalForm": {
+    "source_id": "dri_4599_AdditionalForm",
+    "url": "https://apps.dca.ga.gov/DRI/AdditionalForm.aspx?driid=4599",
+    "retrieved_at": "2026-10-04T04:20:21.592416+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4599_AdditionalForm.html",
+    "bytes": 69771,
+    "sha256": "a6dfb1beeb5b8510acdac376b29299232c3bbfbbc7df4edd64b19a2f40f0c445"
+  },
+  "dri_4599_AppSummary": {
+    "source_id": "dri_4599_AppSummary",
+    "url": "https://apps.dca.ga.gov/DRI/AppSummary.aspx?driid=4599",
+    "retrieved_at": "2026-10-04T04:20:21.459411+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4599_AppSummary.html",
+    "bytes": 13374,
+    "sha256": "0b8bb1e698dee2244ace95205957f078ec81700bf8773be7c627c45d0147bf62"
+  },
+  "dri_4599_InitialForm": {
+    "source_id": "dri_4599_InitialForm",
+    "url": "https://apps.dca.ga.gov/DRI/InitialForm.aspx?driid=4599",
+    "retrieved_at": "2026-10-04T04:20:21.487143+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4599_InitialForm.html",
+    "bytes": 38779,
+    "sha256": "2e545fcdc26794d96a14a2840f1ba3d012f00b86f97efc0d202baeb440acdb4e"
+  },
+  "dri_4602_AdditionalForm": {
+    "source_id": "dri_4602_AdditionalForm",
+    "url": "https://apps.dca.ga.gov/DRI/AdditionalForm.aspx?driid=4602",
+    "retrieved_at": "2026-10-04T04:20:21.703762+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4602_AdditionalForm.html",
+    "bytes": 69466,
+    "sha256": "c88f2ed7693e246c826792b1b45ee0d5cc4cfd19b909b4374a0ee62b0d1d1806"
+  },
+  "dri_4602_AppSummary": {
+    "source_id": "dri_4602_AppSummary",
+    "url": "https://apps.dca.ga.gov/DRI/AppSummary.aspx?driid=4602",
+    "retrieved_at": "2026-10-04T04:20:21.564814+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4602_AppSummary.html",
+    "bytes": 13282,
+    "sha256": "6d4f23f65e779dbe928fb39426c763fc9a1375635d035e95ce96cca02a2416a6"
+  },
+  "dri_4602_InitialForm": {
+    "source_id": "dri_4602_InitialForm",
+    "url": "https://apps.dca.ga.gov/DRI/InitialForm.aspx?driid=4602",
+    "retrieved_at": "2026-10-04T04:20:21.609810+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4602_InitialForm.html",
+    "bytes": 38497,
+    "sha256": "1e12f9d60eb5416deee1026b8bce5046d702f8861de086af5152c3a000a03919"
+  },
+  "dri_4603_AdditionalForm": {
+    "source_id": "dri_4603_AdditionalForm",
+    "url": "https://apps.dca.ga.gov/DRI/AdditionalForm.aspx?driid=4603",
+    "retrieved_at": "2026-10-04T04:20:21.780768+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4603_AdditionalForm.html",
+    "bytes": 70672,
+    "sha256": "10ff5d896580dd7efc2a2fe6c9afb33d43b3a2014c9af77568a250255969e17c"
+  },
+  "dri_4603_AppSummary": {
+    "source_id": "dri_4603_AppSummary",
+    "url": "https://apps.dca.ga.gov/DRI/AppSummary.aspx?driid=4603",
+    "retrieved_at": "2026-10-04T04:20:21.694140+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4603_AppSummary.html",
+    "bytes": 13282,
+    "sha256": "c5b7d9a126e59ce176b8feedc7de205030cb92dc1409feefa745b497ae4c08b2"
+  },
+  "dri_4603_InitialForm": {
+    "source_id": "dri_4603_InitialForm",
+    "url": "https://apps.dca.ga.gov/DRI/InitialForm.aspx?driid=4603",
+    "retrieved_at": "2026-10-04T04:20:21.734157+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4603_InitialForm.html",
+    "bytes": 38659,
+    "sha256": "ca2b0a505f101bf0c535ef26caacfd42bcbf2e81f5ca727f5b3310c0bd3d42d0"
+  },
+  "dri_4606_AdditionalForm": {
+    "source_id": "dri_4606_AdditionalForm",
+    "url": "https://apps.dca.ga.gov/DRI/AdditionalForm.aspx?driid=4606",
+    "retrieved_at": "2026-10-04T04:20:21.877814+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4606_AdditionalForm.html",
+    "bytes": 68523,
+    "sha256": "572ba6e0b1d5037fce9fa5c791f141a570b058b609683ac664df8ef1211ee4b1"
+  },
+  "dri_4606_AppSummary": {
+    "source_id": "dri_4606_AppSummary",
+    "url": "https://apps.dca.ga.gov/DRI/AppSummary.aspx?driid=4606",
+    "retrieved_at": "2026-10-04T04:20:21.796551+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4606_AppSummary.html",
+    "bytes": 13118,
+    "sha256": "075921485a6ba3e27c6e94558d3ddf18fc0d2a0761e7e2b0e6c20cf432de87b6"
+  },
+  "dri_4606_InitialForm": {
+    "source_id": "dri_4606_InitialForm",
+    "url": "https://apps.dca.ga.gov/DRI/InitialForm.aspx?driid=4606",
+    "retrieved_at": "2026-10-04T04:20:21.815441+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4606_InitialForm.html",
+    "bytes": 38482,
+    "sha256": "2e00da784ccf60fd5c6fb8ef3d17c2cfa92bd9ef529a2b808ec32b7f8215746f"
+  },
+  "dri_4607_AdditionalForm": {
+    "source_id": "dri_4607_AdditionalForm",
+    "url": "https://apps.dca.ga.gov/DRI/AdditionalForm.aspx?driid=4607",
+    "retrieved_at": "2026-10-04T04:20:21.962811+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4607_AdditionalForm.html",
+    "bytes": 70379,
+    "sha256": "4a21dcf408757ed037bc493c17a96f74cf8475e4598341ee5015b06aa417a5e7"
+  },
+  "dri_4607_AppSummary": {
+    "source_id": "dri_4607_AppSummary",
+    "url": "https://apps.dca.ga.gov/DRI/AppSummary.aspx?driid=4607",
+    "retrieved_at": "2026-10-04T04:20:21.876151+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4607_AppSummary.html",
+    "bytes": 13351,
+    "sha256": "9afd77d23671ab4dfff159c986386aab5f3a9f19db5f86072f7c9206443f199c"
+  },
+  "dri_4607_InitialForm": {
+    "source_id": "dri_4607_InitialForm",
+    "url": "https://apps.dca.ga.gov/DRI/InitialForm.aspx?driid=4607",
+    "retrieved_at": "2026-10-04T04:20:21.921216+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4607_InitialForm.html",
+    "bytes": 38758,
+    "sha256": "c5e18a3748146d94cbfd3cbbc6dc814b72e942339eeb8c693e3d5472e0566352"
+  },
+  "dri_4617_AdditionalForm": {
+    "source_id": "dri_4617_AdditionalForm",
+    "url": "https://apps.dca.ga.gov/DRI/AdditionalForm.aspx?driid=4617",
+    "retrieved_at": "2026-10-04T04:20:22.069725+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4617_AdditionalForm.html",
+    "bytes": 68434,
+    "sha256": "c592982ea6ca4de4a77f314af18227b42ae67ce3128ac1e6cc11c221561858d5"
+  },
+  "dri_4617_AppSummary": {
+    "source_id": "dri_4617_AppSummary",
+    "url": "https://apps.dca.ga.gov/DRI/AppSummary.aspx?driid=4617",
+    "retrieved_at": "2026-10-04T04:20:21.980924+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4617_AppSummary.html",
+    "bytes": 13237,
+    "sha256": "caafac9a35aa24617e331089862c6558675b06e44610e3d613a41f423b72bb25"
+  },
+  "dri_4617_InitialForm": {
+    "source_id": "dri_4617_InitialForm",
+    "url": "https://apps.dca.ga.gov/DRI/InitialForm.aspx?driid=4617",
+    "retrieved_at": "2026-10-04T04:20:22.006272+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4617_InitialForm.html",
+    "bytes": 38601,
+    "sha256": "c46df07279f064e582faec3130cd50a63a4e60f694eaa563009c3f2b51fdb1b4"
+  },
+  "dri_4624_AdditionalForm": {
+    "source_id": "dri_4624_AdditionalForm",
+    "url": "https://apps.dca.ga.gov/DRI/AdditionalForm.aspx?driid=4624",
+    "retrieved_at": "2026-10-04T04:20:22.148110+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4624_AdditionalForm.html",
+    "bytes": 70538,
+    "sha256": "0e3e5c715001ebb989e03e386d5384c16a1399736b0713b075cdbf6a4547472f"
+  },
+  "dri_4624_AppSummary": {
+    "source_id": "dri_4624_AppSummary",
+    "url": "https://apps.dca.ga.gov/DRI/AppSummary.aspx?driid=4624",
+    "retrieved_at": "2026-10-04T04:20:22.064236+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4624_AppSummary.html",
+    "bytes": 13380,
+    "sha256": "0d0ac7f4202c06647c2569ef7bd1386bd55b64475240544d8e5a0468737989e5"
+  },
+  "dri_4624_InitialForm": {
+    "source_id": "dri_4624_InitialForm",
+    "url": "https://apps.dca.ga.gov/DRI/InitialForm.aspx?driid=4624",
+    "retrieved_at": "2026-10-04T04:20:22.104720+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4624_InitialForm.html",
+    "bytes": 38846,
+    "sha256": "d0ebe33e0d2028072b64ec801a410d440772cdb72dc75e23a1db25e0f2e8ab11"
+  },
+  "dri_4651_AdditionalForm": {
+    "source_id": "dri_4651_AdditionalForm",
+    "url": "https://apps.dca.ga.gov/DRI/AdditionalForm.aspx?driid=4651",
+    "retrieved_at": "2026-10-04T04:20:22.247595+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4651_AdditionalForm.html",
+    "bytes": 71097,
+    "sha256": "53e130be1bbf4386ad3d1e3484a3bf4f31193af9e35edf3b24c26ca1d5597ddd"
+  },
+  "dri_4651_AppSummary": {
+    "source_id": "dri_4651_AppSummary",
+    "url": "https://apps.dca.ga.gov/DRI/AppSummary.aspx?driid=4651",
+    "retrieved_at": "2026-10-04T04:20:22.165220+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4651_AppSummary.html",
+    "bytes": 13156,
+    "sha256": "b65dc39e7e888983f54c6befb22543d663addc92a2c4122055a7704bab9d0ab3"
+  },
+  "dri_4651_InitialForm": {
+    "source_id": "dri_4651_InitialForm",
+    "url": "https://apps.dca.ga.gov/DRI/InitialForm.aspx?driid=4651",
+    "retrieved_at": "2026-10-04T04:20:22.180049+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4651_InitialForm.html",
+    "bytes": 38859,
+    "sha256": "7bff9ab6419cc56356e22c88707b908787711a027321db70826b1f78ca7d6ff1"
+  },
+  "dri_4689_AdditionalForm": {
+    "source_id": "dri_4689_AdditionalForm",
+    "url": "https://apps.dca.ga.gov/DRI/AdditionalForm.aspx?driid=4689",
+    "retrieved_at": "2026-10-04T04:20:22.321213+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4689_AdditionalForm.html",
+    "bytes": 70621,
+    "sha256": "f6a99eabca34dc6422fe5889164c94e812d491649e161313b0576fa7f3efeef0"
+  },
+  "dri_4689_AppSummary": {
+    "source_id": "dri_4689_AppSummary",
+    "url": "https://apps.dca.ga.gov/DRI/AppSummary.aspx?driid=4689",
+    "retrieved_at": "2026-10-04T04:20:22.257491+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4689_AppSummary.html",
+    "bytes": 13303,
+    "sha256": "91056202b927756d6fcb7a5e36c3a7fd24f7726a2abd48e1adcf67cbbe8924b0"
+  },
+  "dri_4689_InitialForm": {
+    "source_id": "dri_4689_InitialForm",
+    "url": "https://apps.dca.ga.gov/DRI/InitialForm.aspx?driid=4689",
+    "retrieved_at": "2026-10-04T04:20:22.285881+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4689_InitialForm.html",
+    "bytes": 38626,
+    "sha256": "2974a3455f3978556f5f38ba697e12b4209949742576b60b966a9becf242b0ce"
+  },
+  "dri_4727_AdditionalForm": {
+    "source_id": "dri_4727_AdditionalForm",
+    "url": "https://apps.dca.ga.gov/DRI/AdditionalForm.aspx?driid=4727",
+    "retrieved_at": "2026-10-04T04:20:22.424206+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4727_AdditionalForm.html",
+    "bytes": 72332,
+    "sha256": "6461b7fbf74500c59eef6ece4004d9a0468564a6ddab78e58afa5ffaa0ef91e9"
+  },
+  "dri_4727_AppSummary": {
+    "source_id": "dri_4727_AppSummary",
+    "url": "https://apps.dca.ga.gov/DRI/AppSummary.aspx?driid=4727",
+    "retrieved_at": "2026-10-04T04:20:22.361616+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4727_AppSummary.html",
+    "bytes": 13344,
+    "sha256": "334e0af12d527c47d9f0304dc4717a7b0aecc0acebdd5333d67f077355d20e9a"
+  },
+  "dri_4727_InitialForm": {
+    "source_id": "dri_4727_InitialForm",
+    "url": "https://apps.dca.ga.gov/DRI/InitialForm.aspx?driid=4727",
+    "retrieved_at": "2026-10-04T04:20:22.377171+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4727_InitialForm.html",
+    "bytes": 38616,
+    "sha256": "58ffb0aec0073b52c8648ae49d69a0e9eff66f18579eeb6b7c74507106d62b3c"
+  },
+  "dri_4735_AdditionalForm": {
+    "source_id": "dri_4735_AdditionalForm",
+    "url": "https://apps.dca.ga.gov/DRI/AdditionalForm.aspx?driid=4735",
+    "retrieved_at": "2026-10-04T04:20:22.509241+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4735_AdditionalForm.html",
+    "bytes": 70538,
+    "sha256": "02dd2075bf5684cf442f3ea32bb1e373e13c7b70e7c034522608ae22e5a3c688"
+  },
+  "dri_4735_AppSummary": {
+    "source_id": "dri_4735_AppSummary",
+    "url": "https://apps.dca.ga.gov/DRI/AppSummary.aspx?driid=4735",
+    "retrieved_at": "2026-10-04T04:20:22.425368+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4735_AppSummary.html",
+    "bytes": 13331,
+    "sha256": "502dde62d61ea1cf745883521601dfe3877e846f3c77f4ac88484dc421f00ff3"
+  },
+  "dri_4735_InitialForm": {
+    "source_id": "dri_4735_InitialForm",
+    "url": "https://apps.dca.ga.gov/DRI/InitialForm.aspx?driid=4735",
+    "retrieved_at": "2026-10-04T04:20:22.479119+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4735_InitialForm.html",
+    "bytes": 38541,
+    "sha256": "0a7f4ad1944f1fa2c15f56599b771fb5b2da965fca345f06518355d64a92cbe2"
+  },
+  "dri_4736_AdditionalForm": {
+    "source_id": "dri_4736_AdditionalForm",
+    "url": "https://apps.dca.ga.gov/DRI/AdditionalForm.aspx?driid=4736",
+    "retrieved_at": "2026-10-04T04:20:22.625725+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4736_AdditionalForm.html",
+    "bytes": 70973,
+    "sha256": "715cade155cc1bf9e5f98bc64b9fe2ee7a450e98ca1ba43511d2589ae1034813"
+  },
+  "dri_4736_AppSummary": {
+    "source_id": "dri_4736_AppSummary",
+    "url": "https://apps.dca.ga.gov/DRI/AppSummary.aspx?driid=4736",
+    "retrieved_at": "2026-10-04T04:20:22.524728+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4736_AppSummary.html",
+    "bytes": 13317,
+    "sha256": "e268abe20e3e79b174824c22a4db4d9442ae44c102bf5a401ec0d78970209651"
+  },
+  "dri_4736_InitialForm": {
+    "source_id": "dri_4736_InitialForm",
+    "url": "https://apps.dca.ga.gov/DRI/InitialForm.aspx?driid=4736",
+    "retrieved_at": "2026-10-04T04:20:22.539875+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4736_InitialForm.html",
+    "bytes": 38989,
+    "sha256": "5fd83be2c676d35d462176bd5fef098a36dc17ebda51676486fdab519b982ef8"
+  },
+  "dri_4761_AdditionalForm": {
+    "source_id": "dri_4761_AdditionalForm",
+    "url": "https://apps.dca.ga.gov/DRI/AdditionalForm.aspx?driid=4761",
+    "retrieved_at": "2026-10-04T04:20:22.672554+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4761_AdditionalForm.html",
+    "bytes": 69780,
+    "sha256": "2823fe97730bd27048c0cebe42cf7ee6678d8e0656f1569e9a802f5f175a5710"
+  },
+  "dri_4761_AppSummary": {
+    "source_id": "dri_4761_AppSummary",
+    "url": "https://apps.dca.ga.gov/DRI/AppSummary.aspx?driid=4761",
+    "retrieved_at": "2026-10-04T04:20:22.601812+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4761_AppSummary.html",
+    "bytes": 13262,
+    "sha256": "9914499c6e818219a49238fe9207090bce47e08c0b36bc7903a1dacb36ae9f93"
+  },
+  "dri_4761_InitialForm": {
+    "source_id": "dri_4761_InitialForm",
+    "url": "https://apps.dca.ga.gov/DRI/InitialForm.aspx?driid=4761",
+    "retrieved_at": "2026-10-04T04:20:22.637168+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4761_InitialForm.html",
+    "bytes": 38585,
+    "sha256": "76f8f728b4a85b2eba228d54b4d293ec9a7426f9ce7664bf25fbf3c93617f755"
+  },
+  "dri_4794_AdditionalForm": {
+    "source_id": "dri_4794_AdditionalForm",
+    "url": "https://apps.dca.ga.gov/DRI/AdditionalForm.aspx?driid=4794",
+    "retrieved_at": "2026-10-04T04:20:22.770322+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4794_AdditionalForm.html",
+    "bytes": 71577,
+    "sha256": "328a4e94d3d7ef28a77ead331d2ebdc6e2cf02c90433d31519dee22cc828d81c"
+  },
+  "dri_4794_AppSummary": {
+    "source_id": "dri_4794_AppSummary",
+    "url": "https://apps.dca.ga.gov/DRI/AppSummary.aspx?driid=4794",
+    "retrieved_at": "2026-10-04T04:20:22.715514+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4794_AppSummary.html",
+    "bytes": 13189,
+    "sha256": "4f2359fb10acc51ebb59561597ba61bd57ee6f2a6d3481ff069ad5e7ada14e1f"
+  },
+  "dri_4794_InitialForm": {
+    "source_id": "dri_4794_InitialForm",
+    "url": "https://apps.dca.ga.gov/DRI/InitialForm.aspx?driid=4794",
+    "retrieved_at": "2026-10-04T04:20:22.740696+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4794_InitialForm.html",
+    "bytes": 38727,
+    "sha256": "a9b8bfcca28877765cf4944da9feace666e9ef9189af418088cb44c8dd6b9d5d"
+  },
+  "dri_4797_AdditionalForm": {
+    "source_id": "dri_4797_AdditionalForm",
+    "url": "https://apps.dca.ga.gov/DRI/AdditionalForm.aspx?driid=4797",
+    "retrieved_at": "2026-10-04T04:20:22.871384+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4797_AdditionalForm.html",
+    "bytes": 69537,
+    "sha256": "305fe93a0334e80b4ba60ca13a087c801def2797886d5d0f895ec69f0d19b008"
+  },
+  "dri_4797_AppSummary": {
+    "source_id": "dri_4797_AppSummary",
+    "url": "https://apps.dca.ga.gov/DRI/AppSummary.aspx?driid=4797",
+    "retrieved_at": "2026-10-04T04:20:22.768796+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4797_AppSummary.html",
+    "bytes": 13211,
+    "sha256": "c44a4f85e43948d9f2aa1c4a5c6016fa4020ecf492e38313081be377369d9cce"
+  },
+  "dri_4797_InitialForm": {
+    "source_id": "dri_4797_InitialForm",
+    "url": "https://apps.dca.ga.gov/DRI/InitialForm.aspx?driid=4797",
+    "retrieved_at": "2026-10-04T04:20:22.837024+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4797_InitialForm.html",
+    "bytes": 38805,
+    "sha256": "5c36a1c92b6afade79f12528d889d9645be3a2beb30734a7dfff51d1706ff5dd"
+  },
+  "dri_4801_AdditionalForm": {
+    "source_id": "dri_4801_AdditionalForm",
+    "url": "https://apps.dca.ga.gov/DRI/AdditionalForm.aspx?driid=4801",
+    "retrieved_at": "2026-10-04T04:20:22.978684+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4801_AdditionalForm.html",
+    "bytes": 69508,
+    "sha256": "8b79d5360269f5cae8ec5e667dec33edb8971a0dfd46ed3d818d04e3eced2513"
+  },
+  "dri_4801_AppSummary": {
+    "source_id": "dri_4801_AppSummary",
+    "url": "https://apps.dca.ga.gov/DRI/AppSummary.aspx?driid=4801",
+    "retrieved_at": "2026-10-04T04:20:22.876645+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4801_AppSummary.html",
+    "bytes": 13283,
+    "sha256": "d732123383a0d00a848d7a0f35dde317d8557ed2c8aef813699ba42c5930064d"
+  },
+  "dri_4801_InitialForm": {
+    "source_id": "dri_4801_InitialForm",
+    "url": "https://apps.dca.ga.gov/DRI/InitialForm.aspx?driid=4801",
+    "retrieved_at": "2026-10-04T04:20:22.896822+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4801_InitialForm.html",
+    "bytes": 38444,
+    "sha256": "55a9ce29f308cc0a99ec92f4111121f024d96dc66efa228fb6f008108a9bb4d7"
+  },
+  "dri_4835_AdditionalForm": {
+    "source_id": "dri_4835_AdditionalForm",
+    "url": "https://apps.dca.ga.gov/DRI/AdditionalForm.aspx?driid=4835",
+    "retrieved_at": "2026-10-04T04:20:23.007858+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4835_AdditionalForm.html",
+    "bytes": 71811,
+    "sha256": "59e08c487983e9fa72b8c80b218aa52d87e786e0483b21a0c5047963a81447bd"
+  },
+  "dri_4835_AppSummary": {
+    "source_id": "dri_4835_AppSummary",
+    "url": "https://apps.dca.ga.gov/DRI/AppSummary.aspx?driid=4835",
+    "retrieved_at": "2026-10-04T04:20:22.975313+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4835_AppSummary.html",
+    "bytes": 13281,
+    "sha256": "55cd4c2569b7cacdc08d129b1775545ba41326e3922bcab018974426e05a3155"
+  },
+  "dri_4835_InitialForm": {
+    "source_id": "dri_4835_InitialForm",
+    "url": "https://apps.dca.ga.gov/DRI/InitialForm.aspx?driid=4835",
+    "retrieved_at": "2026-10-04T04:20:22.998172+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4835_InitialForm.html",
+    "bytes": 38791,
+    "sha256": "63fa58e1f3e568ed77c304b8efa9323d6ac2dd772041fb1beabdd1bac42666e4"
+  },
+  "dri_4843_AdditionalForm": {
+    "source_id": "dri_4843_AdditionalForm",
+    "url": "https://apps.dca.ga.gov/DRI/AdditionalForm.aspx?driid=4843",
+    "retrieved_at": "2026-10-04T04:20:23.111147+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4843_AdditionalForm.html",
+    "bytes": 70795,
+    "sha256": "0321ae0ac3ac6ec66678e7d782b32114f3f4761d5620318328d11c371801d440"
+  },
+  "dri_4843_AppSummary": {
+    "source_id": "dri_4843_AppSummary",
+    "url": "https://apps.dca.ga.gov/DRI/AppSummary.aspx?driid=4843",
+    "retrieved_at": "2026-10-04T04:20:23.001793+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4843_AppSummary.html",
+    "bytes": 13087,
+    "sha256": "9b9afee336a2800232e47a2cf01098c2d1246ceebdb101d84211f24b5d6a5d0f"
+  },
+  "dri_4843_InitialForm": {
+    "source_id": "dri_4843_InitialForm",
+    "url": "https://apps.dca.ga.gov/DRI/InitialForm.aspx?driid=4843",
+    "retrieved_at": "2026-10-04T04:20:23.102106+00:00",
+    "status": "downloaded",
+    "path": "raw/dri_4843_InitialForm.html",
+    "bytes": 38813,
+    "sha256": "937f1e54685d2552416bcc5de392cb92d4e043a50f69b4329839c6274b52765d"
+  },
+  "gp_data_centers": {
+    "source_id": "gp_data_centers",
+    "url": "https://selectgeorgia-production-assets.s3.amazonaws.com/media/documents/Data_Centers_2024_-_March_2025_Update.pdf",
+    "retrieved_at": "2026-10-04T04:20:22.872654+00:00",
+    "status": "downloaded",
+    "path": "raw/gp_data_centers.pdf",
+    "bytes": 2234594,
+    "sha256": "9d0058dd8e0578225c6c83d75927fa2bf0f0d593b44b43ec48b83e07b1343144"
+  },
+  "gp_directory": {
+    "source_id": "gp_directory",
+    "url": "https://www.georgiapower.com/about/grid-reliability/grid-improvements/grid-projects/transmission-projects.html",
+    "retrieved_at": "2026-10-04T04:20:17.309721+00:00",
+    "status": "downloaded",
+    "path": "raw/gp_directory.html",
+    "bytes": 322065,
+    "sha256": "f792f337b6bf304881ed88cb7443c4d6402faba76a0a7dfd53251700f439ff8d"
+  },
+  "gp_farley": {
+    "source_id": "gp_farley",
+    "url": "https://www.georgiapower.com/about/grid-reliability/grid-improvements/grid-projects/transmission-projects/big-tazewell-farley.html",
+    "retrieved_at": "2026-10-04T04:20:17.313614+00:00",
+    "status": "downloaded",
+    "path": "raw/gp_farley.html",
+    "bytes": 265127,
+    "sha256": "2e86516f8685073041aa075e795206700c540190e068f5fecfc6518c06c84866"
+  },
+  "gp_grassy": {
+    "source_id": "gp_grassy",
+    "url": "https://www.georgiapower.com/about/grid-reliability/grid-improvements/grid-projects/transmission-projects/grassy-hollow-great-valley.html",
+    "retrieved_at": "2026-10-04T04:20:17.361237+00:00",
+    "status": "downloaded",
+    "path": "raw/gp_grassy.html",
+    "bytes": 261326,
+    "sha256": "5fbb9691a43bff5d2329009b10faee9af831f91c05f506dfab4f2e33ba9bf813"
+  },
+  "gp_irp": {
+    "source_id": "gp_irp",
+    "url": "https://www.georgiapower.com/about/company/filings/irp.html",
+    "retrieved_at": "2026-10-04T04:20:17.290271+00:00",
+    "status": "downloaded",
+    "path": "raw/gp_irp.html",
+    "bytes": 176311,
+    "sha256": "9f0f7f7899eed9340a06231841e976cf1a7d924b794b56cc876aeb7bfdb4445b"
+  },
+  "gp_pledge": {
+    "source_id": "gp_pledge",
+    "url": "https://www.georgiapower.com/about/customer-pledge.html",
+    "retrieved_at": "2026-10-04T04:20:17.290368+00:00",
+    "status": "downloaded",
+    "path": "raw/gp_pledge.html",
+    "bytes": 204447,
+    "sha256": "07fae9062dae342e93c1f06dc44bd14effb383a9550d09f35d79eece58bd506f"
+  },
+  "gp_speedway": {
+    "source_id": "gp_speedway",
+    "url": "https://www.georgiapower.com/about/grid-reliability/grid-improvements/grid-projects/transmission-projects/hills-bridge-speedway.html",
+    "retrieved_at": "2026-10-04T04:20:17.289839+00:00",
+    "status": "downloaded",
+    "path": "raw/gp_speedway.html",
+    "bytes": 360528,
+    "sha256": "798dc856d7c514b0ac3933080230ab615f699b9c5b12f4a7de595e18b7db638a"
+  },
+  "tyrone_approval": {
+    "source_id": "tyrone_approval",
+    "url": "https://www.tyronega.gov/datacenter",
+    "retrieved_at": "2026-10-04T04:20:18.267711+00:00",
+    "status": "downloaded",
+    "path": "raw/tyrone_approval.html",
+    "bytes": 379837,
+    "sha256": "9d3940381d4a12cdab94971b807d0817e85c672cb25c56ee080690cb2fcf8f92"
+  },
+  "cherokee_moratorium": {
+    "source_id": "cherokee_moratorium",
+    "url": "https://www.cherokeecountyga.gov/Communications/media.php?storyID=664",
+    "retrieved_at": "2026-10-04T04:23:04.399385+00:00",
+    "status": "downloaded",
+    "path": "raw/cherokee_moratorium.html",
+    "bytes": 30039,
+    "sha256": "db641ad24952cfd80a3ed155f2386adbd10a619ffd4e618de34b830c539ae233"
+  },
+  "clayton_moratorium": {
+    "source_id": "clayton_moratorium",
+    "url": "https://www.claytoncountyga.gov/news/clayton-county-board-of-commissioners-approves-moratorium-on-new-data-centers-in-clayton-county/",
+    "retrieved_at": "2026-10-04T04:23:04.604049+00:00",
+    "status": "downloaded",
+    "path": "raw/clayton_moratorium.html",
+    "bytes": 1223,
+    "sha256": "1896666b27d041cfead69de2be17353269417ca5027fb0108f78698b3ed98938"
+  },
+  "athens_minutes": {
+    "source_id": "athens_minutes",
+    "url": "https://www.accgov.com/AgendaCenter/ViewFile/Minutes/_03032026-2902",
+    "retrieved_at": "2026-10-04T04:23:05.097740+00:00",
+    "status": "downloaded",
+    "path": "raw/athens_minutes.pdf",
+    "bytes": 324735,
+    "sha256": "e231e287d9fde17bb981b8a27b9ce511e2c46ed3303dad0e394b09cc91531041"
+  }
+}

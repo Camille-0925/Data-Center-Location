@@ -1,0 +1,2577 @@
+{
+  "13001": {
+    "name": "Appling County",
+    "latitude": 31.739726,
+    "longitude": -82.290102,
+    "utility_ids": [
+      7140,
+      16674
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Satilla Rural Elec Member Corporation"
+    ]
+  },
+  "13003": {
+    "name": "Atkinson County",
+    "latitude": 31.296806,
+    "longitude": -82.878151,
+    "utility_ids": [
+      7140,
+      16674
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Satilla Rural Elec Member Corporation"
+    ]
+  },
+  "13005": {
+    "name": "Bacon County",
+    "latitude": 31.55021,
+    "longitude": -82.451433,
+    "utility_ids": [
+      7140,
+      16674
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Satilla Rural Elec Member Corporation"
+    ]
+  },
+  "13007": {
+    "name": "Baker County",
+    "latitude": 31.31958,
+    "longitude": -84.454881,
+    "utility_ids": [
+      7140,
+      12706,
+      18499
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Mitchell Electric Member Corp",
+      "Three Notch Elec Member Corp"
+    ]
+  },
+  "13009": {
+    "name": "Baldwin County",
+    "latitude": 33.05949,
+    "longitude": -83.255457,
+    "utility_ids": [
+      7140,
+      13962,
+      18956,
+      20146
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Oconee Electric Member Corp",
+      "Tri-County Elec Member Corp (GA)",
+      "Washington Elec Member Corp"
+    ]
+  },
+  "13011": {
+    "name": "Banks County",
+    "latitude": 34.351922,
+    "longitude": -83.498441,
+    "utility_ids": [
+      7140,
+      8210,
+      9601
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Hart Electric Member Corp",
+      "Jackson Electric Member Corp - (GA)"
+    ]
+  },
+  "13013": {
+    "name": "Barrow County",
+    "latitude": 33.992009,
+    "longitude": -83.712303,
+    "utility_ids": [
+      7140,
+      9601,
+      20065
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Jackson Electric Member Corp - (GA)",
+      "Walton Electric Member Corp"
+    ]
+  },
+  "13015": {
+    "name": "Bartow County",
+    "latitude": 34.240917,
+    "longitude": -84.838188,
+    "utility_ids": [
+      308,
+      562,
+      3108,
+      3248,
+      3916,
+      7090,
+      7140
+    ],
+    "utilities": [
+      "City of Acworth - (GA)",
+      "Amicalola Electric Member Corp",
+      "City of Cartersville - (GA)",
+      "Central Georgia El Member Corp",
+      "Cobb Electric Membership Corp",
+      "GreyStone Power Corporation",
+      "Georgia Power Co"
+    ]
+  },
+  "13017": {
+    "name": "Ben Hill County",
+    "latitude": 31.730583,
+    "longitude": -83.162961,
+    "utility_ids": [
+      6380,
+      7140,
+      9431,
+      12472,
+      16674
+    ],
+    "utilities": [
+      "Fitzgerald Wtr Lgt & Bond Comm",
+      "Georgia Power Co",
+      "Irwin Electric Membership Corp",
+      "Middle Georgia El Member Corp",
+      "Satilla Rural Elec Member Corporation"
+    ]
+  },
+  "13019": {
+    "name": "Berrien County",
+    "latitude": 31.288652,
+    "longitude": -83.22787,
+    "utility_ids": [
+      7140,
+      9431,
+      17290,
+      40212
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Irwin Electric Membership Corp",
+      "Slash Pine Elec Member Corp",
+      "Colquitt Electric Membership Corp"
+    ]
+  },
+  "13021": {
+    "name": "Bibb County",
+    "latitude": 32.80899,
+    "longitude": -83.69406,
+    "utility_ids": [
+      3248,
+      6411,
+      7140,
+      10624,
+      13962,
+      18956
+    ],
+    "utilities": [
+      "Central Georgia El Member Corp",
+      "Flint Electric Membership Corp",
+      "Georgia Power Co",
+      "Southern Rivers Energy",
+      "Oconee Electric Member Corp",
+      "Tri-County Elec Member Corp (GA)"
+    ]
+  },
+  "13023": {
+    "name": "Bleckley County",
+    "latitude": 32.435403,
+    "longitude": -83.331717,
+    "utility_ids": [
+      7140,
+      13934,
+      13962
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Ocmulgee Electric Member Corp",
+      "Oconee Electric Member Corp"
+    ]
+  },
+  "13025": {
+    "name": "Brantley County",
+    "latitude": 31.197334,
+    "longitude": -81.982978,
+    "utility_ids": [
+      7140,
+      16674,
+      31833
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Satilla Rural Elec Member Corporation",
+      "Okefenoke Rural El Member Corp"
+    ]
+  },
+  "13027": {
+    "name": "Brooks County",
+    "latitude": 30.822934,
+    "longitude": -83.581905,
+    "utility_ids": [
+      7140,
+      7450,
+      15573,
+      40212
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Grady Electric Membership Corp",
+      "City of Quitman",
+      "Colquitt Electric Membership Corp"
+    ]
+  },
+  "13029": {
+    "name": "Bryan County",
+    "latitude": 32.017969,
+    "longitude": -81.438543,
+    "utility_ids": [
+      2903,
+      3843,
+      5905,
+      7140
+    ],
+    "utilities": [
+      "Canoochee Electric Member Corp",
+      "Coastal Electric Member Corp - (GA)",
+      "Excelsior Electric Member Corp",
+      "Georgia Power Co"
+    ]
+  },
+  "13031": {
+    "name": "Bulloch County",
+    "latitude": 32.394481,
+    "longitude": -81.741441,
+    "utility_ids": [
+      2903,
+      5905,
+      7140,
+      14649
+    ],
+    "utilities": [
+      "Canoochee Electric Member Corp",
+      "Excelsior Electric Member Corp",
+      "Georgia Power Co",
+      "Planters Electric Member Corp"
+    ]
+  },
+  "13033": {
+    "name": "Burke County",
+    "latitude": 33.060181,
+    "longitude": -82.000164,
+    "utility_ids": [
+      7140,
+      9689,
+      14649
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Jefferson Electric Member Corp",
+      "Planters Electric Member Corp"
+    ]
+  },
+  "13035": {
+    "name": "Butts County",
+    "latitude": 33.290355,
+    "longitude": -83.958221,
+    "utility_ids": [
+      3248,
+      7140,
+      9573,
+      17832
+    ],
+    "utilities": [
+      "Central Georgia El Member Corp",
+      "Georgia Power Co",
+      "City of Jackson - (GA)",
+      "Snapping Shoals El Member Corp"
+    ]
+  },
+  "13037": {
+    "name": "Calhoun County",
+    "latitude": 31.521279,
+    "longitude": -84.62629,
+    "utility_ids": [
+      7140,
+      12706,
+      19219
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Mitchell Electric Member Corp",
+      "Diverse Power Incorporated"
+    ]
+  },
+  "13039": {
+    "name": "Camden County",
+    "latitude": 30.913358,
+    "longitude": -81.642019,
+    "utility_ids": [
+      7140,
+      31833
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Okefenoke Rural El Member Corp"
+    ]
+  },
+  "13043": {
+    "name": "Candler County",
+    "latitude": 32.40395,
+    "longitude": -82.071266,
+    "utility_ids": [
+      5905,
+      7140
+    ],
+    "utilities": [
+      "Excelsior Electric Member Corp",
+      "Georgia Power Co"
+    ]
+  },
+  "13045": {
+    "name": "Carroll County",
+    "latitude": 33.582237,
+    "longitude": -85.080527,
+    "utility_ids": [
+      3081,
+      7090,
+      7140
+    ],
+    "utilities": [
+      "Carroll Electric Member Corp - (GA)",
+      "GreyStone Power Corporation",
+      "Georgia Power Co"
+    ]
+  },
+  "13047": {
+    "name": "Catoosa County",
+    "latitude": 34.900212,
+    "longitude": -85.139385,
+    "utility_ids": [
+      3408,
+      7140,
+      13716
+    ],
+    "utilities": [
+      "City of Chattanooga - (TN)",
+      "Georgia Power Co",
+      "North Georgia Elec Member Corp"
+    ]
+  },
+  "13049": {
+    "name": "Charlton County",
+    "latitude": 30.779904,
+    "longitude": -82.139644,
+    "utility_ids": [
+      7140,
+      17290,
+      31833
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Slash Pine Elec Member Corp",
+      "Okefenoke Rural El Member Corp"
+    ]
+  },
+  "13051": {
+    "name": "Chatham County",
+    "latitude": 31.980404,
+    "longitude": -81.085184,
+    "utility_ids": [
+      2903
+    ],
+    "utilities": [
+      "Canoochee Electric Member Corp"
+    ]
+  },
+  "13053": {
+    "name": "Chattahoochee County",
+    "latitude": 32.347445,
+    "longitude": -84.788021,
+    "utility_ids": [
+      6411,
+      7140,
+      18305
+    ],
+    "utilities": [
+      "Flint Electric Membership Corp",
+      "Georgia Power Co",
+      "Sumter Electric Member Corp"
+    ]
+  },
+  "13055": {
+    "name": "Chattooga County",
+    "latitude": 34.474178,
+    "longitude": -85.345289,
+    "utility_ids": [
+      7140,
+      13716
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "North Georgia Elec Member Corp"
+    ]
+  },
+  "13057": {
+    "name": "Cherokee County",
+    "latitude": 34.244317,
+    "longitude": -84.475057,
+    "utility_ids": [
+      562,
+      3916,
+      7140,
+      16865
+    ],
+    "utilities": [
+      "Amicalola Electric Member Corp",
+      "Cobb Electric Membership Corp",
+      "Georgia Power Co",
+      "Sawnee Electric Membership Corporation"
+    ]
+  },
+  "13059": {
+    "name": "Clarke County",
+    "latitude": 33.952185,
+    "longitude": -83.367152,
+    "utility_ids": [
+      7140,
+      9601,
+      15700,
+      20065
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Jackson Electric Member Corp - (GA)",
+      "Rayle Electric Membership Corp",
+      "Walton Electric Member Corp"
+    ]
+  },
+  "13061": {
+    "name": "Clay County",
+    "latitude": 31.619831,
+    "longitude": -84.992583,
+    "utility_ids": [
+      7140,
+      18499,
+      19219
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Three Notch Elec Member Corp",
+      "Diverse Power Incorporated"
+    ]
+  },
+  "13063": {
+    "name": "Clayton County",
+    "latitude": 33.552242,
+    "longitude": -84.412973,
+    "utility_ids": [
+      3248,
+      3939,
+      4432,
+      7140
+    ],
+    "utilities": [
+      "Central Georgia El Member Corp",
+      "City of College Park - (GA)",
+      "Coweta-Fayette El Member Corp",
+      "Georgia Power Co"
+    ]
+  },
+  "13065": {
+    "name": "Clinch County",
+    "latitude": 30.917653,
+    "longitude": -82.702614,
+    "utility_ids": [
+      7140,
+      17290
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Slash Pine Elec Member Corp"
+    ]
+  },
+  "13067": {
+    "name": "Cobb County",
+    "latitude": 33.939926,
+    "longitude": -84.57411,
+    "utility_ids": [
+      308,
+      3916,
+      7090,
+      7140,
+      11646
+    ],
+    "utilities": [
+      "City of Acworth - (GA)",
+      "Cobb Electric Membership Corp",
+      "GreyStone Power Corporation",
+      "Georgia Power Co",
+      "City of Marietta - (GA)"
+    ]
+  },
+  "13069": {
+    "name": "Coffee County",
+    "latitude": 31.549245,
+    "longitude": -82.84494,
+    "utility_ids": [
+      5325,
+      7140,
+      9431,
+      16674
+    ],
+    "utilities": [
+      "City of Douglas",
+      "Georgia Power Co",
+      "Irwin Electric Membership Corp",
+      "Satilla Rural Elec Member Corporation"
+    ]
+  },
+  "13071": {
+    "name": "Colquitt County",
+    "latitude": 31.189714,
+    "longitude": -83.769873,
+    "utility_ids": [
+      5236,
+      7140,
+      7450,
+      12706,
+      13026,
+      40212
+    ],
+    "utilities": [
+      "City of Doerun - (GA)",
+      "Georgia Power Co",
+      "Grady Electric Membership Corp",
+      "Mitchell Electric Member Corp",
+      "City of Moultrie - (GA)",
+      "Colquitt Electric Membership Corp"
+    ]
+  },
+  "13073": {
+    "name": "Columbia County",
+    "latitude": 33.552075,
+    "longitude": -82.249608,
+    "utility_ids": [
+      7140,
+      9689
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Jefferson Electric Member Corp"
+    ]
+  },
+  "13075": {
+    "name": "Cook County",
+    "latitude": 31.152516,
+    "longitude": -83.429445,
+    "utility_ids": [
+      123,
+      7140,
+      40212
+    ],
+    "utilities": [
+      "City of Adel- (GA)",
+      "Georgia Power Co",
+      "Colquitt Electric Membership Corp"
+    ]
+  },
+  "13077": {
+    "name": "Coweta County",
+    "latitude": 33.352897,
+    "longitude": -84.762138,
+    "utility_ids": [
+      4432,
+      7090,
+      7140,
+      7515,
+      10624,
+      13547,
+      14396,
+      19219
+    ],
+    "utilities": [
+      "Coweta-Fayette El Member Corp",
+      "GreyStone Power Corporation",
+      "Georgia Power Co",
+      "City of Grantville - (GA)",
+      "Southern Rivers Energy",
+      "Newnan Wtr, Sewer & Light Comm",
+      "City of Palmetto - (GA)",
+      "Diverse Power Incorporated"
+    ]
+  },
+  "13079": {
+    "name": "Crawford County",
+    "latitude": 32.709448,
+    "longitude": -83.979168,
+    "utility_ids": [
+      6411,
+      6617,
+      7140,
+      10624,
+      19581
+    ],
+    "utilities": [
+      "Flint Electric Membership Corp",
+      "Fort Valley Utility Comm",
+      "Georgia Power Co",
+      "Southern Rivers Energy",
+      "Upson Elec Member Corp"
+    ]
+  },
+  "13081": {
+    "name": "Crisp County",
+    "latitude": 31.920268,
+    "longitude": -83.75653,
+    "utility_ids": [
+      4538,
+      7140
+    ],
+    "utilities": [
+      "Crisp County Power Comm",
+      "Georgia Power Co"
+    ]
+  },
+  "13083": {
+    "name": "Dade County",
+    "latitude": 34.852424,
+    "longitude": -85.506201,
+    "utility_ids": [
+      3408,
+      7140
+    ],
+    "utilities": [
+      "City of Chattanooga - (TN)",
+      "Georgia Power Co"
+    ]
+  },
+  "13085": {
+    "name": "Dawson County",
+    "latitude": 34.442608,
+    "longitude": -84.173261,
+    "utility_ids": [
+      562,
+      7140,
+      16865
+    ],
+    "utilities": [
+      "Amicalola Electric Member Corp",
+      "Georgia Power Co",
+      "Sawnee Electric Membership Corporation"
+    ]
+  },
+  "13087": {
+    "name": "Decatur County",
+    "latitude": 30.880643,
+    "longitude": -84.58389,
+    "utility_ids": [
+      2236,
+      7140,
+      7450,
+      12706,
+      18499
+    ],
+    "utilities": [
+      "Town of Brinson - (GA)",
+      "Georgia Power Co",
+      "Grady Electric Membership Corp",
+      "Mitchell Electric Member Corp",
+      "Three Notch Elec Member Corp"
+    ]
+  },
+  "13089": {
+    "name": "DeKalb County",
+    "latitude": 33.770661,
+    "longitude": -84.226343,
+    "utility_ids": [
+      7140,
+      13646,
+      17832,
+      20065
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "City of Norcross- (GA)",
+      "Snapping Shoals El Member Corp",
+      "Walton Electric Member Corp"
+    ]
+  },
+  "13091": {
+    "name": "Dodge County",
+    "latitude": 32.164369,
+    "longitude": -83.167866,
+    "utility_ids": [
+      7140,
+      13934,
+      13962,
+      26218
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Ocmulgee Electric Member Corp",
+      "Oconee Electric Member Corp",
+      "Little Ocmulgee El Member Corp"
+    ]
+  },
+  "13093": {
+    "name": "Dooly County",
+    "latitude": 32.151995,
+    "longitude": -83.807167,
+    "utility_ids": [
+      4538,
+      6411,
+      7140,
+      12472
+    ],
+    "utilities": [
+      "Crisp County Power Comm",
+      "Flint Electric Membership Corp",
+      "Georgia Power Co",
+      "Middle Georgia El Member Corp"
+    ]
+  },
+  "13095": {
+    "name": "Dougherty County",
+    "latitude": 31.532588,
+    "longitude": -84.20904,
+    "utility_ids": [
+      230,
+      7140,
+      12706,
+      18305,
+      19219
+    ],
+    "utilities": [
+      "Albany Utility Board",
+      "Georgia Power Co",
+      "Mitchell Electric Member Corp",
+      "Sumter Electric Member Corp",
+      "Diverse Power Incorporated"
+    ]
+  },
+  "13097": {
+    "name": "Douglas County",
+    "latitude": 33.701242,
+    "longitude": -84.767314,
+    "utility_ids": [
+      7090,
+      7140
+    ],
+    "utilities": [
+      "GreyStone Power Corporation",
+      "Georgia Power Co"
+    ]
+  },
+  "13099": {
+    "name": "Early County",
+    "latitude": 31.324191,
+    "longitude": -84.906723,
+    "utility_ids": [
+      1826,
+      7140,
+      12706,
+      18499,
+      19219
+    ],
+    "utilities": [
+      "City of Blakely - (GA)",
+      "Georgia Power Co",
+      "Mitchell Electric Member Corp",
+      "Three Notch Elec Member Corp",
+      "Diverse Power Incorporated"
+    ]
+  },
+  "13101": {
+    "name": "Echols County",
+    "latitude": 30.714008,
+    "longitude": -82.897376,
+    "utility_ids": [
+      7140,
+      17290,
+      40212
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Slash Pine Elec Member Corp",
+      "Colquitt Electric Membership Corp"
+    ]
+  },
+  "13103": {
+    "name": "Effingham County",
+    "latitude": 32.361679,
+    "longitude": -81.343376,
+    "utility_ids": [
+      5905,
+      7140,
+      14649
+    ],
+    "utilities": [
+      "Excelsior Electric Member Corp",
+      "Georgia Power Co",
+      "Planters Electric Member Corp"
+    ]
+  },
+  "13105": {
+    "name": "Elbert County",
+    "latitude": 34.116406,
+    "longitude": -82.841911,
+    "utility_ids": [
+      5730,
+      7140,
+      8210
+    ],
+    "utilities": [
+      "City of Elberton",
+      "Georgia Power Co",
+      "Hart Electric Member Corp"
+    ]
+  },
+  "13107": {
+    "name": "Emanuel County",
+    "latitude": 32.5912,
+    "longitude": -82.300195,
+    "utility_ids": [
+      407,
+      2903,
+      5905,
+      7140,
+      9689,
+      14649,
+      20146
+    ],
+    "utilities": [
+      "Altamaha Electric Member Corp",
+      "Canoochee Electric Member Corp",
+      "Excelsior Electric Member Corp",
+      "Georgia Power Co",
+      "Jefferson Electric Member Corp",
+      "Planters Electric Member Corp",
+      "Washington Elec Member Corp"
+    ]
+  },
+  "13109": {
+    "name": "Evans County",
+    "latitude": 32.153083,
+    "longitude": -81.890153,
+    "utility_ids": [
+      2903,
+      5905,
+      7140
+    ],
+    "utilities": [
+      "Canoochee Electric Member Corp",
+      "Excelsior Electric Member Corp",
+      "Georgia Power Co"
+    ]
+  },
+  "13111": {
+    "name": "Fannin County",
+    "latitude": 34.866543,
+    "longitude": -84.317331,
+    "utility_ids": [
+      562,
+      1891,
+      19154
+    ],
+    "utilities": [
+      "Amicalola Electric Member Corp",
+      "Blue Ridge Mountain EMC - (GA)",
+      "Tri-State Electric Member Corp"
+    ]
+  },
+  "13113": {
+    "name": "Fayette County",
+    "latitude": 33.412717,
+    "longitude": -84.493941,
+    "utility_ids": [
+      3248,
+      4432,
+      7090,
+      7140
+    ],
+    "utilities": [
+      "Central Georgia El Member Corp",
+      "Coweta-Fayette El Member Corp",
+      "GreyStone Power Corporation",
+      "Georgia Power Co"
+    ]
+  },
+  "13115": {
+    "name": "Floyd County",
+    "latitude": 34.26369,
+    "longitude": -85.213685,
+    "utility_ids": [
+      3081,
+      7140,
+      13716
+    ],
+    "utilities": [
+      "Carroll Electric Member Corp - (GA)",
+      "Georgia Power Co",
+      "North Georgia Elec Member Corp"
+    ]
+  },
+  "13117": {
+    "name": "Forsyth County",
+    "latitude": 34.225143,
+    "longitude": -84.127408,
+    "utility_ids": [
+      562,
+      7140,
+      13646,
+      16865
+    ],
+    "utilities": [
+      "Amicalola Electric Member Corp",
+      "Georgia Power Co",
+      "City of Norcross- (GA)",
+      "Sawnee Electric Membership Corporation"
+    ]
+  },
+  "13119": {
+    "name": "Franklin County",
+    "latitude": 34.375052,
+    "longitude": -83.22799,
+    "utility_ids": [
+      7140,
+      8210,
+      9601
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Hart Electric Member Corp",
+      "Jackson Electric Member Corp - (GA)"
+    ]
+  },
+  "13121": {
+    "name": "Fulton County",
+    "latitude": 33.790034,
+    "longitude": -84.468182,
+    "utility_ids": [
+      3916,
+      3939,
+      4432,
+      5582,
+      6130,
+      7090,
+      7140,
+      14396,
+      16865
+    ],
+    "utilities": [
+      "Cobb Electric Membership Corp",
+      "City of College Park - (GA)",
+      "Coweta-Fayette El Member Corp",
+      "City of East Point - (GA)",
+      "City of Fairburn - (GA)",
+      "GreyStone Power Corporation",
+      "Georgia Power Co",
+      "City of Palmetto - (GA)",
+      "Sawnee Electric Membership Corporation"
+    ]
+  },
+  "13123": {
+    "name": "Gilmer County",
+    "latitude": 34.690522,
+    "longitude": -84.454812,
+    "utility_ids": [
+      562,
+      1891,
+      7140
+    ],
+    "utilities": [
+      "Amicalola Electric Member Corp",
+      "Blue Ridge Mountain EMC - (GA)",
+      "Georgia Power Co"
+    ]
+  },
+  "13125": {
+    "name": "Glascock County",
+    "latitude": 33.227491,
+    "longitude": -82.606913,
+    "utility_ids": [
+      7140,
+      9689,
+      20146
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Jefferson Electric Member Corp",
+      "Washington Elec Member Corp"
+    ]
+  },
+  "13127": {
+    "name": "Glynn County",
+    "latitude": 31.21271,
+    "longitude": -81.49645,
+    "utility_ids": [
+      7140,
+      31833
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Okefenoke Rural El Member Corp"
+    ]
+  },
+  "13129": {
+    "name": "Gordon County",
+    "latitude": 34.509667,
+    "longitude": -84.873862,
+    "utility_ids": [
+      562,
+      2812,
+      7140,
+      13716
+    ],
+    "utilities": [
+      "Amicalola Electric Member Corp",
+      "City of Calhoun - (GA)",
+      "Georgia Power Co",
+      "North Georgia Elec Member Corp"
+    ]
+  },
+  "13131": {
+    "name": "Grady County",
+    "latitude": 30.8759,
+    "longitude": -84.244965,
+    "utility_ids": [
+      2773,
+      7140,
+      7450,
+      12706,
+      18848,
+      20534
+    ],
+    "utilities": [
+      "City of Cairo - (GA)",
+      "Georgia Power Co",
+      "Grady Electric Membership Corp",
+      "Mitchell Electric Member Corp",
+      "City of Thomasville - (GA)",
+      "City of Whigham - (GA)"
+    ]
+  },
+  "13133": {
+    "name": "Greene County",
+    "latitude": 33.576704,
+    "longitude": -83.166625,
+    "utility_ids": [
+      7140,
+      15700,
+      20065
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Rayle Electric Membership Corp",
+      "Walton Electric Member Corp"
+    ]
+  },
+  "13135": {
+    "name": "Gwinnett County",
+    "latitude": 33.958756,
+    "longitude": -84.025735,
+    "utility_ids": [
+      2487,
+      7140,
+      9601,
+      10800,
+      13646,
+      16865,
+      20065
+    ],
+    "utilities": [
+      "City of Buford",
+      "Georgia Power Co",
+      "Jackson Electric Member Corp - (GA)",
+      "City of Lawrenceville - (GA)",
+      "City of Norcross- (GA)",
+      "Sawnee Electric Membership Corporation",
+      "Walton Electric Member Corp"
+    ]
+  },
+  "13137": {
+    "name": "Habersham County",
+    "latitude": 34.634392,
+    "longitude": -83.525875,
+    "utility_ids": [
+      7140,
+      7887
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Habersham Electric Membership Corp"
+    ]
+  },
+  "13139": {
+    "name": "Hall County",
+    "latitude": 34.317569,
+    "longitude": -83.8185,
+    "utility_ids": [
+      2487,
+      7140,
+      7887,
+      9601,
+      16865
+    ],
+    "utilities": [
+      "City of Buford",
+      "Georgia Power Co",
+      "Habersham Electric Membership Corp",
+      "Jackson Electric Member Corp - (GA)",
+      "Sawnee Electric Membership Corporation"
+    ]
+  },
+  "13141": {
+    "name": "Hancock County",
+    "latitude": 33.26922,
+    "longitude": -83.000465,
+    "utility_ids": [
+      7140,
+      15700,
+      20146
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Rayle Electric Membership Corp",
+      "Washington Elec Member Corp"
+    ]
+  },
+  "13143": {
+    "name": "Haralson County",
+    "latitude": 33.795165,
+    "longitude": -85.220063,
+    "utility_ids": [
+      3081,
+      7140
+    ],
+    "utilities": [
+      "Carroll Electric Member Corp - (GA)",
+      "Georgia Power Co"
+    ]
+  },
+  "13145": {
+    "name": "Harris County",
+    "latitude": 32.731549,
+    "longitude": -84.912432,
+    "utility_ids": [
+      6411,
+      7140,
+      19219,
+      20393
+    ],
+    "utilities": [
+      "Flint Electric Membership Corp",
+      "Georgia Power Co",
+      "Diverse Power Incorporated",
+      "City of West Point - (GA)"
+    ]
+  },
+  "13147": {
+    "name": "Hart County",
+    "latitude": 34.348732,
+    "longitude": -82.96329,
+    "utility_ids": [
+      7140,
+      8210
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Hart Electric Member Corp"
+    ]
+  },
+  "13149": {
+    "name": "Heard County",
+    "latitude": 33.291347,
+    "longitude": -85.137886,
+    "utility_ids": [
+      3081,
+      4432,
+      7140,
+      19219
+    ],
+    "utilities": [
+      "Carroll Electric Member Corp - (GA)",
+      "Coweta-Fayette El Member Corp",
+      "Georgia Power Co",
+      "Diverse Power Incorporated"
+    ]
+  },
+  "13151": {
+    "name": "Henry County",
+    "latitude": 33.452947,
+    "longitude": -84.154021,
+    "utility_ids": [
+      3248,
+      3939,
+      7140,
+      8022,
+      17832
+    ],
+    "utilities": [
+      "Central Georgia El Member Corp",
+      "City of College Park - (GA)",
+      "Georgia Power Co",
+      "City of Hampton - (GA)",
+      "Snapping Shoals El Member Corp"
+    ]
+  },
+  "13153": {
+    "name": "Houston County",
+    "latitude": 32.458147,
+    "longitude": -83.662309,
+    "utility_ids": [
+      6411,
+      7140,
+      12472
+    ],
+    "utilities": [
+      "Flint Electric Membership Corp",
+      "Georgia Power Co",
+      "Middle Georgia El Member Corp"
+    ]
+  },
+  "13155": {
+    "name": "Irwin County",
+    "latitude": 31.604306,
+    "longitude": -83.277037,
+    "utility_ids": [
+      7140,
+      9431,
+      16674
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Irwin Electric Membership Corp",
+      "Satilla Rural Elec Member Corporation"
+    ]
+  },
+  "13157": {
+    "name": "Jackson County",
+    "latitude": 34.130905,
+    "longitude": -83.562557,
+    "utility_ids": [
+      4091,
+      7140,
+      9601
+    ],
+    "utilities": [
+      "City of Commerce - (GA)",
+      "Georgia Power Co",
+      "Jackson Electric Member Corp - (GA)"
+    ]
+  },
+  "13159": {
+    "name": "Jasper County",
+    "latitude": 33.316981,
+    "longitude": -83.689151,
+    "utility_ids": [
+      3248,
+      7140,
+      12851,
+      17832,
+      18956
+    ],
+    "utilities": [
+      "Central Georgia El Member Corp",
+      "Georgia Power Co",
+      "City of Monticello - (GA)",
+      "Snapping Shoals El Member Corp",
+      "Tri-County Elec Member Corp (GA)"
+    ]
+  },
+  "13161": {
+    "name": "Jeff Davis County",
+    "latitude": 31.811615,
+    "longitude": -82.636825,
+    "utility_ids": [
+      7140,
+      16674
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Satilla Rural Elec Member Corporation"
+    ]
+  },
+  "13163": {
+    "name": "Jefferson County",
+    "latitude": 33.058176,
+    "longitude": -82.420004,
+    "utility_ids": [
+      7140,
+      9689,
+      20146
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Jefferson Electric Member Corp",
+      "Washington Elec Member Corp"
+    ]
+  },
+  "13165": {
+    "name": "Jenkins County",
+    "latitude": 32.794563,
+    "longitude": -81.971524,
+    "utility_ids": [
+      5905,
+      7140,
+      9689,
+      14649
+    ],
+    "utilities": [
+      "Excelsior Electric Member Corp",
+      "Georgia Power Co",
+      "Jefferson Electric Member Corp",
+      "Planters Electric Member Corp"
+    ]
+  },
+  "13167": {
+    "name": "Johnson County",
+    "latitude": 32.694584,
+    "longitude": -82.66397,
+    "utility_ids": [
+      407,
+      7140,
+      9689,
+      20146
+    ],
+    "utilities": [
+      "Altamaha Electric Member Corp",
+      "Georgia Power Co",
+      "Jefferson Electric Member Corp",
+      "Washington Elec Member Corp"
+    ]
+  },
+  "13169": {
+    "name": "Jones County",
+    "latitude": 33.021664,
+    "longitude": -83.562196,
+    "utility_ids": [
+      3248,
+      7140,
+      18956
+    ],
+    "utilities": [
+      "Central Georgia El Member Corp",
+      "Georgia Power Co",
+      "Tri-County Elec Member Corp (GA)"
+    ]
+  },
+  "13171": {
+    "name": "Lamar County",
+    "latitude": 33.07444,
+    "longitude": -84.146689,
+    "utility_ids": [
+      1232,
+      3248,
+      7140,
+      7679,
+      10624
+    ],
+    "utilities": [
+      "City of Barnesville - (GA)",
+      "Central Georgia El Member Corp",
+      "Georgia Power Co",
+      "City of Griffin - (GA)",
+      "Southern Rivers Energy"
+    ]
+  },
+  "13173": {
+    "name": "Lanier County",
+    "latitude": 31.038197,
+    "longitude": -83.063164,
+    "utility_ids": [
+      7140,
+      17290,
+      40212
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Slash Pine Elec Member Corp",
+      "Colquitt Electric Membership Corp"
+    ]
+  },
+  "13175": {
+    "name": "Laurens County",
+    "latitude": 32.39322,
+    "longitude": -82.926317,
+    "utility_ids": [
+      407,
+      7140,
+      13934,
+      13962,
+      20146,
+      26218
+    ],
+    "utilities": [
+      "Altamaha Electric Member Corp",
+      "Georgia Power Co",
+      "Ocmulgee Electric Member Corp",
+      "Oconee Electric Member Corp",
+      "Washington Elec Member Corp",
+      "Little Ocmulgee El Member Corp"
+    ]
+  },
+  "13177": {
+    "name": "Lee County",
+    "latitude": 31.818419,
+    "longitude": -84.146681,
+    "utility_ids": [
+      230,
+      7140,
+      12706,
+      18305
+    ],
+    "utilities": [
+      "Albany Utility Board",
+      "Georgia Power Co",
+      "Mitchell Electric Member Corp",
+      "Sumter Electric Member Corp"
+    ]
+  },
+  "13179": {
+    "name": "Liberty County",
+    "latitude": 31.807458,
+    "longitude": -81.457871,
+    "utility_ids": [
+      2903,
+      3843,
+      7140
+    ],
+    "utilities": [
+      "Canoochee Electric Member Corp",
+      "Coastal Electric Member Corp - (GA)",
+      "Georgia Power Co"
+    ]
+  },
+  "13181": {
+    "name": "Lincoln County",
+    "latitude": 33.792151,
+    "longitude": -82.448299,
+    "utility_ids": [
+      7140,
+      15700
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Rayle Electric Membership Corp"
+    ]
+  },
+  "13183": {
+    "name": "Long County",
+    "latitude": 31.749563,
+    "longitude": -81.74287,
+    "utility_ids": [
+      2903,
+      3843,
+      7140
+    ],
+    "utilities": [
+      "Canoochee Electric Member Corp",
+      "Coastal Electric Member Corp - (GA)",
+      "Georgia Power Co"
+    ]
+  },
+  "13185": {
+    "name": "Lowndes County",
+    "latitude": 30.833145,
+    "longitude": -83.268995,
+    "utility_ids": [
+      7140,
+      17290,
+      40212
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Slash Pine Elec Member Corp",
+      "Colquitt Electric Membership Corp"
+    ]
+  },
+  "13187": {
+    "name": "Lumpkin County",
+    "latitude": 34.56814,
+    "longitude": -83.998925,
+    "utility_ids": [
+      562,
+      7140,
+      7887,
+      9601,
+      16865
+    ],
+    "utilities": [
+      "Amicalola Electric Member Corp",
+      "Georgia Power Co",
+      "Habersham Electric Membership Corp",
+      "Jackson Electric Member Corp - (GA)",
+      "Sawnee Electric Membership Corporation"
+    ]
+  },
+  "13189": {
+    "name": "McDuffie County",
+    "latitude": 33.48061,
+    "longitude": -82.479572,
+    "utility_ids": [
+      7140,
+      9689
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Jefferson Electric Member Corp"
+    ]
+  },
+  "13191": {
+    "name": "McIntosh County",
+    "latitude": 31.485629,
+    "longitude": -81.372141,
+    "utility_ids": [
+      3843,
+      7140
+    ],
+    "utilities": [
+      "Coastal Electric Member Corp - (GA)",
+      "Georgia Power Co"
+    ]
+  },
+  "13193": {
+    "name": "Macon County",
+    "latitude": 32.362686,
+    "longitude": -84.051231,
+    "utility_ids": [
+      6411,
+      7140,
+      12472
+    ],
+    "utilities": [
+      "Flint Electric Membership Corp",
+      "Georgia Power Co",
+      "Middle Georgia El Member Corp"
+    ]
+  },
+  "13195": {
+    "name": "Madison County",
+    "latitude": 34.12748,
+    "longitude": -83.208653,
+    "utility_ids": [
+      7140,
+      8210,
+      9601,
+      15700
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Hart Electric Member Corp",
+      "Jackson Electric Member Corp - (GA)",
+      "Rayle Electric Membership Corp"
+    ]
+  },
+  "13197": {
+    "name": "Marion County",
+    "latitude": 32.359312,
+    "longitude": -84.528735,
+    "utility_ids": [
+      6411,
+      7140,
+      18305
+    ],
+    "utilities": [
+      "Flint Electric Membership Corp",
+      "Georgia Power Co",
+      "Sumter Electric Member Corp"
+    ]
+  },
+  "13199": {
+    "name": "Meriwether County",
+    "latitude": 33.029267,
+    "longitude": -84.667058,
+    "utility_ids": [
+      4432,
+      7140,
+      7515,
+      10624,
+      19219,
+      19581
+    ],
+    "utilities": [
+      "Coweta-Fayette El Member Corp",
+      "Georgia Power Co",
+      "City of Grantville - (GA)",
+      "Southern Rivers Energy",
+      "Diverse Power Incorporated",
+      "Upson Elec Member Corp"
+    ]
+  },
+  "13201": {
+    "name": "Miller County",
+    "latitude": 31.162931,
+    "longitude": -84.730398,
+    "utility_ids": [
+      7140,
+      12706,
+      18499
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Mitchell Electric Member Corp",
+      "Three Notch Elec Member Corp"
+    ]
+  },
+  "13205": {
+    "name": "Mitchell County",
+    "latitude": 31.228997,
+    "longitude": -84.192038,
+    "utility_ids": [
+      2910,
+      7140,
+      7450,
+      12706
+    ],
+    "utilities": [
+      "City of Camilla",
+      "Georgia Power Co",
+      "Grady Electric Membership Corp",
+      "Mitchell Electric Member Corp"
+    ]
+  },
+  "13207": {
+    "name": "Monroe County",
+    "latitude": 33.018784,
+    "longitude": -83.921837,
+    "utility_ids": [
+      3248,
+      6411,
+      6598,
+      7140,
+      10624
+    ],
+    "utilities": [
+      "Central Georgia El Member Corp",
+      "Flint Electric Membership Corp",
+      "City of Forsyth - (GA)",
+      "Georgia Power Co",
+      "Southern Rivers Energy"
+    ]
+  },
+  "13209": {
+    "name": "Montgomery County",
+    "latitude": 32.172108,
+    "longitude": -82.533349,
+    "utility_ids": [
+      407,
+      7140,
+      26218
+    ],
+    "utilities": [
+      "Altamaha Electric Member Corp",
+      "Georgia Power Co",
+      "Little Ocmulgee El Member Corp"
+    ]
+  },
+  "13211": {
+    "name": "Morgan County",
+    "latitude": 33.598649,
+    "longitude": -83.499416,
+    "utility_ids": [
+      3248,
+      7140,
+      15700,
+      17832,
+      18956,
+      20065
+    ],
+    "utilities": [
+      "Central Georgia El Member Corp",
+      "Georgia Power Co",
+      "Rayle Electric Membership Corp",
+      "Snapping Shoals El Member Corp",
+      "Tri-County Elec Member Corp (GA)",
+      "Walton Electric Member Corp"
+    ]
+  },
+  "13213": {
+    "name": "Murray County",
+    "latitude": 34.797097,
+    "longitude": -84.73799,
+    "utility_ids": [
+      562,
+      3248,
+      7140,
+      13716
+    ],
+    "utilities": [
+      "Amicalola Electric Member Corp",
+      "Central Georgia El Member Corp",
+      "Georgia Power Co",
+      "North Georgia Elec Member Corp"
+    ]
+  },
+  "13215": {
+    "name": "Muscogee County",
+    "latitude": 32.510191,
+    "longitude": -84.874946,
+    "utility_ids": [
+      6411,
+      7140,
+      19219
+    ],
+    "utilities": [
+      "Flint Electric Membership Corp",
+      "Georgia Power Co",
+      "Diverse Power Incorporated"
+    ]
+  },
+  "13217": {
+    "name": "Newton County",
+    "latitude": 33.552751,
+    "longitude": -83.85136,
+    "utility_ids": [
+      3248,
+      4433,
+      7140,
+      11587,
+      17832,
+      20065,
+      40369
+    ],
+    "utilities": [
+      "Central Georgia El Member Corp",
+      "City of Covington - (GA)",
+      "Georgia Power Co",
+      "City of Mansfield - (GA)",
+      "Snapping Shoals El Member Corp",
+      "Walton Electric Member Corp",
+      "City of Oxford - (GA)"
+    ]
+  },
+  "13219": {
+    "name": "Oconee County",
+    "latitude": 33.834125,
+    "longitude": -83.437728,
+    "utility_ids": [
+      7140,
+      9601,
+      15700,
+      20065
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Jackson Electric Member Corp - (GA)",
+      "Rayle Electric Membership Corp",
+      "Walton Electric Member Corp"
+    ]
+  },
+  "13221": {
+    "name": "Oglethorpe County",
+    "latitude": 33.866815,
+    "longitude": -83.074106,
+    "utility_ids": [
+      7140,
+      9601,
+      15700
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Jackson Electric Member Corp - (GA)",
+      "Rayle Electric Membership Corp"
+    ]
+  },
+  "13223": {
+    "name": "Paulding County",
+    "latitude": 33.92103,
+    "longitude": -84.867169,
+    "utility_ids": [
+      3081,
+      3916,
+      7090,
+      7140
+    ],
+    "utilities": [
+      "Carroll Electric Member Corp - (GA)",
+      "Cobb Electric Membership Corp",
+      "GreyStone Power Corporation",
+      "Georgia Power Co"
+    ]
+  },
+  "13225": {
+    "name": "Peach County",
+    "latitude": 32.57156,
+    "longitude": -83.83155,
+    "utility_ids": [
+      6411,
+      6617,
+      7140
+    ],
+    "utilities": [
+      "Flint Electric Membership Corp",
+      "Fort Valley Utility Comm",
+      "Georgia Power Co"
+    ]
+  },
+  "13227": {
+    "name": "Pickens County",
+    "latitude": 34.456756,
+    "longitude": -84.490366,
+    "utility_ids": [
+      562,
+      7140
+    ],
+    "utilities": [
+      "Amicalola Electric Member Corp",
+      "Georgia Power Co"
+    ]
+  },
+  "13229": {
+    "name": "Pierce County",
+    "latitude": 31.353998,
+    "longitude": -82.21037,
+    "utility_ids": [
+      7140,
+      16674
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Satilla Rural Elec Member Corporation"
+    ]
+  },
+  "13231": {
+    "name": "Pike County",
+    "latitude": 33.081149,
+    "longitude": -84.389462,
+    "utility_ids": [
+      3248,
+      7140,
+      7679,
+      10624,
+      19581
+    ],
+    "utilities": [
+      "Central Georgia El Member Corp",
+      "Georgia Power Co",
+      "City of Griffin - (GA)",
+      "Southern Rivers Energy",
+      "Upson Elec Member Corp"
+    ]
+  },
+  "13233": {
+    "name": "Polk County",
+    "latitude": 33.996015,
+    "longitude": -85.188338,
+    "utility_ids": [
+      3081,
+      7140
+    ],
+    "utilities": [
+      "Carroll Electric Member Corp - (GA)",
+      "Georgia Power Co"
+    ]
+  },
+  "13235": {
+    "name": "Pulaski County",
+    "latitude": 32.238803,
+    "longitude": -83.481845,
+    "utility_ids": [
+      7140,
+      12472,
+      13934
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Middle Georgia El Member Corp",
+      "Ocmulgee Electric Member Corp"
+    ]
+  },
+  "13237": {
+    "name": "Putnam County",
+    "latitude": 33.32106,
+    "longitude": -83.37179,
+    "utility_ids": [
+      3248,
+      7140,
+      18956
+    ],
+    "utilities": [
+      "Central Georgia El Member Corp",
+      "Georgia Power Co",
+      "Tri-County Elec Member Corp (GA)"
+    ]
+  },
+  "13239": {
+    "name": "Quitman County",
+    "latitude": 31.862938,
+    "longitude": -85.004798,
+    "utility_ids": [
+      7140,
+      18305,
+      19219
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Sumter Electric Member Corp",
+      "Diverse Power Incorporated"
+    ]
+  },
+  "13241": {
+    "name": "Rabun County",
+    "latitude": 34.883934,
+    "longitude": -83.40487,
+    "utility_ids": [
+      7140,
+      7887,
+      8333
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Habersham Electric Membership Corp",
+      "Haywood Electric Member Corp"
+    ]
+  },
+  "13243": {
+    "name": "Randolph County",
+    "latitude": 31.762651,
+    "longitude": -84.752311,
+    "utility_ids": [
+      7140,
+      18305,
+      19219
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Sumter Electric Member Corp",
+      "Diverse Power Incorporated"
+    ]
+  },
+  "13245": {
+    "name": "Richmond County",
+    "latitude": 33.361486,
+    "longitude": -82.074998,
+    "utility_ids": [
+      7140,
+      9689,
+      14649,
+      18397
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Jefferson Electric Member Corp",
+      "Planters Electric Member Corp",
+      "City of Sylvania - (GA)"
+    ]
+  },
+  "13247": {
+    "name": "Rockdale County",
+    "latitude": 33.652081,
+    "longitude": -84.02637,
+    "utility_ids": [
+      7140,
+      17832,
+      20065
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Snapping Shoals El Member Corp",
+      "Walton Electric Member Corp"
+    ]
+  },
+  "13249": {
+    "name": "Schley County",
+    "latitude": 32.263444,
+    "longitude": -84.322708,
+    "utility_ids": [
+      5796,
+      6411,
+      7140,
+      18305
+    ],
+    "utilities": [
+      "City of Ellaville",
+      "Flint Electric Membership Corp",
+      "Georgia Power Co",
+      "Sumter Electric Member Corp"
+    ]
+  },
+  "13251": {
+    "name": "Screven County",
+    "latitude": 32.744751,
+    "longitude": -81.617585,
+    "utility_ids": [
+      7140,
+      14649,
+      18397
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Planters Electric Member Corp",
+      "City of Sylvania - (GA)"
+    ]
+  },
+  "13253": {
+    "name": "Seminole County",
+    "latitude": 30.93396,
+    "longitude": -84.867685,
+    "utility_ids": [
+      7140,
+      18499
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Three Notch Elec Member Corp"
+    ]
+  },
+  "13255": {
+    "name": "Spalding County",
+    "latitude": 33.262348,
+    "longitude": -84.284905,
+    "utility_ids": [
+      3248,
+      4432,
+      7140,
+      7679,
+      10624
+    ],
+    "utilities": [
+      "Central Georgia El Member Corp",
+      "Coweta-Fayette El Member Corp",
+      "Georgia Power Co",
+      "City of Griffin - (GA)",
+      "Southern Rivers Energy"
+    ]
+  },
+  "13257": {
+    "name": "Stephens County",
+    "latitude": 34.553582,
+    "longitude": -83.290588,
+    "utility_ids": [
+      7140,
+      7887,
+      8210
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Habersham Electric Membership Corp",
+      "Hart Electric Member Corp"
+    ]
+  },
+  "13259": {
+    "name": "Stewart County",
+    "latitude": 32.073225,
+    "longitude": -84.834912,
+    "utility_ids": [
+      7140,
+      18305,
+      19219
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Sumter Electric Member Corp",
+      "Diverse Power Incorporated"
+    ]
+  },
+  "13261": {
+    "name": "Sumter County",
+    "latitude": 32.042266,
+    "longitude": -84.204294,
+    "utility_ids": [
+      6411,
+      7140,
+      18305
+    ],
+    "utilities": [
+      "Flint Electric Membership Corp",
+      "Georgia Power Co",
+      "Sumter Electric Member Corp"
+    ]
+  },
+  "13263": {
+    "name": "Talbot County",
+    "latitude": 32.704603,
+    "longitude": -84.530029,
+    "utility_ids": [
+      6411,
+      7140,
+      19581
+    ],
+    "utilities": [
+      "Flint Electric Membership Corp",
+      "Georgia Power Co",
+      "Upson Elec Member Corp"
+    ]
+  },
+  "13265": {
+    "name": "Taliaferro County",
+    "latitude": 33.559319,
+    "longitude": -82.875272,
+    "utility_ids": [
+      7140,
+      15700
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Rayle Electric Membership Corp"
+    ]
+  },
+  "13267": {
+    "name": "Tattnall County",
+    "latitude": 32.043768,
+    "longitude": -82.059208,
+    "utility_ids": [
+      407,
+      2903,
+      5905,
+      7140,
+      16674
+    ],
+    "utilities": [
+      "Altamaha Electric Member Corp",
+      "Canoochee Electric Member Corp",
+      "Excelsior Electric Member Corp",
+      "Georgia Power Co",
+      "Satilla Rural Elec Member Corporation"
+    ]
+  },
+  "13269": {
+    "name": "Taylor County",
+    "latitude": 32.554667,
+    "longitude": -84.251426,
+    "utility_ids": [
+      6411,
+      7140,
+      19581
+    ],
+    "utilities": [
+      "Flint Electric Membership Corp",
+      "Georgia Power Co",
+      "Upson Elec Member Corp"
+    ]
+  },
+  "13271": {
+    "name": "Telfair County",
+    "latitude": 31.913641,
+    "longitude": -82.931063,
+    "utility_ids": [
+      7140,
+      13934,
+      26218
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Ocmulgee Electric Member Corp",
+      "Little Ocmulgee El Member Corp"
+    ]
+  },
+  "13273": {
+    "name": "Terrell County",
+    "latitude": 31.777191,
+    "longitude": -84.439446,
+    "utility_ids": [
+      7140,
+      18305,
+      19219
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Sumter Electric Member Corp",
+      "Diverse Power Incorporated"
+    ]
+  },
+  "13275": {
+    "name": "Thomas County",
+    "latitude": 30.864619,
+    "longitude": -83.919815,
+    "utility_ids": [
+      7140,
+      7450,
+      12706,
+      18848,
+      40212
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Grady Electric Membership Corp",
+      "Mitchell Electric Member Corp",
+      "City of Thomasville - (GA)",
+      "Colquitt Electric Membership Corp"
+    ]
+  },
+  "13277": {
+    "name": "Tift County",
+    "latitude": 31.457003,
+    "longitude": -83.525931,
+    "utility_ids": [
+      123,
+      7140,
+      9431,
+      12706,
+      40212
+    ],
+    "utilities": [
+      "City of Adel- (GA)",
+      "Georgia Power Co",
+      "Irwin Electric Membership Corp",
+      "Mitchell Electric Member Corp",
+      "Colquitt Electric Membership Corp"
+    ]
+  },
+  "13279": {
+    "name": "Toombs County",
+    "latitude": 32.117753,
+    "longitude": -82.330597,
+    "utility_ids": [
+      407,
+      2903,
+      7140
+    ],
+    "utilities": [
+      "Altamaha Electric Member Corp",
+      "Canoochee Electric Member Corp",
+      "Georgia Power Co"
+    ]
+  },
+  "13281": {
+    "name": "Towns County",
+    "latitude": 34.902529,
+    "longitude": -83.732264,
+    "utility_ids": [
+      1891
+    ],
+    "utilities": [
+      "Blue Ridge Mountain EMC - (GA)"
+    ]
+  },
+  "13283": {
+    "name": "Treutlen County",
+    "latitude": 32.409586,
+    "longitude": -82.570882,
+    "utility_ids": [
+      407,
+      7140
+    ],
+    "utilities": [
+      "Altamaha Electric Member Corp",
+      "Georgia Power Co"
+    ]
+  },
+  "13285": {
+    "name": "Troup County",
+    "latitude": 33.034482,
+    "longitude": -85.02836,
+    "utility_ids": [
+      3081,
+      4432,
+      7140,
+      8698,
+      10585,
+      19219,
+      20393
+    ],
+    "utilities": [
+      "Carroll Electric Member Corp - (GA)",
+      "Coweta-Fayette El Member Corp",
+      "Georgia Power Co",
+      "City of Hogansville - (GA)",
+      "City of La Grange - (GA)",
+      "Diverse Power Incorporated",
+      "City of West Point - (GA)"
+    ]
+  },
+  "13287": {
+    "name": "Turner County",
+    "latitude": 31.7248,
+    "longitude": -83.620319,
+    "utility_ids": [
+      4538,
+      7140,
+      9431,
+      12472,
+      12706
+    ],
+    "utilities": [
+      "Crisp County Power Comm",
+      "Georgia Power Co",
+      "Irwin Electric Membership Corp",
+      "Middle Georgia El Member Corp",
+      "Mitchell Electric Member Corp"
+    ]
+  },
+  "13289": {
+    "name": "Twiggs County",
+    "latitude": 32.665847,
+    "longitude": -83.425879,
+    "utility_ids": [
+      6411,
+      7140,
+      13962,
+      18956
+    ],
+    "utilities": [
+      "Flint Electric Membership Corp",
+      "Georgia Power Co",
+      "Oconee Electric Member Corp",
+      "Tri-County Elec Member Corp (GA)"
+    ]
+  },
+  "13291": {
+    "name": "Union County",
+    "latitude": 34.833333,
+    "longitude": -83.989257,
+    "utility_ids": [
+      1891
+    ],
+    "utilities": [
+      "Blue Ridge Mountain EMC - (GA)"
+    ]
+  },
+  "13293": {
+    "name": "Upson County",
+    "latitude": 32.881837,
+    "longitude": -84.292283,
+    "utility_ids": [
+      6411,
+      7140,
+      10624,
+      18847,
+      19581
+    ],
+    "utilities": [
+      "Flint Electric Membership Corp",
+      "Georgia Power Co",
+      "Southern Rivers Energy",
+      "City of Thomaston - (GA)",
+      "Upson Elec Member Corp"
+    ]
+  },
+  "13295": {
+    "name": "Walker County",
+    "latitude": 34.735802,
+    "longitude": -85.305456,
+    "utility_ids": [
+      3408,
+      3475,
+      7140,
+      10571,
+      13716,
+      18642
+    ],
+    "utilities": [
+      "City of Chattanooga - (TN)",
+      "City of Chickamauga",
+      "Georgia Power Co",
+      "City of LaFayette - (GA)",
+      "North Georgia Elec Member Corp",
+      "Tennessee Valley Authority"
+    ]
+  },
+  "13297": {
+    "name": "Walton County",
+    "latitude": 33.783887,
+    "longitude": -83.731829,
+    "utility_ids": [
+      4433,
+      7140,
+      12800,
+      17832,
+      20065
+    ],
+    "utilities": [
+      "City of Covington - (GA)",
+      "Georgia Power Co",
+      "City of Monroe - (GA)",
+      "Snapping Shoals El Member Corp",
+      "Walton Electric Member Corp"
+    ]
+  },
+  "13299": {
+    "name": "Ware County",
+    "latitude": 31.050881,
+    "longitude": -82.421507,
+    "utility_ids": [
+      7140,
+      16674,
+      17290,
+      31833
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Satilla Rural Elec Member Corporation",
+      "Slash Pine Elec Member Corp",
+      "Okefenoke Rural El Member Corp"
+    ]
+  },
+  "13301": {
+    "name": "Warren County",
+    "latitude": 33.408381,
+    "longitude": -82.675685,
+    "utility_ids": [
+      7140,
+      9689,
+      20146
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Jefferson Electric Member Corp",
+      "Washington Elec Member Corp"
+    ]
+  },
+  "13303": {
+    "name": "Washington County",
+    "latitude": 32.971843,
+    "longitude": -82.798112,
+    "utility_ids": [
+      7140,
+      9689,
+      16637,
+      20146
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Jefferson Electric Member Corp",
+      "City of Sandersville - (GA)",
+      "Washington Elec Member Corp"
+    ]
+  },
+  "13305": {
+    "name": "Wayne County",
+    "latitude": 31.547845,
+    "longitude": -81.912376,
+    "utility_ids": [
+      7140,
+      16674,
+      31833
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Satilla Rural Elec Member Corporation",
+      "Okefenoke Rural El Member Corp"
+    ]
+  },
+  "13307": {
+    "name": "Webster County",
+    "latitude": 32.046691,
+    "longitude": -84.553828,
+    "utility_ids": [
+      7140,
+      18305
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Sumter Electric Member Corp"
+    ]
+  },
+  "13309": {
+    "name": "Wheeler County",
+    "latitude": 32.105258,
+    "longitude": -82.733849,
+    "utility_ids": [
+      7140,
+      26218
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Little Ocmulgee El Member Corp"
+    ]
+  },
+  "13311": {
+    "name": "White County",
+    "latitude": 34.644182,
+    "longitude": -83.743,
+    "utility_ids": [
+      7140,
+      7887,
+      9601
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Habersham Electric Membership Corp",
+      "Jackson Electric Member Corp - (GA)"
+    ]
+  },
+  "13313": {
+    "name": "Whitfield County",
+    "latitude": 34.801726,
+    "longitude": -84.968541,
+    "utility_ids": [
+      4744,
+      7140,
+      13716
+    ],
+    "utilities": [
+      "Dalton Utilities",
+      "Georgia Power Co",
+      "North Georgia Elec Member Corp"
+    ]
+  },
+  "13315": {
+    "name": "Wilcox County",
+    "latitude": 31.96272,
+    "longitude": -83.438259,
+    "utility_ids": [
+      4538,
+      7140,
+      9431,
+      12472
+    ],
+    "utilities": [
+      "Crisp County Power Comm",
+      "Georgia Power Co",
+      "Irwin Electric Membership Corp",
+      "Middle Georgia El Member Corp"
+    ]
+  },
+  "13317": {
+    "name": "Wilkes County",
+    "latitude": 33.779031,
+    "longitude": -82.747921,
+    "utility_ids": [
+      7140,
+      15700,
+      20140
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Rayle Electric Membership Corp",
+      "City of Washington - (GA)"
+    ]
+  },
+  "13319": {
+    "name": "Wilkinson County",
+    "latitude": 32.804266,
+    "longitude": -83.175512,
+    "utility_ids": [
+      7140,
+      13962,
+      18956,
+      20146
+    ],
+    "utilities": [
+      "Georgia Power Co",
+      "Oconee Electric Member Corp",
+      "Tri-County Elec Member Corp (GA)",
+      "Washington Elec Member Corp"
+    ]
+  },
+  "13321": {
+    "name": "Worth County",
+    "latitude": 31.551773,
+    "longitude": -83.84996,
+    "utility_ids": [
+      4538,
+      7140,
+      9431,
+      12706,
+      18403,
+      40212
+    ],
+    "utilities": [
+      "Crisp County Power Comm",
+      "Georgia Power Co",
+      "Irwin Electric Membership Corp",
+      "Mitchell Electric Member Corp",
+      "City of Sylvester - (GA)",
+      "Colquitt Electric Membership Corp"
+    ]
+  }
+}

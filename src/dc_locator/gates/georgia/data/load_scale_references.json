@@ -1,0 +1,156 @@
+[
+  {
+    "record_id": "GA_LOAD_4801",
+    "county_fips": "13103",
+    "reference_scale_mw": 3210.0,
+    "basis": "facility_peak_connected_electrical_load",
+    "reference_stage": "proposed_applicant_load",
+    "source_ids": [
+      "dri_4801_InitialForm",
+      "dri_4801_AdditionalForm",
+      "dri_4801_AppSummary"
+    ],
+    "raw_value": "3,210",
+    "project_record_id": "GA_DRI_4801"
+  },
+  {
+    "record_id": "GA_LOAD_4797",
+    "county_fips": "13285",
+    "reference_scale_mw": 350.0,
+    "basis": "facility_peak_connected_electrical_load",
+    "reference_stage": "proposed_applicant_load",
+    "source_ids": [
+      "dri_4797_InitialForm",
+      "dri_4797_AdditionalForm",
+      "dri_4797_AppSummary"
+    ],
+    "raw_value": "350 MW",
+    "project_record_id": "GA_DRI_4797"
+  },
+  {
+    "record_id": "GA_LOAD_4761",
+    "county_fips": "13015",
+    "reference_scale_mw": 288.0,
+    "basis": "facility_peak_connected_electrical_load",
+    "reference_stage": "proposed_applicant_load",
+    "source_ids": [
+      "dri_4761_InitialForm",
+      "dri_4761_AdditionalForm",
+      "dri_4761_AppSummary"
+    ],
+    "raw_value": "Requested connected utility load supply is 288 +/-",
+    "project_record_id": "GA_DRI_4761"
+  },
+  {
+    "record_id": "GA_LOAD_4736",
+    "county_fips": "13073",
+    "reference_scale_mw": 1400.0,
+    "basis": "facility_peak_connected_electrical_load",
+    "reference_stage": "proposed_applicant_load",
+    "source_ids": [
+      "dri_4736_InitialForm",
+      "dri_4736_AdditionalForm",
+      "dri_4736_AppSummary"
+    ],
+    "raw_value": "1400",
+    "project_record_id": "GA_DRI_4736"
+  },
+  {
+    "record_id": "GA_LOAD_4735",
+    "county_fips": "13073",
+    "reference_scale_mw": 200.0,
+    "basis": "facility_peak_connected_electrical_load",
+    "reference_stage": "proposed_applicant_load",
+    "source_ids": [
+      "dri_4735_InitialForm",
+      "dri_4735_AdditionalForm",
+      "dri_4735_AppSummary"
+    ],
+    "raw_value": "200",
+    "project_record_id": "GA_DRI_4735"
+  },
+  {
+    "record_id": "GA_LOAD_4727",
+    "county_fips": "13077",
+    "reference_scale_mw": 1500.0,
+    "basis": "facility_peak_connected_electrical_load",
+    "reference_stage": "proposed_applicant_load",
+    "source_ids": [
+      "dri_4727_InitialForm",
+      "dri_4727_AdditionalForm",
+      "dri_4727_AppSummary"
+    ],
+    "raw_value": "Preliminary load request up to 1500MW electricity",
+    "project_record_id": "GA_DRI_4727"
+  },
+  {
+    "record_id": "GA_LOAD_4689",
+    "county_fips": "13155",
+    "reference_scale_mw": 1250.0,
+    "basis": "facility_peak_connected_electrical_load",
+    "reference_stage": "proposed_applicant_load",
+    "source_ids": [
+      "dri_4689_InitialForm",
+      "dri_4689_AdditionalForm",
+      "dri_4689_AppSummary"
+    ],
+    "raw_value": "1250 MW (1.25 GW)",
+    "project_record_id": "GA_DRI_4689"
+  },
+  {
+    "record_id": "GA_LOAD_4651",
+    "county_fips": "13099",
+    "reference_scale_mw": 1500.0,
+    "basis": "facility_peak_connected_electrical_load",
+    "reference_stage": "proposed_applicant_load",
+    "source_ids": [
+      "dri_4651_InitialForm",
+      "dri_4651_AdditionalForm",
+      "dri_4651_AppSummary"
+    ],
+    "raw_value": "1,500MW pending completed utility studies",
+    "project_record_id": "GA_DRI_4651"
+  },
+  {
+    "record_id": "GA_LOAD_4624",
+    "county_fips": "13151",
+    "reference_scale_mw": 1500.0,
+    "basis": "facility_peak_connected_electrical_load",
+    "reference_stage": "proposed_applicant_load",
+    "source_ids": [
+      "dri_4624_InitialForm",
+      "dri_4624_AdditionalForm",
+      "dri_4624_AppSummary"
+    ],
+    "raw_value": "1,500 MW peak",
+    "project_record_id": "GA_DRI_4624"
+  },
+  {
+    "record_id": "GA_LOAD_4607",
+    "county_fips": "13255",
+    "reference_scale_mw": 450.0,
+    "basis": "facility_peak_connected_electrical_load",
+    "reference_stage": "proposed_applicant_load",
+    "source_ids": [
+      "dri_4607_InitialForm",
+      "dri_4607_AdditionalForm",
+      "dri_4607_AppSummary"
+    ],
+    "raw_value": "450 MW",
+    "project_record_id": "GA_DRI_4607"
+  },
+  {
+    "record_id": "GA_LOAD_4602",
+    "county_fips": "13189",
+    "reference_scale_mw": 400.0,
+    "basis": "facility_peak_connected_electrical_load",
+    "reference_stage": "proposed_applicant_load",
+    "source_ids": [
+      "dri_4602_InitialForm",
+      "dri_4602_AdditionalForm",
+      "dri_4602_AppSummary"
+    ],
+    "raw_value": "400",
+    "project_record_id": "GA_DRI_4602"
+  }
+]

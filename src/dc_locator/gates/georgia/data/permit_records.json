@@ -1,0 +1,28 @@
+[
+  {
+    "record_id": "GA_PERMIT_TYRONE_2024",
+    "county_fips": "13113",
+    "jurisdiction": "Town of Tyrone",
+    "approval_date": "2024-03-28",
+    "status": "zoning_approved",
+    "construction_permits_confirmed": false,
+    "status_as_of": "2026-06-02",
+    "source_ids": [
+      "tyrone_approval"
+    ],
+    "note": "Specific Microsoft project zoning precedent; not county-wide permission. Page states no site plan / development permits applied as of stated date."
+  },
+  {
+    "record_id": "GA_PERMIT_CLAYTON_PRECEDENTS_2025",
+    "county_fips": "13063",
+    "jurisdiction": "unincorporated Ellenwood and City of Forest Park",
+    "approval_date": null,
+    "status": "official_notice_reports_approved_data_centers",
+    "construction_permits_confirmed": null,
+    "status_as_of": "2025-09-03",
+    "source_ids": [
+      "clayton_moratorium"
+    ],
+    "note": "County official news reports two approved projects; their detailed permit instruments were not downloaded."
+  }
+]
