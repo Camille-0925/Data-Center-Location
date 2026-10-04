@@ -742,3 +742,40 @@ Jane 的工作簿下方已有指标定义表，包括 18 个 ID 和所属维度�
 2. **报告和 PPT 用图**：雷达图、贡献堆叠柱、DEMATEL 因果图、相关性热力图、SMAA 排名接受度图、地图。
 3. **Gate 模块衔接**：组员上传的 `gates/virginia` 和 `gates/georgia` 如何接入流程。
 4. **最终 README 整理**。
+
+
+---
+
+## 2026-10-04 合并组员 arwubie 的提交（indicator、robustness、margin）后的一致性修正
+
+组员的提交 `61577ce` 引入了两个县级调整：
+- **时间稳健性因子**：用 CMRA 的 RCP8.5 情景，分别作用于制冷、水、气候三个维度；
+- **安全边际因子** A_M：作用于最终分数，最终分数 = Choquet 分 × A_M。
+
+同时修改了指标打分：18 项全部计分、维度内等权算术平均、锚点更新。详见 `docs/SCORING_ADJUSTMENTS.md`。
+
+### 发现的问题
+
+第 3b 步的稳健性检验没有跟上这次改动：SMAA 和权重方法对比用的是乘 A_M 之前的分数，而最终排名用的是乘 A_M 之后的分数。结果是 SMAA 显示 Loudoun 有 75% 的概率排第一，最终排名的第一名却是 Louisa，两者自相矛盾。
+
+### 修正
+
+- `validation/smaa.py`：新增 `final_multiplier` 参数，对每个抽样分数乘以县级 A_M。A_M 与权重无关，所以可以直接相乘。
+- `validation/__init__.py`：新增 `final_multiplier()`；方法对比中的各权重方法分数也乘以 A_M。
+- 新增 2 项测试：乘数确实会改变 SMAA 的胜者；SMAA 前 10 名和方法对比中的 AHP 第一名，都与流程的最终排名一致。
+
+全部测试共 126 项，全部通过。
+
+### 修正后的结果（默认客户）
+
+| | VA | GA |
+|---|---|---|
+| 最终第一名 | Louisa（Loudoun 第 2） | Fayette |
+| SMAA 排第一的概率 | Loudoun 40%、Louisa 30%、Washington 22% | Fayette 53%、Upson 29% |
+| SMAA 进入前 10 的概率 | Louisa 100%、Loudoun 98%、Washington 98% | Fayette 95%、Upson 95% |
+| 90 分位后悔值最低 | Louisa（3.9） | Fayette（4.4） |
+| 有效权重：水 | 0.50 | 0.60 |
+
+### 待团队决定（组员改动与之前讨论的设计不一致）
+
+见对话记录，需要团队确认后统一。在此之前，`validation/README.md` 和两份 PPT 文档里的数字仍是改动前的结果。

@@ -40,10 +40,20 @@ def weighted_sum(D: pd.DataFrame, weights: Mapping[str, float]) -> pd.Series:
     return 100 * (D[cols] * pd.Series({d: weights[d] for d in cols})).sum(axis=1)
 
 
+def final_multiplier(baseline: Mapping[str, Any]) -> pd.Series:
+    """Weight-independent factor applied after suitability (safety margin A_M); 1 if absent."""
+
+    ranking = baseline["ranking"].set_index("fips")
+    if "margin_adjustment" not in ranking:
+        return pd.Series(1.0, index=ranking.index)
+    return ranking["margin_adjustment"].fillna(1.0).astype(float)
+
+
 def compare_methods(baseline: Mapping[str, Any]) -> dict[str, Any]:
-    """Rank the same counties under six weighting methods (weighted sum) and compare."""
+    """Rank the same counties under six weighting methods (weighted sum x margin) and compare."""
 
     counties = baseline["counties"].set_index("fips")
+    multiplier = final_multiplier(baseline)
     phi = baseline["weights"]["weights"]
     active = [d for d, w in phi.items() if w > 0]
     D = counties[active]
@@ -58,7 +68,7 @@ def compare_methods(baseline: Mapping[str, Any]) -> dict[str, Any]:
     }
     choquet = baseline["ranking"].set_index("fips")["score"]
     scores = {"AHP + Choquet (final)": choquet}
-    scores.update({name: weighted_sum(D, w) for name, w in methods.items()})
+    scores.update({name: weighted_sum(D, w) * multiplier.reindex(D.index) for name, w in methods.items()})
     reference = scores["AHP + Choquet (final)"]
     summary = []
     for name, s in scores.items():
@@ -139,7 +149,14 @@ def run_validation(state: str, samples: int = 10_000, seed: int = 42, out_dir: s
 
     methods = compare_methods(baseline)
     pattern = raw_interaction_pattern(baseline["interactions"]["pairs"])
-    robust = smaa(counties, baseline["weights"]["weights"], pattern, samples=samples, seed=seed)
+    robust = smaa(
+        counties,
+        baseline["weights"]["weights"],
+        pattern,
+        samples=samples,
+        seed=seed,
+        final_multiplier=final_multiplier(baseline),
+    )
     robust_table = robust["table"].copy()
     robust_table.insert(0, "county", names.reindex(robust_table.index))
     effective = effective_weights(baseline)

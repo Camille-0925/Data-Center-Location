@@ -75,8 +75,14 @@ def smaa(
     kappa_range: tuple[float, float] = (0.0, 1.0),
     top: int = 10,
     seed: int = 42,
+    final_multiplier: pd.Series | None = None,
 ) -> dict:
-    """Run SMAA-2 on dimension scores D (rows = counties, columns = dimensions)."""
+    """Run SMAA-2 on dimension scores D (rows = counties, columns = dimensions).
+
+    ``final_multiplier`` (one value per county, independent of the weights) is applied to
+    every sampled score, e.g. the safety-margin factor A_M of the score adjustments, so that
+    SMAA ranks counties on the same final score as the pipeline.
+    """
 
     rng = np.random.default_rng(seed)
     active = [d for d, w in phi0.items() if w > 0]
@@ -88,6 +94,8 @@ def smaa(
     pattern = [p for p in pattern if p[0] in index and p[1] in index]
 
     scores = choquet_scores(matrix, weights, kappa, index, pattern)  # M x n
+    if final_multiplier is not None:
+        scores = scores * final_multiplier.reindex(D.index).to_numpy(dtype=float)[None, :]
     order = np.argsort(-scores, axis=1)
     ranks = np.empty_like(order)
     rows = np.arange(samples)[:, None]

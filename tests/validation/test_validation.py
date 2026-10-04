@@ -76,5 +76,24 @@ class SmaaTests(unittest.TestCase):
         self.assertNotIn("energy", result["settings"]["weight_mean"])
 
 
+class ConsistencyTests(unittest.TestCase):
+    def test_final_multiplier_scales_smaa_scores(self):
+        D = pd.DataFrame({"x": [0.9, 0.8], "y": [0.9, 0.8]}, index=["a", "b"])
+        plain = smaa(D, {"x": 0.5, "y": 0.5}, [], samples=200)
+        flipped = smaa(D, {"x": 0.5, "y": 0.5}, [], samples=200,
+                       final_multiplier=pd.Series({"a": 0.8, "b": 1.0}))
+        self.assertEqual(plain["most_robust"], "a")
+        self.assertEqual(flipped["most_robust"], "b")  # 0.9 * 0.8 < 0.8 * 1.0
+
+    def test_smaa_agrees_with_the_pipeline_final_ranking(self):
+        from dc_locator.validation import run_validation
+        result = run_validation("VA", samples=500)
+        final_first = result["baseline"]["ranking"]["fips"].iloc[0]
+        top10 = set(result["smaa_table"].index[:10])
+        self.assertIn(final_first, top10)
+        self.assertEqual(result["methods"]["summary"].iloc[1]["first"],
+                         result["baseline"]["counties"].set_index("fips").loc[final_first, "county_name"])
+
+
 if __name__ == "__main__":
     unittest.main()
