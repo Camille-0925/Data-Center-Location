@@ -36,7 +36,7 @@ Customer inputs that adjust the dimension weights: **cooling type**, **latency s
 ├── src/dc_locator/
 │   ├── data_prep/            ① data preparation
 │   ├── indicator_scoring/    ② utilities, within-dimension weights, dimension scores
-│   ├── dimension_weights/    ③ customer inputs → dimension weights
+│   ├── dimension_weights/    ③ customer inputs → dimension weights — see its README.md
 │   └── decision/             ④ decision matrix (matrix.py, CLI) — see its README.md
 ├── scripts/                  end-to-end pipeline scripts
 ├── tests/                    unit tests and fixtures
@@ -46,11 +46,18 @@ Customer inputs that adjust the dimension weights: **cooling type**, **latency s
 
 ## Quick start
 
-Requires Python 3.10+. The decision matrix uses only the standard library.
+Requires Python 3.10+.
+
+```bash
+pip install -r requirements.txt     # numpy, pandas, openpyxl
+```
 
 ```bash
 # run the tests
 PYTHONPATH=src python3 -m unittest discover -s tests -t . -v
+
+# dimension weights for a customer (evaporative cooling, sustainability first)
+PYTHONPATH=src python3 -m dc_locator.dimension_weights --cooling_type evaporative --priority sustainability
 
 # score and rank an example request (3 synthetic counties, gates disabled)
 PYTHONPATH=src python3 -m dc_locator.decision recommend \
@@ -64,7 +71,9 @@ PYTHONPATH=src python3 -m dc_locator.decision recommend \
 |---|---|---|
 | ④ | Decision matrix (`src/dc_locator/decision/`) | ✅ Done: n × 8 dimension scores + 8 weights → score, rank, Pareto; 28 tests |
 | ② (part) | Indicator → dimension aggregation (`src/dc_locator/indicator_scoring/aggregation.py`) | ✅ mean / geometric / min; 8 tests |
-| ③ | Dimension weights from customer inputs | ⏳ Next |
+| ③a | Dimension weights from customer inputs (`src/dc_locator/dimension_weights/`) | ✅ AHP base + 4 customer inputs; 17 tests |
+| ③c/③d | 8 × 8 interaction matrix from DEMATEL (team) + correlation (data) | ⏳ Next |
+| ④′ | Choquet scoring with interactions in the decision matrix | ⏳ |
 | ② | Indicator scoring and within-dimension weights | ⏳ |
 | ① | Data preparation | ⏳ |
 | — | End-to-end pipeline and documentation | ⏳ |
