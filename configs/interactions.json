@@ -17,14 +17,40 @@
       {
         "respondent_id": "camille_draft",
         "influences": {
-          "climate_risk": {"water": 3, "cooling_climate": 2, "energy_carbon": 2, "land_ecology": 1, "transportation": 1},
-          "cooling_climate": {"energy_carbon": 3, "water": 3},
-          "energy_carbon": {"water": 2, "climate_risk": 1},
-          "water": {"energy_carbon": 1},
-          "land_ecology": {"climate_risk": 1, "water": 1},
-          "fiber": {"workforce_community": 2},
-          "workforce_community": {"fiber": 2, "transportation": 2},
-          "transportation": {"workforce_community": 2, "fiber": 2, "land_ecology": 1}
+          "climate_risk": {
+            "water": 3,
+            "cooling_climate": 2,
+            "energy_carbon": 2,
+            "land_ecology": 1,
+            "transportation": 1
+          },
+          "cooling_climate": {
+            "energy_carbon": 3,
+            "water": 3
+          },
+          "energy_carbon": {
+            "water": 2,
+            "climate_risk": 1
+          },
+          "water": {
+            "energy_carbon": 1
+          },
+          "land_ecology": {
+            "climate_risk": 1,
+            "water": 1
+          },
+          "fiber": {
+            "workforce_community": 2
+          },
+          "workforce_community": {
+            "fiber": 2,
+            "transportation": 2
+          },
+          "transportation": {
+            "workforce_community": 2,
+            "fiber": 2,
+            "land_ecology": 1
+          }
         },
         "rationale": {
           "climate_risk -> water": "Drought and heat raise water stress",
@@ -46,6 +72,70 @@
           "transportation -> fiber": "Long-haul fiber is laid along highway and rail rights-of-way",
           "transportation -> land_ecology": "Transport corridors drive development of open land"
         }
+      }
+    ]
+  },
+  "interaction_model": {
+    "kappa": 0.5,
+    "beta": 0.5,
+    "kappa_meaning": "Interaction intensity as a share of the largest scale that keeps the Choquet score monotone for the customer's weights",
+    "beta_meaning": "Share of the DEMATEL link in the strength of a redundancy; the rest is the positive Spearman correlation",
+    "pairs": [
+      {
+        "dimensions": [
+          "climate_risk",
+          "water"
+        ],
+        "type": "complementarity",
+        "rationale": "Compounding risk: drought and heat events amplify water stress (DEMATEL climate -> water is the strongest link)"
+      },
+      {
+        "dimensions": [
+          "cooling_climate",
+          "water"
+        ],
+        "type": "complementarity",
+        "rationale": "Compounding risk: a hot climate raises cooling water demand exactly where water may be scarce"
+      },
+      {
+        "dimensions": [
+          "cooling_climate",
+          "energy_carbon"
+        ],
+        "type": "complementarity",
+        "rationale": "Compounding: a hot climate raises PUE, so a carbon-intensive grid hurts more (cross-state only)"
+      },
+      {
+        "dimensions": [
+          "climate_risk",
+          "energy_carbon"
+        ],
+        "type": "complementarity",
+        "rationale": "Compounding: extreme weather stresses an already unreliable or carbon-intensive grid (cross-state only)"
+      },
+      {
+        "dimensions": [
+          "transportation",
+          "workforce_community"
+        ],
+        "type": "redundancy",
+        "rationale": "Both proxy access to an urban centre; positive correlation in both states"
+      },
+      {
+        "dimensions": [
+          "fiber",
+          "workforce_community"
+        ],
+        "type": "redundancy",
+        "rationale": "Prior: both track urbanization. Kept as a hypothesis so the data check is visible; dropped where rho <= 0"
+      },
+      {
+        "dimensions": [
+          "fiber",
+          "transportation"
+        ],
+        "type": "redundancy",
+        "rationale": "Long-haul fiber follows highway and rail rights-of-way; kept only where the data show overlap"
       }
     ]
   }

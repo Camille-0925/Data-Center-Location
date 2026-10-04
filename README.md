@@ -54,6 +54,10 @@ pip install -r requirements.txt     # numpy, pandas, openpyxl
 ```
 
 ```bash
+# rank every county of a state for one customer (full pipeline)
+PYTHONPATH=src python3 -m dc_locator.pipeline --state VA
+PYTHONPATH=src python3 -m dc_locator.pipeline --state GA --cooling_type evaporative --priority sustainability
+
 # run the tests
 PYTHONPATH=src python3 -m unittest discover -s tests -t . -v
 
@@ -73,11 +77,13 @@ PYTHONPATH=src python3 -m dc_locator.decision recommend \
 | ④ | Decision matrix (`src/dc_locator/decision/`) | ✅ Done: n × 8 dimension scores + weights φ + optional interactions I → score, rank, Pareto; 38 tests |
 | ③a | Dimension weights from customer inputs (`src/dc_locator/dimension_weights/`) | ✅ AHP base + 4 customer inputs; 17 tests |
 | ③c | DEMATEL causal matrix (`src/dc_locator/interactions/`) | ✅ cause/effect roles, total-relation matrix; 8 tests |
-| ③d | Correlation matrix + combined 8 × 8 interaction matrix | ⏳ |
+| ③d | Correlation matrix + combined 8 × 8 interaction matrix | ✅ redundancies must be supported by the data; 8 tests |
 | ④′ | 2-additive Choquet scoring with interactions | ✅ monotonicity enforced; checked against an independent implementation |
 | ② | Indicator scoring (`src/dc_locator/indicator_scoring/`) | ✅ value functions with fixed anchors, per-dimension aggregation, context flags; 26 tests |
 | ① | Data preparation (`src/dc_locator/data_prep/`) | ✅ 292 counties × 18 indicators, 0 missing; 3 tests |
-| — | End-to-end pipeline and documentation | ⏳ |
+| — | End-to-end pipeline (`src/dc_locator/pipeline.py`) | ✅ data → scores → weights → interactions → Choquet ranking; 6 tests |
+| ③b | Cross-validation and robustness (SMAA) | ⏳ Next |
+| — | Final documentation | ⏳ |
 
 ## Team
 

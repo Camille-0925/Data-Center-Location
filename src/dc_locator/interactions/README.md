@@ -4,8 +4,8 @@ Steps ③c and ③d of the pipeline. The 8 dimensions are not independent: hot c
 
 | Source | What it captures | Status |
 |---|---|---|
-| **B: DEMATEL causal matrix** (team judgment) | Which dimension drives which, and how strongly, including indirect chains | ✅ Step ③c (this page) |
-| **A: correlation matrix** (data, all counties in a state) | Which dimensions move together in the data | ⏳ Step ③d |
+| **B: DEMATEL causal matrix** (team judgment) | Which dimension drives which, and how strongly, including indirect chains | ✅ Step ③c |
+| **A: correlation matrix** (data, all counties in a state) | Which dimensions move together in the data | ✅ Step ③d |
 
 Neither source alone can tell a **synergy** (both must be good, e.g. water and cooling for evaporative cooling) from a **redundancy** (two dimensions measuring the same thing, e.g. fiber and workforce both tracking urbanization). The team assigns the sign of each interaction; A and B set its size (step ③d).
 
@@ -48,6 +48,39 @@ Sources: Gabus & Fontela (1972), Battelle Geneva Research Centre; Si, You, Liu &
 
 The module also exports `pairwise_strength()`: for each pair, (t_kl + t_lk) divided by the largest such sum, giving a 0–1 strength. Step ③d combines it with the data correlation. Currently the strongest two-way links are transportation ↔ workforce (1.00), fiber ↔ workforce (0.999), climate ↔ water (0.973) and climate ↔ energy (0.885).
 
+## Step ③d: from A and B to the interaction matrix I
+
+```bash
+PYTHONPATH=src python3 -m dc_locator.pipeline --state VA      # uses interaction_matrix() internally
+PYTHONPATH=src python3 -m unittest tests.interactions.test_interaction_matrix -v
+```
+
+**A (data).** Spearman rank correlation between the 8 dimension scores across all counties of the state (rank-based, robust to skew). Energy & carbon is constant within a state, so its correlations are set to 0.
+
+**Combining A and B.** The two sources answer different questions, so they are combined by the *type* of interaction. The type is a team judgment recorded in `configs/interactions.json` (`interaction_model.pairs`):
+
+| Type | Meaning | Strength s (0–1) | Why this source |
+|---|---|---|---|
+| Complementarity, I > 0 | Both dimensions must be good; a weakness in one compounds the other | s = DEMATEL strength | A preference and causal statement; co-movement in the data does not reveal it |
+| Redundancy, I < 0 | The two dimensions partly measure the same thing | s = ½·DEMATEL + ½·max(ρ, 0); **dropped if ρ ≤ 0** | An empirical statement: overlap must show up as positive correlation |
+
+**Scale.** I = κ · λ_max · (sign · s). Here λ_max is the largest scale that keeps the score monotone for the customer's weights φ (φ_k ≥ ½ Σ_l |I_kl| for every k). κ = 0.5 sets the interaction intensity to half the admissible maximum and is varied in the robustness analysis. Dimensions with weight 0 (energy within a state) get no interactions.
+
+**Result with the draft judgments (default customer):**
+
+| Pair | Type | DEMATEL | ρ VA | ρ GA | I (VA) | I (GA) |
+|---|---|---|---|---|---|---|
+| climate ↔ water | complementarity | 0.97 | −0.42 | −0.11 | +0.078 | +0.048 |
+| cooling ↔ water | complementarity | 0.80 | 0.55 | −0.30 | +0.064 | +0.040 |
+| transport ↔ workforce | redundancy | 1.00 | 0.35 | 0.49 | −0.054 | −0.037 |
+| fiber ↔ workforce | redundancy | 1.00 | −0.20 | −0.17 | dropped | dropped |
+| fiber ↔ transport | redundancy | 0.65 | −0.11 | 0.05 | dropped | −0.017 |
+| cooling ↔ energy, climate ↔ energy | complementarity | 0.76, 0.89 | — | — | dropped (energy weight 0 within a state) | |
+
+The data overruled one of our priors. We expected fiber and workforce to overlap, since both seem to track urbanization, but business fiber coverage is *negatively* correlated with labor force in both states. So that redundancy is not applied. Judgment proposes; data can veto.
+
+**Effect on the ranking.** With κ = 0.5, Choquet and the plain weighted sum pick the same #1 in both states, share 9 of the top 10, and have Spearman rank correlation 0.99. Interactions refine scores by up to about ±2 points; they do not overturn the result. Robustness to κ is tested in step ③b.
+
 ## Configuration
 
 `configs/interactions.json` → `dematel.respondents`: each team member's influence scores as `{source: {target: score}}`; pairs left out score 0. The current draft (one respondent) records a one-line causal rationale for every nonzero score, for example:
@@ -76,4 +109,6 @@ To replace the draft, each member fills the same 8 × 8 table (about 30 minutes)
 ## Limitations
 
 - The draft is one person's judgment; the team session will replace it.
-- DEMATEL measures how strong a link is, not whether it is a synergy or a redundancy. That sign is assigned explicitly in step ③d.
+- DEMATEL measures how strong a link is, not whether it is a synergy or a redundancy; the type is a team judgment (and redundancies must pass the data check).
+- λ_max is set by the most constrained dimension (currently transportation, the smallest weight with an interaction). One global scale keeps the relative pattern of A and B intact.
+- Correlations are within one state (133 or 159 counties). They describe these counties, not a general law.
