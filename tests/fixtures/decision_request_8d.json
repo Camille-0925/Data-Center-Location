@@ -1,0 +1,1364 @@
+{
+  "context": {
+    "schema_version": "v0.3",
+    "model_version": "v0.3",
+    "run_id": "run_test_001",
+    "run_mode": "test",
+    "profile_id": "reference_v03",
+    "scenario_id": "baseline",
+    "preference_profile_id": "eight_equal_test",
+    "evidence_version": "1",
+    "scoring_config_version": "test_v03"
+  },
+  "scoring_config": {
+    "version": "test_v03",
+    "status": "ready",
+    "preference_profile_id": "eight_equal_test",
+    "dimension_order": [
+      "climate_risk",
+      "water",
+      "land_ecology",
+      "fiber_connectivity",
+      "workforce_community",
+      "cooling_climate",
+      "transportation",
+      "energy_carbon"
+    ],
+    "required_score_metrics": [
+      "wildfire_bp_national_pct",
+      "inland_flood_eal_national_pct",
+      "baseline_water_stress",
+      "future_water_stress_2050",
+      "low_impervious_share",
+      "protected_gap12_share",
+      "wetland_share",
+      "commercial_fiber_100_20_share",
+      "commercial_fiber_1000_100_share",
+      "labor_force",
+      "svi_national_pct",
+      "cdd65",
+      "hot_days_over_90f",
+      "interstate_distance_km",
+      "rail_distance_km",
+      "industrial_electricity_price",
+      "saidi_no_major_events",
+      "grid_co2e_intensity"
+    ],
+    "dimension_weights": {
+      "climate_risk": 0.125,
+      "water": 0.125,
+      "land_ecology": 0.125,
+      "fiber_connectivity": 0.125,
+      "workforce_community": 0.125,
+      "cooling_climate": 0.125,
+      "transportation": 0.125,
+      "energy_carbon": 0.125
+    },
+    "indicators": [
+      {
+        "metric_id": "wildfire_bp_national_pct",
+        "dimension_id": "climate_risk",
+        "unit": "fraction",
+        "direction": "low_better",
+        "good_anchor": 0,
+        "bad_anchor": 1,
+        "function_type": "linear_clipped",
+        "local_weight": 0.5,
+        "anchor_rationale": "test fixture"
+      },
+      {
+        "metric_id": "inland_flood_eal_national_pct",
+        "dimension_id": "climate_risk",
+        "unit": "fraction",
+        "direction": "low_better",
+        "good_anchor": 0,
+        "bad_anchor": 1,
+        "function_type": "linear_clipped",
+        "local_weight": 0.5,
+        "anchor_rationale": "test fixture"
+      },
+      {
+        "metric_id": "baseline_water_stress",
+        "dimension_id": "water",
+        "unit": "aqueduct_index_0_5",
+        "direction": "low_better",
+        "good_anchor": 0,
+        "bad_anchor": 1,
+        "function_type": "linear_clipped",
+        "local_weight": 0.5,
+        "anchor_rationale": "test fixture"
+      },
+      {
+        "metric_id": "future_water_stress_2050",
+        "dimension_id": "water",
+        "unit": "aqueduct_index_0_5",
+        "direction": "low_better",
+        "good_anchor": 0,
+        "bad_anchor": 1,
+        "function_type": "linear_clipped",
+        "local_weight": 0.5,
+        "anchor_rationale": "test fixture"
+      },
+      {
+        "metric_id": "low_impervious_share",
+        "dimension_id": "land_ecology",
+        "unit": "fraction",
+        "direction": "high_better",
+        "good_anchor": 1,
+        "bad_anchor": 0,
+        "function_type": "linear_clipped",
+        "local_weight": 0.3333333333333333,
+        "anchor_rationale": "test fixture"
+      },
+      {
+        "metric_id": "protected_gap12_share",
+        "dimension_id": "land_ecology",
+        "unit": "fraction",
+        "direction": "low_better",
+        "good_anchor": 0,
+        "bad_anchor": 1,
+        "function_type": "linear_clipped",
+        "local_weight": 0.3333333333333333,
+        "anchor_rationale": "test fixture"
+      },
+      {
+        "metric_id": "wetland_share",
+        "dimension_id": "land_ecology",
+        "unit": "fraction",
+        "direction": "low_better",
+        "good_anchor": 0,
+        "bad_anchor": 1,
+        "function_type": "linear_clipped",
+        "local_weight": 0.3333333333333333,
+        "anchor_rationale": "test fixture"
+      },
+      {
+        "metric_id": "commercial_fiber_100_20_share",
+        "dimension_id": "fiber_connectivity",
+        "unit": "fraction",
+        "direction": "high_better",
+        "good_anchor": 1,
+        "bad_anchor": 0,
+        "function_type": "linear_clipped",
+        "local_weight": 0.5,
+        "anchor_rationale": "test fixture"
+      },
+      {
+        "metric_id": "commercial_fiber_1000_100_share",
+        "dimension_id": "fiber_connectivity",
+        "unit": "fraction",
+        "direction": "high_better",
+        "good_anchor": 1,
+        "bad_anchor": 0,
+        "function_type": "linear_clipped",
+        "local_weight": 0.5,
+        "anchor_rationale": "test fixture"
+      },
+      {
+        "metric_id": "labor_force",
+        "dimension_id": "workforce_community",
+        "unit": "persons",
+        "direction": "high_better",
+        "good_anchor": 1,
+        "bad_anchor": 0,
+        "function_type": "linear_clipped",
+        "local_weight": 0.5,
+        "anchor_rationale": "test fixture"
+      },
+      {
+        "metric_id": "svi_national_pct",
+        "dimension_id": "workforce_community",
+        "unit": "fraction",
+        "direction": "low_better",
+        "good_anchor": 0,
+        "bad_anchor": 1,
+        "function_type": "linear_clipped",
+        "local_weight": 0.5,
+        "anchor_rationale": "test fixture"
+      },
+      {
+        "metric_id": "cdd65",
+        "dimension_id": "cooling_climate",
+        "unit": "degF_day_per_year",
+        "direction": "low_better",
+        "good_anchor": 0,
+        "bad_anchor": 1,
+        "function_type": "linear_clipped",
+        "local_weight": 0.5,
+        "anchor_rationale": "test fixture"
+      },
+      {
+        "metric_id": "hot_days_over_90f",
+        "dimension_id": "cooling_climate",
+        "unit": "days_per_year",
+        "direction": "low_better",
+        "good_anchor": 0,
+        "bad_anchor": 1,
+        "function_type": "linear_clipped",
+        "local_weight": 0.5,
+        "anchor_rationale": "test fixture"
+      },
+      {
+        "metric_id": "interstate_distance_km",
+        "dimension_id": "transportation",
+        "unit": "km",
+        "direction": "low_better",
+        "good_anchor": 0,
+        "bad_anchor": 1,
+        "function_type": "linear_clipped",
+        "local_weight": 0.5,
+        "anchor_rationale": "test fixture"
+      },
+      {
+        "metric_id": "rail_distance_km",
+        "dimension_id": "transportation",
+        "unit": "km",
+        "direction": "low_better",
+        "good_anchor": 0,
+        "bad_anchor": 1,
+        "function_type": "linear_clipped",
+        "local_weight": 0.5,
+        "anchor_rationale": "test fixture"
+      },
+      {
+        "metric_id": "industrial_electricity_price",
+        "dimension_id": "energy_carbon",
+        "unit": "USD_per_MWh",
+        "direction": "low_better",
+        "good_anchor": 0,
+        "bad_anchor": 1,
+        "function_type": "linear_clipped",
+        "local_weight": 0.3333333333333333,
+        "anchor_rationale": "test fixture"
+      },
+      {
+        "metric_id": "saidi_no_major_events",
+        "dimension_id": "energy_carbon",
+        "unit": "minutes_per_customer_year",
+        "direction": "low_better",
+        "good_anchor": 0,
+        "bad_anchor": 1,
+        "function_type": "linear_clipped",
+        "local_weight": 0.3333333333333333,
+        "anchor_rationale": "test fixture"
+      },
+      {
+        "metric_id": "grid_co2e_intensity",
+        "dimension_id": "energy_carbon",
+        "unit": "kgCO2e_per_MWh",
+        "direction": "low_better",
+        "good_anchor": 0,
+        "bad_anchor": 1,
+        "function_type": "linear_clipped",
+        "local_weight": 0.3333333333333333,
+        "anchor_rationale": "test fixture"
+      }
+    ]
+  },
+  "constraint_rules": {
+    "gates_enabled": false
+  },
+  "metric_results": {
+    "context": {
+      "schema_version": "v0.3",
+      "model_version": "v0.3",
+      "run_id": "run_test_001",
+      "run_mode": "test",
+      "profile_id": "reference_v03",
+      "scenario_id": "baseline",
+      "preference_profile_id": "eight_equal_test",
+      "evidence_version": "1",
+      "scoring_config_version": "test_v03"
+    },
+    "records": [
+      {
+        "candidate_id": "51107",
+        "metric_id": "wildfire_bp_national_pct",
+        "value": 1.0,
+        "unit": "fraction",
+        "data_status": "available",
+        "pedigree": "proxy",
+        "input_metric_ids": [],
+        "source_ids": [
+          "fixture"
+        ],
+        "reference_period": "test",
+        "geo_method": "fixture",
+        "assumptions": [
+          "synthetic test data"
+        ],
+        "missing_reason": null
+      },
+      {
+        "candidate_id": "51107",
+        "metric_id": "inland_flood_eal_national_pct",
+        "value": 2.0,
+        "unit": "fraction",
+        "data_status": "available",
+        "pedigree": "proxy",
+        "input_metric_ids": [],
+        "source_ids": [
+          "fixture"
+        ],
+        "reference_period": "test",
+        "geo_method": "fixture",
+        "assumptions": [
+          "synthetic test data"
+        ],
+        "missing_reason": null
+      },
+      {
+        "candidate_id": "51107",
+        "metric_id": "baseline_water_stress",
+        "value": 3.0,
+        "unit": "aqueduct_index_0_5",
+        "data_status": "available",
+        "pedigree": "proxy",
+        "input_metric_ids": [],
+        "source_ids": [
+          "fixture"
+        ],
+        "reference_period": "test",
+        "geo_method": "fixture",
+        "assumptions": [
+          "synthetic test data"
+        ],
+        "missing_reason": null
+      },
+      {
+        "candidate_id": "51107",
+        "metric_id": "future_water_stress_2050",
+        "value": 4.0,
+        "unit": "aqueduct_index_0_5",
+        "data_status": "available",
+        "pedigree": "proxy",
+        "input_metric_ids": [],
+        "source_ids": [
+          "fixture"
+        ],
+        "reference_period": "test",
+        "geo_method": "fixture",
+        "assumptions": [
+          "synthetic test data"
+        ],
+        "missing_reason": null
+      },
+      {
+        "candidate_id": "51107",
+        "metric_id": "low_impervious_share",
+        "value": 5.0,
+        "unit": "fraction",
+        "data_status": "available",
+        "pedigree": "proxy",
+        "input_metric_ids": [],
+        "source_ids": [
+          "fixture"
+        ],
+        "reference_period": "test",
+        "geo_method": "fixture",
+        "assumptions": [
+          "synthetic test data"
+        ],
+        "missing_reason": null
+      },
+      {
+        "candidate_id": "51107",
+        "metric_id": "protected_gap12_share",
+        "value": 6.0,
+        "unit": "fraction",
+        "data_status": "available",
+        "pedigree": "proxy",
+        "input_metric_ids": [],
+        "source_ids": [
+          "fixture"
+        ],
+        "reference_period": "test",
+        "geo_method": "fixture",
+        "assumptions": [
+          "synthetic test data"
+        ],
+        "missing_reason": null
+      },
+      {
+        "candidate_id": "51107",
+        "metric_id": "wetland_share",
+        "value": 7.0,
+        "unit": "fraction",
+        "data_status": "available",
+        "pedigree": "proxy",
+        "input_metric_ids": [],
+        "source_ids": [
+          "fixture"
+        ],
+        "reference_period": "test",
+        "geo_method": "fixture",
+        "assumptions": [
+          "synthetic test data"
+        ],
+        "missing_reason": null
+      },
+      {
+        "candidate_id": "51107",
+        "metric_id": "commercial_fiber_100_20_share",
+        "value": 8.0,
+        "unit": "fraction",
+        "data_status": "available",
+        "pedigree": "proxy",
+        "input_metric_ids": [],
+        "source_ids": [
+          "fixture"
+        ],
+        "reference_period": "test",
+        "geo_method": "fixture",
+        "assumptions": [
+          "synthetic test data"
+        ],
+        "missing_reason": null
+      },
+      {
+        "candidate_id": "51107",
+        "metric_id": "commercial_fiber_1000_100_share",
+        "value": 9.0,
+        "unit": "fraction",
+        "data_status": "available",
+        "pedigree": "proxy",
+        "input_metric_ids": [],
+        "source_ids": [
+          "fixture"
+        ],
+        "reference_period": "test",
+        "geo_method": "fixture",
+        "assumptions": [
+          "synthetic test data"
+        ],
+        "missing_reason": null
+      },
+      {
+        "candidate_id": "51107",
+        "metric_id": "labor_force",
+        "value": 10.0,
+        "unit": "persons",
+        "data_status": "available",
+        "pedigree": "proxy",
+        "input_metric_ids": [],
+        "source_ids": [
+          "fixture"
+        ],
+        "reference_period": "test",
+        "geo_method": "fixture",
+        "assumptions": [
+          "synthetic test data"
+        ],
+        "missing_reason": null
+      },
+      {
+        "candidate_id": "51107",
+        "metric_id": "svi_national_pct",
+        "value": 11.0,
+        "unit": "fraction",
+        "data_status": "available",
+        "pedigree": "proxy",
+        "input_metric_ids": [],
+        "source_ids": [
+          "fixture"
+        ],
+        "reference_period": "test",
+        "geo_method": "fixture",
+        "assumptions": [
+          "synthetic test data"
+        ],
+        "missing_reason": null
+      },
+      {
+        "candidate_id": "51107",
+        "metric_id": "cdd65",
+        "value": 12.0,
+        "unit": "degF_day_per_year",
+        "data_status": "available",
+        "pedigree": "proxy",
+        "input_metric_ids": [],
+        "source_ids": [
+          "fixture"
+        ],
+        "reference_period": "test",
+        "geo_method": "fixture",
+        "assumptions": [
+          "synthetic test data"
+        ],
+        "missing_reason": null
+      },
+      {
+        "candidate_id": "51107",
+        "metric_id": "hot_days_over_90f",
+        "value": 13.0,
+        "unit": "days_per_year",
+        "data_status": "available",
+        "pedigree": "proxy",
+        "input_metric_ids": [],
+        "source_ids": [
+          "fixture"
+        ],
+        "reference_period": "test",
+        "geo_method": "fixture",
+        "assumptions": [
+          "synthetic test data"
+        ],
+        "missing_reason": null
+      },
+      {
+        "candidate_id": "51107",
+        "metric_id": "interstate_distance_km",
+        "value": 14.0,
+        "unit": "km",
+        "data_status": "available",
+        "pedigree": "proxy",
+        "input_metric_ids": [],
+        "source_ids": [
+          "fixture"
+        ],
+        "reference_period": "test",
+        "geo_method": "fixture",
+        "assumptions": [
+          "synthetic test data"
+        ],
+        "missing_reason": null
+      },
+      {
+        "candidate_id": "51107",
+        "metric_id": "rail_distance_km",
+        "value": 15.0,
+        "unit": "km",
+        "data_status": "available",
+        "pedigree": "proxy",
+        "input_metric_ids": [],
+        "source_ids": [
+          "fixture"
+        ],
+        "reference_period": "test",
+        "geo_method": "fixture",
+        "assumptions": [
+          "synthetic test data"
+        ],
+        "missing_reason": null
+      },
+      {
+        "candidate_id": "51107",
+        "metric_id": "industrial_electricity_price",
+        "value": 16.0,
+        "unit": "USD_per_MWh",
+        "data_status": "available",
+        "pedigree": "proxy",
+        "input_metric_ids": [],
+        "source_ids": [
+          "fixture"
+        ],
+        "reference_period": "test",
+        "geo_method": "fixture",
+        "assumptions": [
+          "synthetic test data"
+        ],
+        "missing_reason": null
+      },
+      {
+        "candidate_id": "51107",
+        "metric_id": "saidi_no_major_events",
+        "value": 17.0,
+        "unit": "minutes_per_customer_year",
+        "data_status": "available",
+        "pedigree": "proxy",
+        "input_metric_ids": [],
+        "source_ids": [
+          "fixture"
+        ],
+        "reference_period": "test",
+        "geo_method": "fixture",
+        "assumptions": [
+          "synthetic test data"
+        ],
+        "missing_reason": null
+      },
+      {
+        "candidate_id": "51107",
+        "metric_id": "grid_co2e_intensity",
+        "value": 18.0,
+        "unit": "kgCO2e_per_MWh",
+        "data_status": "available",
+        "pedigree": "proxy",
+        "input_metric_ids": [],
+        "source_ids": [
+          "fixture"
+        ],
+        "reference_period": "test",
+        "geo_method": "fixture",
+        "assumptions": [
+          "synthetic test data"
+        ],
+        "missing_reason": null
+      },
+      {
+        "candidate_id": "51013",
+        "metric_id": "wildfire_bp_national_pct",
+        "value": 1.0,
+        "unit": "fraction",
+        "data_status": "available",
+        "pedigree": "proxy",
+        "input_metric_ids": [],
+        "source_ids": [
+          "fixture"
+        ],
+        "reference_period": "test",
+        "geo_method": "fixture",
+        "assumptions": [
+          "synthetic test data"
+        ],
+        "missing_reason": null
+      },
+      {
+        "candidate_id": "51013",
+        "metric_id": "inland_flood_eal_national_pct",
+        "value": 2.0,
+        "unit": "fraction",
+        "data_status": "available",
+        "pedigree": "proxy",
+        "input_metric_ids": [],
+        "source_ids": [
+          "fixture"
+        ],
+        "reference_period": "test",
+        "geo_method": "fixture",
+        "assumptions": [
+          "synthetic test data"
+        ],
+        "missing_reason": null
+      },
+      {
+        "candidate_id": "51013",
+        "metric_id": "baseline_water_stress",
+        "value": 3.0,
+        "unit": "aqueduct_index_0_5",
+        "data_status": "available",
+        "pedigree": "proxy",
+        "input_metric_ids": [],
+        "source_ids": [
+          "fixture"
+        ],
+        "reference_period": "test",
+        "geo_method": "fixture",
+        "assumptions": [
+          "synthetic test data"
+        ],
+        "missing_reason": null
+      },
+      {
+        "candidate_id": "51013",
+        "metric_id": "future_water_stress_2050",
+        "value": 4.0,
+        "unit": "aqueduct_index_0_5",
+        "data_status": "available",
+        "pedigree": "proxy",
+        "input_metric_ids": [],
+        "source_ids": [
+          "fixture"
+        ],
+        "reference_period": "test",
+        "geo_method": "fixture",
+        "assumptions": [
+          "synthetic test data"
+        ],
+        "missing_reason": null
+      },
+      {
+        "candidate_id": "51013",
+        "metric_id": "low_impervious_share",
+        "value": 5.0,
+        "unit": "fraction",
+        "data_status": "available",
+        "pedigree": "proxy",
+        "input_metric_ids": [],
+        "source_ids": [
+          "fixture"
+        ],
+        "reference_period": "test",
+        "geo_method": "fixture",
+        "assumptions": [
+          "synthetic test data"
+        ],
+        "missing_reason": null
+      },
+      {
+        "candidate_id": "51013",
+        "metric_id": "protected_gap12_share",
+        "value": 6.0,
+        "unit": "fraction",
+        "data_status": "available",
+        "pedigree": "proxy",
+        "input_metric_ids": [],
+        "source_ids": [
+          "fixture"
+        ],
+        "reference_period": "test",
+        "geo_method": "fixture",
+        "assumptions": [
+          "synthetic test data"
+        ],
+        "missing_reason": null
+      },
+      {
+        "candidate_id": "51013",
+        "metric_id": "wetland_share",
+        "value": 7.0,
+        "unit": "fraction",
+        "data_status": "available",
+        "pedigree": "proxy",
+        "input_metric_ids": [],
+        "source_ids": [
+          "fixture"
+        ],
+        "reference_period": "test",
+        "geo_method": "fixture",
+        "assumptions": [
+          "synthetic test data"
+        ],
+        "missing_reason": null
+      },
+      {
+        "candidate_id": "51013",
+        "metric_id": "commercial_fiber_100_20_share",
+        "value": 8.0,
+        "unit": "fraction",
+        "data_status": "available",
+        "pedigree": "proxy",
+        "input_metric_ids": [],
+        "source_ids": [
+          "fixture"
+        ],
+        "reference_period": "test",
+        "geo_method": "fixture",
+        "assumptions": [
+          "synthetic test data"
+        ],
+        "missing_reason": null
+      },
+      {
+        "candidate_id": "51013",
+        "metric_id": "commercial_fiber_1000_100_share",
+        "value": 9.0,
+        "unit": "fraction",
+        "data_status": "available",
+        "pedigree": "proxy",
+        "input_metric_ids": [],
+        "source_ids": [
+          "fixture"
+        ],
+        "reference_period": "test",
+        "geo_method": "fixture",
+        "assumptions": [
+          "synthetic test data"
+        ],
+        "missing_reason": null
+      },
+      {
+        "candidate_id": "51013",
+        "metric_id": "labor_force",
+        "value": 10.0,
+        "unit": "persons",
+        "data_status": "available",
+        "pedigree": "proxy",
+        "input_metric_ids": [],
+        "source_ids": [
+          "fixture"
+        ],
+        "reference_period": "test",
+        "geo_method": "fixture",
+        "assumptions": [
+          "synthetic test data"
+        ],
+        "missing_reason": null
+      },
+      {
+        "candidate_id": "51013",
+        "metric_id": "svi_national_pct",
+        "value": 11.0,
+        "unit": "fraction",
+        "data_status": "available",
+        "pedigree": "proxy",
+        "input_metric_ids": [],
+        "source_ids": [
+          "fixture"
+        ],
+        "reference_period": "test",
+        "geo_method": "fixture",
+        "assumptions": [
+          "synthetic test data"
+        ],
+        "missing_reason": null
+      },
+      {
+        "candidate_id": "51013",
+        "metric_id": "cdd65",
+        "value": 12.0,
+        "unit": "degF_day_per_year",
+        "data_status": "available",
+        "pedigree": "proxy",
+        "input_metric_ids": [],
+        "source_ids": [
+          "fixture"
+        ],
+        "reference_period": "test",
+        "geo_method": "fixture",
+        "assumptions": [
+          "synthetic test data"
+        ],
+        "missing_reason": null
+      },
+      {
+        "candidate_id": "51013",
+        "metric_id": "hot_days_over_90f",
+        "value": 13.0,
+        "unit": "days_per_year",
+        "data_status": "available",
+        "pedigree": "proxy",
+        "input_metric_ids": [],
+        "source_ids": [
+          "fixture"
+        ],
+        "reference_period": "test",
+        "geo_method": "fixture",
+        "assumptions": [
+          "synthetic test data"
+        ],
+        "missing_reason": null
+      },
+      {
+        "candidate_id": "51013",
+        "metric_id": "interstate_distance_km",
+        "value": 14.0,
+        "unit": "km",
+        "data_status": "available",
+        "pedigree": "proxy",
+        "input_metric_ids": [],
+        "source_ids": [
+          "fixture"
+        ],
+        "reference_period": "test",
+        "geo_method": "fixture",
+        "assumptions": [
+          "synthetic test data"
+        ],
+        "missing_reason": null
+      },
+      {
+        "candidate_id": "51013",
+        "metric_id": "rail_distance_km",
+        "value": 15.0,
+        "unit": "km",
+        "data_status": "available",
+        "pedigree": "proxy",
+        "input_metric_ids": [],
+        "source_ids": [
+          "fixture"
+        ],
+        "reference_period": "test",
+        "geo_method": "fixture",
+        "assumptions": [
+          "synthetic test data"
+        ],
+        "missing_reason": null
+      },
+      {
+        "candidate_id": "51013",
+        "metric_id": "industrial_electricity_price",
+        "value": 16.0,
+        "unit": "USD_per_MWh",
+        "data_status": "available",
+        "pedigree": "proxy",
+        "input_metric_ids": [],
+        "source_ids": [
+          "fixture"
+        ],
+        "reference_period": "test",
+        "geo_method": "fixture",
+        "assumptions": [
+          "synthetic test data"
+        ],
+        "missing_reason": null
+      },
+      {
+        "candidate_id": "51013",
+        "metric_id": "saidi_no_major_events",
+        "value": 17.0,
+        "unit": "minutes_per_customer_year",
+        "data_status": "available",
+        "pedigree": "proxy",
+        "input_metric_ids": [],
+        "source_ids": [
+          "fixture"
+        ],
+        "reference_period": "test",
+        "geo_method": "fixture",
+        "assumptions": [
+          "synthetic test data"
+        ],
+        "missing_reason": null
+      },
+      {
+        "candidate_id": "51013",
+        "metric_id": "grid_co2e_intensity",
+        "value": 18.0,
+        "unit": "kgCO2e_per_MWh",
+        "data_status": "available",
+        "pedigree": "proxy",
+        "input_metric_ids": [],
+        "source_ids": [
+          "fixture"
+        ],
+        "reference_period": "test",
+        "geo_method": "fixture",
+        "assumptions": [
+          "synthetic test data"
+        ],
+        "missing_reason": null
+      }
+    ]
+  },
+  "indicator_scores": {
+    "context": {
+      "schema_version": "v0.3",
+      "model_version": "v0.3",
+      "run_id": "run_test_001",
+      "run_mode": "test",
+      "profile_id": "reference_v03",
+      "scenario_id": "baseline",
+      "preference_profile_id": "eight_equal_test",
+      "evidence_version": "1",
+      "scoring_config_version": "test_v03"
+    },
+    "records": [
+      {
+        "candidate_id": "51107",
+        "metric_id": "wildfire_bp_national_pct",
+        "raw_value": 1.0,
+        "unit": "fraction",
+        "score_0_100": 40.0,
+        "score_status": "complete",
+        "scoring_config_version": "test_v03",
+        "explanation": "fixture"
+      },
+      {
+        "candidate_id": "51107",
+        "metric_id": "inland_flood_eal_national_pct",
+        "raw_value": 2.0,
+        "unit": "fraction",
+        "score_0_100": 40.0,
+        "score_status": "complete",
+        "scoring_config_version": "test_v03",
+        "explanation": "fixture"
+      },
+      {
+        "candidate_id": "51107",
+        "metric_id": "baseline_water_stress",
+        "raw_value": 3.0,
+        "unit": "aqueduct_index_0_5",
+        "score_0_100": 40.0,
+        "score_status": "complete",
+        "scoring_config_version": "test_v03",
+        "explanation": "fixture"
+      },
+      {
+        "candidate_id": "51107",
+        "metric_id": "future_water_stress_2050",
+        "raw_value": 4.0,
+        "unit": "aqueduct_index_0_5",
+        "score_0_100": 40.0,
+        "score_status": "complete",
+        "scoring_config_version": "test_v03",
+        "explanation": "fixture"
+      },
+      {
+        "candidate_id": "51107",
+        "metric_id": "low_impervious_share",
+        "raw_value": 5.0,
+        "unit": "fraction",
+        "score_0_100": 40.0,
+        "score_status": "complete",
+        "scoring_config_version": "test_v03",
+        "explanation": "fixture"
+      },
+      {
+        "candidate_id": "51107",
+        "metric_id": "protected_gap12_share",
+        "raw_value": 6.0,
+        "unit": "fraction",
+        "score_0_100": 40.0,
+        "score_status": "complete",
+        "scoring_config_version": "test_v03",
+        "explanation": "fixture"
+      },
+      {
+        "candidate_id": "51107",
+        "metric_id": "wetland_share",
+        "raw_value": 7.0,
+        "unit": "fraction",
+        "score_0_100": 40.0,
+        "score_status": "complete",
+        "scoring_config_version": "test_v03",
+        "explanation": "fixture"
+      },
+      {
+        "candidate_id": "51107",
+        "metric_id": "commercial_fiber_100_20_share",
+        "raw_value": 8.0,
+        "unit": "fraction",
+        "score_0_100": 40.0,
+        "score_status": "complete",
+        "scoring_config_version": "test_v03",
+        "explanation": "fixture"
+      },
+      {
+        "candidate_id": "51107",
+        "metric_id": "commercial_fiber_1000_100_share",
+        "raw_value": 9.0,
+        "unit": "fraction",
+        "score_0_100": 40.0,
+        "score_status": "complete",
+        "scoring_config_version": "test_v03",
+        "explanation": "fixture"
+      },
+      {
+        "candidate_id": "51107",
+        "metric_id": "labor_force",
+        "raw_value": 10.0,
+        "unit": "persons",
+        "score_0_100": 40.0,
+        "score_status": "complete",
+        "scoring_config_version": "test_v03",
+        "explanation": "fixture"
+      },
+      {
+        "candidate_id": "51107",
+        "metric_id": "svi_national_pct",
+        "raw_value": 11.0,
+        "unit": "fraction",
+        "score_0_100": 40.0,
+        "score_status": "complete",
+        "scoring_config_version": "test_v03",
+        "explanation": "fixture"
+      },
+      {
+        "candidate_id": "51107",
+        "metric_id": "cdd65",
+        "raw_value": 12.0,
+        "unit": "degF_day_per_year",
+        "score_0_100": 90,
+        "score_status": "complete",
+        "scoring_config_version": "test_v03",
+        "explanation": "fixture"
+      },
+      {
+        "candidate_id": "51107",
+        "metric_id": "hot_days_over_90f",
+        "raw_value": 13.0,
+        "unit": "days_per_year",
+        "score_0_100": 40.0,
+        "score_status": "complete",
+        "scoring_config_version": "test_v03",
+        "explanation": "fixture"
+      },
+      {
+        "candidate_id": "51107",
+        "metric_id": "interstate_distance_km",
+        "raw_value": 14.0,
+        "unit": "km",
+        "score_0_100": 40.0,
+        "score_status": "complete",
+        "scoring_config_version": "test_v03",
+        "explanation": "fixture"
+      },
+      {
+        "candidate_id": "51107",
+        "metric_id": "rail_distance_km",
+        "raw_value": 15.0,
+        "unit": "km",
+        "score_0_100": 40.0,
+        "score_status": "complete",
+        "scoring_config_version": "test_v03",
+        "explanation": "fixture"
+      },
+      {
+        "candidate_id": "51107",
+        "metric_id": "industrial_electricity_price",
+        "raw_value": 16.0,
+        "unit": "USD_per_MWh",
+        "score_0_100": 40.0,
+        "score_status": "complete",
+        "scoring_config_version": "test_v03",
+        "explanation": "fixture"
+      },
+      {
+        "candidate_id": "51107",
+        "metric_id": "saidi_no_major_events",
+        "raw_value": 17.0,
+        "unit": "minutes_per_customer_year",
+        "score_0_100": 40.0,
+        "score_status": "complete",
+        "scoring_config_version": "test_v03",
+        "explanation": "fixture"
+      },
+      {
+        "candidate_id": "51107",
+        "metric_id": "grid_co2e_intensity",
+        "raw_value": 18.0,
+        "unit": "kgCO2e_per_MWh",
+        "score_0_100": 40.0,
+        "score_status": "complete",
+        "scoring_config_version": "test_v03",
+        "explanation": "fixture"
+      },
+      {
+        "candidate_id": "51013",
+        "metric_id": "wildfire_bp_national_pct",
+        "raw_value": 1.0,
+        "unit": "fraction",
+        "score_0_100": 40.0,
+        "score_status": "complete",
+        "scoring_config_version": "test_v03",
+        "explanation": "fixture"
+      },
+      {
+        "candidate_id": "51013",
+        "metric_id": "inland_flood_eal_national_pct",
+        "raw_value": 2.0,
+        "unit": "fraction",
+        "score_0_100": 40.0,
+        "score_status": "complete",
+        "scoring_config_version": "test_v03",
+        "explanation": "fixture"
+      },
+      {
+        "candidate_id": "51013",
+        "metric_id": "baseline_water_stress",
+        "raw_value": 3.0,
+        "unit": "aqueduct_index_0_5",
+        "score_0_100": 40.0,
+        "score_status": "complete",
+        "scoring_config_version": "test_v03",
+        "explanation": "fixture"
+      },
+      {
+        "candidate_id": "51013",
+        "metric_id": "future_water_stress_2050",
+        "raw_value": 4.0,
+        "unit": "aqueduct_index_0_5",
+        "score_0_100": 40.0,
+        "score_status": "complete",
+        "scoring_config_version": "test_v03",
+        "explanation": "fixture"
+      },
+      {
+        "candidate_id": "51013",
+        "metric_id": "low_impervious_share",
+        "raw_value": 5.0,
+        "unit": "fraction",
+        "score_0_100": 40.0,
+        "score_status": "complete",
+        "scoring_config_version": "test_v03",
+        "explanation": "fixture"
+      },
+      {
+        "candidate_id": "51013",
+        "metric_id": "protected_gap12_share",
+        "raw_value": 6.0,
+        "unit": "fraction",
+        "score_0_100": 40.0,
+        "score_status": "complete",
+        "scoring_config_version": "test_v03",
+        "explanation": "fixture"
+      },
+      {
+        "candidate_id": "51013",
+        "metric_id": "wetland_share",
+        "raw_value": 7.0,
+        "unit": "fraction",
+        "score_0_100": 40.0,
+        "score_status": "complete",
+        "scoring_config_version": "test_v03",
+        "explanation": "fixture"
+      },
+      {
+        "candidate_id": "51013",
+        "metric_id": "commercial_fiber_100_20_share",
+        "raw_value": 8.0,
+        "unit": "fraction",
+        "score_0_100": 40.0,
+        "score_status": "complete",
+        "scoring_config_version": "test_v03",
+        "explanation": "fixture"
+      },
+      {
+        "candidate_id": "51013",
+        "metric_id": "commercial_fiber_1000_100_share",
+        "raw_value": 9.0,
+        "unit": "fraction",
+        "score_0_100": 40.0,
+        "score_status": "complete",
+        "scoring_config_version": "test_v03",
+        "explanation": "fixture"
+      },
+      {
+        "candidate_id": "51013",
+        "metric_id": "labor_force",
+        "raw_value": 10.0,
+        "unit": "persons",
+        "score_0_100": 40.0,
+        "score_status": "complete",
+        "scoring_config_version": "test_v03",
+        "explanation": "fixture"
+      },
+      {
+        "candidate_id": "51013",
+        "metric_id": "svi_national_pct",
+        "raw_value": 11.0,
+        "unit": "fraction",
+        "score_0_100": 40.0,
+        "score_status": "complete",
+        "scoring_config_version": "test_v03",
+        "explanation": "fixture"
+      },
+      {
+        "candidate_id": "51013",
+        "metric_id": "cdd65",
+        "raw_value": 12.0,
+        "unit": "degF_day_per_year",
+        "score_0_100": 40.0,
+        "score_status": "complete",
+        "scoring_config_version": "test_v03",
+        "explanation": "fixture"
+      },
+      {
+        "candidate_id": "51013",
+        "metric_id": "hot_days_over_90f",
+        "raw_value": 13.0,
+        "unit": "days_per_year",
+        "score_0_100": 40.0,
+        "score_status": "complete",
+        "scoring_config_version": "test_v03",
+        "explanation": "fixture"
+      },
+      {
+        "candidate_id": "51013",
+        "metric_id": "interstate_distance_km",
+        "raw_value": 14.0,
+        "unit": "km",
+        "score_0_100": 40.0,
+        "score_status": "complete",
+        "scoring_config_version": "test_v03",
+        "explanation": "fixture"
+      },
+      {
+        "candidate_id": "51013",
+        "metric_id": "rail_distance_km",
+        "raw_value": 15.0,
+        "unit": "km",
+        "score_0_100": 40.0,
+        "score_status": "complete",
+        "scoring_config_version": "test_v03",
+        "explanation": "fixture"
+      },
+      {
+        "candidate_id": "51013",
+        "metric_id": "industrial_electricity_price",
+        "raw_value": 16.0,
+        "unit": "USD_per_MWh",
+        "score_0_100": 40.0,
+        "score_status": "complete",
+        "scoring_config_version": "test_v03",
+        "explanation": "fixture"
+      },
+      {
+        "candidate_id": "51013",
+        "metric_id": "saidi_no_major_events",
+        "raw_value": 17.0,
+        "unit": "minutes_per_customer_year",
+        "score_0_100": 40.0,
+        "score_status": "complete",
+        "scoring_config_version": "test_v03",
+        "explanation": "fixture"
+      },
+      {
+        "candidate_id": "51013",
+        "metric_id": "grid_co2e_intensity",
+        "raw_value": 18.0,
+        "unit": "kgCO2e_per_MWh",
+        "score_0_100": 40.0,
+        "score_status": "complete",
+        "scoring_config_version": "test_v03",
+        "explanation": "fixture"
+      }
+    ]
+  },
+  "dimension_scores": {
+    "context": {
+      "schema_version": "v0.3",
+      "model_version": "v0.3",
+      "run_id": "run_test_001",
+      "run_mode": "test",
+      "profile_id": "reference_v03",
+      "scenario_id": "baseline",
+      "preference_profile_id": "eight_equal_test",
+      "evidence_version": "1",
+      "scoring_config_version": "test_v03"
+    },
+    "records": [
+      {
+        "candidate_id": "51107",
+        "scores": {
+          "climate_risk": 0.4,
+          "water": 0.4,
+          "land_ecology": 0.4,
+          "fiber_connectivity": 0.4,
+          "workforce_community": 0.4,
+          "cooling_climate": 0.65,
+          "transportation": 0.4,
+          "energy_carbon": 0.4
+        },
+        "dimension_order": [
+          "climate_risk",
+          "water",
+          "land_ecology",
+          "fiber_connectivity",
+          "workforce_community",
+          "cooling_climate",
+          "transportation",
+          "energy_carbon"
+        ],
+        "score_status": "complete",
+        "missing_metric_ids": []
+      },
+      {
+        "candidate_id": "51013",
+        "scores": {
+          "climate_risk": 0.4,
+          "water": 0.4,
+          "land_ecology": 0.4,
+          "fiber_connectivity": 0.4,
+          "workforce_community": 0.4,
+          "cooling_climate": 0.4,
+          "transportation": 0.4,
+          "energy_carbon": 0.4
+        },
+        "dimension_order": [
+          "climate_risk",
+          "water",
+          "land_ecology",
+          "fiber_connectivity",
+          "workforce_community",
+          "cooling_climate",
+          "transportation",
+          "energy_carbon"
+        ],
+        "score_status": "complete",
+        "missing_metric_ids": []
+      }
+    ]
+  }
+}

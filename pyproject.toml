@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "dc-locator"
+version = "0.3.0"
+description = "Sustainable AI data-center county locator for Virginia and Georgia (eight dimensions)"
+requires-python = ">=3.10"
+dependencies = []
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["dc_locator*"]
