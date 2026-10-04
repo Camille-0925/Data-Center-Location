@@ -1,0 +1,1773 @@
+{
+  "51001": {
+    "name": "Accomack County",
+    "latitude": 37.765944,
+    "longitude": -75.757807,
+    "utility_ids": [
+      84,
+      19876
+    ],
+    "utilities": [
+      "A & N Electric Coop",
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51003": {
+    "name": "Albemarle County",
+    "latitude": 38.024184,
+    "longitude": -78.553506,
+    "utility_ids": [
+      733,
+      3291,
+      19876,
+      40228
+    ],
+    "utilities": [
+      "Appalachian Power Co",
+      "Central Virginia Electric Coop",
+      "Virginia Electric & Power Co",
+      "Rappahannock Electric Coop"
+    ]
+  },
+  "51005": {
+    "name": "Alleghany County",
+    "latitude": 37.787905,
+    "longitude": -80.008669,
+    "utility_ids": [
+      1062,
+      4471,
+      19876
+    ],
+    "utilities": [
+      "BARC Electric Coop Inc",
+      "Craig-Botetourt Electric Coop",
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51007": {
+    "name": "Amelia County",
+    "latitude": 37.331927,
+    "longitude": -77.977462,
+    "utility_ids": [
+      19876,
+      21244
+    ],
+    "utilities": [
+      "Virginia Electric & Power Co",
+      "Southside Electric Coop, Inc"
+    ]
+  },
+  "51009": {
+    "name": "Amherst County",
+    "latitude": 37.629301,
+    "longitude": -79.154756,
+    "utility_ids": [
+      733,
+      3291,
+      19876
+    ],
+    "utilities": [
+      "Appalachian Power Co",
+      "Central Virginia Electric Coop",
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51011": {
+    "name": "Appomattox County",
+    "latitude": 37.370725,
+    "longitude": -78.81094,
+    "utility_ids": [
+      733,
+      3291,
+      19876,
+      21244
+    ],
+    "utilities": [
+      "Appalachian Power Co",
+      "Central Virginia Electric Coop",
+      "Virginia Electric & Power Co",
+      "Southside Electric Coop, Inc"
+    ]
+  },
+  "51013": {
+    "name": "Arlington County",
+    "latitude": 38.878337,
+    "longitude": -77.100703,
+    "utility_ids": [
+      19876
+    ],
+    "utilities": [
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51015": {
+    "name": "Augusta County",
+    "latitude": 38.17259,
+    "longitude": -79.140975,
+    "utility_ids": [
+      1062,
+      3291,
+      17066,
+      19876
+    ],
+    "utilities": [
+      "BARC Electric Coop Inc",
+      "Central Virginia Electric Coop",
+      "Shenandoah Valley Elec Coop",
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51017": {
+    "name": "Bath County",
+    "latitude": 38.068368,
+    "longitude": -79.731203,
+    "utility_ids": [
+      1062,
+      19876
+    ],
+    "utilities": [
+      "BARC Electric Coop Inc",
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51019": {
+    "name": "Bedford County",
+    "latitude": 37.312257,
+    "longitude": -79.527223,
+    "utility_ids": [
+      733,
+      1456,
+      19876,
+      21244
+    ],
+    "utilities": [
+      "Appalachian Power Co",
+      "Town of Bedford - (VA)",
+      "Virginia Electric & Power Co",
+      "Southside Electric Coop, Inc"
+    ]
+  },
+  "51021": {
+    "name": "Bland County",
+    "latitude": 37.130612,
+    "longitude": -81.125853,
+    "utility_ids": [
+      733
+    ],
+    "utilities": [
+      "Appalachian Power Co"
+    ]
+  },
+  "51023": {
+    "name": "Botetourt County",
+    "latitude": 37.565482,
+    "longitude": -79.797546,
+    "utility_ids": [
+      733,
+      4471,
+      19876
+    ],
+    "utilities": [
+      "Appalachian Power Co",
+      "Craig-Botetourt Electric Coop",
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51025": {
+    "name": "Brunswick County",
+    "latitude": 36.764204,
+    "longitude": -77.861483,
+    "utility_ids": [
+      12260,
+      19876,
+      21244
+    ],
+    "utilities": [
+      "Mecklenburg Electric Cooperative",
+      "Virginia Electric & Power Co",
+      "Southside Electric Coop, Inc"
+    ]
+  },
+  "51027": {
+    "name": "Buchanan County",
+    "latitude": 37.26812,
+    "longitude": -82.038151,
+    "utility_ids": [
+      733,
+      19876
+    ],
+    "utilities": [
+      "Appalachian Power Co",
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51029": {
+    "name": "Buckingham County",
+    "latitude": 37.573928,
+    "longitude": -78.529169,
+    "utility_ids": [
+      733,
+      3291,
+      19876,
+      21244
+    ],
+    "utilities": [
+      "Appalachian Power Co",
+      "Central Virginia Electric Coop",
+      "Virginia Electric & Power Co",
+      "Southside Electric Coop, Inc"
+    ]
+  },
+  "51031": {
+    "name": "Campbell County",
+    "latitude": 37.210152,
+    "longitude": -79.095428,
+    "utility_ids": [
+      733,
+      3291,
+      19876,
+      21244
+    ],
+    "utilities": [
+      "Appalachian Power Co",
+      "Central Virginia Electric Coop",
+      "Virginia Electric & Power Co",
+      "Southside Electric Coop, Inc"
+    ]
+  },
+  "51033": {
+    "name": "Caroline County",
+    "latitude": 38.028033,
+    "longitude": -77.353736,
+    "utility_ids": [
+      19876,
+      40228
+    ],
+    "utilities": [
+      "Virginia Electric & Power Co",
+      "Rappahannock Electric Coop"
+    ]
+  },
+  "51035": {
+    "name": "Carroll County",
+    "latitude": 36.731963,
+    "longitude": -80.727831,
+    "utility_ids": [
+      733,
+      19876
+    ],
+    "utilities": [
+      "Appalachian Power Co",
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51036": {
+    "name": "Charles City County",
+    "latitude": 37.361054,
+    "longitude": -77.05417,
+    "utility_ids": [
+      19876
+    ],
+    "utilities": [
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51037": {
+    "name": "Charlotte County",
+    "latitude": 37.009042,
+    "longitude": -78.658568,
+    "utility_ids": [
+      12260,
+      19876,
+      21244
+    ],
+    "utilities": [
+      "Mecklenburg Electric Cooperative",
+      "Virginia Electric & Power Co",
+      "Southside Electric Coop, Inc"
+    ]
+  },
+  "51041": {
+    "name": "Chesterfield County",
+    "latitude": 37.378434,
+    "longitude": -77.585847,
+    "utility_ids": [
+      19876,
+      21244
+    ],
+    "utilities": [
+      "Virginia Electric & Power Co",
+      "Southside Electric Coop, Inc"
+    ]
+  },
+  "51043": {
+    "name": "Clarke County",
+    "latitude": 39.115307,
+    "longitude": -77.990748,
+    "utility_ids": [
+      13640,
+      17066,
+      19876,
+      40228
+    ],
+    "utilities": [
+      "Northern Virginia Elec Coop",
+      "Shenandoah Valley Elec Coop",
+      "Virginia Electric & Power Co",
+      "Rappahannock Electric Coop"
+    ]
+  },
+  "51045": {
+    "name": "Craig County",
+    "latitude": 37.473603,
+    "longitude": -80.231051,
+    "utility_ids": [
+      733,
+      4471
+    ],
+    "utilities": [
+      "Appalachian Power Co",
+      "Craig-Botetourt Electric Coop"
+    ]
+  },
+  "51047": {
+    "name": "Culpeper County",
+    "latitude": 38.48593,
+    "longitude": -77.956476,
+    "utility_ids": [
+      4619,
+      19876,
+      40228
+    ],
+    "utilities": [
+      "Town of Culpeper- (VA)",
+      "Virginia Electric & Power Co",
+      "Rappahannock Electric Coop"
+    ]
+  },
+  "51049": {
+    "name": "Cumberland County",
+    "latitude": 37.520189,
+    "longitude": -78.252836,
+    "utility_ids": [
+      3291,
+      19876,
+      21244
+    ],
+    "utilities": [
+      "Central Virginia Electric Coop",
+      "Virginia Electric & Power Co",
+      "Southside Electric Coop, Inc"
+    ]
+  },
+  "51051": {
+    "name": "Dickenson County",
+    "latitude": 37.136701,
+    "longitude": -82.34922,
+    "utility_ids": [
+      733,
+      10171
+    ],
+    "utilities": [
+      "Appalachian Power Co",
+      "Kentucky Utilities Co"
+    ]
+  },
+  "51053": {
+    "name": "Dinwiddie County",
+    "latitude": 37.073498,
+    "longitude": -77.635492,
+    "utility_ids": [
+      15410,
+      19876,
+      21244
+    ],
+    "utilities": [
+      "Prince George Electric Coop",
+      "Virginia Electric & Power Co",
+      "Southside Electric Coop, Inc"
+    ]
+  },
+  "51057": {
+    "name": "Essex County",
+    "latitude": 37.936389,
+    "longitude": -76.933747,
+    "utility_ids": [
+      19876,
+      40228
+    ],
+    "utilities": [
+      "Virginia Electric & Power Co",
+      "Rappahannock Electric Coop"
+    ]
+  },
+  "51059": {
+    "name": "Fairfax County",
+    "latitude": 38.82952,
+    "longitude": -77.273252,
+    "utility_ids": [
+      13640,
+      19876
+    ],
+    "utilities": [
+      "Northern Virginia Elec Coop",
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51061": {
+    "name": "Fauquier County",
+    "latitude": 38.744096,
+    "longitude": -77.8215,
+    "utility_ids": [
+      13640,
+      19876,
+      40228
+    ],
+    "utilities": [
+      "Northern Virginia Elec Coop",
+      "Virginia Electric & Power Co",
+      "Rappahannock Electric Coop"
+    ]
+  },
+  "51063": {
+    "name": "Floyd County",
+    "latitude": 36.931433,
+    "longitude": -80.350266,
+    "utility_ids": [
+      733
+    ],
+    "utilities": [
+      "Appalachian Power Co"
+    ]
+  },
+  "51065": {
+    "name": "Fluvanna County",
+    "latitude": 37.830584,
+    "longitude": -78.283494,
+    "utility_ids": [
+      733,
+      3291,
+      19876
+    ],
+    "utilities": [
+      "Appalachian Power Co",
+      "Central Virginia Electric Coop",
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51067": {
+    "name": "Franklin County",
+    "latitude": 36.991186,
+    "longitude": -79.882715,
+    "utility_ids": [
+      733,
+      19876
+    ],
+    "utilities": [
+      "Appalachian Power Co",
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51069": {
+    "name": "Frederick County",
+    "latitude": 39.20366,
+    "longitude": -78.263829,
+    "utility_ids": [
+      17066,
+      40228
+    ],
+    "utilities": [
+      "Shenandoah Valley Elec Coop",
+      "Rappahannock Electric Coop"
+    ]
+  },
+  "51071": {
+    "name": "Giles County",
+    "latitude": 37.318072,
+    "longitude": -80.698321,
+    "utility_ids": [
+      733,
+      4471
+    ],
+    "utilities": [
+      "Appalachian Power Co",
+      "Craig-Botetourt Electric Coop"
+    ]
+  },
+  "51073": {
+    "name": "Gloucester County",
+    "latitude": 37.403541,
+    "longitude": -76.523505,
+    "utility_ids": [
+      19876
+    ],
+    "utilities": [
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51075": {
+    "name": "Goochland County",
+    "latitude": 37.718814,
+    "longitude": -77.917626,
+    "utility_ids": [
+      3291,
+      19876,
+      40228
+    ],
+    "utilities": [
+      "Central Virginia Electric Coop",
+      "Virginia Electric & Power Co",
+      "Rappahannock Electric Coop"
+    ]
+  },
+  "51077": {
+    "name": "Grayson County",
+    "latitude": 36.652229,
+    "longitude": -81.215323,
+    "utility_ids": [
+      733
+    ],
+    "utilities": [
+      "Appalachian Power Co"
+    ]
+  },
+  "51079": {
+    "name": "Greene County",
+    "latitude": 38.297981,
+    "longitude": -78.470163,
+    "utility_ids": [
+      3291,
+      17066,
+      19876,
+      40228
+    ],
+    "utilities": [
+      "Central Virginia Electric Coop",
+      "Shenandoah Valley Elec Coop",
+      "Virginia Electric & Power Co",
+      "Rappahannock Electric Coop"
+    ]
+  },
+  "51081": {
+    "name": "Greensville County",
+    "latitude": 36.680336,
+    "longitude": -77.560277,
+    "utility_ids": [
+      12260,
+      19876
+    ],
+    "utilities": [
+      "Mecklenburg Electric Cooperative",
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51083": {
+    "name": "Halifax County",
+    "latitude": 36.766461,
+    "longitude": -78.939614,
+    "utility_ids": [
+      4794,
+      12260,
+      19876
+    ],
+    "utilities": [
+      "City of Danville - (VA)",
+      "Mecklenburg Electric Cooperative",
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51085": {
+    "name": "Hanover County",
+    "latitude": 37.760215,
+    "longitude": -77.491317,
+    "utility_ids": [
+      19876,
+      40228
+    ],
+    "utilities": [
+      "Virginia Electric & Power Co",
+      "Rappahannock Electric Coop"
+    ]
+  },
+  "51087": {
+    "name": "Henrico County",
+    "latitude": 37.43752,
+    "longitude": -77.300333,
+    "utility_ids": [
+      19876
+    ],
+    "utilities": [
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51089": {
+    "name": "Henry County",
+    "latitude": 36.620612,
+    "longitude": -79.980662,
+    "utility_ids": [
+      733,
+      4794,
+      11770,
+      19876
+    ],
+    "utilities": [
+      "Appalachian Power Co",
+      "City of Danville - (VA)",
+      "City of Martinsville - (VA)",
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51091": {
+    "name": "Highland County",
+    "latitude": 38.366243,
+    "longitude": -79.564472,
+    "utility_ids": [
+      1062,
+      17066
+    ],
+    "utilities": [
+      "BARC Electric Coop Inc",
+      "Shenandoah Valley Elec Coop"
+    ]
+  },
+  "51093": {
+    "name": "Isle of Wight County",
+    "latitude": 36.901418,
+    "longitude": -76.707569,
+    "utility_ids": [
+      4117,
+      6715,
+      15410,
+      19876
+    ],
+    "utilities": [
+      "Community Electric Coop",
+      "City of Franklin - (VA)",
+      "Prince George Electric Coop",
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51095": {
+    "name": "James City County",
+    "latitude": 37.324837,
+    "longitude": -76.777888,
+    "utility_ids": [
+      19876
+    ],
+    "utilities": [
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51097": {
+    "name": "King and Queen County",
+    "latitude": 37.717772,
+    "longitude": -76.905581,
+    "utility_ids": [
+      19876,
+      40228
+    ],
+    "utilities": [
+      "Virginia Electric & Power Co",
+      "Rappahannock Electric Coop"
+    ]
+  },
+  "51099": {
+    "name": "King George County",
+    "latitude": 38.277179,
+    "longitude": -77.162638,
+    "utility_ids": [
+      13762,
+      19876
+    ],
+    "utilities": [
+      "Northern Neck Elec Coop, Inc",
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51101": {
+    "name": "King William County",
+    "latitude": 37.70826,
+    "longitude": -77.091054,
+    "utility_ids": [
+      19876,
+      40228
+    ],
+    "utilities": [
+      "Virginia Electric & Power Co",
+      "Rappahannock Electric Coop"
+    ]
+  },
+  "51103": {
+    "name": "Lancaster County",
+    "latitude": 37.704843,
+    "longitude": -76.412663,
+    "utility_ids": [
+      13762,
+      19876
+    ],
+    "utilities": [
+      "Northern Neck Elec Coop, Inc",
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51105": {
+    "name": "Lee County",
+    "latitude": 36.701721,
+    "longitude": -83.130112,
+    "utility_ids": [
+      10171,
+      15293
+    ],
+    "utilities": [
+      "Kentucky Utilities Co",
+      "Powell Valley Electric Coop"
+    ]
+  },
+  "51107": {
+    "name": "Loudoun County",
+    "latitude": 39.0812,
+    "longitude": -77.638898,
+    "utility_ids": [
+      13640,
+      19876
+    ],
+    "utilities": [
+      "Northern Virginia Elec Coop",
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51109": {
+    "name": "Louisa County",
+    "latitude": 37.972704,
+    "longitude": -77.959795,
+    "utility_ids": [
+      3291,
+      19876,
+      40228
+    ],
+    "utilities": [
+      "Central Virginia Electric Coop",
+      "Virginia Electric & Power Co",
+      "Rappahannock Electric Coop"
+    ]
+  },
+  "51111": {
+    "name": "Lunenburg County",
+    "latitude": 36.945555,
+    "longitude": -78.240528,
+    "utility_ids": [
+      12260,
+      19876,
+      21244
+    ],
+    "utilities": [
+      "Mecklenburg Electric Cooperative",
+      "Virginia Electric & Power Co",
+      "Southside Electric Coop, Inc"
+    ]
+  },
+  "51113": {
+    "name": "Madison County",
+    "latitude": 38.412059,
+    "longitude": -78.276961,
+    "utility_ids": [
+      19876,
+      40228
+    ],
+    "utilities": [
+      "Virginia Electric & Power Co",
+      "Rappahannock Electric Coop"
+    ]
+  },
+  "51115": {
+    "name": "Mathews County",
+    "latitude": 37.425348,
+    "longitude": -76.268808,
+    "utility_ids": [
+      19876
+    ],
+    "utilities": [
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51117": {
+    "name": "Mecklenburg County",
+    "latitude": 36.687256,
+    "longitude": -78.368959,
+    "utility_ids": [
+      12260,
+      19876,
+      21244
+    ],
+    "utilities": [
+      "Mecklenburg Electric Cooperative",
+      "Virginia Electric & Power Co",
+      "Southside Electric Coop, Inc"
+    ]
+  },
+  "51119": {
+    "name": "Middlesex County",
+    "latitude": 37.606975,
+    "longitude": -76.528082,
+    "utility_ids": [
+      19876
+    ],
+    "utilities": [
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51121": {
+    "name": "Montgomery County",
+    "latitude": 37.175538,
+    "longitude": -80.387794,
+    "utility_ids": [
+      733,
+      4471,
+      15619,
+      19882
+    ],
+    "utilities": [
+      "Appalachian Power Co",
+      "Craig-Botetourt Electric Coop",
+      "City of Radford - (VA)",
+      "Virginia Tech Electric Service"
+    ]
+  },
+  "51125": {
+    "name": "Nelson County",
+    "latitude": 37.789079,
+    "longitude": -78.88344,
+    "utility_ids": [
+      733,
+      3291,
+      17066,
+      19876
+    ],
+    "utilities": [
+      "Appalachian Power Co",
+      "Central Virginia Electric Coop",
+      "Shenandoah Valley Elec Coop",
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51127": {
+    "name": "New Kent County",
+    "latitude": 37.51016,
+    "longitude": -76.999331,
+    "utility_ids": [
+      19876
+    ],
+    "utilities": [
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51131": {
+    "name": "Northampton County",
+    "latitude": 37.302775,
+    "longitude": -75.924018,
+    "utility_ids": [
+      84
+    ],
+    "utilities": [
+      "A & N Electric Coop"
+    ]
+  },
+  "51133": {
+    "name": "Northumberland County",
+    "latitude": 37.856975,
+    "longitude": -76.379688,
+    "utility_ids": [
+      13762,
+      19876
+    ],
+    "utilities": [
+      "Northern Neck Elec Coop, Inc",
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51135": {
+    "name": "Nottoway County",
+    "latitude": 37.141167,
+    "longitude": -78.053866,
+    "utility_ids": [
+      1795,
+      19876,
+      21244
+    ],
+    "utilities": [
+      "Town of Blackstone - (VA)",
+      "Virginia Electric & Power Co",
+      "Southside Electric Coop, Inc"
+    ]
+  },
+  "51137": {
+    "name": "Orange County",
+    "latitude": 38.249326,
+    "longitude": -78.011092,
+    "utility_ids": [
+      3291,
+      19876,
+      40228
+    ],
+    "utilities": [
+      "Central Virginia Electric Coop",
+      "Virginia Electric & Power Co",
+      "Rappahannock Electric Coop"
+    ]
+  },
+  "51139": {
+    "name": "Page County",
+    "latitude": 38.623209,
+    "longitude": -78.491872,
+    "utility_ids": [
+      17066,
+      19876,
+      40228
+    ],
+    "utilities": [
+      "Shenandoah Valley Elec Coop",
+      "Virginia Electric & Power Co",
+      "Rappahannock Electric Coop"
+    ]
+  },
+  "51141": {
+    "name": "Patrick County",
+    "latitude": 36.667138,
+    "longitude": -80.286413,
+    "utility_ids": [
+      733,
+      4794
+    ],
+    "utilities": [
+      "Appalachian Power Co",
+      "City of Danville - (VA)"
+    ]
+  },
+  "51143": {
+    "name": "Pittsylvania County",
+    "latitude": 36.821721,
+    "longitude": -79.398502,
+    "utility_ids": [
+      733,
+      4794,
+      12260,
+      19876,
+      21244
+    ],
+    "utilities": [
+      "Appalachian Power Co",
+      "City of Danville - (VA)",
+      "Mecklenburg Electric Cooperative",
+      "Virginia Electric & Power Co",
+      "Southside Electric Coop, Inc"
+    ]
+  },
+  "51145": {
+    "name": "Powhatan County",
+    "latitude": 37.549404,
+    "longitude": -77.912855,
+    "utility_ids": [
+      19876,
+      21244
+    ],
+    "utilities": [
+      "Virginia Electric & Power Co",
+      "Southside Electric Coop, Inc"
+    ]
+  },
+  "51147": {
+    "name": "Prince Edward County",
+    "latitude": 37.224881,
+    "longitude": -78.432957,
+    "utility_ids": [
+      3291,
+      19876,
+      21244
+    ],
+    "utilities": [
+      "Central Virginia Electric Coop",
+      "Virginia Electric & Power Co",
+      "Southside Electric Coop, Inc"
+    ]
+  },
+  "51149": {
+    "name": "Prince George County",
+    "latitude": 37.187325,
+    "longitude": -77.220993,
+    "utility_ids": [
+      15410,
+      19876,
+      21244
+    ],
+    "utilities": [
+      "Prince George Electric Coop",
+      "Virginia Electric & Power Co",
+      "Southside Electric Coop, Inc"
+    ]
+  },
+  "51153": {
+    "name": "Prince William County",
+    "latitude": 38.701119,
+    "longitude": -77.479579,
+    "utility_ids": [
+      13640,
+      19876
+    ],
+    "utilities": [
+      "Northern Virginia Elec Coop",
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51155": {
+    "name": "Pulaski County",
+    "latitude": 37.063385,
+    "longitude": -80.713444,
+    "utility_ids": [
+      733,
+      15619
+    ],
+    "utilities": [
+      "Appalachian Power Co",
+      "City of Radford - (VA)"
+    ]
+  },
+  "51157": {
+    "name": "Rappahannock County",
+    "latitude": 38.684522,
+    "longitude": -78.168824,
+    "utility_ids": [
+      19876,
+      40228
+    ],
+    "utilities": [
+      "Virginia Electric & Power Co",
+      "Rappahannock Electric Coop"
+    ]
+  },
+  "51159": {
+    "name": "Richmond County",
+    "latitude": 37.942894,
+    "longitude": -76.730561,
+    "utility_ids": [
+      13762,
+      19876
+    ],
+    "utilities": [
+      "Northern Neck Elec Coop, Inc",
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51161": {
+    "name": "Roanoke County",
+    "latitude": 37.330792,
+    "longitude": -80.191237,
+    "utility_ids": [
+      733,
+      4471,
+      16558
+    ],
+    "utilities": [
+      "Appalachian Power Co",
+      "Craig-Botetourt Electric Coop",
+      "City of Salem - (VA)"
+    ]
+  },
+  "51163": {
+    "name": "Rockbridge County",
+    "latitude": 37.814517,
+    "longitude": -79.447754,
+    "utility_ids": [
+      1062,
+      17066,
+      19876
+    ],
+    "utilities": [
+      "BARC Electric Coop Inc",
+      "Shenandoah Valley Elec Coop",
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51165": {
+    "name": "Rockingham County",
+    "latitude": 38.507612,
+    "longitude": -78.885329,
+    "utility_ids": [
+      5794,
+      8198,
+      17066,
+      19876,
+      40228
+    ],
+    "utilities": [
+      "Town of Elkton",
+      "City of Harrisonburg - (VA)",
+      "Shenandoah Valley Elec Coop",
+      "Virginia Electric & Power Co",
+      "Rappahannock Electric Coop"
+    ]
+  },
+  "51167": {
+    "name": "Russell County",
+    "latitude": 36.93342,
+    "longitude": -82.095934,
+    "utility_ids": [
+      733,
+      10171
+    ],
+    "utilities": [
+      "Appalachian Power Co",
+      "Kentucky Utilities Co"
+    ]
+  },
+  "51169": {
+    "name": "Scott County",
+    "latitude": 36.712776,
+    "longitude": -82.613624,
+    "utility_ids": [
+      733,
+      2248,
+      10171,
+      15293
+    ],
+    "utilities": [
+      "Appalachian Power Co",
+      "Bristol Virginia Utilities",
+      "Kentucky Utilities Co",
+      "Powell Valley Electric Coop"
+    ]
+  },
+  "51171": {
+    "name": "Shenandoah County",
+    "latitude": 38.856204,
+    "longitude": -78.573987,
+    "utility_ids": [
+      17066,
+      19876,
+      40228
+    ],
+    "utilities": [
+      "Shenandoah Valley Elec Coop",
+      "Virginia Electric & Power Co",
+      "Rappahannock Electric Coop"
+    ]
+  },
+  "51173": {
+    "name": "Smyth County",
+    "latitude": 36.842318,
+    "longitude": -81.539786,
+    "utility_ids": [
+      733
+    ],
+    "utilities": [
+      "Appalachian Power Co"
+    ]
+  },
+  "51175": {
+    "name": "Southampton County",
+    "latitude": 36.720068,
+    "longitude": -77.103813,
+    "utility_ids": [
+      4117,
+      6715,
+      12260,
+      15410,
+      19876
+    ],
+    "utilities": [
+      "Community Electric Coop",
+      "City of Franklin - (VA)",
+      "Mecklenburg Electric Cooperative",
+      "Prince George Electric Coop",
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51177": {
+    "name": "Spotsylvania County",
+    "latitude": 38.182431,
+    "longitude": -77.657226,
+    "utility_ids": [
+      19876,
+      40228
+    ],
+    "utilities": [
+      "Virginia Electric & Power Co",
+      "Rappahannock Electric Coop"
+    ]
+  },
+  "51179": {
+    "name": "Stafford County",
+    "latitude": 38.423084,
+    "longitude": -77.458048,
+    "utility_ids": [
+      13640,
+      13762,
+      19876,
+      40228
+    ],
+    "utilities": [
+      "Northern Virginia Elec Coop",
+      "Northern Neck Elec Coop, Inc",
+      "Virginia Electric & Power Co",
+      "Rappahannock Electric Coop"
+    ]
+  },
+  "51181": {
+    "name": "Surry County",
+    "latitude": 37.119761,
+    "longitude": -76.880172,
+    "utility_ids": [
+      4117,
+      15410,
+      19876
+    ],
+    "utilities": [
+      "Community Electric Coop",
+      "Prince George Electric Coop",
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51183": {
+    "name": "Sussex County",
+    "latitude": 36.926645,
+    "longitude": -77.259732,
+    "utility_ids": [
+      4117,
+      12260,
+      15410,
+      19876,
+      19978,
+      21244
+    ],
+    "utilities": [
+      "Community Electric Coop",
+      "Mecklenburg Electric Cooperative",
+      "Prince George Electric Coop",
+      "Virginia Electric & Power Co",
+      "Town of Wakefield - (VA)",
+      "Southside Electric Coop, Inc"
+    ]
+  },
+  "51185": {
+    "name": "Tazewell County",
+    "latitude": 37.125395,
+    "longitude": -81.562924,
+    "utility_ids": [
+      733,
+      15982,
+      19876
+    ],
+    "utilities": [
+      "Appalachian Power Co",
+      "Town of Richlands - (VA)",
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51187": {
+    "name": "Warren County",
+    "latitude": 38.908221,
+    "longitude": -78.207594,
+    "utility_ids": [
+      6803,
+      17066,
+      19876,
+      40228
+    ],
+    "utilities": [
+      "Town of Front Royal",
+      "Shenandoah Valley Elec Coop",
+      "Virginia Electric & Power Co",
+      "Rappahannock Electric Coop"
+    ]
+  },
+  "51191": {
+    "name": "Washington County",
+    "latitude": 36.747814,
+    "longitude": -81.950322,
+    "utility_ids": [
+      733,
+      2248
+    ],
+    "utilities": [
+      "Appalachian Power Co",
+      "Bristol Virginia Utilities"
+    ]
+  },
+  "51193": {
+    "name": "Westmoreland County",
+    "latitude": 38.109311,
+    "longitude": -76.803933,
+    "utility_ids": [
+      13762,
+      19876
+    ],
+    "utilities": [
+      "Northern Neck Elec Coop, Inc",
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51195": {
+    "name": "Wise County",
+    "latitude": 36.974561,
+    "longitude": -82.62156,
+    "utility_ids": [
+      733,
+      10171,
+      15293
+    ],
+    "utilities": [
+      "Appalachian Power Co",
+      "Kentucky Utilities Co",
+      "Powell Valley Electric Coop"
+    ]
+  },
+  "51197": {
+    "name": "Wythe County",
+    "latitude": 36.899868,
+    "longitude": -81.08301,
+    "utility_ids": [
+      733
+    ],
+    "utilities": [
+      "Appalachian Power Co"
+    ]
+  },
+  "51199": {
+    "name": "York County",
+    "latitude": 37.220914,
+    "longitude": -76.395533,
+    "utility_ids": [
+      19876
+    ],
+    "utilities": [
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51510": {
+    "name": "Alexandria city",
+    "latitude": 38.819251,
+    "longitude": -77.08367,
+    "utility_ids": [
+      19876
+    ],
+    "utilities": [
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51520": {
+    "name": "Bristol city",
+    "latitude": 36.616954,
+    "longitude": -82.157564,
+    "utility_ids": [
+      2248,
+      19876
+    ],
+    "utilities": [
+      "Bristol Virginia Utilities",
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51530": {
+    "name": "Buena Vista city",
+    "latitude": 37.729345,
+    "longitude": -79.358134,
+    "utility_ids": [
+      19876
+    ],
+    "utilities": [
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51540": {
+    "name": "Charlottesville city",
+    "latitude": 38.037658,
+    "longitude": -78.485381,
+    "utility_ids": [
+      19876
+    ],
+    "utilities": [
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51550": {
+    "name": "Chesapeake city",
+    "latitude": 36.679376,
+    "longitude": -76.301788,
+    "utility_ids": [
+      19876
+    ],
+    "utilities": [
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51570": {
+    "name": "Colonial Heights city",
+    "latitude": 37.261685,
+    "longitude": -77.396804,
+    "utility_ids": [
+      19876
+    ],
+    "utilities": [
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51580": {
+    "name": "Covington city",
+    "latitude": 37.78106,
+    "longitude": -79.985434,
+    "utility_ids": [
+      19876
+    ],
+    "utilities": [
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51590": {
+    "name": "Danville city",
+    "latitude": 36.583334,
+    "longitude": -79.408071,
+    "utility_ids": [
+      4794
+    ],
+    "utilities": [
+      "City of Danville - (VA)"
+    ]
+  },
+  "51595": {
+    "name": "Emporia city",
+    "latitude": 36.696182,
+    "longitude": -77.535975,
+    "utility_ids": [
+      19876
+    ],
+    "utilities": [
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51600": {
+    "name": "Fairfax city",
+    "latitude": 38.853183,
+    "longitude": -77.299025,
+    "utility_ids": [
+      19876
+    ],
+    "utilities": [
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51610": {
+    "name": "Falls Church city",
+    "latitude": 38.884722,
+    "longitude": -77.175603,
+    "utility_ids": [
+      19876
+    ],
+    "utilities": [
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51620": {
+    "name": "Franklin city",
+    "latitude": 36.684014,
+    "longitude": -76.941396,
+    "utility_ids": [
+      6715
+    ],
+    "utilities": [
+      "City of Franklin - (VA)"
+    ]
+  },
+  "51630": {
+    "name": "Fredericksburg city",
+    "latitude": 38.299272,
+    "longitude": -77.486658,
+    "utility_ids": [
+      19876
+    ],
+    "utilities": [
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51640": {
+    "name": "Galax city",
+    "latitude": 36.66564,
+    "longitude": -80.914308,
+    "utility_ids": [
+      733
+    ],
+    "utilities": [
+      "Appalachian Power Co"
+    ]
+  },
+  "51650": {
+    "name": "Hampton city",
+    "latitude": 37.047961,
+    "longitude": -76.297293,
+    "utility_ids": [
+      19876
+    ],
+    "utilities": [
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51660": {
+    "name": "Harrisonburg city",
+    "latitude": 38.436255,
+    "longitude": -78.873303,
+    "utility_ids": [
+      19876
+    ],
+    "utilities": [
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51670": {
+    "name": "Hopewell city",
+    "latitude": 37.29101,
+    "longitude": -77.298944,
+    "utility_ids": [
+      19876
+    ],
+    "utilities": [
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51678": {
+    "name": "Lexington city",
+    "latitude": 37.782332,
+    "longitude": -79.44432,
+    "utility_ids": [
+      19876
+    ],
+    "utilities": [
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51680": {
+    "name": "Lynchburg city",
+    "latitude": 37.399016,
+    "longitude": -79.195458,
+    "utility_ids": [
+      733
+    ],
+    "utilities": [
+      "Appalachian Power Co"
+    ]
+  },
+  "51683": {
+    "name": "Manassas city",
+    "latitude": 38.746808,
+    "longitude": -77.482633,
+    "utility_ids": [
+      11560,
+      19876
+    ],
+    "utilities": [
+      "City of Manassas - (VA)",
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51685": {
+    "name": "Manassas Park city",
+    "latitude": 38.769398,
+    "longitude": -77.442323,
+    "utility_ids": [
+      13640,
+      19876
+    ],
+    "utilities": [
+      "Northern Virginia Elec Coop",
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51690": {
+    "name": "Martinsville city",
+    "latitude": 36.683527,
+    "longitude": -79.863647,
+    "utility_ids": [
+      11770
+    ],
+    "utilities": [
+      "City of Martinsville - (VA)"
+    ]
+  },
+  "51700": {
+    "name": "Newport News city",
+    "latitude": 37.076136,
+    "longitude": -76.52198,
+    "utility_ids": [
+      19876
+    ],
+    "utilities": [
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51710": {
+    "name": "Norfolk city",
+    "latitude": 36.923015,
+    "longitude": -76.244641,
+    "utility_ids": [
+      19876
+    ],
+    "utilities": [
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51720": {
+    "name": "Norton city",
+    "latitude": 36.931549,
+    "longitude": -82.625996,
+    "utility_ids": [
+      10171
+    ],
+    "utilities": [
+      "Kentucky Utilities Co"
+    ]
+  },
+  "51730": {
+    "name": "Petersburg city",
+    "latitude": 37.20473,
+    "longitude": -77.392368,
+    "utility_ids": [
+      19876
+    ],
+    "utilities": [
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51735": {
+    "name": "Poquoson city",
+    "latitude": 37.12836,
+    "longitude": -76.303534,
+    "utility_ids": [
+      19876
+    ],
+    "utilities": [
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51740": {
+    "name": "Portsmouth city",
+    "latitude": 36.859339,
+    "longitude": -76.356973,
+    "utility_ids": [
+      19876
+    ],
+    "utilities": [
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51750": {
+    "name": "Radford city",
+    "latitude": 37.12012,
+    "longitude": -80.559149,
+    "utility_ids": [
+      15619
+    ],
+    "utilities": [
+      "City of Radford - (VA)"
+    ]
+  },
+  "51760": {
+    "name": "Richmond city",
+    "latitude": 37.531399,
+    "longitude": -77.476009,
+    "utility_ids": [
+      19876
+    ],
+    "utilities": [
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51770": {
+    "name": "Roanoke city",
+    "latitude": 37.278458,
+    "longitude": -79.958174,
+    "utility_ids": [
+      733
+    ],
+    "utilities": [
+      "Appalachian Power Co"
+    ]
+  },
+  "51775": {
+    "name": "Salem city",
+    "latitude": 37.285333,
+    "longitude": -80.055241,
+    "utility_ids": [
+      16558
+    ],
+    "utilities": [
+      "City of Salem - (VA)"
+    ]
+  },
+  "51790": {
+    "name": "Staunton city",
+    "latitude": 38.157978,
+    "longitude": -79.061876,
+    "utility_ids": [
+      19876
+    ],
+    "utilities": [
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51800": {
+    "name": "Suffolk city",
+    "latitude": 36.697157,
+    "longitude": -76.634781,
+    "utility_ids": [
+      4117,
+      6715,
+      19876
+    ],
+    "utilities": [
+      "Community Electric Coop",
+      "City of Franklin - (VA)",
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51810": {
+    "name": "Virginia Beach city",
+    "latitude": 36.779525,
+    "longitude": -76.029142,
+    "utility_ids": [
+      19876
+    ],
+    "utilities": [
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51820": {
+    "name": "Waynesboro city",
+    "latitude": 38.067157,
+    "longitude": -78.90142,
+    "utility_ids": [
+      19876
+    ],
+    "utilities": [
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51830": {
+    "name": "Williamsburg city",
+    "latitude": 37.269481,
+    "longitude": -76.708193,
+    "utility_ids": [
+      19876
+    ],
+    "utilities": [
+      "Virginia Electric & Power Co"
+    ]
+  },
+  "51840": {
+    "name": "Winchester city",
+    "latitude": 39.173869,
+    "longitude": -78.176356,
+    "utility_ids": [
+      17066
+    ],
+    "utilities": [
+      "Shenandoah Valley Elec Coop"
+    ]
+  }
+}

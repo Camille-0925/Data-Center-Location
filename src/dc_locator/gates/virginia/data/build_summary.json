@@ -1,0 +1,23 @@
+{
+  "data_version": "virginia_public_evidence_2026-10-03_v1_power_expansion_20261004",
+  "county_directory_count": 133,
+  "data_center_related_permit_records": 1365,
+  "loudoun_issued": 1332,
+  "loudoun_submitted": 31,
+  "pwc_cases": 2,
+  "linked_parcel_features": 109,
+  "zoning_features": 3502,
+  "virginia_transmission_engineering_rows": 2302,
+  "henrico_public_load_projects": 4,
+  "exclusions": "No capacity reserved for a new user, no full-capacity delivery commitment, no complete current project-specific permitting checklist.",
+  "previous_data_version": "virginia_public_evidence_2026-10-03_v1",
+  "power_expansion": {
+    "indexed_at": "2026-10-04",
+    "new_reference_records": 17,
+    "new_reference_localities": 16,
+    "downloaded_source_files": 22,
+    "failed_downloads": 3,
+    "nvrc_records": 265,
+    "scope": "Power Gate only; time and permitting rules are unchanged."
+  }
+}

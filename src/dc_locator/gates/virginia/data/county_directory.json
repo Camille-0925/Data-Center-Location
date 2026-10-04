@@ -1,0 +1,667 @@
+[
+  {
+    "county_fips": "51001",
+    "name": "Accomack County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51003",
+    "name": "Albemarle County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51005",
+    "name": "Alleghany County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51007",
+    "name": "Amelia County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51009",
+    "name": "Amherst County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51011",
+    "name": "Appomattox County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51013",
+    "name": "Arlington County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51015",
+    "name": "Augusta County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51017",
+    "name": "Bath County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51019",
+    "name": "Bedford County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51021",
+    "name": "Bland County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51023",
+    "name": "Botetourt County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51025",
+    "name": "Brunswick County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51027",
+    "name": "Buchanan County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51029",
+    "name": "Buckingham County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51031",
+    "name": "Campbell County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51033",
+    "name": "Caroline County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51035",
+    "name": "Carroll County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51036",
+    "name": "Charles City County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51037",
+    "name": "Charlotte County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51041",
+    "name": "Chesterfield County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51043",
+    "name": "Clarke County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51045",
+    "name": "Craig County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51047",
+    "name": "Culpeper County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51049",
+    "name": "Cumberland County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51051",
+    "name": "Dickenson County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51053",
+    "name": "Dinwiddie County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51057",
+    "name": "Essex County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51059",
+    "name": "Fairfax County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51061",
+    "name": "Fauquier County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51063",
+    "name": "Floyd County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51065",
+    "name": "Fluvanna County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51067",
+    "name": "Franklin County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51069",
+    "name": "Frederick County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51071",
+    "name": "Giles County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51073",
+    "name": "Gloucester County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51075",
+    "name": "Goochland County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51077",
+    "name": "Grayson County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51079",
+    "name": "Greene County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51081",
+    "name": "Greensville County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51083",
+    "name": "Halifax County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51085",
+    "name": "Hanover County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51087",
+    "name": "Henrico County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51089",
+    "name": "Henry County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51091",
+    "name": "Highland County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51093",
+    "name": "Isle of Wight County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51095",
+    "name": "James City County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51097",
+    "name": "King and Queen County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51099",
+    "name": "King George County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51101",
+    "name": "King William County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51103",
+    "name": "Lancaster County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51105",
+    "name": "Lee County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51107",
+    "name": "Loudoun County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51109",
+    "name": "Louisa County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51111",
+    "name": "Lunenburg County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51113",
+    "name": "Madison County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51115",
+    "name": "Mathews County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51117",
+    "name": "Mecklenburg County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51119",
+    "name": "Middlesex County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51121",
+    "name": "Montgomery County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51125",
+    "name": "Nelson County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51127",
+    "name": "New Kent County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51131",
+    "name": "Northampton County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51133",
+    "name": "Northumberland County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51135",
+    "name": "Nottoway County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51137",
+    "name": "Orange County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51139",
+    "name": "Page County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51141",
+    "name": "Patrick County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51143",
+    "name": "Pittsylvania County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51145",
+    "name": "Powhatan County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51147",
+    "name": "Prince Edward County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51149",
+    "name": "Prince George County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51153",
+    "name": "Prince William County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51155",
+    "name": "Pulaski County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51157",
+    "name": "Rappahannock County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51159",
+    "name": "Richmond County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51161",
+    "name": "Roanoke County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51163",
+    "name": "Rockbridge County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51165",
+    "name": "Rockingham County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51167",
+    "name": "Russell County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51169",
+    "name": "Scott County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51171",
+    "name": "Shenandoah County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51173",
+    "name": "Smyth County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51175",
+    "name": "Southampton County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51177",
+    "name": "Spotsylvania County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51179",
+    "name": "Stafford County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51181",
+    "name": "Surry County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51183",
+    "name": "Sussex County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51185",
+    "name": "Tazewell County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51187",
+    "name": "Warren County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51191",
+    "name": "Washington County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51193",
+    "name": "Westmoreland County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51195",
+    "name": "Wise County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51197",
+    "name": "Wythe County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51199",
+    "name": "York County",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51510",
+    "name": "Alexandria city",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51520",
+    "name": "Bristol city",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51530",
+    "name": "Buena Vista city",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51540",
+    "name": "Charlottesville city",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51550",
+    "name": "Chesapeake city",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51570",
+    "name": "Colonial Heights city",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51580",
+    "name": "Covington city",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51590",
+    "name": "Danville city",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51595",
+    "name": "Emporia city",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51600",
+    "name": "Fairfax city",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51610",
+    "name": "Falls Church city",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51620",
+    "name": "Franklin city",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51630",
+    "name": "Fredericksburg city",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51640",
+    "name": "Galax city",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51650",
+    "name": "Hampton city",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51660",
+    "name": "Harrisonburg city",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51670",
+    "name": "Hopewell city",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51678",
+    "name": "Lexington city",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51680",
+    "name": "Lynchburg city",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51683",
+    "name": "Manassas city",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51685",
+    "name": "Manassas Park city",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51690",
+    "name": "Martinsville city",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51700",
+    "name": "Newport News city",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51710",
+    "name": "Norfolk city",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51720",
+    "name": "Norton city",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51730",
+    "name": "Petersburg city",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51735",
+    "name": "Poquoson city",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51740",
+    "name": "Portsmouth city",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51750",
+    "name": "Radford city",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51760",
+    "name": "Richmond city",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51770",
+    "name": "Roanoke city",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51775",
+    "name": "Salem city",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51790",
+    "name": "Staunton city",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51800",
+    "name": "Suffolk city",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51810",
+    "name": "Virginia Beach city",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51820",
+    "name": "Waynesboro city",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51830",
+    "name": "Williamsburg city",
+    "state": "VA"
+  },
+  {
+    "county_fips": "51840",
+    "name": "Winchester city",
+    "state": "VA"
+  }
+]
