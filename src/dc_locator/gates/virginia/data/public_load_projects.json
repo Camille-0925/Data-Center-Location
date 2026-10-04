@@ -1,0 +1,87 @@
+[
+  {
+    "project_ref": "DOM-2024-0018",
+    "name": "Thicket",
+    "county_fips": "51087",
+    "source_id": "PJM_Dominion_Load_Projects_20250107",
+    "source_locator": "PDF pages 3-4",
+    "source_date": "2025-01-07",
+    "claim_type": "historical_customer_load_request",
+    "initial_summer_load_mw": 123,
+    "initial_winter_load_mw": 0,
+    "projected_2029_summer_load_mw": 255,
+    "projected_2029_winter_load_mw": 195,
+    "requested_in_service": "Q1 2028",
+    "engineering_projected_in_service_at_2025": "Q4 2027",
+    "matched_engineering_record_ids": [
+      "PJM:s3673.1",
+      "PJM:s3673.4",
+      "PJM:s3674.1",
+      "PJM:s3675.1"
+    ],
+    "source_text": "TEAC – Dominion Supplemental 01/07/2025\nDominion Transmission Zone: Supplemental \nCustomer Load Request\nNeed Number: DOM-2024-0018\nProcess Stage: Solution Meeting 01/07/2025\nPreviously Presented: Need Meeting 07/09/2024 \nProject Driver: Customer Service\nSpecific Assumption References:\nCustomer load request will be evaluated per Dominion’s Facility Interconnection \nRequirements Document and Dominion’s Transmission Planning Criteria.\nProblem Statement:\nDEV Distribution has submitted a DP Request for a new substation (Thicket) to serve a \ndata center in Henrico County with a total load in excess of 100 MW.  The requested in-\nservice date is Q1 2028.\nInitial In-Service Load Projected 2029 Load\nSummer: 123.0 MW\nWinter: 0.0 MW\nSummer: 255.0 MW\nWinter: 195.0 MW\n            Thicket Sub  \n           230kV Delivery \n3\nTEAC – Dominion Supplemental 01/07/2025\nDominion Transmission Zone: Supplemental \nThicket 230kV Delivery - DEVNeed Number: DOM-2024-0018\nProcess Stage: Solution Meeting 01/07/2025 \nProject Driver: Customer Service\nProposed Solution:\nCut and loop future 230kV Line 2294 (Chickahominy to White Oak) in and out of \nproposed Thicket substation. Line 2294 to terminate in a 230kV six-breaker ring \narrangement.\nEstimated Project Cost: $20M Substation, $5M Transmission Line\nAlternatives Considered: None, new station is adjacent to \nexisting transmission line and on customer property\nProjected In-service Date: Q4 2027\nProject Status: Engineering\nModel: 2029 RTEP\n2075 2294\nElmont Chickahominy\nThicket\nWhite \nOak\nPreviously approved:\nDOM-2022-0038-DNH\nLoop existing Line \n2075 (Elmont – \nChickahominy) in and \nout of White Oak\n4",
+    "eligible_as_new_customer_capacity_confirmation": false
+  },
+  {
+    "project_ref": "DOM-2024-0020",
+    "name": "Saltwood",
+    "county_fips": "51087",
+    "source_id": "PJM_Dominion_Load_Projects_20250107",
+    "source_locator": "PDF pages 5-6",
+    "source_date": "2025-01-07",
+    "claim_type": "historical_customer_load_request",
+    "initial_summer_load_mw": 150,
+    "initial_winter_load_mw": 0,
+    "projected_2029_summer_load_mw": 300,
+    "projected_2029_winter_load_mw": 300,
+    "requested_in_service": "7/01/2027",
+    "engineering_projected_in_service_at_2025": "Q3 2027",
+    "matched_engineering_record_ids": [
+      "PJM:s3674.1",
+      "PJM:s3675.1",
+      "PJM:s3676.1"
+    ],
+    "source_text": "TEAC – Dominion Supplemental 01/07/2025\nDominion Transmission Zone: Supplemental \nCustomer Load Request\nNeed Number: DOM-2024-0020\nProcess Stage: Solution Meeting 01/07/2025\nPreviously Presented: Need Meeting 07/09/2024 \nProject Driver: Customer Service\nSpecific Assumption References:\nCustomer load request will be evaluated per Dominion’s Facility Interconnection \nRequirements Document and Dominion’s Transmission Planning Criteria.\nProblem Statement:\nDEV Distribution has submitted a DP Request for a new substation (Saltwood) to serve \na data center in Henrico County with a total load in excess of 100 MW.  The requested \nin-service date is 7/01/2027.\nInitial In-Service Load Projected 2029 Load\nSummer: 150.0 MW\nWinter: 0.0 MW\nSummer: 300.0 MW\nWinter: 300.0 MW\n          Saltwood Sub  \n           230kV Delivery \n5\nTEAC – Dominion Supplemental 01/07/2025\nDominion Transmission Zone: Supplemental \nSaltwood 230kV Delivery - DEV\nNeed Number: DOM-2024-0020\nProcess Stage: Solution Meeting 01/07/2025 \nProject Driver: Customer Service\nProposed Solution:\nExtend two 230kV lines from proposed Thicket substation to proposed \nSaltwood substation. Lines to terminate in a 230kV six-breaker ring \narrangement.\nEstimated Project Cost: $20M Substation, $20M Transmission Line\nAlternatives Considered: None, new station is adjacent to existing \ntransmission line\nProjected In-service Date: Q3 2027\nProject Status: Engineering\nModel: 2029 RTEP\n2075 2294\nElmont Chickahominy\nThicket\nWhite \nOak\nSaltwood\n6",
+    "eligible_as_new_customer_capacity_confirmation": false
+  },
+  {
+    "project_ref": "DOM-2024-0040",
+    "name": "Bunker",
+    "county_fips": "51087",
+    "source_id": "PJM_Dominion_Load_Projects_20250107",
+    "source_locator": "PDF pages 7-8",
+    "source_date": "2025-01-07",
+    "claim_type": "historical_customer_load_request",
+    "initial_summer_load_mw": 28,
+    "initial_winter_load_mw": 8,
+    "projected_2029_summer_load_mw": 104,
+    "projected_2029_winter_load_mw": 60,
+    "requested_in_service": "12/31/2027",
+    "engineering_projected_in_service_at_2025": "Q4 2027",
+    "matched_engineering_record_ids": [
+      "PJM:s3675.1"
+    ],
+    "source_text": "TEAC – Dominion Supplemental 01/07/2024\nDominion Transmission Zone: Supplemental \nCustomer Load Request\nNeed Number: DOM-2024-0040\nProcess Stage: Solution Meeting 01/07/2025\nPreviously Presented: Need Meeting 08/06/2024 \nProject Driver: Customer Service\nSpecific Assumption References:\nCustomer load request will be evaluated per Dominion’s Facility Interconnection \nRequirements Document and Dominion’s Transmission Planning Criteria.\nProblem Statement:\nDEV Distribution has submitted a DP Request for a new substation (Bunker) to serve a \ndata center in Henrico County with a total load in excess of 100 MW.  The requested in-\nservice date is 12/31/2027.\nInitial In-Service Load Projected 2029 Load\nSummer: 28.0 MW\nWinter: 8.0 MW\nSummer: 104.0 MW\nWinter: 60.0 MW\n            Bunker Sub  \n           230kV Delivery \n7\nTEAC – Dominion Supplemental 01/07/2024\nDominion Transmission Zone: Supplemental \nBunker 230kV Delivery - DEV\nNeed Number: DOM-2024-0040\nProcess Stage: Solution Meeting 01/07/2025 \nProject Driver: Customer Service\nProposed Solution:\nCut and loop future 230kV line between proposed Thicket substation \nand proposed Saltwood substation in and out of proposed Bunker \nsubstation. Lines to terminate in a 230kV four-breaker ring \narrangement.\nEstimated Project Cost: $15M Substation, $6M Transmission Line\nAlternatives Considered: None, new station is on customer owned \nland and adjacent to existing transmission source.\nProjected In-service Date: Q4 2027\nProject Status: Engineering\nModel: 2029 RTEP\n2075 2294\nElmont Chickahominy\nThicket\nWhite \nOak\nBunker\nSaltwood\n8",
+    "eligible_as_new_customer_capacity_confirmation": false
+  },
+  {
+    "project_ref": "DOM-2024-0019",
+    "name": "Gray Bark",
+    "county_fips": "51087",
+    "source_id": "PJM_Dominion_Load_Projects_20250107",
+    "source_locator": "PDF pages 9-10",
+    "source_date": "2025-01-07",
+    "claim_type": "historical_customer_load_request",
+    "initial_summer_load_mw": 127,
+    "initial_winter_load_mw": 0,
+    "projected_2029_summer_load_mw": 300,
+    "projected_2029_winter_load_mw": 300,
+    "requested_in_service": "7/01/2027",
+    "engineering_projected_in_service_at_2025": "Q3 2027",
+    "matched_engineering_record_ids": [
+      "PJM:s3676.1"
+    ],
+    "source_text": "TEAC – Dominion Supplemental 01/07/2025\nDominion Transmission Zone: Supplemental \nCustomer Load Request\nNeed Number: DOM-2024-0019\nProcess Stage: Solution Meeting 01/07/2025\nPreviously Presented: Need Meeting 07/09/2024 \nProject Driver: Customer Service\nSpecific Assumption References:\nCustomer load request will be evaluated per Dominion’s Facility Interconnection \nRequirements Document and Dominion’s Transmission Planning Criteria.\nProblem Statement:\nDEV Distribution has submitted a DP Request for a new substation (Gray Bark) to \nserve a data center in Henrico County with a total load in excess of 100 MW.  The \nrequested in-service date is 7/01/2027.\nInitial In-Service Load Projected 2029 Load\nSummer: 127.0 MW\nWinter: 0.0 MW\nSummer: 300.0 MW\nWinter: 300.0 MW\n          Gray Bark Sub  \n           230kV Delivery \n9\nTEAC – Dominion Supplemental 01/07/2025\nDominion Transmission Zone: Supplemental \nGray Bark 230kV Delivery - DEV\nNeed Number: DOM-2024-0019\nProcess Stage: Solution Meeting 01/07/2025 \nProject Driver: Customer Service\nProposed Solution:\nExtend two 230kV lines from proposed Saltwood substation to \nproposed Gray Bark substation. Cut and loop existing 230kV Line \n2091 (Chickahominy to Portugee) into Gray Bark substation. Lines to \nterminate in a 230kV six-breaker ring arrangement.\nEstimated Project Cost: $20M Substation, $20M Transmission Lines\nAlternatives Considered: None, new station is adjacent to existing \ntransmission line\nProjected In-service Date: Q3 2027\nProject Status: Engineering\nModel: 2029 RTEP\n2075 2294\nElmont\nChickahominy\nThicket\nWhite \nOak\nSaltwood Gray \nBark\nPortugee\n2091\nBunker\n10",
+    "eligible_as_new_customer_capacity_confirmation": false
+  }
+]
