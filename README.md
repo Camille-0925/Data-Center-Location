@@ -10,7 +10,7 @@ Where should America's next sustainable AI data center be built? This project sc
 ① data_prep           county indicator table → long table (one row = county × indicator)
 ② indicator_scoring   raw value → utility score u (0–100); within-dimension weights ω → dimension score D (0–1)
 ③ dimension_weights   4 customer inputs → dimension weights w
-④ decision            Score = 100 × Σ w_k · D_k → ranking, Pareto status, trade-offs
+④ decision            n × 8 matrix D + 8 weights w → Score = 100 × Σ w_k · D_k, rank, Pareto status, trade-offs
 ```
 
 | Dimension | Indicators |
@@ -52,7 +52,7 @@ Requires Python 3.10+. The decision matrix uses only the standard library.
 # run the tests
 PYTHONPATH=src python3 -m unittest discover -s tests -t . -v
 
-# score and rank an example request (2 counties, gates disabled)
+# score and rank an example request (3 synthetic counties, gates disabled)
 PYTHONPATH=src python3 -m dc_locator.decision recommend \
   --request tests/fixtures/decision_request_8d.json \
   --output-dir outputs/demo
@@ -62,7 +62,8 @@ PYTHONPATH=src python3 -m dc_locator.decision recommend \
 
 | Step | Module | Status |
 |---|---|---|
-| ④ | Decision matrix (`src/dc_locator/decision/`) | ✅ Done: 8 dimensions, config-driven, mean / geometric / min aggregation, 33 tests |
+| ④ | Decision matrix (`src/dc_locator/decision/`) | ✅ Done: n × 8 dimension scores + 8 weights → score, rank, Pareto; 28 tests |
+| ② (part) | Indicator → dimension aggregation (`src/dc_locator/indicator_scoring/aggregation.py`) | ✅ mean / geometric / min; 8 tests |
 | ③ | Dimension weights from customer inputs | ⏳ Next |
 | ② | Indicator scoring and within-dimension weights | ⏳ |
 | ① | Data preparation | ⏳ |

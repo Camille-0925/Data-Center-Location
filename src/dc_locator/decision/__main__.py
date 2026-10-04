@@ -23,7 +23,7 @@ def _dump(value: Any, path: Path) -> None:
 
 
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Decision matrix (v0.3, config-driven dimensions)")
+    parser = argparse.ArgumentParser(description="Decision matrix: n x K dimension scores + K weights -> score and rank")
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     recommend_parser = subparsers.add_parser("recommend", help="score, rank and (optionally) gate candidates")
@@ -40,14 +40,12 @@ def main() -> int:
         if args.command == "recommend":
             request = _load(args.request)
             result = recommend(
-                request["metric_results"],
-                request["indicator_scores"],
                 request["dimension_scores"],
                 request["scoring_config"],
-                request.get("project_profile"),
-                request.get("constraint_rules"),
-                request.get("evidence_records"),
                 request["context"],
+                project_profile=request.get("project_profile"),
+                constraint_rules=request.get("constraint_rules"),
+                evidence_records=request.get("evidence_records"),
             )
             output_dir = Path(args.output_dir)
             _dump(result["gate_results"], output_dir / "gate_results.json")

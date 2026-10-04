@@ -1,30 +1,33 @@
-"""Decision matrix: gate evaluation, weighted suitability score, ranking, and run comparison.
+"""Decision matrix: weighted suitability score, ranking, Pareto status, and run comparison.
 
-Originally written by Adelyn for the v0.2 seven-dimension model with one metric per
-dimension. v0.3 generalizes it so that the dimension list, the metrics in each
-dimension, the dimension weights, the within-dimension (local) weights and the way
-indicators combine into a dimension score (weighted mean, weighted geometric mean or
-minimum) are all read from ``scoring_config`` instead of module constants. Gates are
-optional (``constraint_rules.gates_enabled = false`` skips them).
+Input is an n x K matrix of dimension scores (n counties, K dimensions, each score 0-1,
+higher is better) plus K dimension weights that sum to 1:
 
-The public functions consume and return JSON-serializable dictionaries. This module
-does not collect data (data_prep), convert raw values to 0-100 utilities
-(indicator_scoring), or derive weights from customer inputs (dimension_weights).
+    Score_i = 100 * sum_k w_k * D_ik
+
+Everything below the dimension level (raw indicators, utility functions, how indicators
+combine into a dimension score) belongs to ``dc_locator.indicator_scoring``. The weights
+come from ``dc_locator.dimension_weights``.
+
+Originally written by Adelyn (v0.2: seven dimensions, one indicator each, gates
+required). v0.4 takes dimension scores only, reads the dimension list from the
+configuration, and makes the feasibility gates optional.
+
+All public functions consume and return JSON-serializable dictionaries.
 """
 
 from __future__ import annotations
 
 from copy import deepcopy
-from dataclasses import dataclass
 from datetime import date
 import math
-from typing import Any, Callable, Iterable, Mapping, Sequence
+from typing import Any, Callable, Mapping, Sequence
 
 
-SCHEMA_VERSION = "v0.3"
-MODEL_VERSION = "v0.3"
+SCHEMA_VERSION = "v0.4"
+MODEL_VERSION = "v0.4"
 
-# Reference only: the v0.3 eight-dimension model. Validation uses scoring_config.
+# Reference only: the eight-dimension model. Validation uses scoring_config.dimension_order.
 DEFAULT_DIMENSION_ORDER = [
     "climate_risk",
     "water",
@@ -58,43 +61,10 @@ VALID_GATE_STATUSES = {"pass", "fail", "unknown"}
 VALID_VERIFICATION_STATUSES = {"reported", "reviewed"}
 RANK_TOLERANCE = 1e-8
 WEIGHT_TOLERANCE = 1e-9
-SCORE_TOLERANCE = 1e-7
-AGGREGATION_METHODS = {"weighted_mean", "weighted_geometric", "min"}
 
 
 class ContractError(ValueError):
-    """Raised when an input violates the v0.3 interface contract."""
-
-
-@dataclass(frozen=True)
-class ModelSpec:
-    """Dimension and metric structure declared by one scoring_config."""
-
-    dimension_order: tuple[str, ...]
-    metrics: tuple[str, ...]
-    metric_to_dimension: Mapping[str, str]
-    aggregation: Mapping[str, str]
-
-    def metrics_in(self, dimension_id: str) -> list[str]:
-        return [m for m in self.metrics if self.metric_to_dimension[m] == dimension_id]
-
-
-def aggregate_dimension(method: str, scores_0_100: Sequence[float], local_weights: Sequence[float]) -> float:
-    """Combine indicator utilities (0-100) into one dimension score (0-1).
-
-    weighted_mean       D = sum(w * u) / 100
-    weighted_geometric  D = prod((u / 100) ** w)      a low indicator cannot be fully offset
-    min                 D = min(u) / 100 over indicators with w > 0   the worst indicator decides
-    """
-
-    pairs = list(zip(scores_0_100, local_weights))
-    if method == "weighted_mean":
-        return sum(w * u for u, w in pairs) / 100.0
-    if method == "weighted_geometric":
-        return math.prod((u / 100.0) ** w for u, w in pairs if w > 0)
-    if method == "min":
-        return min(u for u, w in pairs if w > 0) / 100.0
-    raise ContractError(f"unknown aggregation method: {method}")
+    """Raised when an input violates the interface contract."""
 
 
 def _finite_number(value: Any) -> bool:
@@ -159,6 +129,72 @@ def _validate_context(context: Any) -> dict[str, Any]:
     return result
 
 
+def _parse_date(value: Any, name: str) -> date:
+    _require(isinstance(value, str) and bool(value), f"{name} must be YYYY-MM-DD")
+    try:
+        parsed = date.fromisoformat(value)
+    except ValueError as exc:
+        raise ContractError(f"{name} must be a valid YYYY-MM-DD date") from exc
+    _require(parsed.isoformat() == value, f"{name} must be YYYY-MM-DD")
+    return parsed
+
+
+def _validate_scoring_config(scoring_config: Any, context: Mapping[str, Any]) -> tuple[dict[str, Any], list[str], list[str]]:
+    """Return (config, dimension_order, diagnostics)."""
+
+    config = dict(_require_mapping(scoring_config, "scoring_config"))
+    diagnostics: list[str] = []
+    _require(config.get("version") == context["scoring_config_version"], "scoring_config.version does not match context")
+    _require(config.get("status") in VALID_CONFIG_STATUSES, "invalid scoring_config.status")
+    _require(
+        config.get("preference_profile_id") == context["preference_profile_id"],
+        "scoring_config.preference_profile_id does not match context",
+    )
+    order = config.get("dimension_order")
+    _require(
+        isinstance(order, list) and order and all(isinstance(d, str) and d for d in order),
+        "scoring_config.dimension_order must be a non-empty array of dimension ids",
+    )
+    _require(len(set(order)) == len(order), "scoring_config.dimension_order contains duplicates")
+
+    weights = _require_mapping(config.get("dimension_weights"), "scoring_config.dimension_weights")
+    _require(set(weights) == set(order), "dimension_weights must contain exactly the dimension ids in dimension_order")
+    for dimension_id, weight in weights.items():
+        _require(_finite_number(weight) and weight >= 0, f"invalid weight for {dimension_id}")
+    _require(abs(sum(float(weights[d]) for d in order) - 1.0) <= WEIGHT_TOLERANCE, "dimension weights must sum to 1")
+
+    if context["run_mode"] == "real" and config["status"] == "test_only":
+        diagnostics.append("real runs cannot produce a complete recommendation with test_only scoring configuration")
+    if config["status"] == "provisional":
+        diagnostics.append("weights or scoring anchors are provisional team assumptions")
+    return config, list(order), diagnostics
+
+
+def _index_dimension_scores(dimension_scores: Any, order: Sequence[str]) -> dict[str, dict[str, Any]]:
+    """Validate the n x K matrix: one record per candidate, one score (0-1 or null) per dimension."""
+
+    indexed: dict[str, dict[str, Any]] = {}
+    for record in _records(dimension_scores, "dimension_scores"):
+        candidate_id = record.get("candidate_id")
+        _require(isinstance(candidate_id, str) and candidate_id, "dimension score candidate_id is required")
+        _require(candidate_id not in indexed, f"duplicate dimension score record for {candidate_id}")
+        scores = _require_mapping(record.get("scores"), f"dimension_scores[{candidate_id}].scores")
+        _require(set(scores) == set(order), f"scores for {candidate_id} must contain exactly the configured dimensions")
+        for dimension_id, value in scores.items():
+            _require(
+                value is None or (_finite_number(value) and 0 <= value <= 1),
+                f"{dimension_id} score for {candidate_id} must be between 0 and 1, or null",
+            )
+        indexed[candidate_id] = record
+    _require(indexed, "dimension_scores.records must not be empty")
+    return indexed
+
+
+# ---------------------------------------------------------------------------
+# Optional feasibility gates (Adelyn's v0.2 logic, unchanged when enabled)
+# ---------------------------------------------------------------------------
+
+
 def _unwrap_profile(project_profile: Any) -> dict[str, Any]:
     profile = dict(_require_mapping(project_profile, "project_profile"))
     if "profile" in profile:
@@ -211,87 +247,6 @@ def _validate_profile(project_profile: Any, context: Mapping[str, Any]) -> tuple
     return profile, required_capacity
 
 
-def _parse_date(value: Any, name: str) -> date:
-    _require(isinstance(value, str) and bool(value), f"{name} must be YYYY-MM-DD")
-    try:
-        parsed = date.fromisoformat(value)
-    except ValueError as exc:
-        raise ContractError(f"{name} must be a valid YYYY-MM-DD date") from exc
-    _require(parsed.isoformat() == value, f"{name} must be YYYY-MM-DD")
-    return parsed
-
-
-def _validate_scoring_config(
-    scoring_config: Any, context: Mapping[str, Any]
-) -> tuple[dict[str, Any], ModelSpec, list[str]]:
-    config = dict(_require_mapping(scoring_config, "scoring_config"))
-    diagnostics: list[str] = []
-    _require(config.get("version") == context["scoring_config_version"], "scoring_config.version does not match context")
-    _require(config.get("status") in VALID_CONFIG_STATUSES, "invalid scoring_config.status")
-    _require(
-        config.get("preference_profile_id") == context["preference_profile_id"],
-        "scoring_config.preference_profile_id does not match context",
-    )
-
-    order = config.get("dimension_order")
-    _require(
-        isinstance(order, list) and order and all(isinstance(d, str) and d for d in order),
-        "scoring_config.dimension_order must be a non-empty array of dimension ids",
-    )
-    _require(len(set(order)) == len(order), "scoring_config.dimension_order contains duplicates")
-
-    weights = _require_mapping(config.get("dimension_weights"), "scoring_config.dimension_weights")
-    _require(set(weights) == set(order), "dimension_weights must contain exactly the dimension ids in dimension_order")
-    for dimension_id, weight in weights.items():
-        _require(_finite_number(weight) and weight >= 0, f"invalid weight for {dimension_id}")
-    _require(abs(sum(float(weights[d]) for d in order) - 1.0) <= WEIGHT_TOLERANCE, "dimension weights must sum to 1")
-
-    indicators = config.get("indicators")
-    _require(isinstance(indicators, list) and indicators, "scoring_config.indicators must be a non-empty array")
-    metrics: list[str] = []
-    metric_to_dimension: dict[str, str] = {}
-    for indicator in indicators:
-        item = _require_mapping(indicator, "scoring_config.indicators item")
-        metric_id = item.get("metric_id")
-        _require(isinstance(metric_id, str) and metric_id, "indicator metric_id is required")
-        _require(metric_id not in metric_to_dimension, f"duplicate indicator: {metric_id}")
-        _require(item.get("dimension_id") in order, f"unknown dimension for {metric_id}: {item.get('dimension_id')}")
-        _require(item.get("direction") in {"low_better", "high_better"}, f"invalid direction for {metric_id}")
-        for field in ["unit", "function_type", "anchor_rationale"]:
-            _require(isinstance(item.get(field), str) and item[field], f"missing {field} for {metric_id}")
-        for field in ["good_anchor", "bad_anchor"]:
-            _require(_finite_number(item.get(field)), f"invalid {field} for {metric_id}")
-        if item["direction"] == "low_better":
-            _require(item["good_anchor"] < item["bad_anchor"], f"low_better anchors must satisfy good < bad for {metric_id}")
-        else:
-            _require(item["good_anchor"] > item["bad_anchor"], f"high_better anchors must satisfy good > bad for {metric_id}")
-        _require(_finite_number(item.get("local_weight")) and item["local_weight"] >= 0, f"invalid local_weight for {metric_id}")
-        metrics.append(metric_id)
-        metric_to_dimension[metric_id] = item["dimension_id"]
-
-    required = config.get("required_score_metrics", metrics)
-    _require(required == metrics, "required_score_metrics must list the indicator metric_ids in the same order")
-
-    declared = config.get("dimension_aggregation", {})
-    _require(isinstance(declared, Mapping), "scoring_config.dimension_aggregation must be an object")
-    _require(set(declared).issubset(order), "dimension_aggregation contains an unknown dimension id")
-    aggregation = {dimension_id: declared.get(dimension_id, "weighted_mean") for dimension_id in order}
-    for dimension_id, method in aggregation.items():
-        _require(method in AGGREGATION_METHODS, f"invalid aggregation for {dimension_id}: {method}")
-    spec = ModelSpec(tuple(order), tuple(metrics), metric_to_dimension, aggregation)
-    for dimension_id in order:
-        members = spec.metrics_in(dimension_id)
-        _require(members, f"dimension {dimension_id} has no indicators")
-        local_sum = sum(float(item["local_weight"]) for item in indicators if item["dimension_id"] == dimension_id)
-        _require(abs(local_sum - 1.0) <= WEIGHT_TOLERANCE, f"local weights for {dimension_id} must sum to 1")
-
-    if context["run_mode"] == "real" and config["status"] == "test_only":
-        diagnostics.append("real runs cannot produce a complete recommendation with test_only scoring configuration")
-    if config["status"] == "provisional":
-        diagnostics.append("scoring anchors or preferences are provisional team assumptions")
-    return config, spec, diagnostics
-
-
 def _validate_constraint_rules(constraint_rules: Any) -> dict[str, Any]:
     if constraint_rules is None:
         return {"gates_enabled": False}
@@ -310,81 +265,6 @@ def _validate_constraint_rules(constraint_rules: Any) -> dict[str, Any]:
     _require(isinstance(scope_map, Mapping), "assessment_scope_by_candidate must be an object")
     _require(isinstance(plan_map, Mapping), "supply_plan_by_candidate must be an object")
     return rules
-
-
-def _index_dimension_scores(dimension_scores: Any, spec: ModelSpec) -> dict[str, dict[str, Any]]:
-    indexed: dict[str, dict[str, Any]] = {}
-    order = list(spec.dimension_order)
-    for record in _records(dimension_scores, "dimension_scores"):
-        candidate_id = record.get("candidate_id")
-        _require(isinstance(candidate_id, str) and candidate_id, "dimension score candidate_id is required")
-        _require(candidate_id not in indexed, f"duplicate dimension score record for {candidate_id}")
-        _require(record.get("dimension_order") == order, f"wrong dimension_order for {candidate_id}")
-        scores = _require_mapping(record.get("scores"), f"dimension_scores[{candidate_id}].scores")
-        _require(set(scores) == set(order), f"scores for {candidate_id} must contain exactly the configured dimensions")
-        for dimension_id, value in scores.items():
-            _require(value is None or (_finite_number(value) and 0 <= value <= 1), f"invalid {dimension_id} score for {candidate_id}")
-        _require(record.get("score_status") in {"complete", "incomplete"}, f"invalid score_status for {candidate_id}")
-        missing = record.get("missing_metric_ids")
-        _require(isinstance(missing, list), f"missing_metric_ids must be an array for {candidate_id}")
-        _require(set(missing).issubset(spec.metrics), f"unexpected missing metric id for {candidate_id}")
-        if record["score_status"] == "complete":
-            _require(not missing and all(value is not None for value in scores.values()), f"complete dimension score cannot contain missing values for {candidate_id}")
-        indexed[candidate_id] = record
-    _require(indexed, "dimension_scores.records must not be empty")
-    return indexed
-
-
-def _index_indicators(indicator_scores: Any, spec: ModelSpec) -> dict[tuple[str, str], dict[str, Any]]:
-    indexed: dict[tuple[str, str], dict[str, Any]] = {}
-    for record in _records(indicator_scores, "indicator_scores"):
-        candidate_id = record.get("candidate_id")
-        metric_id = record.get("metric_id")
-        _require(isinstance(candidate_id, str) and candidate_id, "indicator candidate_id is required")
-        _require(metric_id in spec.metrics, f"unexpected indicator metric_id: {metric_id}")
-        key = (candidate_id, metric_id)
-        _require(key not in indexed, f"duplicate indicator score: {candidate_id}/{metric_id}")
-        _require(record.get("score_status") in {"complete", "incomplete"}, f"invalid indicator score_status for {key}")
-        _require(
-            isinstance(record.get("scoring_config_version"), str)
-            and bool(record["scoring_config_version"]),
-            f"scoring_config_version is required for {key}",
-        )
-        _require(isinstance(record.get("unit"), str) and record["unit"], f"unit is required for {key}")
-        value = record.get("score_0_100")
-        _require(value is None or (_finite_number(value) and 0 <= value <= 100), f"invalid score_0_100 for {key}")
-        if record["score_status"] == "complete":
-            _require(value is not None, f"complete indicator must have score_0_100 for {key}")
-        else:
-            _require(value is None, f"incomplete indicator must have null score_0_100 for {key}")
-        indexed[key] = record
-    return indexed
-
-
-def _index_metrics(metric_results: Any) -> dict[tuple[str, str], dict[str, Any]]:
-    indexed: dict[tuple[str, str], dict[str, Any]] = {}
-    for record in _records(metric_results, "metric_results"):
-        candidate_id = record.get("candidate_id")
-        metric_id = record.get("metric_id")
-        _require(isinstance(candidate_id, str) and candidate_id, "metric candidate_id is required")
-        _require(isinstance(metric_id, str) and metric_id, "metric_id is required")
-        key = (candidate_id, metric_id)
-        _require(key not in indexed, f"duplicate metric result: {candidate_id}/{metric_id}")
-        _require(record.get("data_status") in {"available", "missing"}, f"invalid data_status for {key}")
-        _require(record.get("pedigree") in {"direct", "derived", "proxy", "assumed"}, f"invalid pedigree for {key}")
-        for field in ["input_metric_ids", "source_ids", "assumptions"]:
-            _require(isinstance(record.get(field), list), f"{field} must be an array for {key}")
-        _require(isinstance(record.get("unit"), str) and record["unit"], f"unit is required for {key}")
-        for field in ["reference_period", "geo_method"]:
-            _require(record.get(field) is not None, f"{field} is required for {key}")
-        value = record.get("value")
-        _require(value is None or _finite_number(value), f"metric value must be a finite number or null for {key}")
-        if record["data_status"] == "available":
-            _require(value is not None, f"available metric must have a value for {key}")
-        if record["data_status"] == "missing":
-            _require(value is None, f"missing metric must have null value for {key}")
-        indexed[key] = record
-    return indexed
 
 
 def _evidence_records(evidence_records: Any, context: Mapping[str, Any]) -> tuple[list[dict[str, Any]], list[str]]:
@@ -619,118 +499,56 @@ def _aggregate_gate_status(gates: Sequence[Mapping[str, Any]]) -> str:
     return "unknown"
 
 
-def _score_candidate(
-    candidate_id: str,
-    dimension_record: Mapping[str, Any],
-    indicators: Mapping[tuple[str, str], Mapping[str, Any]],
-    metrics: Mapping[tuple[str, str], Mapping[str, Any]],
-    config: Mapping[str, Any],
-    spec: ModelSpec,
-    context: Mapping[str, Any],
-) -> tuple[float | None, str, dict[str, list[dict[str, Any]]], list[str]]:
-    missing = set(dimension_record["missing_metric_ids"])
-    scores = dimension_record["scores"]
-    for metric_id in spec.metrics:
-        indicator = indicators.get((candidate_id, metric_id))
-        if not indicator or indicator["score_status"] != "complete" or indicator["score_0_100"] is None:
-            missing.add(metric_id)
-        metric = metrics.get((candidate_id, metric_id))
-        if not metric or metric["data_status"] != "available" or metric["value"] is None:
-            missing.add(metric_id)
-    for dimension_id, value in scores.items():
-        if value is None:
-            missing.update(spec.metrics_in(dimension_id))
-    if context["run_mode"] == "real" and config["status"] == "test_only":
-        return None, "incomplete", {"metrics": [], "dimensions": []}, sorted(missing)
-    if missing:
-        return None, "incomplete", {"metrics": [], "dimensions": []}, sorted(missing)
+# ---------------------------------------------------------------------------
+# Scoring, ranking, Pareto, trade-offs
+# ---------------------------------------------------------------------------
 
-    by_metric = {item["metric_id"]: item for item in config["indicators"]}
-    metric_contributions: list[dict[str, Any]] = []
-    dimension_contributions: list[dict[str, Any]] = []
+
+def _score_candidate(
+    scores: Mapping[str, Any],
+    config: Mapping[str, Any],
+    order: Sequence[str],
+    context: Mapping[str, Any],
+) -> tuple[float | None, str, list[dict[str, Any]], list[str]]:
+    """Return (score_0_100, score_status, dimension_contributions, missing_dimension_ids)."""
+
+    missing = [dimension_id for dimension_id in order if scores[dimension_id] is None]
+    if missing or (context["run_mode"] == "real" and config["status"] == "test_only"):
+        return None, "incomplete", [], missing
+    contributions: list[dict[str, Any]] = []
     total = 0.0
-    for dimension_id in spec.dimension_order:
-        method = spec.aggregation[dimension_id]
-        members = spec.metrics_in(dimension_id)
-        utilities = [float(indicators[(candidate_id, m)]["score_0_100"]) for m in members]
-        local_weights = [float(by_metric[m]["local_weight"]) for m in members]
-        expected = aggregate_dimension(method, utilities, local_weights)
-        supplied = float(scores[dimension_id])
-        _require(
-            abs(expected - supplied) <= SCORE_TOLERANCE,
-            f"dimension score for {candidate_id}/{dimension_id} is {supplied}, "
-            f"but {method} of its indicator scores gives {expected}",
-        )
-        dimension_weight = float(config["dimension_weights"][dimension_id])
-        dimension_points = 100.0 * dimension_weight * supplied
-        total += dimension_points
-        dimension_contributions.append(
+    for dimension_id in order:
+        weight = float(config["dimension_weights"][dimension_id])
+        value = float(scores[dimension_id])
+        points = 100.0 * weight * value
+        total += points
+        contributions.append(
             {
                 "dimension_id": dimension_id,
-                "aggregation": method,
-                "dimension_weight": dimension_weight,
-                "dimension_score_0_1": supplied,
-                "contribution_points": dimension_points,
+                "dimension_weight": weight,
+                "dimension_score_0_1": value,
+                "contribution_points": points,
             }
         )
-        additive = method == "weighted_mean"
-        for metric_id, utility, local_weight in zip(members, utilities, local_weights):
-            metric_contributions.append(
-                {
-                    "metric_id": metric_id,
-                    "dimension_id": dimension_id,
-                    "local_weight": local_weight,
-                    "global_leaf_weight": dimension_weight * local_weight if additive else None,
-                    "indicator_score_0_100": utility,
-                    "contribution_points": dimension_weight * local_weight * utility if additive else None,
-                }
-            )
-    return total, "complete", {"metrics": metric_contributions, "dimensions": dimension_contributions}, []
+    return total, "complete", contributions, []
 
 
-def _pareto_statuses(
-    candidate_ids: Iterable[str],
-    metric_index: Mapping[tuple[str, str], Mapping[str, Any]],
-    config: Mapping[str, Any],
-    spec: ModelSpec,
-) -> dict[str, str]:
-    ids = sorted(candidate_ids)
-    directions = {item["metric_id"]: item["direction"] for item in config["indicators"]}
-    vectors: dict[str, dict[str, float]] = {}
-    for candidate_id in ids:
-        values: dict[str, float] = {}
-        complete = True
-        for metric_id in spec.metrics:
-            record = metric_index.get((candidate_id, metric_id))
-            if not record or record["data_status"] != "available" or record["value"] is None:
-                complete = False
-                break
-            values[metric_id] = float(record["value"])
-        if complete:
-            vectors[candidate_id] = values
+def _pareto_statuses(dimensions: Mapping[str, Mapping[str, Any]], order: Sequence[str]) -> dict[str, str]:
+    """Non-dominated = no other candidate is at least as good on every dimension and better on one."""
 
-    result = {candidate_id: "not_evaluated" for candidate_id in ids}
+    vectors = {
+        candidate_id: [float(record["scores"][d]) for d in order]
+        for candidate_id, record in dimensions.items()
+        if all(record["scores"][d] is not None for d in order)
+    }
+    result = {candidate_id: "not_evaluated" for candidate_id in sorted(dimensions)}
     for candidate_id, values in vectors.items():
-        dominated = False
-        for other_id, other in vectors.items():
-            if other_id == candidate_id:
-                continue
-            no_worse = True
-            strictly_better = False
-            for metric_id in spec.metrics:
-                if directions[metric_id] == "high_better":
-                    if other[metric_id] + RANK_TOLERANCE < values[metric_id]:
-                        no_worse = False
-                        break
-                    strictly_better |= other[metric_id] > values[metric_id] + RANK_TOLERANCE
-                else:
-                    if other[metric_id] > values[metric_id] + RANK_TOLERANCE:
-                        no_worse = False
-                        break
-                    strictly_better |= other[metric_id] + RANK_TOLERANCE < values[metric_id]
-            if no_worse and strictly_better:
-                dominated = True
-                break
+        dominated = any(
+            other_id != candidate_id
+            and all(o + RANK_TOLERANCE >= v for o, v in zip(other, values))
+            and any(o > v + RANK_TOLERANCE for o, v in zip(other, values))
+            for other_id, other in vectors.items()
+        )
         result[candidate_id] = "dominated" if dominated else "non_dominated"
     return result
 
@@ -754,11 +572,9 @@ def _assign_ranks(recommendations: list[dict[str, Any]]) -> None:
             previous_score = item["score_0_100"]
 
 
-def _tradeoffs(
-    recommendations: list[dict[str, Any]],
-    metric_index: Mapping[tuple[str, str], Mapping[str, Any]],
-    spec: ModelSpec,
-) -> None:
+def _tradeoffs(recommendations: list[dict[str, Any]], order: Sequence[str]) -> None:
+    """Dimension-score differences from the top-ranked candidate (or from #2, for the leader)."""
+
     pools: dict[str, list[dict[str, Any]]] = {}
     for item in recommendations:
         if item["rank"] is not None:
@@ -770,20 +586,15 @@ def _tradeoffs(
         leader = ordered[0]
         for item in ordered:
             comparison = ordered[1] if item is leader else leader
-            differences: list[dict[str, Any]] = []
-            for metric_id in spec.metrics:
-                current = metric_index.get((item["candidate_id"], metric_id))
-                other = metric_index.get((comparison["candidate_id"], metric_id))
-                if not current or not other or current["value"] is None or other["value"] is None:
-                    continue
-                if current.get("unit") != other.get("unit"):
-                    continue
+            differences = []
+            for dimension_id in order:
+                gap = float(item["dimension_scores"][dimension_id]) - float(comparison["dimension_scores"][dimension_id])
                 differences.append(
                     {
                         "comparison_candidate_id": comparison["candidate_id"],
-                        "metric_id": metric_id,
-                        "difference_current_minus_comparison": float(current["value"]) - float(other["value"]),
-                        "unit": current.get("unit"),
+                        "dimension_id": dimension_id,
+                        "score_difference_current_minus_comparison": gap,
+                        "points_difference": 100.0 * float(item["dimension_weights_used"][dimension_id]) * gap,
                     }
                 )
             item["tradeoffs"] = differences
@@ -792,14 +603,14 @@ def _tradeoffs(
 def _constant_dimension_diagnostics(
     dimensions: Mapping[str, Mapping[str, Any]],
     config: Mapping[str, Any],
-    spec: ModelSpec,
+    order: Sequence[str],
 ) -> list[str]:
     """Flag weighted dimensions whose score is identical for every candidate."""
 
     messages: list[str] = []
     if len(dimensions) < 2:
         return messages
-    for dimension_id in spec.dimension_order:
+    for dimension_id in order:
         values = [record["scores"][dimension_id] for record in dimensions.values()]
         if any(value is None for value in values):
             continue
@@ -812,73 +623,31 @@ def _constant_dimension_diagnostics(
 
 
 def recommend(
-    metric_results: Mapping[str, Any],
-    indicator_scores: Mapping[str, Any],
     dimension_scores: Mapping[str, Any],
     scoring_config: Mapping[str, Any],
-    project_profile: Mapping[str, Any] | None,
-    constraint_rules: Mapping[str, Any] | None,
-    evidence_records: Mapping[str, Any] | None,
     context: Mapping[str, Any],
+    project_profile: Mapping[str, Any] | None = None,
+    constraint_rules: Mapping[str, Any] | None = None,
+    evidence_records: Mapping[str, Any] | None = None,
 ) -> dict[str, Any]:
-    """Evaluate optional gates and produce grouped, ranked recommendations."""
+    """Score, rank and (optionally) gate candidates from an n x K dimension-score matrix."""
 
     context_value = _validate_context(context)
     rules = _validate_constraint_rules(constraint_rules)
     gates_enabled = rules["gates_enabled"]
-    envelopes = [
-        ("metric_results", metric_results),
-        ("indicator_scores", indicator_scores),
-        ("dimension_scores", dimension_scores),
-    ]
+    _validate_envelope_context(dimension_scores, "dimension_scores", context_value)
+    config, order, diagnostics = _validate_scoring_config(scoring_config, context_value)
+    dimensions = _index_dimension_scores(dimension_scores, order)
+
     if gates_enabled:
-        envelopes.append(("evidence_records", evidence_records))
-    for name, envelope in envelopes:
-        _validate_envelope_context(envelope, name, context_value)
-    config, spec, diagnostics = _validate_scoring_config(scoring_config, context_value)
-    if gates_enabled:
+        _validate_envelope_context(evidence_records, "evidence_records", context_value)
         profile, required_capacity = _validate_profile(project_profile, context_value)
         evidence, evidence_diagnostics = _evidence_records(evidence_records, context_value)
         diagnostics.extend(evidence_diagnostics)
     else:
         profile, required_capacity, evidence = None, None, []
         diagnostics.append("gates are disabled for this run; candidates are ranked as conditional without feasibility screening")
-    dimensions = _index_dimension_scores(dimension_scores, spec)
-    indicators = _index_indicators(indicator_scores, spec)
-    metrics = _index_metrics(metric_results)
-
-    config_indicators = {item["metric_id"]: item for item in config["indicators"]}
-    dimension_candidates = set(dimensions)
-    indicator_candidates = {candidate_id for candidate_id, _ in indicators}
-    _require(indicator_candidates == dimension_candidates, "indicator_scores and dimension_scores candidate sets must match")
-    for candidate_id in sorted(dimension_candidates):
-        for metric_id in spec.metrics:
-            metric_key = (candidate_id, metric_id)
-            _require(metric_key in metrics, f"metric_results must retain a row for missing metric {candidate_id}/{metric_id}")
-            _require(metric_key in indicators, f"indicator_scores must retain a row for {candidate_id}/{metric_id}")
-            metric = metrics[metric_key]
-            indicator = indicators[metric_key]
-            expected_unit = config_indicators[metric_id]["unit"]
-            _require(metric["unit"] == expected_unit, f"metric unit does not match scoring_config for {candidate_id}/{metric_id}")
-            _require(indicator["unit"] == expected_unit, f"indicator unit does not match scoring_config for {candidate_id}/{metric_id}")
-            _require(
-                indicator["scoring_config_version"] == context_value["scoring_config_version"],
-                f"indicator scoring_config_version mismatch for {candidate_id}/{metric_id}",
-            )
-            raw_value = indicator.get("raw_value")
-            metric_value = metric.get("value")
-            _require(
-                raw_value is None or _finite_number(raw_value),
-                f"indicator raw_value must be a finite number or null for {candidate_id}/{metric_id}",
-            )
-            if metric_value is None:
-                _require(raw_value is None, f"missing metric must have null indicator raw_value for {candidate_id}/{metric_id}")
-            else:
-                _require(
-                    raw_value is not None and abs(float(raw_value) - float(metric_value)) <= RANK_TOLERANCE,
-                    f"indicator raw_value does not match metric result for {candidate_id}/{metric_id}",
-                )
-    diagnostics.extend(_constant_dimension_diagnostics(dimensions, config, spec))
+    diagnostics.extend(_constant_dimension_diagnostics(dimensions, config, order))
 
     gate_records: list[dict[str, Any]] = []
     candidate_gates: dict[str, list[dict[str, Any]]] = {}
@@ -888,13 +657,7 @@ def recommend(
             continue
         scope, plan, scope_error = _select_scope_and_plan(candidate_id, evidence, rules)
         power, delivery = _power_gates(
-            candidate_id,
-            evidence,
-            scope,
-            plan,
-            scope_error,
-            required_capacity,
-            profile["target_online_date"],
+            candidate_id, evidence, scope, plan, scope_error, required_capacity, profile["target_online_date"]
         )
         gates = [
             power,
@@ -906,14 +669,14 @@ def recommend(
         candidate_gates[candidate_id] = gates
         gate_records.extend(gates)
 
-    pareto = _pareto_statuses(dimensions, metrics, config, spec)
+    pareto = _pareto_statuses(dimensions, order)
+    weights_used = {d: float(config["dimension_weights"][d]) for d in order}
     recommendations: list[dict[str, Any]] = []
     for candidate_id in sorted(dimensions):
+        record = dimensions[candidate_id]
         gates = candidate_gates[candidate_id]
         overall_gate = _aggregate_gate_status(gates)
-        score, score_status, contributions, missing = _score_candidate(
-            candidate_id, dimensions[candidate_id], indicators, metrics, config, spec, context_value
-        )
+        score, score_status, contributions, missing = _score_candidate(record["scores"], config, order, context_value)
         if overall_gate == "fail":
             eligibility = "excluded"
         elif score_status != "complete":
@@ -961,19 +724,10 @@ def recommend(
             if gates_enabled
             else []
         )
-        limitations = [
-            f"{len(spec.metrics)} proxy metrics across {len(spec.dimension_order)} dimensions provide regional screening, not construction approval",
-            "safety-margin and temporal-robustness multipliers are not enabled",
-        ]
-        limitations.insert(
-            1,
-            "eligibility gates depend on evidence scope and verification status"
-            if gates_enabled
-            else "feasibility gates were not evaluated in this run",
-        )
         recommendations.append(
             {
                 "candidate_id": candidate_id,
+                "candidate_name": record.get("candidate_name"),
                 "eligibility_status": eligibility,
                 "gate_status": overall_gate,
                 "gate_reasons": [
@@ -986,20 +740,25 @@ def recommend(
                 "rank": None,
                 "ranking_pool": eligibility,
                 "pareto_status": pareto[candidate_id],
-                "dimension_scores": dict(dimensions[candidate_id]["scores"]),
-                "dimension_contributions": contributions["dimensions"],
-                "metric_contributions": contributions["metrics"],
+                "dimension_scores": dict(record["scores"]),
+                "dimension_weights_used": dict(weights_used),
+                "dimension_contributions": contributions,
                 "tradeoffs": [],
+                "missing_dimension_ids": missing,
                 "critical_unknown": unknowns,
                 "next_check": next_check,
                 "change_conditions": change_conditions,
-                "limitations": limitations,
-                "missing_metric_ids": missing,
+                "limitations": [
+                    f"weighted sum of {len(order)} dimension scores; regional screening, not construction approval",
+                    "eligibility gates depend on evidence scope and verification status"
+                    if gates_enabled
+                    else "feasibility gates were not evaluated in this run",
+                ],
             }
         )
 
     _assign_ranks(recommendations)
-    _tradeoffs(recommendations, metrics, spec)
+    _tradeoffs(recommendations, order)
     output_context = deepcopy(context_value)
     return {
         "gate_results": {"context": output_context, "records": gate_records},
@@ -1092,11 +851,7 @@ def compare_runs(previous_outputs: Mapping[str, Any], current_outputs: Mapping[s
         explanation = "No material input, gate, or recommendation change was detected."
 
     next_check = next(
-        (
-            item.get("next_check")
-            for item in current_recs
-            if item.get("next_check") is not None
-        ),
+        (item.get("next_check") for item in current_recs if item.get("next_check") is not None),
         None,
     )
     report = {
@@ -1113,54 +868,25 @@ def compare_runs(previous_outputs: Mapping[str, Any], current_outputs: Mapping[s
 
 def run_decision(
     *,
-    project_profile: Mapping[str, Any] | None,
-    candidates: Mapping[str, Any] | None,
-    feature_inputs: Mapping[str, Any] | None,
-    scenario_config: Mapping[str, Any],
     scoring_config: Mapping[str, Any],
-    constraint_rules: Mapping[str, Any] | None,
-    evidence_records: Mapping[str, Any] | None,
     context: Mapping[str, Any],
-    metric_results: Mapping[str, Any] | None = None,
-    indicator_scores: Mapping[str, Any] | None = None,
     dimension_scores: Mapping[str, Any] | None = None,
-    compute_results_fn: Callable[..., Mapping[str, Any]] | None = None,
-    score_metrics_fn: Callable[..., Mapping[str, Any]] | None = None,
+    compute_dimension_scores_fn: Callable[..., Mapping[str, Any]] | None = None,
+    project_profile: Mapping[str, Any] | None = None,
+    constraint_rules: Mapping[str, Any] | None = None,
+    evidence_records: Mapping[str, Any] | None = None,
 ) -> dict[str, Any]:
-    """Integration entry point for data_prep -> indicator_scoring -> decision.
-
-    Callers may supply precomputed result envelopes, or provide the two upstream
-    callables. No silent fallback to baseline or fabricated stub data occurs.
-    """
+    """Integration entry point: precomputed dimension scores, or a callable that returns them."""
 
     context_value = _validate_context(context)
-    scenario = _require_mapping(scenario_config, "scenario_config")
-    _require(scenario.get("scenario_id") == "baseline", "only baseline scenario_config is supported")
-    _require(context_value["scenario_id"] == scenario["scenario_id"], "scenario_config does not match context")
-
-    if metric_results is None:
-        _require(compute_results_fn is not None, "metric_results or compute_results_fn is required")
-        _require(candidates is not None, "candidates is required by compute_results_fn")
-        _require(feature_inputs is not None, "feature_inputs is required by compute_results_fn")
-        data_output = compute_results_fn(project_profile, candidates, feature_inputs, scenario_config, context_value)
-        data_mapping = _require_mapping(data_output, "compute_results_fn output")
-        metric_results = data_mapping.get("metric_results", data_output)
-
-    if indicator_scores is None or dimension_scores is None:
-        _require(score_metrics_fn is not None, "indicator_scores/dimension_scores or score_metrics_fn is required")
-        scoring_output = score_metrics_fn(metric_results, scoring_config, context_value)
-        scoring_mapping = _require_mapping(scoring_output, "score_metrics_fn output")
-        indicator_scores = scoring_mapping.get("indicator_scores")
-        dimension_scores = scoring_mapping.get("dimension_scores")
-        _require(indicator_scores is not None and dimension_scores is not None, "score_metrics_fn must return indicator_scores and dimension_scores")
-
+    if dimension_scores is None:
+        _require(compute_dimension_scores_fn is not None, "dimension_scores or compute_dimension_scores_fn is required")
+        dimension_scores = compute_dimension_scores_fn(context_value)
     return recommend(
-        metric_results,
-        indicator_scores,
         dimension_scores,
         scoring_config,
-        project_profile,
-        constraint_rules,
-        evidence_records,
         context_value,
+        project_profile=project_profile,
+        constraint_rules=constraint_rules,
+        evidence_records=evidence_records,
     )

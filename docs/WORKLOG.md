@@ -24,7 +24,7 @@
 ④ decision            Score = 100 × Σ w_k · D_k → 排名、Pareto、取舍对比
 ```
 
-当前进度：④ 完成（含维度内聚合方式的扩展）；①②③ 未开始。Gate 暂时不考虑，在矩阵里先关闭。
+当前进度：④ 完成，已改为只接收 n × 8 维度分；② 的聚合函数已完成，其余 ①②③ 未开始。Gate 暂时不考虑，在矩阵里先关闭。
 
 ## 目录结构
 
@@ -161,6 +161,8 @@ PYTHONPATH=src python3 -m dc_locator.decision compare \
 
 ## 2026-10-04 第 1.5 步：矩阵支持三种维度内聚合方式
 
+> 已被第 1.6 步取代：矩阵不再处理维度以下的计算，`aggregate_dimension()` 移到了 `indicator_scoring/`。保留本节作为决策过程的记录。
+
 ### 为什么要改
 
 组员提出：不同维度应该用不同方式把指标合成维度分，而不是全部用加权平均（详见下一节）。第 1 步的矩阵默认维度分 = 加权平均，并且会用这个公式核对上游传来的维度分。几何平均或 min 算出的维度分会被它当成"算错了"而拒绝。
@@ -194,6 +196,61 @@ PYTHONPATH=src python3 -m dc_locator.decision compare \
 - 给不存在的维度声明聚合方式报错
 
 示例命令的结果不变（51107：43.125 分，第 1；51013：40.0 分，第 2），因为示例配置没有声明聚合方式，全部默认为加权平均。
+
+---
+
+## 2026-10-04 第 1.6 步：矩阵简化为只接收 n × 8 维度分（取代第 1.5 步的做法）
+
+### 为什么改
+
+第 1.5 步让矩阵去核对"维度分是不是按声明的方式由指标算出来的"，等于让矩阵管到了维度以下的层级。讨论后确定：**矩阵只做一件事——n × 8 的维度分矩阵乘以 8 个权重**。维度以下怎么算（分段函数、聚合方式）全部归第 2 步。
+
+理由：
+1. 每层只做一件事。以后改分段函数或聚合方式，不需要动矩阵。第 1.5 步就是因为没分清这一点，矩阵才被迫修改。
+2. 好讲：报告里矩阵就是"县 × 8 维度的表 + 一行权重"。
+3. 唯一的损失是矩阵不再核对维度分是否算对，这个核对改由第 2 步自己的测试负责。
+
+### 改了什么
+
+1. `recommend(dimension_scores, scoring_config, context, project_profile=None, constraint_rules=None, evidence_records=None)`：
+   - 不再需要 `metric_results` 和 `indicator_scores`；
+   - Gate 相关参数都是可选的，不传就关闭。
+2. `dimension_scores` 每条记录：`candidate_id`、可选的 `candidate_name`、`scores = {维度: D 或 null}`。原来的 `dimension_order`、`score_status`、`missing_metric_ids` 字段不再需要，缺失由矩阵自己判断。
+3. `scoring_config` 只需要 `dimension_order`、`dimension_weights`、`version`、`status`、`preference_profile_id`，不再包含 `indicators` 和 `dimension_aggregation`。
+4. 输出：
+   - `dimension_contributions`（100·w·D，之和等于总分）；
+   - `dimension_weights_used`；
+   - `missing_dimension_ids`（取代 `missing_metric_ids`）；
+   - **Pareto 改为在 8 个维度分上判断**（原来是 18 个原始值）；
+   - **取舍对比改为维度分之差和加权分差**（原来是原始值之差）。
+   - 删除 `metric_contributions`。
+5. `run_decision(scoring_config, context, dimension_scores=None, compute_dimension_scores_fn=None, ...)` 也相应简化。
+6. 版本号升为 `v0.4`。
+7. 第 1.5 步写的 `aggregate_dimension()` 移到 `src/dc_locator/indicator_scoring/aggregation.py`，第 2 步直接使用。矩阵中的 `dimension_aggregation` 字段和核对逻辑全部删除。
+
+### 测试
+
+共 36 项，全部通过：
+
+- `tests/decision/test_matrix.py`（28 项）：
+  - 打分 12 项：等分 40、手算核对、动态权重改变第一名、缺失、真实 0、权重为 0、常数维度诊断、并列、Pareto、取舍对比、3 维配置也能运行、real 模式拒绝 test_only 配置；
+  - 输入校验 5 项：权重和、分数范围、维度齐全、重复县、非 baseline 情景；
+  - Gate 开关 2 项；
+  - Gate 原有逻辑 6 项；
+  - 运行比较 3 项。
+- `tests/indicator_scoring/test_aggregation.py`（8 项）：加权平均、几何平均（野火 90 / 洪水 10 → 0.30）、带权重的几何平均、min、min 忽略权重为 0 的指标、0 分会让几何平均和 min 清零、分数相等时三种方法结果相同、非法输入。
+
+### 示例
+
+`tests/fixtures/decision_request_8d.json`：3 个虚构县，使用默认州内权重（能源 0；水 0.267、气候 0.200、光纤 0.167、土地 0.133、劳动力 0.100、制冷 0.067、交通 0.067）。
+
+| 排名 | 县 | 总分 | Pareto |
+|---|---|---|---|
+| 1 | A（乡村、水资源充足） | 62.17 | 非支配 |
+| 2 | B（城市、网络发达） | 60.17 | 非支配 |
+| 3 | C（各维度均衡，全部 0.6） | 60.00 | 非支配 |
+
+三个县都是非支配：各有所长，排序完全由权重决定。
 
 ---
 

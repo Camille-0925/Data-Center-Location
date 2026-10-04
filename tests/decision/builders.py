@@ -1,50 +1,12 @@
-"""Synthetic eight-dimension request builder shared by the decision tests and fixture script."""
+"""Synthetic n x 8 dimension-score requests shared by the decision tests and the fixture script."""
 
 from __future__ import annotations
 
 from copy import deepcopy
 
-from dc_locator.decision import aggregate_dimension
+from dc_locator.decision import DEFAULT_DIMENSION_ORDER
 
-# dimension_id -> [(metric_id, unit, direction)]
-MODEL_8D = {
-    "climate_risk": [
-        ("wildfire_bp_national_pct", "fraction", "low_better"),
-        ("inland_flood_eal_national_pct", "fraction", "low_better"),
-    ],
-    "water": [
-        ("baseline_water_stress", "aqueduct_index_0_5", "low_better"),
-        ("future_water_stress_2050", "aqueduct_index_0_5", "low_better"),
-    ],
-    "land_ecology": [
-        ("low_impervious_share", "fraction", "high_better"),
-        ("protected_gap12_share", "fraction", "low_better"),
-        ("wetland_share", "fraction", "low_better"),
-    ],
-    "fiber_connectivity": [
-        ("commercial_fiber_100_20_share", "fraction", "high_better"),
-        ("commercial_fiber_1000_100_share", "fraction", "high_better"),
-    ],
-    "workforce_community": [
-        ("labor_force", "persons", "high_better"),
-        ("svi_national_pct", "fraction", "low_better"),
-    ],
-    "cooling_climate": [
-        ("cdd65", "degF_day_per_year", "low_better"),
-        ("hot_days_over_90f", "days_per_year", "low_better"),
-    ],
-    "transportation": [
-        ("interstate_distance_km", "km", "low_better"),
-        ("rail_distance_km", "km", "low_better"),
-    ],
-    "energy_carbon": [
-        ("industrial_electricity_price", "USD_per_MWh", "low_better"),
-        ("saidi_no_major_events", "minutes_per_customer_year", "low_better"),
-        ("grid_co2e_intensity", "kgCO2e_per_MWh", "low_better"),
-    ],
-}
-DIMENSIONS = list(MODEL_8D)
-METRICS = [metric for items in MODEL_8D.values() for metric, _, _ in items]
+DIMENSIONS = list(DEFAULT_DIMENSION_ORDER)
 
 
 def build_request(
@@ -52,92 +14,44 @@ def build_request(
     run_mode="test",
     config_status="ready",
     gates_enabled=True,
-    indicator_score=40.0,
+    default_score=0.40,
 ):
-    """Every indicator scores ``indicator_score`` so any valid weighting totals that value."""
+    """Every dimension of every candidate scores ``default_score`` so any weighting totals 100x that."""
 
     context = {
-        "schema_version": "v0.3",
-        "model_version": "v0.3",
+        "schema_version": "v0.4",
+        "model_version": "v0.4",
         "run_id": "run_test_001",
         "run_mode": run_mode,
-        "profile_id": "reference_v03",
+        "profile_id": "reference_v04",
         "scenario_id": "baseline",
         "preference_profile_id": "eight_equal_test",
         "evidence_version": "1",
-        "scoring_config_version": "test_v03",
+        "scoring_config_version": "test_v04",
     }
-    indicators = []
-    for dimension_id, items in MODEL_8D.items():
-        for metric_id, unit, direction in items:
-            indicators.append(
-                {
-                    "metric_id": metric_id,
-                    "dimension_id": dimension_id,
-                    "unit": unit,
-                    "direction": direction,
-                    "good_anchor": 0 if direction == "low_better" else 1,
-                    "bad_anchor": 1 if direction == "low_better" else 0,
-                    "function_type": "linear_clipped",
-                    "local_weight": 1 / len(items),
-                    "anchor_rationale": "test fixture",
-                }
-            )
     scoring_config = {
-        "version": "test_v03",
+        "version": "test_v04",
         "status": config_status,
         "preference_profile_id": "eight_equal_test",
         "dimension_order": list(DIMENSIONS),
-        "required_score_metrics": list(METRICS),
         "dimension_weights": {dimension_id: 1 / len(DIMENSIONS) for dimension_id in DIMENSIONS},
-        "indicators": indicators,
     }
-    metric_records, indicator_records, dimension_records = [], [], []
-    for candidate_id in candidate_ids:
-        for index, item in enumerate(indicators):
-            metric_records.append(
-                {
-                    "candidate_id": candidate_id,
-                    "metric_id": item["metric_id"],
-                    "value": float(index + 1),
-                    "unit": item["unit"],
-                    "data_status": "available",
-                    "pedigree": "proxy",
-                    "input_metric_ids": [],
-                    "source_ids": ["fixture"],
-                    "reference_period": "test",
-                    "geo_method": "fixture",
-                    "assumptions": ["synthetic test data"],
-                    "missing_reason": None,
-                }
-            )
-            indicator_records.append(
-                {
-                    "candidate_id": candidate_id,
-                    "metric_id": item["metric_id"],
-                    "raw_value": float(index + 1),
-                    "unit": item["unit"],
-                    "score_0_100": indicator_score,
-                    "score_status": "complete",
-                    "scoring_config_version": "test_v03",
-                    "explanation": "fixture",
-                }
-            )
-        dimension_records.append(
-            {
-                "candidate_id": candidate_id,
-                "scores": {dimension_id: indicator_score / 100 for dimension_id in DIMENSIONS},
-                "dimension_order": list(DIMENSIONS),
-                "score_status": "complete",
-                "missing_metric_ids": [],
-            }
-        )
-    request = {
+    records = [
+        {
+            "candidate_id": candidate_id,
+            "candidate_name": f"County {candidate_id}",
+            "scores": {dimension_id: default_score for dimension_id in DIMENSIONS},
+        }
+        for candidate_id in candidate_ids
+    ]
+    return {
         "context": context,
+        "scoring_config": scoring_config,
+        "dimension_scores": {"context": deepcopy(context), "records": records},
         "project_profile": {
-            "schema_version": "v0.3",
-            "model_version": "v0.3",
-            "profile_id": "reference_v03",
+            "schema_version": "v0.4",
+            "model_version": "v0.4",
+            "profile_id": "reference_v04",
             "it_capacity_mw": 100,
             "utilization": 0.8,
             "operating_hours_per_year": 8760,
@@ -148,7 +62,6 @@ def build_request(
             "cooling_config_id": "illustrative_reference",
             "target_online_date": "2030-12-31",
         },
-        "scoring_config": scoring_config,
         "constraint_rules": {
             "gates_enabled": gates_enabled,
             "gates": [
@@ -158,40 +71,32 @@ def build_request(
             "assessment_scope_by_candidate": {},
             "supply_plan_by_candidate": {},
         },
-        "metric_results": {"context": deepcopy(context), "records": metric_records},
-        "indicator_scores": {"context": deepcopy(context), "records": indicator_records},
-        "dimension_scores": {"context": deepcopy(context), "records": dimension_records},
         "evidence_records": {"context": deepcopy(context), "records": []},
     }
-    return request
 
 
-def set_indicator_score(request, candidate_id, metric_id, score):
-    """Change one indicator score and recompute that candidate's dimension score with the configured aggregation."""
-
-    config = {item["metric_id"]: item for item in request["scoring_config"]["indicators"]}
-    for record in request["indicator_scores"]["records"]:
-        if record["candidate_id"] == candidate_id and record["metric_id"] == metric_id:
-            record["score_0_100"] = score
-    dimension_id = config[metric_id]["dimension_id"]
-    members = [m for m, item in config.items() if item["dimension_id"] == dimension_id]
-    by_key = {
-        r["metric_id"]: r["score_0_100"]
-        for r in request["indicator_scores"]["records"]
-        if r["candidate_id"] == candidate_id
-    }
-    method = request["scoring_config"].get("dimension_aggregation", {}).get(dimension_id, "weighted_mean")
-    value = aggregate_dimension(method, [by_key[m] for m in members], [config[m]["local_weight"] for m in members])
+def set_score(request, candidate_id, dimension_id, value):
     for record in request["dimension_scores"]["records"]:
         if record["candidate_id"] == candidate_id:
             record["scores"][dimension_id] = value
+
+
+def set_weights(request, **weights):
+    """Override some dimension weights; the rest share what is left equally."""
+
+    others = [d for d in DIMENSIONS if d not in weights]
+    remaining = 1.0 - sum(weights.values())
+    request["scoring_config"]["dimension_weights"] = {
+        **weights,
+        **{d: remaining / len(others) for d in others},
+    }
 
 
 def add_passing_evidence(request, candidate_id="51107", capacity=150, delivery="2030-12-31", reviewed=True, is_demo=False):
     verification = "reviewed" if reviewed else "reported"
     common = {
         "candidate_id": candidate_id,
-        "profile_id": "reference_v03",
+        "profile_id": "reference_v04",
         "assessment_scope_id": f"scope_{candidate_id}",
         "asserted_status": "pass",
         "source": "fixture",
