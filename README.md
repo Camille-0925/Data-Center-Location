@@ -39,6 +39,8 @@ Customer inputs that adjust the dimension weights: **cooling type**, **latency s
 │   ├── dimension_weights/    ③a customer inputs → dimension weights — see its README.md
 │   ├── interactions/         ③c/③d DEMATEL + correlation → 8 × 8 interaction matrix — see its README.md
 │   └── decision/             ④ decision matrix (matrix.py, CLI) — see its README.md
+│   ├── validation/           ③b cross-validation and SMAA robustness — see its README.md
+│   └── pipeline.py           end-to-end run (CLI)
 ├── scripts/                  end-to-end pipeline scripts
 ├── tests/                    unit tests and fixtures
 ├── outputs/                  run outputs (not tracked)
@@ -57,6 +59,9 @@ pip install -r requirements.txt     # numpy, pandas, openpyxl
 # rank every county of a state for one customer (full pipeline)
 PYTHONPATH=src python3 -m dc_locator.pipeline --state VA
 PYTHONPATH=src python3 -m dc_locator.pipeline --state GA --cooling_type evaporative --priority sustainability
+
+# robustness analysis (SMAA, method comparison) for one state
+PYTHONPATH=src python3 -m dc_locator.validation --state VA
 
 # run the tests
 PYTHONPATH=src python3 -m unittest discover -s tests -t . -v
@@ -82,7 +87,7 @@ PYTHONPATH=src python3 -m dc_locator.decision recommend \
 | ② | Indicator scoring (`src/dc_locator/indicator_scoring/`) | ✅ value functions with fixed anchors, per-dimension aggregation, context flags; 26 tests |
 | ① | Data preparation (`src/dc_locator/data_prep/`) | ✅ 292 counties × 18 indicators, 0 missing; 3 tests |
 | — | End-to-end pipeline (`src/dc_locator/pipeline.py`) | ✅ data → scores → weights → interactions → Choquet ranking; 6 tests |
-| ③b | Cross-validation and robustness (SMAA) | ⏳ Next |
+| ③b | Cross-validation and robustness (`src/dc_locator/validation/`) | ✅ 6 weighting methods, SMAA-2 (10,000 samples), effective weights, input response, value-function shape; 11 tests |
 | — | Final documentation | ⏳ |
 
 ## Team
