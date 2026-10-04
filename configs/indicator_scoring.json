@@ -1,0 +1,118 @@
+{
+  "version": "indicator_scoring_v0.1",
+  "status": "provisional",
+  "notes": "Anchors T (ideal, utility 100) and L (unacceptable, utility 0) are team proposals; anchor_basis says where each comes from. Within-dimension weights follow the teammate proposal and are to be confirmed by swing weighting.",
+  "indicators": {
+    "wildfire_bp_national_percentile": {
+      "label": "Wildfire burn-probability national percentile", "dimension": "climate_risk", "unit": "fraction",
+      "direction": "low_better", "transform": null, "ideal_T": 0.0, "unacceptable_L": 1.0,
+      "anchor_basis": "Natural end points of a national percentile"
+    },
+    "inland_flood_loss_rate_percentile": {
+      "label": "Inland flood expected-loss-rate national percentile", "dimension": "climate_risk", "unit": "fraction",
+      "direction": "low_better", "transform": null, "ideal_T": 0.0, "unacceptable_L": 1.0,
+      "anchor_basis": "Natural end points of a national percentile"
+    },
+    "baseline_water_stress": {
+      "label": "Baseline water stress (Aqueduct 4.0)", "dimension": "water", "unit": "Aqueduct index 0-5",
+      "direction": "low_better", "transform": null, "ideal_T": 1.0, "unacceptable_L": 4.0,
+      "anchor_basis": "Aqueduct categories: < 1 low (< 10% withdrawal/supply); >= 4 extremely high (> 80%)"
+    },
+    "water_stress_2050_bau": {
+      "label": "2050 business-as-usual water stress (Aqueduct 4.0)", "dimension": "water", "unit": "Aqueduct index 0-5",
+      "direction": "low_better", "transform": null, "ideal_T": 1.0, "unacceptable_L": 4.0,
+      "anchor_basis": "Same Aqueduct categories as baseline"
+    },
+    "low_impervious_land_share": {
+      "label": "Share of land with < 10% impervious cover", "dimension": "land_ecology", "unit": "fraction",
+      "direction": "high_better", "transform": null, "ideal_T": 0.95, "unacceptable_L": 0.25,
+      "anchor_basis": "Team assumption: 95% open land is ample; below 25% (dense urban core) no room for a campus. Direction to be confirmed"
+    },
+    "gap12_protected_land_share": {
+      "label": "GAP 1/2 protected land share", "dimension": "land_ecology", "unit": "fraction",
+      "direction": "low_better", "transform": null, "ideal_T": 0.0, "unacceptable_L": 0.5,
+      "anchor_basis": "Team assumption: half of a county under strict protection is the limit (observed max 0.41)"
+    },
+    "wetland_land_share": {
+      "label": "Wetland share of land", "dimension": "land_ecology", "unit": "fraction",
+      "direction": "low_better", "transform": null, "ideal_T": 0.0, "unacceptable_L": 0.6,
+      "anchor_basis": "Just above the observed maximum (0.58) so no county is zeroed by this indicator alone"
+    },
+    "fiber_business_1000_100_availability": {
+      "label": "Business fiber availability at 1000/100 Mbps", "dimension": "fiber", "unit": "fraction",
+      "direction": "high_better", "transform": null, "ideal_T": 0.9, "unacceptable_L": 0.0,
+      "anchor_basis": "Team assumption: coverage of 90% or more counts as saturated"
+    },
+    "labor_force": {
+      "label": "Civilian labor force", "dimension": "workforce_community", "unit": "persons",
+      "direction": "high_better", "transform": "ln", "ideal_T": 50000, "unacceptable_L": 2000,
+      "anchor_basis": "Log scale so large metros do not win automatically; 50,000 workers counts as ample, under 2,000 as too thin. Anchors are in persons and log-transformed with the value"
+    },
+    "historical_cdd65": {
+      "label": "Cooling degree days (base 65 F)", "dimension": "cooling_climate", "unit": "degF-day/year",
+      "direction": "low_better", "transform": null, "ideal_T": 500, "unacceptable_L": 2500,
+      "anchor_basis": "Span of the two states (276-2,499)"
+    },
+    "distance_to_interstate_km": {
+      "label": "Distance to nearest Interstate", "dimension": "transportation", "unit": "km",
+      "direction": "low_better", "transform": null, "ideal_T": 5, "unacceptable_L": 60,
+      "anchor_basis": "Within 5 km is as good as adjacent; 60 km is about the 90th percentile"
+    },
+    "distance_to_rail_km": {
+      "label": "Distance to nearest rail line", "dimension": "transportation", "unit": "km",
+      "direction": "low_better", "transform": null, "ideal_T": 2, "unacceptable_L": 30,
+      "anchor_basis": "Within 2 km allows a spur; 30 km is above the 90th percentile"
+    },
+    "state_industrial_price": {
+      "label": "State industrial electricity price", "dimension": "energy_carbon", "unit": "USD/MWh",
+      "direction": "low_better", "transform": null, "ideal_T": 50, "unacceptable_L": 120,
+      "anchor_basis": "Approximate range of US state industrial prices"
+    },
+    "state_ieee_saidi_without_med": {
+      "label": "State SAIDI excluding major events", "dimension": "energy_carbon", "unit": "minutes/customer/year",
+      "direction": "low_better", "transform": null, "ideal_T": 100, "unacceptable_L": 400,
+      "anchor_basis": "Approximate range of US utility SAIDI"
+    },
+    "state_grid_co2e_intensity": {
+      "label": "State grid CO2e intensity", "dimension": "energy_carbon", "unit": "kgCO2e/MWh",
+      "direction": "low_better", "transform": null, "ideal_T": 100, "unacceptable_L": 650,
+      "anchor_basis": "Low-carbon grid vs coal-heavy grid"
+    }
+  },
+  "dimensions": {
+    "climate_risk":        {"aggregation": "weighted_geometric", "weights": {"wildfire_bp_national_percentile": 0.5, "inland_flood_loss_rate_percentile": 0.5}},
+    "water":               {"aggregation": "min",                "weights": {"baseline_water_stress": 0.5, "water_stress_2050_bau": 0.5}},
+    "land_ecology":        {"aggregation": "weighted_geometric", "weights": {"low_impervious_land_share": 0.5, "gap12_protected_land_share": 0.25, "wetland_land_share": 0.25}},
+    "fiber":               {"aggregation": "weighted_mean",      "weights": {"fiber_business_1000_100_availability": 1.0}},
+    "workforce_community": {"aggregation": "weighted_mean",      "weights": {"labor_force": 1.0}},
+    "cooling_climate":     {"aggregation": "weighted_mean",      "weights": {"historical_cdd65": 1.0}},
+    "transportation":      {"aggregation": "weighted_mean",      "weights": {"distance_to_interstate_km": 0.7, "distance_to_rail_km": 0.3}},
+    "energy_carbon":       {"aggregation": "weighted_mean",      "weights": {"state_industrial_price": 0.25, "state_ieee_saidi_without_med": 0.35, "state_grid_co2e_intensity": 0.40}}
+  },
+  "flags": {
+    "water_stress_change_2050": {
+      "label": "Change in water stress, 2050 BAU minus baseline (Aqueduct index points)",
+      "formula": "water_stress_2050_bau - baseline_water_stress",
+      "bands": [[-99, -0.5, "improving"], [-0.5, 0.5, "stable"], [0.5, 99, "worsening"]],
+      "basis": "Half of one Aqueduct category width; team assumption"
+    },
+    "fiber_100_20_availability": {
+      "label": "Business fiber availability at 100/20 Mbps (context; overlaps the scored 1000/100 indicator)",
+      "formula": "fiber_business_100_20_availability",
+      "bands": null
+    },
+    "social_vulnerability": {
+      "label": "CDC/ATSDR Social Vulnerability Index percentile (community-impact context, not scored)",
+      "formula": "social_vulnerability_percentile",
+      "bands": [[0, 0.25, "low"], [0.25, 0.5, "low-moderate"], [0.5, 0.75, "moderate-high"], [0.75, 1.01, "high"]],
+      "basis": "CDC SVI quartile convention"
+    },
+    "extreme_heat_days": {
+      "label": "Days per year above 90 F (cooling-design risk; overlaps the scored CDD indicator)",
+      "formula": "historical_days_tmax_gt90f",
+      "bands": [[0, 15, "normal"], [15, 45, "elevated"], [45, 75, "high"], [75, 366, "extreme"]],
+      "basis": "Team assumption: about two weeks, six weeks and ten weeks of 90 F days"
+    }
+  },
+  "utility_floor": 0.0
+}

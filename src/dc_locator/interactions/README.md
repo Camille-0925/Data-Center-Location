@@ -53,7 +53,7 @@ The module also exports `pairwise_strength()`: for each pair, (t_kl + t_lk) divi
 `configs/interactions.json` → `dematel.respondents`: each team member's influence scores as `{source: {target: score}}`; pairs left out score 0. The current draft (one respondent) records a one-line causal rationale for every nonzero score, for example:
 
 - *cooling_climate → energy_carbon (3)*: higher cooling load raises PUE, electricity use and emissions;
-- *transportation → fiber_connectivity (2)*: long-haul fiber is laid along highway and rail rights-of-way.
+- *transportation → fiber (2)*: long-haul fiber is laid along highway and rail rights-of-way.
 
 To replace the draft, each member fills the same 8 × 8 table (about 30 minutes) and is added as another respondent.
 

@@ -60,7 +60,7 @@ class ChoquetTests(unittest.TestCase):
         phi = {d: 1 / 8 for d in DIMENSIONS}
         interactions = {
             ("water", "cooling_climate"): 0.10,
-            ("fiber_connectivity", "workforce_community"): -0.08,
+            ("fiber", "workforce_community"): -0.08,
             ("transportation", "workforce_community"): -0.06,
             ("climate_risk", "water"): 0.05,
         }
@@ -98,7 +98,7 @@ class ChoquetTests(unittest.TestCase):
         phi = {d: 1 / 8 for d in DIMENSIONS}
         interactions = [
             {"dimensions": ["water", "cooling_climate"], "value": 0.12},
-            {"dimensions": ["fiber_connectivity", "workforce_community"], "value": -0.12},
+            {"dimensions": ["fiber", "workforce_community"], "value": -0.12},
             {"dimensions": ["climate_risk", "water"], "value": 0.12},
         ]
         for _ in range(200):

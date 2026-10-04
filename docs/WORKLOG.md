@@ -102,8 +102,8 @@ Adelyn 的 `adelyn_decision` v0.2（`~/Downloads/Adelyn/`）。原代码把 7 �
 | land_ecology | low_impervious_share | fraction | high_better（方向待定） |
 | land_ecology | protected_gap12_share | fraction | low_better |
 | land_ecology | wetland_share | fraction | low_better |
-| fiber_connectivity | commercial_fiber_100_20_share | fraction | high_better |
-| fiber_connectivity | commercial_fiber_1000_100_share | fraction | high_better |
+| fiber | commercial_fiber_100_20_share | fraction | high_better |
+| fiber | commercial_fiber_1000_100_share | fraction | high_better |
 | workforce_community | labor_force | persons | high_better |
 | workforce_community | svi_national_pct | fraction | low_better（默认可能不计分，待定） |
 | cooling_climate | cdd65 | degF_day_per_year | low_better |
@@ -540,11 +540,80 @@ Score_i = 100 × [ Σ_k φ_k·D_ik − ½ Σ_{k<l} I_kl·|D_ik − D_il| ]
 
 ---
 
+## 2026-10-04 合并组员的 Georgia Gate 模块（PR #2）
+
+推送第 4′ 步时远端多了 PR #2：`src/dc_locator/gates/georgia/`，共 18 个文件，没有改动其他文件。已合并，测试全部通过。
+
+---
+
+## 2026-10-04 第 1 步（数据）+ 第 2 步：分段效用函数 → 维度分 D
+
+### 指标 ID 和维度 ID 统一为 Jane 的命名
+
+Jane 的工作簿下方已有指标定义表，包括 18 个 ID 和所属维度，以此为准：
+
+- 本文件第 1 步表格中我自拟的指标 ID 全部作废，以 `src/dc_locator/data_prep/__init__.py` 的 `METRIC_IDS` 为准；
+- 维度 `fiber_connectivity` 改名为 `fiber`，全仓库已替换（gates 目录除外）。
+
+### 数据整理（`src/dc_locator/data_prep/`）
+
+- 原始文件：`data/raw/virginia_georgia_8d18_indicators_fcc.xlsx`（Jane 的 FCC 更新版，200 KB），并附 `data/raw/README.md` 说明来源。
+- 输出：`data/processed/county_indicators_va_ga.csv`，共 292 行（VA 133、GA 159），包括 FIPS、县名、州、土地面积、18 项原始值，以及质量提示和覆盖率。
+- 读取时的检查：按表头核对指标列的位置；FIPS 必须是唯一的 5 位编码；不能有缺失值（实际为 0）。
+
+### 指标打分（`src/dc_locator/indicator_scoring/`）
+
+- `utility.py`：分段线性效用函数。
+  - 越低越好：u = 100（x ≤ T）、100·(L − x)/(L − T)、0（x ≥ L）；越高越好同理；
+  - `transform="ln"` 时对数值和两个锚点同时取对数（劳动力）；
+  - 可选指数形状（Kirkwood 1997），供敏感性分析使用；
+  - 可选效用下限，默认 0。
+- `configs/indicator_scoring.json`：15 个计分指标（方向、T、L、锚点依据）、8 个维度（聚合方式和维度内权重）、4 个提示指标（计算公式和分级）。
+- `__init__.py`：`score_counties()` 依次计算效用、维度分和提示指标；`zero_utility_report()` 统计每个指标得 0 分和满分的县数；`dimension_score_records()` 生成 matrix 的输入。
+
+### 用真实数据检查锚点
+
+| 指标 | 得 0 分的县数 | 判断 |
+|---|---|---|
+| 2050 水压力 | VA 12 | 指数 ≥ 4 是 Aqueduct 官方的"极高"等级，保留；因为取 min，这些县的水维度为 0 |
+| 低不透水比例 | VA 15（多为独立市） | 城市核心区没有建园区的空地，保留 |
+| 劳动力 | GA 11、VA 2 | 不足 2,000 人，保留 |
+| Interstate / 铁路距离 | 每州最多 17 | 交通维度是加权平均，另一项可以补偿 |
+
+### 结果（维度分中位数）
+
+| 维度 | VA | GA |
+|---|---|---|
+| 气候 | 0.647 | 0.513 |
+| 水 | 0.316 | 0.633 |
+| 土地 | 0.900 | 0.874 |
+| 光纤 | 0.416 | 0.704 |
+| 劳动力 | 0.591 | 0.496 |
+| 制冷 | 0.694 | 0.287 |
+| 交通 | 0.834 | 0.696 |
+| 能源（州内常数） | 0.583 | 0.627 |
+
+### 测试（21 项）
+
+- **数据**（3 项）：两州县数、FIPS 唯一、无缺失；CSV 与工作簿一致；能源三项在州内是常数。
+- **效用函数**（7 项）：越低越好和越高越好的分段计算、图片里的碳强度例子（63.6）、ln 变换、指数形状、缺失值和下限、非法锚点报错。
+- **配置**（3 项）：随仓库提供的配置合法、维度内权重之和为 1、指标不能放在错误的维度。
+- **县级打分**（8 项）：
+  - 292 个县都有 8 个维度分，且都在 0–1 之间；
+  - Loudoun 的气候、水、土地、交通维度与手算一致，精确到 1e-9；
+  - 能源维度在州内是常数；
+  - 提示指标都已计算，且没有被计分；
+  - 输出的记录可以直接作为 matrix 的输入。
+
+全部测试共 92 项，全部通过。
+
+---
+
 ## 下一步
 
-第 2 步：分段线性效用函数 → 维度分 D。
-- 读取 Jane 的 18 项指标；
-- 用 14 行锚点计算效用分；
-- 按组员方案聚合成 8 个维度分；
-- 输出提示指标；
-- 生成 VA 和 GA 各自的 n × 8 维度分矩阵。
+第 3d 步：
+- 在真实维度分上计算 A 相关矩阵（Spearman，分州计算）；
+- 与 DEMATEL 的 pairwise_strength 合成关联强度 s；
+- 团队标注正负号；
+- 按单调性条件设定 κ，得到 I；
+- 用 VA 和 GA 的真实数据跑第一次完整的 Choquet 排名。

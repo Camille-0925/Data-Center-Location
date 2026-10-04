@@ -45,11 +45,11 @@ class ScoringTests(unittest.TestCase):
     def test_dynamic_weights_change_the_leader(self):
         request = build_request(("51107", "13121"))
         set_score(request, "51107", "water", 0.90)
-        set_score(request, "13121", "fiber_connectivity", 0.90)
+        set_score(request, "13121", "fiber", 0.90)
         water_first = deepcopy(request)
-        set_weights(water_first, water=0.30, fiber_connectivity=0.05)
+        set_weights(water_first, water=0.30, fiber=0.05)
         fiber_first = deepcopy(request)
-        set_weights(fiber_first, water=0.05, fiber_connectivity=0.30)
+        set_weights(fiber_first, water=0.05, fiber=0.30)
         leader = lambda req: next(i["candidate_id"] for i in call_recommend(req)["recommendations"]["records"] if i["rank"] == 1)
         self.assertEqual(leader(water_first), "51107")
         self.assertEqual(leader(fiber_first), "13121")
@@ -90,7 +90,7 @@ class ScoringTests(unittest.TestCase):
     def test_pareto_uses_dimension_scores(self):
         request = build_request(("51107", "51013", "13121"))
         set_score(request, "51107", "water", 0.90)          # dominates 51013
-        set_score(request, "13121", "fiber_connectivity", 0.90)
+        set_score(request, "13121", "fiber", 0.90)
         set_score(request, "13121", "land_ecology", 0.10)   # better on one, worse on another
         statuses = {k: v["pareto_status"] for k, v in by_id(call_recommend(request)).items()}
         self.assertEqual(statuses, {"51107": "non_dominated", "51013": "dominated", "13121": "non_dominated"})
@@ -241,11 +241,11 @@ class RunComparisonTests(unittest.TestCase):
     def test_compare_runs_reports_rank_change_from_new_weights(self):
         request = build_request(("51107", "13121"), gates_enabled=False)
         set_score(request, "51107", "water", 0.90)
-        set_score(request, "13121", "fiber_connectivity", 0.90)
+        set_score(request, "13121", "fiber", 0.90)
         first = deepcopy(request)
-        set_weights(first, water=0.30, fiber_connectivity=0.05)
+        set_weights(first, water=0.30, fiber=0.05)
         second = deepcopy(request)
-        set_weights(second, water=0.05, fiber_connectivity=0.30)
+        set_weights(second, water=0.05, fiber=0.30)
         second["context"]["run_id"] = "run_test_002"
         second["context"]["preference_profile_id"] = "fiber_first"
         second["scoring_config"]["preference_profile_id"] = "fiber_first"

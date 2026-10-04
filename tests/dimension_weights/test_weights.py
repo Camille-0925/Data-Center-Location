@@ -105,7 +105,7 @@ class CustomerInputTests(unittest.TestCase):
         result = compute_dimension_weights({"latency_sensitivity": "high"}, mode="cross_state")
         base = result["ahp"]["base_weights"]
         w = result["weights"]
-        self.assertAlmostEqual(w["fiber_connectivity"] / w["water"], 1.6 * base["fiber_connectivity"] / base["water"])
+        self.assertAlmostEqual(w["fiber"] / w["water"], 1.6 * base["fiber"] / base["water"])
         self.assertAlmostEqual(w["climate_risk"] / w["water"], base["climate_risk"] / base["water"])
 
     def test_all_combinations_sum_to_one_and_respect_cap(self):

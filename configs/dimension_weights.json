@@ -6,7 +6,7 @@
     "climate_risk",
     "water",
     "land_ecology",
-    "fiber_connectivity",
+    "fiber",
     "workforce_community",
     "cooling_climate",
     "transportation",
@@ -21,26 +21,26 @@
         "judgments": [
           ["energy_carbon", "water", 1],
           ["energy_carbon", "climate_risk", 2],
-          ["energy_carbon", "fiber_connectivity", 2],
+          ["energy_carbon", "fiber", 2],
           ["energy_carbon", "land_ecology", 3],
           ["energy_carbon", "cooling_climate", 4],
           ["energy_carbon", "workforce_community", 4],
           ["energy_carbon", "transportation", 5],
           ["water", "climate_risk", 2],
-          ["water", "fiber_connectivity", 2],
+          ["water", "fiber", 2],
           ["water", "land_ecology", 3],
           ["water", "cooling_climate", 3],
           ["water", "workforce_community", 4],
           ["water", "transportation", 5],
-          ["climate_risk", "fiber_connectivity", 1],
+          ["climate_risk", "fiber", 1],
           ["climate_risk", "land_ecology", 2],
           ["climate_risk", "cooling_climate", 2],
           ["climate_risk", "workforce_community", 3],
           ["climate_risk", "transportation", 3],
-          ["fiber_connectivity", "land_ecology", 2],
-          ["fiber_connectivity", "cooling_climate", 2],
-          ["fiber_connectivity", "workforce_community", 2],
-          ["fiber_connectivity", "transportation", 3],
+          ["fiber", "land_ecology", 2],
+          ["fiber", "cooling_climate", 2],
+          ["fiber", "workforce_community", 2],
+          ["fiber", "transportation", 3],
           ["land_ecology", "cooling_climate", 1],
           ["land_ecology", "workforce_community", 2],
           ["land_ecology", "transportation", 2],
@@ -68,9 +68,9 @@
       "default": "normal",
       "label": "Latency sensitivity of the workload",
       "options": {
-        "low": {"fiber_connectivity": 0.6},
+        "low": {"fiber": 0.6},
         "normal": {},
-        "high": {"fiber_connectivity": 1.6}
+        "high": {"fiber": 1.6}
       }
     },
     "reliability_requirement": {
@@ -87,7 +87,7 @@
       "options": {
         "balanced": {},
         "sustainability": {"water": 2, "cooling_climate": 2, "land_ecology": 2, "energy_carbon": 2},
-        "operations": {"fiber_connectivity": 2, "workforce_community": 2, "transportation": 2}
+        "operations": {"fiber": 2, "workforce_community": 2, "transportation": 2}
       }
     }
   }

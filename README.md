@@ -18,7 +18,7 @@ Where should America's next sustainable AI data center be built? This project sc
 | Climate risk | Wildfire burn-probability percentile; inland flood loss percentile |
 | Water | Baseline water stress; 2050 water stress |
 | Land & ecology | Low-impervious land share; protected-land share; wetland share |
-| Fiber connectivity | Commercial fiber coverage (100/20 and 1000/100 Mbps) |
+| Fiber | Business fiber availability at 1000/100 Mbps (100/20 shown as context) |
 | Workforce & community | Labor force; social vulnerability percentile |
 | Cooling climate | Cooling degree days; days above 90°F |
 | Transportation | Distance to Interstate; distance to rail |
@@ -34,8 +34,8 @@ Customer inputs that adjust the dimension weights: **cooling type**, **latency s
 │   ├── raw/                  pointers to source datasets
 │   └── processed/            county-level indicator table
 ├── src/dc_locator/
-│   ├── data_prep/            ① data preparation
-│   ├── indicator_scoring/    ② utilities, within-dimension weights, dimension scores
+│   ├── data_prep/            ① data preparation — see its README.md
+│   ├── indicator_scoring/    ② utilities, within-dimension weights, dimension scores — see its README.md
 │   ├── dimension_weights/    ③a customer inputs → dimension weights — see its README.md
 │   ├── interactions/         ③c/③d DEMATEL + correlation → 8 × 8 interaction matrix — see its README.md
 │   └── decision/             ④ decision matrix (matrix.py, CLI) — see its README.md
@@ -71,13 +71,12 @@ PYTHONPATH=src python3 -m dc_locator.decision recommend \
 | Step | Module | Status |
 |---|---|---|
 | ④ | Decision matrix (`src/dc_locator/decision/`) | ✅ Done: n × 8 dimension scores + weights φ + optional interactions I → score, rank, Pareto; 38 tests |
-| ② (part) | Indicator → dimension aggregation (`src/dc_locator/indicator_scoring/aggregation.py`) | ✅ mean / geometric / min; 8 tests |
 | ③a | Dimension weights from customer inputs (`src/dc_locator/dimension_weights/`) | ✅ AHP base + 4 customer inputs; 17 tests |
 | ③c | DEMATEL causal matrix (`src/dc_locator/interactions/`) | ✅ cause/effect roles, total-relation matrix; 8 tests |
 | ③d | Correlation matrix + combined 8 × 8 interaction matrix | ⏳ |
 | ④′ | 2-additive Choquet scoring with interactions | ✅ monotonicity enforced; checked against an independent implementation |
-| ② | Indicator scoring and within-dimension weights | ⏳ |
-| ① | Data preparation | ⏳ |
+| ② | Indicator scoring (`src/dc_locator/indicator_scoring/`) | ✅ value functions with fixed anchors, per-dimension aggregation, context flags; 26 tests |
+| ① | Data preparation (`src/dc_locator/data_prep/`) | ✅ 292 counties × 18 indicators, 0 missing; 3 tests |
 | — | End-to-end pipeline and documentation | ⏳ |
 
 ## Team

@@ -36,7 +36,7 @@ DEFAULT_DIMENSION_ORDER = [
     "climate_risk",
     "water",
     "land_ecology",
-    "fiber_connectivity",
+    "fiber",
     "workforce_community",
     "cooling_climate",
     "transportation",
