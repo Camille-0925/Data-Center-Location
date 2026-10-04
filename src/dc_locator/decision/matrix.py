@@ -2,9 +2,10 @@
 
 Originally written by Adelyn for the v0.2 seven-dimension model with one metric per
 dimension. v0.3 generalizes it so that the dimension list, the metrics in each
-dimension, the dimension weights and the within-dimension (local) weights are all
-read from ``scoring_config`` instead of module constants. Gates are optional
-(``constraint_rules.gates_enabled = false`` skips them).
+dimension, the dimension weights, the within-dimension (local) weights and the way
+indicators combine into a dimension score (weighted mean, weighted geometric mean or
+minimum) are all read from ``scoring_config`` instead of module constants. Gates are
+optional (``constraint_rules.gates_enabled = false`` skips them).
 
 The public functions consume and return JSON-serializable dictionaries. This module
 does not collect data (data_prep), convert raw values to 0-100 utilities
@@ -57,6 +58,8 @@ VALID_GATE_STATUSES = {"pass", "fail", "unknown"}
 VALID_VERIFICATION_STATUSES = {"reported", "reviewed"}
 RANK_TOLERANCE = 1e-8
 WEIGHT_TOLERANCE = 1e-9
+SCORE_TOLERANCE = 1e-7
+AGGREGATION_METHODS = {"weighted_mean", "weighted_geometric", "min"}
 
 
 class ContractError(ValueError):
@@ -70,9 +73,28 @@ class ModelSpec:
     dimension_order: tuple[str, ...]
     metrics: tuple[str, ...]
     metric_to_dimension: Mapping[str, str]
+    aggregation: Mapping[str, str]
 
     def metrics_in(self, dimension_id: str) -> list[str]:
         return [m for m in self.metrics if self.metric_to_dimension[m] == dimension_id]
+
+
+def aggregate_dimension(method: str, scores_0_100: Sequence[float], local_weights: Sequence[float]) -> float:
+    """Combine indicator utilities (0-100) into one dimension score (0-1).
+
+    weighted_mean       D = sum(w * u) / 100
+    weighted_geometric  D = prod((u / 100) ** w)      a low indicator cannot be fully offset
+    min                 D = min(u) / 100 over indicators with w > 0   the worst indicator decides
+    """
+
+    pairs = list(zip(scores_0_100, local_weights))
+    if method == "weighted_mean":
+        return sum(w * u for u, w in pairs) / 100.0
+    if method == "weighted_geometric":
+        return math.prod((u / 100.0) ** w for u, w in pairs if w > 0)
+    if method == "min":
+        return min(u for u, w in pairs if w > 0) / 100.0
+    raise ContractError(f"unknown aggregation method: {method}")
 
 
 def _finite_number(value: Any) -> bool:
@@ -249,7 +271,14 @@ def _validate_scoring_config(
 
     required = config.get("required_score_metrics", metrics)
     _require(required == metrics, "required_score_metrics must list the indicator metric_ids in the same order")
-    spec = ModelSpec(tuple(order), tuple(metrics), metric_to_dimension)
+
+    declared = config.get("dimension_aggregation", {})
+    _require(isinstance(declared, Mapping), "scoring_config.dimension_aggregation must be an object")
+    _require(set(declared).issubset(order), "dimension_aggregation contains an unknown dimension id")
+    aggregation = {dimension_id: declared.get(dimension_id, "weighted_mean") for dimension_id in order}
+    for dimension_id, method in aggregation.items():
+        _require(method in AGGREGATION_METHODS, f"invalid aggregation for {dimension_id}: {method}")
+    spec = ModelSpec(tuple(order), tuple(metrics), metric_to_dimension, aggregation)
     for dimension_id in order:
         members = spec.metrics_in(dimension_id)
         _require(members, f"dimension {dimension_id} has no indicators")
@@ -598,7 +627,7 @@ def _score_candidate(
     config: Mapping[str, Any],
     spec: ModelSpec,
     context: Mapping[str, Any],
-) -> tuple[float | None, str, list[dict[str, Any]], list[str]]:
+) -> tuple[float | None, str, dict[str, list[dict[str, Any]]], list[str]]:
     missing = set(dimension_record["missing_metric_ids"])
     scores = dimension_record["scores"]
     for metric_id in spec.metrics:
@@ -612,37 +641,51 @@ def _score_candidate(
         if value is None:
             missing.update(spec.metrics_in(dimension_id))
     if context["run_mode"] == "real" and config["status"] == "test_only":
-        return None, "incomplete", [], sorted(missing)
+        return None, "incomplete", {"metrics": [], "dimensions": []}, sorted(missing)
     if missing:
-        return None, "incomplete", [], sorted(missing)
+        return None, "incomplete", {"metrics": [], "dimensions": []}, sorted(missing)
 
-    contributions: list[dict[str, Any]] = []
-    total = 0.0
     by_metric = {item["metric_id"]: item for item in config["indicators"]}
-    for metric_id in spec.metrics:
-        item = by_metric[metric_id]
-        dimension_id = item["dimension_id"]
+    metric_contributions: list[dict[str, Any]] = []
+    dimension_contributions: list[dict[str, Any]] = []
+    total = 0.0
+    for dimension_id in spec.dimension_order:
+        method = spec.aggregation[dimension_id]
+        members = spec.metrics_in(dimension_id)
+        utilities = [float(indicators[(candidate_id, m)]["score_0_100"]) for m in members]
+        local_weights = [float(by_metric[m]["local_weight"]) for m in members]
+        expected = aggregate_dimension(method, utilities, local_weights)
+        supplied = float(scores[dimension_id])
+        _require(
+            abs(expected - supplied) <= SCORE_TOLERANCE,
+            f"dimension score for {candidate_id}/{dimension_id} is {supplied}, "
+            f"but {method} of its indicator scores gives {expected}",
+        )
         dimension_weight = float(config["dimension_weights"][dimension_id])
-        local_weight = float(item["local_weight"])
-        indicator_score = float(indicators[(candidate_id, metric_id)]["score_0_100"])
-        contribution = dimension_weight * local_weight * indicator_score
-        total += contribution
-        contributions.append(
+        dimension_points = 100.0 * dimension_weight * supplied
+        total += dimension_points
+        dimension_contributions.append(
             {
-                "metric_id": metric_id,
                 "dimension_id": dimension_id,
-                "global_leaf_weight": dimension_weight * local_weight,
-                "indicator_score_0_100": indicator_score,
-                "contribution_points": contribution,
+                "aggregation": method,
+                "dimension_weight": dimension_weight,
+                "dimension_score_0_1": supplied,
+                "contribution_points": dimension_points,
             }
         )
-
-    dimension_total = 100.0 * sum(
-        float(config["dimension_weights"][dimension_id]) * float(scores[dimension_id])
-        for dimension_id in spec.dimension_order
-    )
-    _require(abs(total - dimension_total) <= 1e-7, f"indicator contributions disagree with dimension score aggregation for {candidate_id}")
-    return total, "complete", contributions, []
+        additive = method == "weighted_mean"
+        for metric_id, utility, local_weight in zip(members, utilities, local_weights):
+            metric_contributions.append(
+                {
+                    "metric_id": metric_id,
+                    "dimension_id": dimension_id,
+                    "local_weight": local_weight,
+                    "global_leaf_weight": dimension_weight * local_weight if additive else None,
+                    "indicator_score_0_100": utility,
+                    "contribution_points": dimension_weight * local_weight * utility if additive else None,
+                }
+            )
+    return total, "complete", {"metrics": metric_contributions, "dimensions": dimension_contributions}, []
 
 
 def _pareto_statuses(
@@ -944,7 +987,8 @@ def recommend(
                 "ranking_pool": eligibility,
                 "pareto_status": pareto[candidate_id],
                 "dimension_scores": dict(dimensions[candidate_id]["scores"]),
-                "metric_contributions": contributions,
+                "dimension_contributions": contributions["dimensions"],
+                "metric_contributions": contributions["metrics"],
                 "tradeoffs": [],
                 "critical_unknown": unknowns,
                 "next_check": next_check,

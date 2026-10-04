@@ -4,6 +4,8 @@ from __future__ import annotations
 
 from copy import deepcopy
 
+from dc_locator.decision import aggregate_dimension
+
 # dimension_id -> [(metric_id, unit, direction)]
 MODEL_8D = {
     "climate_risk": [
@@ -165,7 +167,7 @@ def build_request(
 
 
 def set_indicator_score(request, candidate_id, metric_id, score):
-    """Change one indicator score and recompute that candidate's dimension score consistently."""
+    """Change one indicator score and recompute that candidate's dimension score with the configured aggregation."""
 
     config = {item["metric_id"]: item for item in request["scoring_config"]["indicators"]}
     for record in request["indicator_scores"]["records"]:
@@ -178,7 +180,8 @@ def set_indicator_score(request, candidate_id, metric_id, score):
         for r in request["indicator_scores"]["records"]
         if r["candidate_id"] == candidate_id
     }
-    value = sum(config[m]["local_weight"] * by_key[m] for m in members) / 100
+    method = request["scoring_config"].get("dimension_aggregation", {}).get(dimension_id, "weighted_mean")
+    value = aggregate_dimension(method, [by_key[m] for m in members], [config[m]["local_weight"] for m in members])
     for record in request["dimension_scores"]["records"]:
         if record["candidate_id"] == candidate_id:
             record["scores"][dimension_id] = value

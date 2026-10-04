@@ -177,6 +177,96 @@ class ScoringTests(unittest.TestCase):
             call_recommend(request)
 
 
+def use_aggregation(request, dimension_id, method, local_weights=None):
+    """Switch one dimension's aggregation (and optionally its local weights) in the config."""
+
+    request["scoring_config"].setdefault("dimension_aggregation", {})[dimension_id] = method
+    if local_weights:
+        for item in request["scoring_config"]["indicators"]:
+            if item["metric_id"] in local_weights:
+                item["local_weight"] = local_weights[item["metric_id"]]
+
+
+class AggregationTests(unittest.TestCase):
+    def test_geometric_mean_for_climate(self):
+        request = build_request()
+        use_aggregation(request, "climate_risk", "weighted_geometric")
+        set_indicator_score(request, "51107", "wildfire_bp_national_pct", 90)
+        set_indicator_score(request, "51107", "inland_flood_eal_national_pct", 10)
+        recommendation = call_recommend(request)["recommendations"]["records"][0]
+        self.assertAlmostEqual(recommendation["dimension_scores"]["climate_risk"], 0.30)
+        # An arithmetic mean would give 0.50; the geometric mean penalizes the poor flood score.
+        self.assertAlmostEqual(recommendation["score_0_100"], 40 + 100 * (0.30 - 0.40) / 8)
+        climate = [item for item in recommendation["metric_contributions"] if item["dimension_id"] == "climate_risk"]
+        self.assertTrue(all(item["contribution_points"] is None for item in climate))
+
+    def test_min_for_water(self):
+        request = build_request()
+        use_aggregation(request, "water", "min")
+        set_indicator_score(request, "51107", "baseline_water_stress", 90)
+        set_indicator_score(request, "51107", "future_water_stress_2050", 20)
+        recommendation = call_recommend(request)["recommendations"]["records"][0]
+        self.assertAlmostEqual(recommendation["dimension_scores"]["water"], 0.20)
+        self.assertAlmostEqual(recommendation["score_0_100"], 40 + 100 * (0.20 - 0.40) / 8)
+
+    def test_weighted_geometric_land_uses_local_weights(self):
+        request = build_request()
+        use_aggregation(
+            request,
+            "land_ecology",
+            "weighted_geometric",
+            {"low_impervious_share": 0.5, "protected_gap12_share": 0.25, "wetland_share": 0.25},
+        )
+        set_indicator_score(request, "51107", "low_impervious_share", 100)
+        recommendation = call_recommend(request)["recommendations"]["records"][0]
+        self.assertAlmostEqual(recommendation["dimension_scores"]["land_ecology"], 1.0**0.5 * 0.4**0.25 * 0.4**0.25)
+
+    def test_equal_utilities_give_same_score_for_every_method(self):
+        request = build_request()
+        use_aggregation(request, "climate_risk", "weighted_geometric")
+        use_aggregation(request, "water", "min")
+        recommendation = call_recommend(request)["recommendations"]["records"][0]
+        self.assertAlmostEqual(recommendation["score_0_100"], 40)
+
+    def test_dimension_contributions_sum_to_total(self):
+        request = build_request()
+        use_aggregation(request, "climate_risk", "weighted_geometric")
+        use_aggregation(request, "water", "min")
+        set_indicator_score(request, "51107", "wildfire_bp_national_pct", 80)
+        set_indicator_score(request, "51107", "future_water_stress_2050", 15)
+        set_indicator_score(request, "51107", "interstate_distance_km", 95)
+        recommendation = call_recommend(request)["recommendations"]["records"][0]
+        points = [item["contribution_points"] for item in recommendation["dimension_contributions"]]
+        self.assertEqual(len(points), 8)
+        self.assertAlmostEqual(sum(points), recommendation["score_0_100"])
+        transport = [item for item in recommendation["metric_contributions"] if item["dimension_id"] == "transportation"]
+        transport_dimension = next(
+            item for item in recommendation["dimension_contributions"] if item["dimension_id"] == "transportation"
+        )
+        self.assertAlmostEqual(sum(item["contribution_points"] for item in transport), transport_dimension["contribution_points"])
+
+    def test_dimension_score_that_ignores_declared_aggregation_is_rejected(self):
+        request = build_request()
+        set_indicator_score(request, "51107", "wildfire_bp_national_pct", 90)
+        set_indicator_score(request, "51107", "inland_flood_eal_national_pct", 10)
+        # Dimension score was computed as an arithmetic mean (0.50); the config now says geometric.
+        use_aggregation(request, "climate_risk", "weighted_geometric")
+        with self.assertRaises(ContractError):
+            call_recommend(request)
+
+    def test_unknown_aggregation_is_rejected(self):
+        request = build_request()
+        use_aggregation(request, "water", "median")
+        with self.assertRaises(ContractError):
+            call_recommend(request)
+
+    def test_aggregation_for_unknown_dimension_is_rejected(self):
+        request = build_request()
+        use_aggregation(request, "heat_reuse", "min")
+        with self.assertRaises(ContractError):
+            call_recommend(request)
+
+
 class GateToggleTests(unittest.TestCase):
     def test_gates_disabled_ranks_without_profile_or_evidence(self):
         request = build_request(("51107", "51013"), gates_enabled=False)

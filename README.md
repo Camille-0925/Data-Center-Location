@@ -62,7 +62,7 @@ PYTHONPATH=src python3 -m dc_locator.decision recommend \
 
 | Step | Module | Status |
 |---|---|---|
-| ④ | Decision matrix (`src/dc_locator/decision/`) | ✅ Done: 8 dimensions, config-driven, 25 tests |
+| ④ | Decision matrix (`src/dc_locator/decision/`) | ✅ Done: 8 dimensions, config-driven, mean / geometric / min aggregation, 33 tests |
 | ③ | Dimension weights from customer inputs | ⏳ Next |
 | ② | Indicator scoring and within-dimension weights | ⏳ |
 | ① | Data preparation | ⏳ |
