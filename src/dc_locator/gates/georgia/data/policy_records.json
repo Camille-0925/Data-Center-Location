@@ -1,0 +1,45 @@
+[
+  {
+    "record_id": "GA_POLICY_CHEROKEE_2026",
+    "county_fips": "13057",
+    "jurisdiction": "unincorporated Cherokee County",
+    "kind": "temporary_moratorium",
+    "effective_date": "2026-08-18",
+    "certain_active_through": "2027-02-13",
+    "possible_active_through": "2027-02-16",
+    "expiry_is_derived": true,
+    "expiry_derivation": "Official notice gives a 180-day extension but no exact expiry. Bounds: Aug 18 + 180 days through original Aug 20 expiry + 180 days. Verify resolution for exact boundary.",
+    "source_ids": [
+      "cherokee_moratorium"
+    ],
+    "note": "Does not apply automatically to incorporated cities; county risk flag only, no county exclusion."
+  },
+  {
+    "record_id": "GA_POLICY_CLAYTON_2025",
+    "county_fips": "13063",
+    "jurisdiction": "unincorporated Clayton County",
+    "kind": "temporary_moratorium",
+    "effective_date": "2025-09-03",
+    "certain_active_through": "2025-12-31",
+    "possible_active_through": "2025-12-31",
+    "expiry_is_derived": false,
+    "source_ids": [
+      "clayton_moratorium"
+    ],
+    "note": "Expired documented restriction; no claim that later policy has been fully searched."
+  },
+  {
+    "record_id": "GA_POLICY_ATHENS_2026",
+    "county_fips": "13059",
+    "jurisdiction": "Athens-Clarke County unified government",
+    "kind": "temporary_moratorium",
+    "effective_date": "2026-03-03",
+    "certain_active_through": "2026-06-05",
+    "possible_active_through": "2026-06-05",
+    "expiry_is_derived": false,
+    "source_ids": [
+      "athens_minutes"
+    ],
+    "note": "Expired documented extension; later amendments/extensions require rechecking."
+  }
+]

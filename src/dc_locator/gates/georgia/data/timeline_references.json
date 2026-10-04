@@ -1,0 +1,55 @@
+[
+  {
+    "record_id": "GA_TIMELINE_gp_grassy",
+    "county_fips": [
+      "13015"
+    ],
+    "source_ids": [
+      "gp_grassy"
+    ],
+    "survey_start_quarter": "Q4 2023",
+    "planned_completion_quarter": "Q1 2027",
+    "start_date_bounds": [
+      "2023-10-01",
+      "2023-12-31"
+    ],
+    "completion_date_bounds": [
+      "2027-01-01",
+      "2027-03-31"
+    ],
+    "duration_days_lower": 1097,
+    "duration_days_upper": 1277,
+    "duration_days_midpoint": 1187.0,
+    "stage": "projected_schedule_not_completed_history",
+    "start_milestone": "landowner_survey_notification",
+    "end_milestone": "transmission_project_completion_not_customer_energization",
+    "note": "Tentative utility schedule; new-project comparison assumes comparable planning stage and infrastructure scope."
+  },
+  {
+    "record_id": "GA_TIMELINE_gp_speedway",
+    "county_fips": [
+      "13151",
+      "13063"
+    ],
+    "source_ids": [
+      "gp_speedway"
+    ],
+    "survey_start_quarter": "Q3 2025",
+    "planned_completion_quarter": "Q4 2028",
+    "start_date_bounds": [
+      "2025-07-01",
+      "2025-09-30"
+    ],
+    "completion_date_bounds": [
+      "2028-10-01",
+      "2028-12-31"
+    ],
+    "duration_days_lower": 1097,
+    "duration_days_upper": 1279,
+    "duration_days_midpoint": 1188.0,
+    "stage": "projected_schedule_not_completed_history",
+    "start_milestone": "landowner_survey_notification",
+    "end_milestone": "transmission_project_completion_not_customer_energization",
+    "note": "Tentative utility schedule; new-project comparison assumes comparable planning stage and infrastructure scope."
+  }
+]

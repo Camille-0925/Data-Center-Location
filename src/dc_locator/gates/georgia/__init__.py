@@ -1,0 +1,1 @@
+"""Georgia feasibility gate module."""

@@ -1,0 +1,37 @@
+{
+  "counts": {
+    "counties": 159,
+    "dri_projects": 39,
+    "counties_with_dri": 18,
+    "load_references": 11,
+    "counties_with_load_reference": 10,
+    "utility_timeline_references": 2,
+    "local_approval_records": 2,
+    "policy_records": 3,
+    "downloaded_originals": 136,
+    "failed_downloads": 3
+  },
+  "directory_source": {
+    "filename": "Virginia_Georgia_八维18指标_FCC更新.xlsx",
+    "sha256": "d157da517f26b2cc1324395753b703ebab37e1afa43a83541c8b626bcec858b1",
+    "sheet": "Georgia",
+    "columns": [
+      "FIPS",
+      "County",
+      "State"
+    ]
+  },
+  "as_of": "2026-10-04",
+  "limitations": [
+    "Named-project/technological-category DRI search is not a complete census of all Georgia data centers.",
+    "Only two utility projected timelines are used; no completed-energization statistical model.",
+    "No county spare capacity, parcel zoning eligibility or committed delivery date is claimed.",
+    "Local policy research covers identified sources, not all 159 county and city ordinance systems."
+  ],
+  "originals_directory": "../Feasibility_Gates_Georgia",
+  "validation": {
+    "meaningful_test_cases": 17,
+    "status": "passed",
+    "assessed_date": "2026-10-04"
+  }
+}
