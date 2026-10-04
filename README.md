@@ -10,7 +10,7 @@ Where should America's next sustainable AI data center be built? This project sc
 ① data_prep           county indicator table → long table (one row = county × indicator)
 ② indicator_scoring   raw value → utility score u (0–100); within-dimension weights ω → dimension score D (0–1)
 ③ dimension_weights   4 customer inputs → dimension weights w
-④ decision            n × 8 matrix D + 8 weights w → Score = 100 × Σ w_k · D_k, rank, Pareto status, trade-offs
+④ decision            D (n × 8) + φ (8) + I (8 × 8) → Choquet score 100 × [Σ φ_k·D_k − ½ Σ I_kl·|D_k − D_l|], rank, Pareto
 ```
 
 | Dimension | Indicators |
@@ -70,12 +70,12 @@ PYTHONPATH=src python3 -m dc_locator.decision recommend \
 
 | Step | Module | Status |
 |---|---|---|
-| ④ | Decision matrix (`src/dc_locator/decision/`) | ✅ Done: n × 8 dimension scores + 8 weights → score, rank, Pareto; 28 tests |
+| ④ | Decision matrix (`src/dc_locator/decision/`) | ✅ Done: n × 8 dimension scores + weights φ + optional interactions I → score, rank, Pareto; 38 tests |
 | ② (part) | Indicator → dimension aggregation (`src/dc_locator/indicator_scoring/aggregation.py`) | ✅ mean / geometric / min; 8 tests |
 | ③a | Dimension weights from customer inputs (`src/dc_locator/dimension_weights/`) | ✅ AHP base + 4 customer inputs; 17 tests |
 | ③c | DEMATEL causal matrix (`src/dc_locator/interactions/`) | ✅ cause/effect roles, total-relation matrix; 8 tests |
 | ③d | Correlation matrix + combined 8 × 8 interaction matrix | ⏳ |
-| ④′ | Choquet scoring with interactions in the decision matrix | ⏳ |
+| ④′ | 2-additive Choquet scoring with interactions | ✅ monotonicity enforced; checked against an independent implementation |
 | ② | Indicator scoring and within-dimension weights | ⏳ |
 | ① | Data preparation | ⏳ |
 | — | End-to-end pipeline and documentation | ⏳ |

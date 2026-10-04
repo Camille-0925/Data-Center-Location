@@ -1,9 +1,13 @@
 """Decision matrix: weighted suitability score, ranking, Pareto status, and run comparison.
 
 Input is an n x K matrix of dimension scores (n counties, K dimensions, each score 0-1,
-higher is better) plus K dimension weights that sum to 1:
+higher is better), K dimension weights phi that sum to 1, and optionally a K x K matrix of
+interaction indices I (2-additive Choquet integral; Grabisch 1997, Marichal 2000):
 
-    Score_i = 100 * sum_k w_k * D_ik
+    Score_i = 100 * [ sum_k phi_k * D_ik  -  1/2 * sum_{k<l} I_kl * |D_ik - D_il| ]
+
+I_kl > 0: complementarity (both must be good); I_kl < 0: redundancy (overlapping
+dimensions). With no interactions the score is the weighted sum 100 * sum_k phi_k * D_ik.
 
 Everything below the dimension level (raw indicators, utility functions, how indicators
 combine into a dimension score) belongs to ``dc_locator.indicator_scoring``. The weights
@@ -11,7 +15,7 @@ come from ``dc_locator.dimension_weights``.
 
 Originally written by Adelyn (v0.2: seven dimensions, one indicator each, gates
 required). v0.4 takes dimension scores only, reads the dimension list from the
-configuration, and makes the feasibility gates optional.
+configuration, makes the feasibility gates optional, and adds Choquet interactions.
 
 All public functions consume and return JSON-serializable dictionaries.
 """
@@ -163,11 +167,56 @@ def _validate_scoring_config(scoring_config: Any, context: Mapping[str, Any]) ->
         _require(_finite_number(weight) and weight >= 0, f"invalid weight for {dimension_id}")
     _require(abs(sum(float(weights[d]) for d in order) - 1.0) <= WEIGHT_TOLERANCE, "dimension weights must sum to 1")
 
+    config["_interactions"] = _validate_interactions(config.get("interactions", []), weights, order)
+    if config["_interactions"]:
+        diagnostics.append(
+            f"scoring model: 2-additive Choquet integral with {len(config['_interactions'])} nonzero interaction(s)"
+        )
+
     if context["run_mode"] == "real" and config["status"] == "test_only":
         diagnostics.append("real runs cannot produce a complete recommendation with test_only scoring configuration")
     if config["status"] == "provisional":
         diagnostics.append("weights or scoring anchors are provisional team assumptions")
     return config, list(order), diagnostics
+
+
+def _validate_interactions(
+    interactions: Any, weights: Mapping[str, Any], order: Sequence[str]
+) -> list[tuple[str, str, float]]:
+    """Validate the 2-additive Choquet interaction indices I_kl.
+
+    Each item is {"dimensions": [k, l], "value": I_kl} with I_kl in [-1, 1]:
+    I_kl > 0 complementarity (both must be good), I_kl < 0 redundancy (overlap).
+    The capacity is monotone (a better dimension score never lowers the total) if and
+    only if, for every dimension k,  phi_k >= 1/2 * sum_l |I_kl|  (phi = dimension weights).
+    """
+
+    _require(isinstance(interactions, list), "scoring_config.interactions must be an array")
+    pairs: list[tuple[str, str, float]] = []
+    seen: set[frozenset[str]] = set()
+    load = {d: 0.0 for d in order}
+    for item in interactions:
+        entry = _require_mapping(item, "scoring_config.interactions item")
+        dims = entry.get("dimensions")
+        value = entry.get("value")
+        _require(isinstance(dims, list) and len(dims) == 2, "each interaction needs exactly two dimensions")
+        k, l = dims
+        _require(k in order and l in order, f"interaction refers to an unknown dimension: {dims}")
+        _require(k != l, f"interaction needs two different dimensions: {dims}")
+        _require(frozenset(dims) not in seen, f"interaction listed twice: {dims}")
+        _require(_finite_number(value) and -1 <= value <= 1, f"interaction value for {dims} must be in [-1, 1]")
+        seen.add(frozenset(dims))
+        if value != 0:
+            pairs.append((k, l, float(value)))
+            load[k] += abs(value) / 2
+            load[l] += abs(value) / 2
+    for d in order:
+        _require(
+            float(weights[d]) - load[d] >= -WEIGHT_TOLERANCE,
+            f"interactions break monotonicity for {d}: weight {float(weights[d]):.4f} < "
+            f"half the sum of its |interactions| {load[d]:.4f}",
+        )
+    return pairs
 
 
 def _index_dimension_scores(dimension_scores: Any, order: Sequence[str]) -> dict[str, dict[str, Any]]:
@@ -509,12 +558,17 @@ def _score_candidate(
     config: Mapping[str, Any],
     order: Sequence[str],
     context: Mapping[str, Any],
-) -> tuple[float | None, str, list[dict[str, Any]], list[str]]:
-    """Return (score_0_100, score_status, dimension_contributions, missing_dimension_ids)."""
+) -> tuple[float | None, str, list[dict[str, Any]], list[dict[str, Any]], list[str]]:
+    """Return (score, status, dimension_contributions, interaction_contributions, missing_dimension_ids).
+
+    Score = 100 * [ sum_k phi_k * D_k  -  1/2 * sum_{k<l} I_kl * |D_k - D_l| ]
+    (2-additive Choquet integral in Shapley-interaction form; with no interactions it is
+    the weighted sum). The dimension and interaction contributions add up to the score.
+    """
 
     missing = [dimension_id for dimension_id in order if scores[dimension_id] is None]
     if missing or (context["run_mode"] == "real" and config["status"] == "test_only"):
-        return None, "incomplete", [], missing
+        return None, "incomplete", [], [], missing
     contributions: list[dict[str, Any]] = []
     total = 0.0
     for dimension_id in order:
@@ -530,7 +584,21 @@ def _score_candidate(
                 "contribution_points": points,
             }
         )
-    return total, "complete", contributions, []
+    interaction_contributions: list[dict[str, Any]] = []
+    for k, l, value in config["_interactions"]:
+        gap = abs(float(scores[k]) - float(scores[l]))
+        points = -50.0 * value * gap
+        total += points
+        interaction_contributions.append(
+            {
+                "dimensions": [k, l],
+                "interaction_index": value,
+                "type": "complementarity" if value > 0 else "redundancy",
+                "score_gap": gap,
+                "contribution_points": points,
+            }
+        )
+    return total, "complete", contributions, interaction_contributions, []
 
 
 def _pareto_statuses(dimensions: Mapping[str, Mapping[str, Any]], order: Sequence[str]) -> dict[str, str]:
@@ -614,7 +682,15 @@ def _constant_dimension_diagnostics(
         values = [record["scores"][dimension_id] for record in dimensions.values()]
         if any(value is None for value in values):
             continue
-        if max(values) - min(values) <= RANK_TOLERANCE and float(config["dimension_weights"][dimension_id]) > 0:
+        if max(values) - min(values) > RANK_TOLERANCE:
+            continue
+        linked = [pair for pair in config["_interactions"] if dimension_id in pair[:2]]
+        if linked:
+            messages.append(
+                f"dimension {dimension_id} has the same score for every candidate but takes part in "
+                f"{len(linked)} interaction(s); those terms still vary across candidates"
+            )
+        elif float(config["dimension_weights"][dimension_id]) > 0:
             messages.append(
                 f"dimension {dimension_id} has the same score for every candidate; "
                 "its weight shifts all totals equally and cannot change the ranking"
@@ -676,7 +752,9 @@ def recommend(
         record = dimensions[candidate_id]
         gates = candidate_gates[candidate_id]
         overall_gate = _aggregate_gate_status(gates)
-        score, score_status, contributions, missing = _score_candidate(record["scores"], config, order, context_value)
+        score, score_status, contributions, interaction_points, missing = _score_candidate(
+            record["scores"], config, order, context_value
+        )
         if overall_gate == "fail":
             eligibility = "excluded"
         elif score_status != "complete":
@@ -743,13 +821,15 @@ def recommend(
                 "dimension_scores": dict(record["scores"]),
                 "dimension_weights_used": dict(weights_used),
                 "dimension_contributions": contributions,
+                "interaction_contributions": interaction_points,
                 "tradeoffs": [],
                 "missing_dimension_ids": missing,
                 "critical_unknown": unknowns,
                 "next_check": next_check,
                 "change_conditions": change_conditions,
+                "scoring_model": "choquet_2additive" if config["_interactions"] else "weighted_sum",
                 "limitations": [
-                    f"weighted sum of {len(order)} dimension scores; regional screening, not construction approval",
+                    f"aggregate of {len(order)} dimension scores; regional screening, not construction approval",
                     "eligibility gates depend on evidence scope and verification status"
                     if gates_enabled
                     else "feasibility gates were not evaluated in this run",
