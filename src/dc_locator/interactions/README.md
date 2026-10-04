@@ -46,7 +46,7 @@ The strongest total influences are climate → water (0.527), cooling → water 
 
 Sources: Gabus & Fontela (1972), Battelle Geneva Research Centre; Si, You, Liu & Zhang (2018), "DEMATEL technique: a systematic review", *Mathematical Problems in Engineering*. Citations are from memory; verify before quoting.
 
-The module also exports `pairwise_strength()`: for each pair, (t_kl + t_lk) divided by the largest such sum, giving a 0–1 strength. Step ③d combines it with the data correlation. Currently the strongest two-way link is transportation ↔ workforce (1.00), ahead of climate ↔ water (0.95).
+The module also exports `pairwise_strength()`: for each pair, (t_kl + t_lk) divided by the largest such sum, giving a 0–1 strength. Step ③d combines it with the data correlation. Currently the strongest two-way links are transportation ↔ workforce (1.00), fiber ↔ workforce (0.999), climate ↔ water (0.973) and climate ↔ energy (0.885).
 
 ## Configuration
 
