@@ -1,0 +1,52 @@
+{
+  "version": "interactions_v0.1",
+  "status": "provisional",
+  "notes": "DEMATEL scores are a single-respondent draft (Camille). Each team member should fill the same 8 x 8 table (0 = no direct influence, 1 = low, 2 = medium, 3 = high, 4 = very high); add them as further respondents.",
+  "dimension_order": [
+    "climate_risk",
+    "water",
+    "land_ecology",
+    "fiber_connectivity",
+    "workforce_community",
+    "cooling_climate",
+    "transportation",
+    "energy_carbon"
+  ],
+  "dematel": {
+    "respondents": [
+      {
+        "respondent_id": "camille_draft",
+        "influences": {
+          "climate_risk": {"water": 3, "cooling_climate": 2, "energy_carbon": 2, "land_ecology": 1, "transportation": 1},
+          "cooling_climate": {"energy_carbon": 3, "water": 3},
+          "energy_carbon": {"water": 2, "climate_risk": 1},
+          "water": {"energy_carbon": 1},
+          "land_ecology": {"climate_risk": 1, "water": 1},
+          "fiber_connectivity": {"workforce_community": 2},
+          "workforce_community": {"fiber_connectivity": 2, "transportation": 2},
+          "transportation": {"workforce_community": 2, "fiber_connectivity": 2, "land_ecology": 1}
+        },
+        "rationale": {
+          "climate_risk -> water": "Drought and heat raise water stress",
+          "climate_risk -> cooling_climate": "More extreme heat raises peak cooling load",
+          "climate_risk -> energy_carbon": "Extreme weather stresses grid reliability and prices",
+          "climate_risk -> land_ecology": "Flood-prone land and wetlands constrain developable land",
+          "climate_risk -> transportation": "Floods and storms disrupt road and rail access",
+          "cooling_climate -> energy_carbon": "Higher cooling load raises PUE, electricity use and emissions",
+          "cooling_climate -> water": "Evaporative cooling consumes more water in hot climates",
+          "energy_carbon -> water": "Thermoelectric generation withdraws and consumes water",
+          "energy_carbon -> climate_risk": "Emissions contribute to long-run climate change (weak at regional scale)",
+          "water -> energy_carbon": "Water scarcity can curtail thermoelectric plants",
+          "land_ecology -> climate_risk": "Wetlands and low impervious cover buffer flooding",
+          "land_ecology -> water": "Land cover affects watershed recharge and runoff",
+          "fiber_connectivity -> workforce_community": "Connectivity attracts technical employers and workers",
+          "workforce_community -> fiber_connectivity": "Population and businesses justify fiber build-out",
+          "workforce_community -> transportation": "Population centres receive road and rail investment",
+          "transportation -> workforce_community": "Highway access widens the commuting labour shed",
+          "transportation -> fiber_connectivity": "Long-haul fiber is laid along highway and rail rights-of-way",
+          "transportation -> land_ecology": "Transport corridors drive development of open land"
+        }
+      }
+    ]
+  }
+}
