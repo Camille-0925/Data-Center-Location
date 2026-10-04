@@ -37,7 +37,7 @@ Customer inputs that adjust the dimension weights: **cooling type**, **latency s
 │   ├── data_prep/            ① data preparation
 │   ├── indicator_scoring/    ② utilities, within-dimension weights, dimension scores
 │   ├── dimension_weights/    ③ customer inputs → dimension weights
-│   └── decision/             ④ decision matrix (matrix.py, CLI)
+│   └── decision/             ④ decision matrix (matrix.py, CLI) — see its README.md
 ├── scripts/                  end-to-end pipeline scripts
 ├── tests/                    unit tests and fixtures
 ├── outputs/                  run outputs (not tracked)
