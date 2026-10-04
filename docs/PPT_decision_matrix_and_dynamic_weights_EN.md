@@ -1,7 +1,7 @@
 # Slide brief: the decision matrix and customer-driven dynamic weights
 
 > For the teammates building the slides. Each section is one slide, with a **suggested title**, **on-slide points**, **formulas**, **suggested visual** and **speaker notes**.
-> All numbers come from actual runs of the repository (default customer, draft single-respondent judgments). After the team scoring session, rerun and update them; see the last section.
+> All numbers come from actual runs of the repository (default customer: 100 MW by 2029-12-31; draft single-respondent judgments). They include Adelyn's indicator scoring, temporal robustness and safety margin (`docs/SCORING_ADJUSTMENTS.md`) and the feasibility gates. After the team scoring session, rerun and update them; see the last section.
 > Code: `src/dc_locator/decision/`, `dimension_weights/`, `interactions/`, `validation/`.
 > A Chinese–English version with the same content is in `docs/PPT_决策矩阵与动态权重.md`.
 
@@ -13,7 +13,10 @@
 |---|---|---|
 | i | County | 133 in Virginia, 159 in Georgia |
 | k, l | Dimension | 8 |
-| D_ik | Score of county i on dimension k | 0–1, higher is better |
+| D_ik | Base score of county i on dimension k (equal-weight mean of its indicator utilities) | 0–1, higher is better |
+| Dᴿ_ik | Dimension score after the temporal-robustness adjustment | 0–1 |
+| A_M,i | Safety-margin factor | 0.80–1 |
+| F_i | Feasibility flag (gates) | 0 / 1 / unresolved |
 | w0_k | Base weight from team judgment (AHP) | sums to 1 |
 | M_k | Multiplier that the customer's needs put on dimension k | > 0, 1 by default |
 | φ_k | Final dimension weight (importance in the Choquet integral) | sums to 1 |
@@ -31,17 +34,22 @@ The 8 dimensions: Climate risk, Water, Land & ecology, Fiber, Workforce & commun
 **On slide (flow diagram)**:
 
 ```
+County data (18 indicators) ──► utilities U ──► dimension scores D ──► climate projections ──► Dᴿ (n × 8)
 Customer needs (4 questions) ──► dynamic weights φ (8)
-Team judgment (DEMATEL) ─┐
-County data (correlation) ┴──► interaction matrix I (8 × 8)
-County data (18 indicators) ──► dimension scores D (n × 8)
+Team judgment (DEMATEL) + county data (correlation) ──► interaction matrix I (8 × 8)
                                          │
-                       Choquet decision matrix: D, φ, I ──► score, rank, robustness
+              Choquet suitability Sᴿ(Dᴿ, φ, I) × safety margin A_M × feasibility F ──► final score, rank, robustness
 ```
 
+**The one formula of the deck**:
+
+$$
+\text{FinalScore}_i = F_i \times S^{R}_i \times A_{M,i}
+$$
+
 **Speaker notes**:
-- Each input answers one question. The customer's needs decide what matters (φ). Team judgment plus data decide how the dimensions affect each other (I). County data say how each county performs on each dimension (D).
-- The three meet in the decision matrix, which produces each county's score.
+- Four questions are answered in separate layers instead of one weighted average: **suitability** Sᴿ (how attractive overall), **feasibility** F (any non-negotiable obstacle?), **safety margin** A_M (how far from the weakest boundary?), and **temporal robustness** (how much will the climate deteriorate, applied to the affected dimensions).
+- The customer's needs decide what matters (φ). Team judgment plus data decide how the dimensions affect each other (I). County data and climate projections say how each county performs on each dimension (Dᴿ).
 
 **Visual**: the flow diagram above, with the three kinds of input in three colours.
 
@@ -58,12 +66,12 @@ County data (18 indicators) ──► dimension scores D (n × 8)
 **Formula (large, centred)**:
 
 $$
-\text{Score}_i = 100 \times \Big[\underbrace{\sum_{k} \varphi_k D_{ik}}_{\text{each dimension on its own}} \;-\; \underbrace{\tfrac{1}{2}\sum_{k<l} I_{kl}\,\lvert D_{ik}-D_{il}\rvert}_{\text{interactions between dimensions}}\Big]
+S^{R}_i = 100 \times \Big[\underbrace{\sum_{k} \varphi_k D^{R}_{ik}}_{\text{each dimension on its own}} \;-\; \underbrace{\tfrac{1}{2}\sum_{k<l} I_{kl}\,\lvert D^{R}_{ik}-D^{R}_{il}\rvert}_{\text{interactions between dimensions}}\Big]
 $$
 
 **Speaker notes**:
 - This is the **2-additive Choquet integral** (Grabisch 1997), the standard multi-criteria method for criteria that are not independent.
-- The first term is the familiar weighted sum; the second term corrects for interactions.
+- The first term is the familiar weighted sum; the second term corrects for interactions. The matrix receives the robustness-adjusted scores Dᴿ (slide 10), and its output Sᴿ is multiplied by the safety margin A_M (slide 11) to give the final score.
 - When every I is 0, the formula **reduces to the weighted sum**. The conventional method is a special case of our model.
 
 **Visual**: an n × 8 heat-map table (rows = counties, columns = dimensions, colour = D), with a row of 8 weights beside it and an arrow to "Score".
@@ -202,9 +210,10 @@ M_k is the product of the multipliers that the customer's answers put on dimensi
 | Energy & carbon | 0 | 0 |
 
 **How the ranking responds (Virginia, one answer changed at a time; full table in `outputs/validation_VA/customer_input_response.csv`)**:
-- Air economizer, high latency sensitivity, or operations first: #1 changes from Loudoun to **Washington County**.
-- Closed-loop liquid cooling: #1 becomes **Louisa County**.
-- Each answer replaces 0 to 2 counties in the top 10.
+- Default customer: #1 is **Louisa County**.
+- Evaporative cooling, low latency sensitivity, high reliability, or sustainability first: #1 becomes **Loudoun County**.
+- Each answer replaces 1 to 2 counties in the top 10.
+- Georgia: default #1 is **Fayette County**; with high latency sensitivity it becomes **Upson County**.
 
 **Speaker notes**: whenever the customer changes an answer, the weights are recomputed by the formula and the ranking updates. The system also reports which answer changed which weight, and by how much.
 
@@ -234,17 +243,17 @@ M_k is the product of the multipliers that the customer's answers put on dimensi
 - In one line: **climate is the root driver; water and energy are where its effects land.**
 
 **"Data veto" example (highlight box)**:
-> We assumed fiber and workforce overlap, since both seem to track urbanization. In both states, business fiber coverage is **negatively** correlated with labor force (Virginia ρ = −0.20, Georgia ρ = −0.17), so the model dropped that interaction automatically.
+> We assumed fiber and workforce overlap, since both seem to track urbanization. In both states the fiber and workforce dimensions are **negatively** correlated (Virginia ρ = −0.13, Georgia ρ = −0.15), so the model dropped that interaction automatically.
 
 **Current interaction matrix (default customer)**:
 
 | Interaction | Type | Virginia | Georgia |
 |---|---|---|---|
-| Climate ↔ Water | complementarity | +0.078 | +0.048 |
-| Cooling ↔ Water | complementarity | +0.064 | +0.040 |
-| Transport ↔ Workforce | redundancy | −0.054 | −0.037 |
-| Fiber ↔ Transport | redundancy | dropped (ρ < 0) | −0.017 |
-| Fiber ↔ Workforce | redundancy | dropped | dropped |
+| Climate ↔ Water | complementarity | +0.060 | +0.051 |
+| Cooling ↔ Water | complementarity | +0.049 | +0.042 |
+| Transport ↔ Workforce | redundancy | −0.034 | −0.036 |
+| Fiber ↔ Transport | redundancy | −0.020 | −0.018 |
+| Fiber ↔ Workforce | redundancy | dropped (ρ < 0) | dropped (ρ < 0) |
 
 ---
 
@@ -269,7 +278,57 @@ $$
 
 ---
 
-## Slide 10: Completeness 2 — robustness checks
+## Slide 10: Temporal robustness — penalize projected deterioration (Adelyn)
+
+**Title**: *Temporal robustness: penalize projected deterioration*
+
+**On slide**:
+- Data: CMRA 2025 county climate projections, **RCP8.5 mid-century** vs the historical mean. A conservative stress test, not a forecast.
+- Only deterioration counts: Δ = max(0, future − historical); improvement earns nothing.
+- Δ becomes a percentile p across the 292 Virginia and Georgia counties (ties get the average rank).
+- **One factor per affected dimension**, never combined into a global factor:
+
+| Climate change (RCP8.5 mid-century vs historical) | Dimension | Formula |
+|---|---|---|
+| More days above 90°F | Cooling climate | Dᴿ = D × (1 − 0.20·p_heat) |
+| Longer dry spells | Water | Dᴿ = D × (1 − 0.20·p_dry) |
+| More days with ≥ 2 inches of rain | Climate risk | Dᴿ = D × (1 − 0.20·p_rain) |
+
+**Speaker notes**:
+- A data center runs for 20–30 years; today's climate is not enough.
+- These three variables are exogenous physical changes (not local policy), available for every county in both states, and directly linked to cooling, water supply and drainage.
+- Aqueduct 2050 water stress is not reused as a second water factor: it is already in the water dimension and the margin, so using it again would double count.
+- The factors do not depend on the customer's weights, so they are precomputed per county; changing the weights never requires recomputing them.
+
+**Visual**: three state maps, one per factor, or a diagram "one climate change → one dimension".
+
+---
+
+## Slide 11: Weakest-link margin and feasibility gates (Adelyn + gates)
+
+**Title**: *Weakest-link margin and feasibility gates*
+
+**Safety-margin formula**:
+
+$$
+m_{ik} = \frac{U_{ik}}{100},\qquad
+A_{M,i} = 1 - \lambda_M\Big(1-\min_{k} m_{ik}\Big),\qquad \lambda_M = 0.20
+$$
+
+**On slide**:
+- Suitability is average performance and cannot tell whether a county sits **right at a boundary** on one indicator. The margin looks at the **weakest of the 18 indicators** and removes up to 20%.
+- Only the minimum is used; the 18 factors are never multiplied, so adding indicators does not compound the penalty.
+- **Case**: Loudoun has Virginia's highest suitability (82.76), but its distance to rail reaches the boundary (utility 0), so its margin factor is 0.80 and its final score 66.21. Louisa has suitability 77.76 and margin 0.855, final **66.48, #1**.
+- **Feasibility F** (gate modules, run with the customer's MW and target date): power availability, time to power, permitting/zoning.
+  - Virginia (100 MW by 2029-12-31): 98 counties with no obvious risk, 33 with insufficient reference data, 2 with a permitting risk.
+  - Georgia: 154 / 4 / 1.
+- Gate results are screening signals, not verified pass/fail evidence, so by default they flag but do not exclude (every county is Conditional). A strict option excludes counties with a detected risk and re-ranks the rest.
+
+**Speaker notes**: the layers separate what may be traded off from what may not. Suitability lets dimensions compensate; the margin looks at the weakest indicator and does not; feasibility is a hard gate.
+
+---
+
+## Slide 12: Completeness 2 — robustness checks
 
 **Title**: *Is the answer robust?*
 
@@ -277,22 +336,24 @@ $$
 
 | Check | Virginia | Georgia |
 |---|---|---|
-| Choquet vs weighted sum | Same #1, 9 of top 10 shared, ρ = 0.995 | Same #1, 9 of top 10 shared, ρ = 0.992 |
-| SMAA-2 (10,000 weight sets, random κ) | Loudoun #1 in 57% of cases, Washington 36%; both in the top 10 over 98% of the time | Dade 38%, Candler 20%; top three are in the top 10 75–79% of the time |
-| Six weighting methods | AHP and ROC pick Loudoun; equal, CRITIC, entropy and DEMATEL weights pick Washington | Methods disagree strongly (ρ 0.19–0.94) |
-| Effective weights (share of score variance) | Water 0.49, fiber 0.33 | **Water 0.66** |
-| Value-function shape (exponential, ρ = ±2) | 8–9 of top 10 shared, same #1 | 8 of top 10 shared |
+| Choquet vs weighted sum | Same #1, 9 of top 10 shared, ρ = 0.994 | Same #1, 8 of top 10 shared, ρ = 0.991 |
+| SMAA-2 (10,000 samples; weights, κ, λ_R and λ_M all random) | #1: Loudoun 37%, Louisa 33%, Washington 21%. Top 10: Louisa 100%, Washington 98%, Loudoun 98% | #1: Fayette 52%, Upson 27%. Top 10: both about 94%, the next county only 64% |
+| Lowest 90th-percentile regret | Louisa (4.9 points) | Fayette (4.7 points) |
+| Six weighting methods | AHP picks Louisa, ROC Loudoun; equal, CRITIC and entropy pick Washington (ρ 0.86–0.99) | AHP, equal, ROC and DEMATEL weights all pick Fayette (ρ 0.23–0.99) |
+| Effective weights (share of final-score variance) | Water 0.42, fiber 0.34 | Water 0.51, fiber 0.34 |
+| Value-function shape (exponential, ρ = ±2) | 7–9 of top 10 shared | 5 of top 10 shared |
 
 **Speaker notes**:
-- **Virginia is robust.** Loudoun and Washington County are the two robust leaders, and the customer inputs show exactly when Washington overtakes.
-- **Georgia is weight-sensitive.** Its ranking is driven mainly by water stress, so we recommend a shortlist (Dade, Candler, Sumter) rather than a single winner. We do not hide this uncertainty.
+- **Virginia**: Louisa, Loudoun and Washington form a robust leading group. Louisa has the lowest regret and is the safest choice; Loudoun is most often #1 but has a weakest-link exposure (rail distance) that the margin penalizes.
+- **Georgia**: Fayette and Upson are clear leaders, followed by a gap. Below them, the order depends on the water weight and the value-function shape, so it is presented as a shortlist. We do not hide this uncertainty.
+- SMAA also perturbs Adelyn's 20% robustness and margin coefficients (sampled between 10% and 30%). With both fixed at 0.20 it reproduces the pipeline exactly (tested).
 - Methods: SMAA-2 (Lahdelma & Salminen 2001); CRITIC (Diakoulaki et al. 1995); ROC (Barron & Barrett 1996).
 
 **Visual**: stacked bar chart of rank acceptability (probability that each county takes rank 1, 2, 3, …); data in `outputs/validation_<state>/smaa_rank_acceptability.csv`.
 
 ---
 
-## Slide 11: What is new
+## Slide 13: What is new
 
 **Title**: *What is new*
 
@@ -300,16 +361,20 @@ $$
 2. **Dimensions are not assumed independent.** A Choquet integral models complementarity and redundancy; the conventional weighted sum is a special case.
 3. **Judgment and data are fused, and data can veto.** DEMATEL captures causal structure; the correlation matrix tests claimed redundancies, and unsupported ones are dropped automatically.
 4. **Explainability with mathematical guarantees.** Monotonicity has a necessary and sufficient condition that is enforced; every score decomposes exactly into dimensions and interactions.
-5. **Uncertainty stated openly.** Conclusions are expressed as probabilities (SMAA) rather than a single ranking, together with the conditions under which they hold or change.
+5. **Layers instead of one average.** Suitability may compensate; the margin looks at the weakest indicator; each projected climate change touches exactly one dimension; feasibility is a hard gate. Every layer has an explicit rule against double counting.
+6. **Uncertainty stated openly.** Conclusions are expressed as probabilities (SMAA) rather than a single ranking, together with the conditions under which they hold or change.
 
 ---
 
-## Slide 12: Limitations (can go in the appendix)
+## Slide 14: Limitations (can go in the appendix)
 
 - AHP, DEMATEL and the interaction types are currently **single-respondent drafts**; rerun after the team scoring session.
 - Energy and carbon data are state-level and cannot separate counties within a state; utility-level data would fix this.
 - The 2-additive model captures pairwise interactions only, not three-way ones. This is the standard trade-off between expressiveness and the number of parameters a team can justify (28 pairs for 8 dimensions).
-- The model is a regional screen and does not approve construction on a specific site. The gate module checks power, time-to-power and permitting risks.
+- The 20% margin cap and the three 20% robustness caps are policy parameters; SMAA varies them between 10% and 30%.
+- Robustness percentiles are relative to the 292 Virginia and Georgia counties and must be recomputed if the comparison set changes.
+- Gate results are screening signals, not verified pass/fail evidence, so by default no county is excluded.
+- The model is a regional screen and does not approve construction on a specific site.
 
 ---
 
@@ -320,8 +385,10 @@ cd final
 PYTHONPATH=src python3 -m dc_locator.dimension_weights                     # slides 5–7: weights
 PYTHONPATH=src python3 -m dc_locator.dimension_weights --cooling_type evaporative --priority sustainability
 PYTHONPATH=src python3 -m dc_locator.interactions dematel                  # slide 8: DEMATEL
-PYTHONPATH=src python3 -m dc_locator.pipeline --state VA                   # slides 8–9: interactions and ranking
-PYTHONPATH=src python3 -m dc_locator.validation --state VA                 # slides 7 and 10 (same for GA)
+PYTHONPATH=src python3 -m dc_locator.pipeline --state VA                   # slides 8–11: interactions, ranking, margin, gates
+PYTHONPATH=src python3 -m dc_locator.validation --state VA                 # slides 7 and 12 (same for GA)
 ```
+
+Full robustness and margin formulas: `docs/SCORING_ADJUSTMENTS.md`.
 
 References (from memory; verify before putting them on slides): Grabisch (1997) *Fuzzy Sets and Systems* 92(2); Marichal (2000) *IEEE Trans. Fuzzy Systems* 8(6); Saaty (1980) *The Analytic Hierarchy Process*; Forman & Peniwati (1998) *EJOR* 108(1); Gabus & Fontela (1972) Battelle Geneva; Lahdelma & Salminen (2001) *Operations Research* 49(3); Diakoulaki et al. (1995) *Computers & OR* 22(7); Barron & Barrett (1996) *Management Science* 42(11).

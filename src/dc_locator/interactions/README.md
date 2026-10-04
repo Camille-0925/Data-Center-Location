@@ -66,20 +66,20 @@ PYTHONPATH=src python3 -m unittest tests.interactions.test_interaction_matrix -v
 
 **Scale.** I = κ · λ_max · (sign · s). Here λ_max is the largest scale that keeps the score monotone for the customer's weights φ (φ_k ≥ ½ Σ_l |I_kl| for every k). κ = 0.5 sets the interaction intensity to half the admissible maximum and is varied in the robustness analysis. Dimensions with weight 0 (energy within a state) get no interactions.
 
-**Result with the draft judgments (default customer):**
+**Result with the draft judgments (default customer).** Correlations are computed on the robustness-adjusted dimension scores that the pipeline actually ranks (indicator scoring v0.3, see `docs/SCORING_ADJUSTMENTS.md`):
 
-| Pair | Type | DEMATEL | ρ VA | ρ GA | I (VA) | I (GA) |
-|---|---|---|---|---|---|---|
-| climate ↔ water | complementarity | 0.97 | −0.42 | −0.11 | +0.078 | +0.048 |
-| cooling ↔ water | complementarity | 0.80 | 0.55 | −0.30 | +0.064 | +0.040 |
-| transport ↔ workforce | redundancy | 1.00 | 0.35 | 0.49 | −0.054 | −0.037 |
-| fiber ↔ workforce | redundancy | 1.00 | −0.20 | −0.17 | dropped | dropped |
-| fiber ↔ transport | redundancy | 0.65 | −0.11 | 0.05 | dropped | −0.017 |
-| cooling ↔ energy, climate ↔ energy | complementarity | 0.76, 0.89 | — | — | dropped (energy weight 0 within a state) | |
+| Pair | Type | I (VA) | I (GA) |
+|---|---|---|---|
+| climate ↔ water | complementarity | +0.060 | +0.051 |
+| cooling ↔ water | complementarity | +0.049 | +0.042 |
+| transport ↔ workforce | redundancy | −0.034 | −0.036 |
+| fiber ↔ transport | redundancy | −0.020 | −0.018 |
+| fiber ↔ workforce | redundancy | dropped (ρ ≤ 0 in both states) | dropped |
+| cooling ↔ energy, climate ↔ energy | complementarity | dropped (energy weight 0 within a state) | dropped |
 
-The data overruled one of our priors. We expected fiber and workforce to overlap, since both seem to track urbanization, but business fiber coverage is *negatively* correlated with labor force in both states. So that redundancy is not applied. Judgment proposes; data can veto.
+The data overruled one of our priors. We expected fiber and workforce to overlap, since both seem to track urbanization, but the data show no positive correlation in either state. So that redundancy is not applied. Judgment proposes; data can veto. Exact correlations for any run are saved in `outputs/<run_id>/interactions.json`.
 
-**Effect on the ranking.** With κ = 0.5, Choquet and the plain weighted sum pick the same #1 in both states, share 9 of the top 10, and have Spearman rank correlation 0.99. Interactions refine scores by up to about ±2 points; they do not overturn the result. Robustness to κ is tested in step ③b.
+**Effect on the ranking.** With κ = 0.5, Choquet and the plain weighted sum (both with the robustness and margin adjustments) pick the same #1 in both states, share 9 (VA) and 8 (GA) of the top 10, and have Spearman rank correlations of 0.994 and 0.991. Interactions refine scores by a few points; they do not overturn the result. Robustness to κ is tested in step ③b.
 
 ## Configuration
 

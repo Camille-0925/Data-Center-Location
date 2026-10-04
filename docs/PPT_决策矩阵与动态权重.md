@@ -1,7 +1,7 @@
 # PPT 素材：决策矩阵与客户需求驱动的动态权重
 
 > 用途：给负责做 PPT 的组员。每一节对应一页幻灯片，包括 **建议标题（英文，直接放到幻灯片上）**、**页面要点**、**公式**、**建议配图** 和 **讲稿要点（中文）**。
-> 文中所有数字都来自 repo 的实际运行结果（默认客户、单人初稿判断）。团队打分后需要重跑并更新数字，见最后一节。
+> 文中所有数字都来自 repo 的实际运行结果（默认客户：100 MW、2029-12-31；单人初稿判断）。已融合 Adelyn 的指标打分、时间稳健性和安全边际（`docs/SCORING_ADJUSTMENTS.md`），以及 Gate 模块。团队打分后需要重跑并更新数字，见最后一节。
 > 代码位置：`src/dc_locator/decision/`、`dimension_weights/`、`interactions/`、`validation/`。
 > 纯英文版见 `docs/PPT_decision_matrix_and_dynamic_weights_EN.md`。
 
@@ -13,7 +13,10 @@
 |---|---|---|
 | i | 县（county） | VA 133 个，GA 159 个 |
 | k, l | 维度 | 8 个 |
-| D_ik | 县 i 在维度 k 上的分数 | 0–1，越高越好 |
+| D_ik | 县 i 在维度 k 上的基础分数（18 个指标经分段函数后等权平均） | 0–1，越高越好 |
+| Dᴿ_ik | 经时间稳健性调整后的维度分 | 0–1 |
+| A_M,i | 安全边际因子 | 0.80–1 |
+| F_i | 可行性标记（Gate） | 0 / 1 / 未确定 |
 | w0_k | 团队判断的基准权重（AHP） | Σ = 1 |
 | M_k | 客户需求作用在维度 k 上的乘数 | > 0，默认为 1 |
 | φ_k | 最终维度权重，也就是 Choquet 中的重要性 | Σ = 1 |
@@ -31,17 +34,22 @@
 **页面要点（流程图）**：
 
 ```
+County data (18 indicators) ──► utilities U ──► dimension scores D ──► climate projections ──► Dᴿ (n × 8)
 Customer needs (4 questions) ──► dynamic weights φ (8)
-Team judgment (DEMATEL) ─┐
-County data (correlation) ┴──► interaction matrix I (8 × 8)
-County data (18 indicators) ──► dimension scores D (n × 8)
+Team judgment (DEMATEL) + county data (correlation) ──► interaction matrix I (8 × 8)
                                          │
-                       Choquet decision matrix: D, φ, I ──► score, rank, robustness
+              Choquet suitability Sᴿ(Dᴿ, φ, I) × safety margin A_M × feasibility F ──► final score, rank, robustness
 ```
 
+**最终分数（全片最核心的一行公式）**：
+
+$$
+\text{FinalScore}_i = F_i \times S^{R}_i \times A_{M,i}
+$$
+
 **讲稿要点**：
-- 三类输入各管一件事：客户需求决定"什么重要"（φ）；团队判断加上数据决定"维度之间怎么互相影响"（I）；县的数据决定"每个县各维度表现如何"（D）。
-- 三者在决策矩阵里汇合，得到每个县的分数。
+- 四个问题分层回答，不混在一个加权平均里：**适宜度** Sᴿ（各维度综合有多好）、**可行性** F（有没有不可妥协的障碍）、**安全边际** A_M（离最弱的那条边界有多远）、**时间稳健性**（未来气候恶化多少，作用在受影响的维度上）。
+- 客户需求决定"什么重要"（φ）；团队判断加上数据决定"维度之间怎么互相影响"（I）；县的数据和气候预测决定"每个县各维度表现如何"（Dᴿ）。
 
 **建议配图**：上面这张流程图，三种输入用三种颜色区分。
 
@@ -58,12 +66,12 @@ County data (18 indicators) ──► dimension scores D (n × 8)
 **公式（大字号放在页面中央）**：
 
 $$
-\text{Score}_i = 100 \times \Big[\underbrace{\sum_{k} \varphi_k D_{ik}}_{\text{each dimension on its own}} \;-\; \underbrace{\tfrac{1}{2}\sum_{k<l} I_{kl}\,\lvert D_{ik}-D_{il}\rvert}_{\text{interactions between dimensions}}\Big]
+S^{R}_i = 100 \times \Big[\underbrace{\sum_{k} \varphi_k D^{R}_{ik}}_{\text{each dimension on its own}} \;-\; \underbrace{\tfrac{1}{2}\sum_{k<l} I_{kl}\,\lvert D^{R}_{ik}-D^{R}_{il}\rvert}_{\text{interactions between dimensions}}\Big]
 $$
 
 **讲稿要点**：
 - 这是 **2-additive Choquet 积分**（Grabisch 1997），多准则决策领域处理"准则之间不独立"的标准方法。
-- 第一项就是常见的加权求和；第二项是我们加入的交互修正。
+- 第一项就是常见的加权求和；第二项是我们加入的交互修正。矩阵的输入是经时间稳健性调整后的维度分 Dᴿ（第 10 页），输出的 Sᴿ 再乘安全边际 A_M（第 11 页）得到最终分数。
 - 所有 I = 0 时，公式**退化为加权求和**。所以加权求和是我们模型的一个特例，传统方法完全被包含在内。
 
 **建议配图**：一张 n × 8 的热力图表格（行为县，列为维度，颜色表示 D），旁边放一行 8 个权重，箭头指向"Score"。
@@ -202,9 +210,10 @@ $$
 | Energy & carbon | 0 | 0 |
 
 **排名会怎么变（VA，每次只改一个选项；完整表见 `outputs/validation_VA/customer_input_response.csv`）**：
-- 风冷、高延迟敏感、运营优先：第一名从 Loudoun 变为 **Washington County**；
-- 闭式液冷：第一名变为 **Louisa County**；
-- 每个选项都会让前 10 名换掉 0 到 2 个县。
+- 默认客户：第一名 **Louisa County**；
+- 蒸发冷却、低延迟敏感、高可靠性、可持续优先：第一名变为 **Loudoun County**；
+- 每个选项都会让前 10 名换掉 1 到 2 个县。
+- GA：默认第一名 **Fayette County**；选高延迟敏感时变为 **Upson County**。
 
 **讲稿要点**：客户每改一个答案，权重就按公式重新计算，排名随之更新；系统会逐条说明是哪个选项改变了哪个维度的权重。
 
@@ -234,17 +243,17 @@ $$
 - 一句话：**气候是根源，水和能源是它的影响落点。**
 
 **"数据否决"的实例（建议单独做一个醒目的框）**：
-> 我们原本假设光纤和劳动力都反映城市化、属于重复。但两州数据显示商业光纤覆盖率和劳动力规模**负相关**（VA ρ = −0.20，GA ρ = −0.17），系统自动取消了这一对交互。
+> 我们原本假设光纤和劳动力都反映城市化、属于重复。但两州数据显示光纤维度和劳动力维度**负相关**（VA ρ = −0.13，GA ρ = −0.15），系统自动取消了这一对交互。
 
 **当前交互矩阵（默认客户）**：
 
 | 交互 | 类型 | VA | GA |
 |---|---|---|---|
-| Climate ↔ Water | 互补 | +0.078 | +0.048 |
-| Cooling ↔ Water | 互补 | +0.064 | +0.040 |
-| Transport ↔ Workforce | 重复 | −0.054 | −0.037 |
-| Fiber ↔ Transport | 重复 | 取消（ρ < 0） | −0.017 |
-| Fiber ↔ Workforce | 重复 | 取消 | 取消 |
+| Climate ↔ Water | 互补 | +0.060 | +0.051 |
+| Cooling ↔ Water | 互补 | +0.049 | +0.042 |
+| Transport ↔ Workforce | 重复 | −0.034 | −0.036 |
+| Fiber ↔ Transport | 重复 | −0.020 | −0.018 |
+| Fiber ↔ Workforce | 重复 | 取消（ρ < 0） | 取消（ρ < 0） |
 
 ---
 
@@ -269,7 +278,57 @@ $$
 
 ---
 
-## 第 10 页：完备性 ②：稳健性检验
+## 第 10 页：时间稳健性：未来气候恶化（Adelyn）
+
+**建议标题**：*Temporal robustness: penalize projected deterioration*
+
+**页面要点**：
+- 数据：CMRA 2025 县级气候预测，**RCP8.5 本世纪中叶**对比历史均值。这是保守的压力测试，不是预测。
+- 只惩罚恶化：Δ = max(0, 未来值 − 历史值)，改善不加分。
+- 把 Δ 换成 VA+GA 292 个县中的百分位 p（并列取平均秩）。
+- **一个因子只作用于一个维度**，不合成全局因子：
+
+| 气候变化（RCP8.5 中叶 vs 历史） | 作用的维度 | 公式 |
+|---|---|---|
+| >90°F 天数增加 | Cooling climate | Dᴿ = D × (1 − 0.20·p_heat) |
+| 连续干旱日增加 | Water | Dᴿ = D × (1 − 0.20·p_dry) |
+| 日降水 ≥ 2 英寸的天数增加 | Climate risk | Dᴿ = D × (1 − 0.20·p_rain) |
+
+**讲稿要点**：
+- 数据中心要运行 20–30 年，只看现在的气候不够。
+- 选这三项，是因为它们是外生的物理变化，不受当地政策影响，两州每个县都有数据，而且和冷却、供水、排水直接相关。
+- 不用 Aqueduct 2050 水压力作为第二个水因子，因为它已经在水维度和安全边际里了，再用一次就是重复计算。
+- 这些因子与客户权重无关，可以预先算好按县查表；改权重不需要重算。
+
+**建议配图**：三张州地图，分别显示三个因子；或者一张示意图"一个气候变化 → 一个维度"。
+
+---
+
+## 第 11 页：安全边际与可行性门槛（Adelyn + Gate）
+
+**建议标题**：*Weakest-link margin and feasibility gates*
+
+**安全边际公式**：
+
+$$
+m_{ik} = \frac{U_{ik}}{100},\qquad
+A_{M,i} = 1 - \lambda_M\Big(1-\min_{k} m_{ik}\Big),\qquad \lambda_M = 0.20
+$$
+
+**页面要点**：
+- 适宜度分是"平均表现"，看不出一个县是否在某一项上**刚好踩线**。安全边际看的是 18 个指标中**最弱的一项**，最多扣 20%。
+- 只取最小值，不把 18 个因子相乘，避免指标越多惩罚越重。
+- **案例**：Loudoun 的适宜度分是 VA 最高（82.76），但到铁路的距离达到了边界（效用为 0），边际因子为 0.80，最终 66.21；Louisa 适宜度 77.76、边际因子 0.855，最终 **66.48，排第一**。
+- **可行性门槛 F**（Gate 模块，按客户的 MW 和供电日期运行）：电力可得性、供电时间、许可/分区三项。
+  - VA（100 MW，2029-12-31）：98 个县未发现明显风险，33 个资料不足，2 个有许可风险；
+  - GA：154 / 4 / 1。
+- Gate 给出的是筛查信号，不是核实过的 PASS/FAIL，所以默认只标记、不淘汰（所有县为 Conditional）；客户可以选择严格模式，排除有风险的县后重新排名。
+
+**讲稿要点**：分层的意义在于"有的东西可以互相弥补，有的不能"。适宜度允许各维度互相补偿；安全边际看最弱一项，不允许补偿；可行性是硬门槛。
+
+---
+
+## 第 12 页：完备性 ②：稳健性检验
 
 **建议标题**：*Is the answer robust?*
 
@@ -277,22 +336,24 @@ $$
 
 | 检验 | VA | GA |
 |---|---|---|
-| Choquet 与加权求和对比 | 第一名相同，前 10 名重合 9 个，ρ = 0.995 | 第一名相同，前 10 名重合 9 个，ρ = 0.992 |
-| SMAA-2（10,000 组权重，κ 随机） | Loudoun 排第一的概率 57%，Washington 36%；两者进入前 10 的概率 > 98% | Dade 38%、Candler 20%；进入前 10 的概率在 75%–79% 之间 |
-| 6 种权重方法对比 | AHP 和 ROC 选 Loudoun；等权、CRITIC、熵权、DEMATEL 选 Washington | 方法之间分歧很大（ρ 0.19–0.94） |
-| 有效权重（对分数差异的实际贡献） | 水 0.49、光纤 0.33 | **水 0.66** |
-| 效用函数形状（指数形状 ρ = ±2） | 前 10 名重合 8–9 个，第一名不变 | 前 10 名重合 8 个 |
+| Choquet 与加权求和对比 | 第一名相同，前 10 名重合 9 个，ρ = 0.994 | 第一名相同，前 10 名重合 8 个，ρ = 0.991 |
+| SMAA-2（10,000 次：权重、κ、λ_R、λ_M 全部随机） | 排第一的概率：Loudoun 37%、Louisa 33%、Washington 21%；进入前 10：Louisa 100%、Washington 98%、Loudoun 98% | 排第一：Fayette 52%、Upson 27%；进入前 10：两者都约 94%，第三名只有 64% |
+| 90 分位后悔值最低 | Louisa（4.9 分） | Fayette（4.7 分） |
+| 6 种权重方法对比 | AHP 选 Louisa，ROC 选 Loudoun，等权、CRITIC、熵权选 Washington（ρ 0.86–0.99） | AHP、等权、ROC、DEMATEL 都选 Fayette（ρ 0.23–0.99） |
+| 有效权重（对最终分数差异的实际贡献） | 水 0.42、光纤 0.34 | 水 0.51、光纤 0.34 |
+| 效用函数形状（指数形状 ρ = ±2） | 前 10 名重合 7–9 个 | 前 10 名重合 5 个 |
 
 **讲稿要点**：
-- **VA 是稳健的**：Loudoun 和 Washington County 是两个稳健的领先者，客户输入可以说明在什么条件下 Washington 会反超。
-- **GA 对权重敏感**：分数差异主要由水资源驱动，所以给出候选名单（Dade、Candler、Sumter），而不是唯一的第一名。我们不隐藏这种不确定性。
+- **VA**：Louisa、Loudoun、Washington 是稳健的领先组。Louisa 后悔值最低，是"最稳妥"的选择；Loudoun 最常排第一，但有一个最弱项（铁路距离）被安全边际惩罚。
+- **GA**：Fayette 和 Upson 是明确的领先者，之后有明显断层；第三名以后的顺序取决于水的权重和效用函数形状，应作为候选名单呈现。我们不隐藏这种不确定性。
+- SMAA 同时扰动了 Adelyn 设定的 20% 稳健性和边际系数（在 10%–30% 之间抽样），把这两个系数固定在 0.20 时，SMAA 的结果和流程完全一致（有测试）。
 - 方法依据：SMAA-2（Lahdelma & Salminen 2001）；CRITIC（Diakoulaki 等 1995）；ROC（Barron & Barrett 1996）。
 
 **建议配图**：SMAA 排名接受度堆叠条形图（每个县排第 1、2、3… 的概率），数据见 `outputs/validation_<州>/smaa_rank_acceptability.csv`。
 
 ---
 
-## 第 11 页：创新点总结
+## 第 13 页：创新点总结
 
 **建议标题**：*What is new*
 
@@ -300,16 +361,20 @@ $$
 2. **不假设维度独立**：用 Choquet 积分建模互补与重复，传统加权求和只是其中一个特例。
 3. **团队判断与数据融合，数据可以否决**：DEMATEL 捕捉因果关系，相关矩阵检验重复；数据不支持的假设会被自动取消。
 4. **有数学保证的可解释性**：单调性有充要条件并强制检查；每个分数都能精确分解到维度和交互。
-5. **透明说明不确定性**：用概率（SMAA）而不是单一排名表达结论，并说明结论在什么条件下成立、在什么条件下会变。
+5. **分层而不是一锅平均**：适宜度可以互相补偿；安全边际看最弱一项；时间稳健性"一个气候变化只作用于一个维度"；可行性是硬门槛。每一层都有明确的防止重复计算规则。
+6. **透明说明不确定性**：用概率（SMAA）而不是单一排名表达结论，并说明结论在什么条件下成立、在什么条件下会变。
 
 ---
 
-## 第 12 页：局限（可放附录）
+## 第 14 页：局限（可放附录）
 
 - AHP、DEMATEL 和交互类型目前是**单人初稿**，团队打分后需要重跑。
 - 能源和碳数据是州级的，无法区分同一州内的县；需要 utility 级数据。
 - 2-additive 模型只捕捉两两之间的交互，不包括三个维度之间的交互。这是表达能力和参数可解释性之间的标准权衡：8 个维度共 28 对。
-- 本模型是区域初筛，不代表具体地块可以建设；Gate 模块负责电力、供电时间和许可等风险检查。
+- 安全边际（20%）和三个稳健性系数（各 20%）是政策参数，已在 SMAA 中按 10%–30% 扰动。
+- 稳健性百分位是相对 VA+GA 这 292 个县计算的；换比较范围需要重算。
+- Gate 给出的是筛查信号，不是核实过的通过或失败，所以默认不淘汰任何县。
+- 本模型是区域初筛，不代表具体地块可以建设。
 
 ---
 
@@ -320,8 +385,10 @@ cd final
 PYTHONPATH=src python3 -m dc_locator.dimension_weights                     # 第 5–7 页的权重
 PYTHONPATH=src python3 -m dc_locator.dimension_weights --cooling_type evaporative --priority sustainability
 PYTHONPATH=src python3 -m dc_locator.interactions dematel                  # 第 8 页的 DEMATEL
-PYTHONPATH=src python3 -m dc_locator.pipeline --state VA                   # 第 8–9 页的交互矩阵和排名
-PYTHONPATH=src python3 -m dc_locator.validation --state VA                 # 第 7、10 页（GA 同理）
+PYTHONPATH=src python3 -m dc_locator.pipeline --state VA                   # 第 8–11 页：交互矩阵、排名、安全边际、Gate
+PYTHONPATH=src python3 -m dc_locator.validation --state VA                 # 第 7、12 页（GA 同理）
 ```
+
+稳健性和安全边际的完整公式见 `docs/SCORING_ADJUSTMENTS.md`。
 
 文献（凭记忆整理，放进 PPT 前请核对）：Grabisch (1997) *Fuzzy Sets and Systems* 92(2)；Marichal (2000) *IEEE Trans. Fuzzy Systems* 8(6)；Saaty (1980) *The Analytic Hierarchy Process*；Forman & Peniwati (1998) *EJOR* 108(1)；Gabus & Fontela (1972) Battelle Geneva；Lahdelma & Salminen (2001) *Operations Research* 49(3)；Diakoulaki et al. (1995) *Computers & OR* 22(7)；Barron & Barrett (1996) *Management Science* 42(11)。

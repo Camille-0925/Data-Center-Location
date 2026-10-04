@@ -2,7 +2,7 @@
 
 Where should America's next sustainable AI data center be built? This project scores and ranks every county in **Virginia** (133 counties and independent cities) and **Georgia** (159 counties) for data-center siting. It uses **8 dimensions and 18 indicators**, and the dimension weights adjust to what each customer needs.
 
-> Status: work in progress. The decision matrix is done; the data, scoring and weighting modules are under construction. See [docs/WORKLOG.md](docs/WORKLOG.md) for the step-by-step development log.
+> Status: the full pipeline runs end to end for both states (133 tests pass). Judgment inputs (AHP comparisons, DEMATEL scores, interaction types) are still single-respondent drafts to be replaced after the team session. See [docs/WORKLOG.md](docs/WORKLOG.md) for the development log.
 
 ## How it works
 
@@ -12,7 +12,11 @@ Where should America's next sustainable AI data center be built? This project sc
 ③ score adjustments   precomputed CMRA factor → Dᴿ for climate/water/cooling; weakest indicator → A_M
 ④ dimension_weights   4 customer inputs → Camille's dimension weights φ
 ⑤ decision            Dᴿ + φ + I → Choquet/weighted suitability Sᴿ → final score Sᴿ × A_M
+⑥ feasibility gates   power availability, time to power, permitting/zoning per county (flags; optional strict exclusion)
+⑦ validation          method comparison + SMAA-2 over weights, κ, λ_R, λ_M
 ```
+
+In one line: **FinalScore = F × Sᴿ × A_M**, where Sᴿ = 100 × [Σ φ_k Dᴿ_k − ½ Σ I_kl |Dᴿ_k − Dᴿ_l|].
 
 | Dimension | Indicators |
 |---|---|
@@ -49,8 +53,9 @@ All runtime inputs and processed reference workbooks are stored under `data/` an
 │   ├── indicator_scoring/    ② utilities, within-dimension weights, dimension scores — see its README.md
 │   ├── dimension_weights/    ③a customer inputs → dimension weights — see its README.md
 │   ├── interactions/         ③c/③d DEMATEL + correlation → 8 × 8 interaction matrix — see its README.md
-│   └── decision/             ④ decision matrix (matrix.py, CLI) — see its README.md
-│   ├── validation/           ③b cross-validation and SMAA robustness — see its README.md
+│   ├── decision/             ⑤ decision matrix (matrix.py, CLI) — see its README.md
+│   ├── gates/                ⑥ feasibility gates for Virginia and Georgia — see README.txt in each
+│   ├── validation/           ⑦ cross-validation and SMAA robustness — see its README.md
 │   └── pipeline.py           end-to-end run (CLI)
 ├── scripts/                  end-to-end pipeline scripts
 ├── tests/                    unit tests and fixtures
@@ -67,9 +72,13 @@ pip install -r requirements.txt     # numpy, pandas, openpyxl
 ```
 
 ```bash
-# rank every county of a state for one customer (full pipeline)
+# rank every county of a state for one customer (full pipeline, gates included)
 PYTHONPATH=src python3 -m dc_locator.pipeline --state VA
-PYTHONPATH=src python3 -m dc_locator.pipeline --state GA --cooling_type evaporative --priority sustainability
+PYTHONPATH=src python3 -m dc_locator.pipeline --state GA --cooling_type evaporative --priority sustainability \
+  --power_mw 150 --target_date 2028-12-31
+
+# strict screening: exclude counties whose gates detect a risk, then re-rank
+PYTHONPATH=src python3 -m dc_locator.pipeline --state VA --exclude-gate-risks
 
 # diagnostic legacy path: skip margin and CMRA adjustments
 PYTHONPATH=src python3 -m dc_locator.pipeline --state VA --no-adjustments
@@ -101,9 +110,10 @@ PYTHONPATH=src python3 -m dc_locator.decision recommend \
 | ② | Indicator scoring (`src/dc_locator/indicator_scoring/`) | ✅ 18 fixed-anchor value functions, equal within-dimension aggregation, margin and dimension-specific robustness |
 | ① | Data preparation (`src/dc_locator/data_prep/`) | ✅ 292 counties × 18 indicators, 0 missing; 3 tests |
 | — | End-to-end pipeline (`src/dc_locator/pipeline.py`) | ✅ data → utilities → D → Dᴿ → weights/interactions → suitability → A_M → ranking; complete audit export |
-| ③b | Cross-validation and robustness (`src/dc_locator/validation/`) | ✅ 6 weighting methods, SMAA-2 (10,000 samples), effective weights, input response, value-function shape; 11 tests |
+| ③b | Cross-validation and robustness (`src/dc_locator/validation/`) | ✅ 6 weighting methods, SMAA-2 (10,000 samples over weights, κ, λ_R, λ_M), effective weights, input response, value-function shape; 17 tests |
+| ⑥ | Feasibility gates (`src/dc_locator/gates/`) | ✅ connected to the pipeline: three gate statuses per county; optional strict exclusion; 3 tests |
 | — | Final documentation | ✅ formulas and implementation contract in `docs/SCORING_ADJUSTMENTS.md` |
 
 ## Team
 
-Camille (weights and integration), Jane (data), Adelyn (decision matrix).
+Camille (weights, interactions, validation, integration), Jane (data), Adelyn (decision matrix, indicator scoring, robustness and margin), MoonChild-1969 (feasibility gates).
